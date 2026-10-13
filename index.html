@@ -56,7 +56,7 @@ a{color:inherit}
 .rif-b{font:inherit;line-height:inherit;color:#561622;background:none;border:0;padding:0;margin:0;cursor:pointer;font-weight:600;text-decoration:underline dotted;text-underline-offset:3px}
 .pop{display:none;position:absolute;z-index:60;left:0;top:100%;margin-top:8px;width:min(440px,86vw);max-height:360px;overflow:auto;background:#FFFDF9;border:1px solid #E5DBCB;border-top:3px solid #6E1E2B;border-radius:8px;box-shadow:0 14px 36px rgba(42,35,36,.2);padding:16px 18px;font-family:'Instrument Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;color:#2A2324;text-align:left;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none}
 .pop::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
-@media (hover:hover){.rif:hover .pop{display:block}}
+.rif.hov .pop{display:block}
 .rif.open .pop{display:block}
 .pop-t{display:block;font-weight:700;font-size:14px;margin-bottom:2px}
 .pop-s{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6A5F59;margin-bottom:10px}
@@ -65,7 +65,7 @@ a{color:inherit}
 .pop-l{font-weight:600;color:#561622}
 .pop-c{font:inherit;font-size:13px;font-weight:600;background:#F2EADD;color:#2A2324;border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
 @media (max-width:700px){.pop{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:65vh;margin:0}}
-@media (hover:hover) and (min-width:701px){.pop-c{display:none}}
+@media (hover:hover) and (min-width:701px){.rif:not(.open) .pop-c{display:none}}
 </style>
 </head>
 <body>
@@ -98,7 +98,7 @@ a{color:inherit}
       </div>
     </div>
     <aside class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
-      <p class="lbl">Quadro normativo · passa sopra un riferimento</p>
+      <p class="lbl">Quadro normativo · tieni il cursore su un riferimento o cliccalo</p>
       <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
         <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>D.Lgs. 36/2023,
           <span class="rif"><button type="button" class="rif-b">art. 215</button><span class="pop" role="note"><span class="pop-t">Art. 215 D.Lgs. 36/2023 — Collegio consultivo tecnico</span><span class="pop-s">Sintesi redazionale · testo vigente dopo il D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Per prevenire le controversie o consentirne la rapida risoluzione, ciascuna parte può chiedere la costituzione di un collegio consultivo tecnico. Per i lavori di importo pari o superiore alle soglie europee la costituzione è obbligatoria, anche per le opere realizzate in concessione o in partenariato pubblico-privato. La formazione del collegio è disciplinata dall'Allegato V.2.
@@ -391,7 +391,7 @@ Dopo il correttivo, l'Allegato V.2 (art. 1, c. 4) applica questi limiti alla sol
       </div>
     </div>
     <aside class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
-      <p class="lbl">Quadro normativo · passa sopra un riferimento</p>
+      <p class="lbl">Quadro normativo · tieni il cursore su un riferimento o cliccalo</p>
       <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
         <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>D.Lgs. 36/2023,
           <span class="{{r.a215.cls}}"><button type="button" class="rif-b" onClick="{{r.a215.tog}}">{{r.a215.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.a215.t}}</span><span class="pop-s">{{r.a215.s}}</span><span class="pop-x">{{r.a215.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.a215.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.a215.close}}">Chiudi</button></span></span></span>,

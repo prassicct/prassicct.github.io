@@ -122,10 +122,9 @@
   }
 
 
-  /* Riposiziona i riquadri delle fonti perché restino dentro lo schermo. */
-  function placePop(e) {
-    var rif = e.target.closest && e.target.closest('.rif');
-    if (!rif) return;
+  /* Riquadri delle fonti: si aprono dopo 1,5 secondi di cursore fermo sul riferimento, oppure con un clic. */
+  var HOVER_MS = 1500;
+  function placePop(rif) {
     var pop = rif.querySelector('.pop');
     if (!pop || window.innerWidth <= 700) return;
     var r = rif.getBoundingClientRect();
@@ -136,8 +135,29 @@
       pop.style.left = shift + 'px';
     }
   }
-  document.addEventListener('mouseover', placePop, true);
-  document.addEventListener('click', placePop, true);
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  if (canHover) {
+    document.addEventListener('mouseover', function (e) {
+      var rif = e.target.closest && e.target.closest('.rif');
+      if (!rif || rif.__t || rif.classList.contains('hov')) return;
+      rif.__t = setTimeout(function () { rif.__t = null; placePop(rif); rif.classList.add('hov'); }, HOVER_MS);
+    });
+    document.addEventListener('mouseout', function (e) {
+      var rif = e.target.closest && e.target.closest('.rif');
+      if (!rif || (e.relatedTarget && rif.contains(e.relatedTarget))) return;
+      if (rif.__t) { clearTimeout(rif.__t); rif.__t = null; }
+      rif.classList.remove('hov');
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var rif = e.target.closest && e.target.closest('.rif');
+    if (!rif) return;
+    placePop(rif);
+    if (e.target.closest('.rif-b') || e.target.closest('.pop-c')) {
+      if (rif.__t) { clearTimeout(rif.__t); rif.__t = null; }
+      rif.classList.remove('hov');
+    }
+  }, true);
 
   window.DC = {
     mount: function (Component) {

@@ -51,7 +51,7 @@ a{color:inherit}
 .rif-b{font:inherit;line-height:inherit;color:#561622;background:none;border:0;padding:0;margin:0;cursor:pointer;font-weight:600;text-decoration:underline dotted;text-underline-offset:3px}
 .pop{display:none;position:absolute;z-index:60;left:0;top:100%;margin-top:8px;width:min(440px,86vw);max-height:360px;overflow:auto;background:#FFFDF9;border:1px solid #E5DBCB;border-top:3px solid #6E1E2B;border-radius:8px;box-shadow:0 14px 36px rgba(42,35,36,.2);padding:16px 18px;font-family:'Instrument Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;color:#2A2324;text-align:left;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none}
 .pop::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
-@media (hover:hover){.rif:hover .pop{display:block}}
+.rif.hov .pop{display:block}
 .rif.open .pop{display:block}
 .pop-t{display:block;font-weight:700;font-size:14px;margin-bottom:2px}
 .pop-s{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6A5F59;margin-bottom:10px}
@@ -60,7 +60,7 @@ a{color:inherit}
 .pop-l{font-weight:600;color:#561622}
 .pop-c{font:inherit;font-size:13px;font-weight:600;background:#F2EADD;color:#2A2324;border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
 @media (max-width:700px){.pop{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:65vh;margin:0}}
-@media (hover:hover) and (min-width:701px){.pop-c{display:none}}
+@media (hover:hover) and (min-width:701px){.rif:not(.open) .pop-c{display:none}}
 </style>
 </head>
 <body>
@@ -85,7 +85,7 @@ a{color:inherit}
   <section class="wrap" style="padding-top: 64px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 18px;">
     <p class="kick">Approfondimenti</p>
     <h1 class="h1">La biblioteca sui Collegi Consultivi Tecnici</h1>
-    <p class="lead">Analisi operative su un singolo problema concreto, ordinate per fase della vita del Collegio. Ogni approfondimento indica i riferimenti normativi: passa sopra un riferimento, o toccalo da telefono, per leggerne la sintesi e aprire la fonte ufficiale.</p>
+    <p class="lead">Analisi operative su un singolo problema concreto, ordinate per fase della vita del Collegio. Ogni approfondimento indica i riferimenti normativi: tieni il cursore su un riferimento per un istante, oppure cliccalo, per leggerne la sintesi e aprire la fonte ufficiale.</p>
     <div role="group" aria-label="Filtra per fase" style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px;">
       
         <button type="button" class="chip on" aria-pressed="true">Tutti · 13</button>
@@ -513,7 +513,7 @@ c. 4 — L'Osservatorio tiene l'elenco dei soggetti, anche appartenenti o già a
   <section class="wrap" style="padding-top: 64px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 18px;">
     <p class="kick">Approfondimenti</p>
     <h1 class="h1">La biblioteca sui Collegi Consultivi Tecnici</h1>
-    <p class="lead">Analisi operative su un singolo problema concreto, ordinate per fase della vita del Collegio. Ogni approfondimento indica i riferimenti normativi: passa sopra un riferimento, o toccalo da telefono, per leggerne la sintesi e aprire la fonte ufficiale.</p>
+    <p class="lead">Analisi operative su un singolo problema concreto, ordinate per fase della vita del Collegio. Ogni approfondimento indica i riferimenti normativi: tieni il cursore su un riferimento per un istante, oppure cliccalo, per leggerne la sintesi e aprire la fonte ufficiale.</p>
     <div role="group" aria-label="Filtra per fase" style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px;">
       <sc-for list="{{filtri}}" as="f" hint-placeholder-count="6">
         <button type="button" class="{{f.cls}}" aria-pressed="{{f.on}}" onClick="{{f.pick}}">{{f.nome}} · {{f.n}}</button>
