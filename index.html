@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prassi CCT — Il metodo per gestire un Collegio Consultivo Tecnico</title>
+<meta name="description" content="Risorsa specialistica indipendente sui Collegi Consultivi Tecnici: approfondimenti, guide operative, strumenti e fonti ufficiali sul CCT (D.Lgs. 36/2023, Allegato V.2).">
+<link rel="canonical" href="https://prassicct.it/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prassi CCT">
+<meta property="og:title" content="Prassi CCT — Il metodo per gestire un Collegio Consultivo Tecnico">
+<meta property="og:description" content="Risorsa specialistica indipendente sui Collegi Consultivi Tecnici: approfondimenti, guide operative, strumenti e fonti ufficiali sul CCT (D.Lgs. 36/2023, Allegato V.2).">
+<meta property="og:url" content="https://prassicct.it/">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/Lora-Bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/fonts/InstrumentSans-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+body{margin:0}*{box-sizing:border-box}
+a{color:inherit}
+.pg{min-height:100vh;background:#FAF6EF;color:#2A2324;font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.hd{background:#FFFDF9;border-bottom:1px solid #E5DBCB}
+.hd-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding-top:18px;padding-bottom:18px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#2A2324}
+.logo-p{font-family:'Lora',Georgia,serif;font-weight:600;font-size:28px;line-height:1;letter-spacing:-.01em}
+.logo-i{position:relative;display:inline-block}
+.logo-q{position:absolute;left:50%;top:.02em;width:.19em;height:.19em;margin-left:-.095em;background:#6E1E2B}
+.logo-c{font-weight:600;font-size:15px;letter-spacing:.2em;color:#6E1E2B}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;padding:8px 0}
+.nav a:hover{color:#6E1E2B}
+.nav a.on{color:#6E1E2B;font-weight:600;box-shadow:inset 0 -2px 0 #6E1E2B}
+.nav a.cta{padding:10px 16px;border-radius:8px;background:#6E1E2B;color:#fff;font-weight:600;font-size:14px;box-shadow:none}
+.btn{display:inline-block;text-decoration:none;padding:13px 21px;border-radius:8px;background:#6E1E2B;color:#fff;font:inherit;font-weight:600;border:1px solid #6E1E2B;cursor:pointer}
+.btn:hover{background:#561622}
+.btn-o{background:transparent;color:#2A2324;border-color:#2A2324}
+.btn-o:hover{background:#2A2324;color:#fff}
+.kick{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E1E2B}
+.lbl{margin:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6A5F59}
+.h1{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:clamp(34px,4.6vw,58px);line-height:1.1;letter-spacing:-.015em}
+.h2{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:30px;line-height:1.2}
+.h3{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:21px;line-height:1.3}
+.lead{margin:0;font-size:19px;line-height:1.6;color:#6A5F59;max-width:62ch}
+.mut{color:#6A5F59}
+.card{background:#FFFDF9;border:1px solid #E5DBCB;border-radius:8px;padding:24px}
+.band{background:#F2EADD;border-top:1px solid #E5DBCB;border-bottom:1px solid #E5DBCB}
+.tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:12.5px;font-weight:600;background:#F3E4E1;color:#561622}
+.tag-n{background:#2A2324;color:#fff}.tag-i{background:#F2EADD;color:#2A2324}.tag-o{background:#6E1E2B;color:#fff}
+.sq{display:inline-block;flex:none;width:8px;height:8px;background:#6E1E2B}
+.more{font-size:15px;font-weight:600;color:#561622}
+.ft{border-top:1px solid #E5DBCB;background:#FFFDF9}
+.ft-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:32px;padding-bottom:32px;font-size:13px;color:#6A5F59}
+.rif{position:relative;display:inline}
+.rif-b{font:inherit;line-height:inherit;color:#561622;background:none;border:0;padding:0;margin:0;cursor:pointer;font-weight:600;text-decoration:underline dotted;text-underline-offset:3px}
+.pop{display:none;position:absolute;z-index:60;left:0;top:100%;margin-top:8px;width:min(440px,86vw);max-height:360px;overflow:auto;background:#FFFDF9;border:1px solid #E5DBCB;border-top:3px solid #6E1E2B;border-radius:8px;box-shadow:0 14px 36px rgba(42,35,36,.2);padding:16px 18px;font-family:'Instrument Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;color:#2A2324;text-align:left;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none}
+.pop::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
+@media (hover:hover){.rif:hover .pop{display:block}}
+.rif.open .pop{display:block}
+.pop-t{display:block;font-weight:700;font-size:14px;margin-bottom:2px}
+.pop-s{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6A5F59;margin-bottom:10px}
+.pop-x{display:block;white-space:pre-line}
+.pop-f{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #E5DBCB}
+.pop-l{font-weight:600;color:#561622}
+.pop-c{font:inherit;font-size:13px;font-weight:600;background:#F2EADD;color:#2A2324;border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+@media (max-width:700px){.pop{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:65vh;margin:0}}
+@media (hover:hover) and (min-width:701px){.pop-c{display:none}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/strumenti/">Strumenti</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-top: 80px; padding-bottom: 64px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end;">
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+      <p class="kick">Risorsa specialistica indipendente</p>
+      <h1 class="h1" style="max-width: 15ch;">Il metodo per gestire un Collegio Consultivo Tecnico</h1>
+      <p class="lead">Approfondimenti, guide e strumenti operativi su costituzione, insediamento, quesiti, termini, compensi e fascicolo del CCT. Ogni affermazione rinvia alla sua fonte ufficiale e distingue sempre norma, interpretazione e prassi.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
+        <a href="/guide/" class="btn">Inizia dalle guide operative</a>
+        <a href="/strumenti/kit/" class="btn btn-o">Apri il Kit della Segreteria</a>
+      </div>
+    </div>
+    <aside class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+      <p class="lbl">Quadro normativo · passa sopra un riferimento</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>D.Lgs. 36/2023,
+          <span class="rif"><button type="button" class="rif-b">art. 215</button><span class="pop" role="note"><span class="pop-t">Art. 215 D.Lgs. 36/2023 — Collegio consultivo tecnico</span><span class="pop-s">Sintesi redazionale · testo vigente dopo il D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Per prevenire le controversie o consentirne la rapida risoluzione, ciascuna parte può chiedere la costituzione di un collegio consultivo tecnico. Per i lavori di importo pari o superiore alle soglie europee la costituzione è obbligatoria, anche per le opere realizzate in concessione o in partenariato pubblico-privato. La formazione del collegio è disciplinata dall'Allegato V.2.
+c. 2 — Il collegio esprime pareri o adotta determinazioni che, nei casi previsti, hanno natura di lodo contrattuale ai sensi dell'art. 808-ter c.p.c. L'attività è orientata a individuare la soluzione migliore per la realizzazione dell'opera a regola d'arte.
+c. 3 — L'inosservanza di pareri o determinazioni è valutata ai fini della responsabilità per danno erariale e costituisce, salvo prova contraria, grave inadempimento degli obblighi contrattuali. L'osservanza delle determinazioni esclude la responsabilità per danno erariale, salvo il dolo.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art215" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+          <span class="rif"><button type="button" class="rif-b">216</button><span class="pop" role="note"><span class="pop-t">Art. 216 D.Lgs. 36/2023 — Pareri e determinazioni obbligatori</span><span class="pop-s">Sintesi redazionale · testo vigente dopo il D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee, in caso di riserve, proposte di variante e altre controversie tecniche in corso di esecuzione è obbligatoria l'acquisizione del parere del collegio o, su richiesta concorde delle parti, di una sua determinazione. Se le parti attribuiscono alla determinazione natura di lodo contrattuale, è precluso l'accordo bonario sulle riserve.
+c. 2 — Il parere è obbligatorio nei casi di risoluzione del contratto. Se i lavori non possono proseguire con il soggetto designato, il collegio valuta anche se ragioni tecniche ed economiche rendano preferibile proseguire con il medesimo soggetto.
+c. 3 — Nel parere il collegio valuta: a) l'esecuzione dei lavori in via diretta; b) l'interpello progressivo dei partecipanti alla procedura originaria; c) l'indizione di una nuova procedura; d) la proposta di nomina di un commissario straordinario.
+c. 4 — Quando la sospensione è imposta da gravi ragioni di ordine tecnico e le parti non concordano sulle modalità di prosecuzione, il collegio si pronuncia entro quindici giorni dalla comunicazione: accerta la legittimità della sospensione e indica le modalità di prosecuzione. La pronuncia assume natura di lodo contrattuale «solo se tale possibilità non sia stata espressamente esclusa ai sensi di quanto disposto dall'articolo 217».</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art216" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+          <span class="rif"><button type="button" class="rif-b">217</button><span class="pop" role="note"><span class="pop-t">Art. 217 D.Lgs. 36/2023 — Determinazioni facoltative</span><span class="pop-s">Sintesi redazionale · testo vigente dopo il D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Fuori dai casi di parere o determinazione obbligatori, le determinazioni del collegio hanno natura di lodo contrattuale ai sensi dell'art. 808-ter c.p.c., se le parti non hanno diversamente disposto dopo la nomina del Presidente e non oltre l'insediamento del collegio. «La possibilità che la pronuncia del collegio consultivo tecnico assuma natura di lodo contrattuale è esclusa» quando è richiesta una pronuncia sulla risoluzione, sulla sospensione coattiva o sulle modalità di prosecuzione dei lavori.
+c. 2 — Se le parti escludono il valore di lodo, la determinazione, anche facoltativa, produce comunque gli effetti dell'art. 215, comma 3.
+c. 3 — Le determinazioni con natura di lodo contrattuale sono impugnabili nei casi e nei modi dell'art. 808-ter, secondo comma, c.p.c.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art217" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+          <span class="rif"><button type="button" class="rif-b">218</button><span class="pop" role="note"><span class="pop-t">Art. 218 D.Lgs. 36/2023 — Costituzione facoltativa del collegio consultivo tecnico</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Le stazioni appaltanti e gli enti concedenti, tramite il RUP, possono costituire, secondo l'Allegato V.2, un collegio consultivo tecnico di tre componenti per risolvere problemi tecnici o giuridici di ogni natura, anche nella fase che precede l'esecuzione: tra questi la determinazione delle caratteristiche delle opere, le clausole e le condizioni del bando o dell'invito, la verifica dei requisiti di partecipazione e dei criteri di selezione e aggiudicazione.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art218" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+          <span class="rif"><button type="button" class="rif-b">219</button><span class="pop" role="note"><span class="pop-t">Art. 219 D.Lgs. 36/2023 — Scioglimento del collegio consultivo tecnico</span><span class="pop-s">Sintesi redazionale · comma 1-bis inserito dal D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Il collegio è sciolto al termine dell'esecuzione del contratto. Nei casi in cui la costituzione non è obbligatoria, può essere sciolto prima, in qualsiasi momento, per accordo tra le parti.
+c. 1-bis — Il contratto si considera eseguito alla data di sottoscrizione dell'atto di collaudo o del certificato di regolare esecuzione. Se sul collaudo sussistono riserve o altre richieste, il collegio si scioglie con l'adozione della relativa pronuncia.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art219" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span></div>
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>Allegato V.2,
+          <span class="rif"><button type="button" class="rif-b">art. 1</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — Formazione del Collegio e compensi</span><span class="pop-s">Sintesi redazionale · modificato dal D.Lgs. 209/2024 e dal D.L. 73/2025</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee il Collegio è formato da tre componenti, o da cinque in caso di opera complessa ed eterogeneità delle professionalità richieste, a scelta della stazione appaltante o del concessionario. I componenti hanno comprovata esperienza nel settore dei contratti e degli investimenti pubblici, anche in relazione all'oggetto del contratto.
+c. 2 — Le parti nominano i componenti di comune accordo, oppure ciascuna ne nomina uno o due, anche tra il proprio personale o tra soggetti legati da rapporti di lavoro autonomo o collaborazione. Il Presidente è scelto dai componenti di parte; in mancanza di accordo è designato entro cinque giorni dal MIT (opere di interesse nazionale), dalla Regione, dalla Provincia autonoma o dalla Città metropolitana. Se il MIT finanzia l'opera o è concedente, nomina un componente.
+c. 3 — Ai componenti si applica l'art. 813, secondo comma, c.p.c.
+c. 4 — La parte fissa del compenso non può superare i limiti dell'art. 6, comma 7-bis, del D.L. 76/2020; per la parte di valore dell'appalto eccedente 1.000 milioni di euro il limite è pari allo 0,02% (collegio di tre) o allo 0,03% (collegio di cinque).
+c. 5 — Il compenso complessivo non può superare il triplo della parte fissa. Spetta il rimborso delle spese non remunerative. Il compenso è dovuto a tutti i componenti, indipendentemente dal rapporto con le parti, senza vincolo di solidarietà. Non si applica l'art. 3 della L. 136/2010.
+c. 6 — Un decreto MIT, su parere conforme del Consiglio superiore dei lavori pubblici, definirà i parametri dei compensi (anche della segreteria). Fino ad allora restano applicabili, per i compensi, le Linee guida del D.M. 17 gennaio 2022 (G.U. n. 55 del 7 marzo 2022).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+          <span class="rif"><button type="button" class="rif-b">art. 2</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 2 — Costituzione e insediamento del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — La stazione appaltante costituisce il Collegio prima dell'avvio dell'esecuzione o comunque non oltre dieci giorni da tale data. Il ritardo rileva ai fini della responsabilità dirigenziale ed erariale e, tra le parti, della buona fede contrattuale. In caso di mancata designazione, la parte interessata può rivolgersi al presidente del tribunale nel cui circondario ha sede la stazione appaltante.
+c. 2 — Il Collegio si intende istituito con l'accettazione dell'incarico da parte del Presidente. La seduta di insediamento si tiene entro quindici giorni dall'accettazione; in quella sede le parti dichiarano a verbale se intendono escludere che le determinazioni abbiano valore di lodo contrattuale ai sensi dell'art. 808-ter c.p.c.
+c. 3 — Nel verbale di insediamento si stabiliscono periodicità e modalità delle riunioni e dei sopralluoghi e, se il valore di lodo non è escluso, le modalità del contraddittorio.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+          <span class="rif"><button type="button" class="rif-b">art. 3</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 3 — Decisioni del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni. Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo.
+c. 2 — Il Collegio può operare anche in videoconferenza o con collegamento da remoto.
+c. 3 — Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio; non è ammessa la consulenza tecnica d'ufficio. Sono previste riunioni periodiche di monitoraggio, nelle quali il Collegio può formulare osservazioni.
+c. 4 — Le determinazioni sono adottate a maggioranza, con atto sottoscritto, entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti; il termine è di venti giorni per esigenze istruttorie. La motivazione può essere succinta e integrata nei successivi quindici giorni. Sono previste conseguenze sulle spese del giudizio per la parte che non ha osservato una determinazione poi confermata dalla sentenza.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> e ss.</span></div>
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>
+          <span class="rif"><button type="button" class="rif-b">D.L. 76/2020, art. 6, c. 7-bis</button><span class="pop" role="note"><span class="pop-t">Art. 6, comma 7-bis, D.L. 76/2020 — Limiti dei compensi</span><span class="pop-s">Sintesi redazionale · comma introdotto dal D.L. 152/2021</span><span class="pop-x">I compensi dei componenti del collegio non possono complessivamente superare:
+a) collegio di tre componenti: 0,5% del valore dell'appalto fino a 50 milioni di euro; 0,25% per la parte eccedente 50 e fino a 100 milioni; 0,15% per la parte eccedente 100 milioni;
+b) collegio di cinque componenti: 0,8% fino a 50 milioni; 0,4% per la parte eccedente 50 e fino a 100 milioni; 0,25% per la parte eccedente 100 milioni.
+Dopo il correttivo, l'Allegato V.2 (art. 1, c. 4) applica questi limiti alla sola parte fissa del compenso.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76~art6" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> (limiti dei compensi)</span></div>
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>
+          <span class="rif"><button type="button" class="rif-b">Linee guida D.M. 12/2022</button><span class="pop" role="note"><span class="pop-t">Linee guida CCT — D.M. 17 gennaio 2022, n. 12</span><span class="pop-s">MIT · G.U. n. 55 del 7 marzo 2022</span><span class="pop-x">Linee guida per l'omogenea applicazione delle funzioni del collegio consultivo tecnico, adottate sotto la disciplina del D.L. 76/2020. Dopo il correttivo restano applicabili in via transitoria per i compensi (Allegato V.2, art. 1, c. 6) e, per intero, ai collegi di servizi e forniture già costituiti al 31 dicembre 2024. Il punto 8 prevede la trasmissione all'Osservatorio degli atti del collegio, con firma digitale, entro cinque giorni dalla loro adozione.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2022-09/linee-guida-collegio-consultivo-tecnico.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> (in via transitoria)</span></div>
+      </div>
+      <a href="/fonti/" class="more">Tutte le fonti →</a>
+    </aside>
+  </section>
+
+  <section class="band" aria-labelledby="fasi">
+    <div class="wrap" style="padding-top: 64px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <p class="kick">Naviga per fase</p>
+          <h2 id="fasi" class="h2">La vita di un Collegio, dall'inizio alla fine</h2>
+        </div>
+        <p class="mut" style="margin: 0; max-width: 46ch;">Scegli la fase in cui si trova il Collegio: la guida operativa elenca adempimenti, termini e riferimenti di quel momento.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        
+          <a href="/guide/" class="card" style="flex: 1 1 240px; min-width: 0; text-decoration: none; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="width: 14px; height: 14px; background: #6E1E2B;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">01</span>
+              <span style="flex: 1; height: 1px; background: #E5DBCB;"></span>
+            </div>
+            <h3 class="h3" style="font-size: 22px;">Costituzione</h3>
+            <p class="mut" style="margin: 0; font-size: 15px;">Obbligatorietà, tre o cinque componenti, nomine, Presidente, limiti agli incarichi, conflitto di interessi.</p>
+            <span class="more" style="margin-top: auto; font-size: 14px;">Entro 10 giorni dall’avvio dell’esecuzione →</span>
+          </a>
+        
+          <a href="/guide/" class="card" style="flex: 1 1 240px; min-width: 0; text-decoration: none; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="width: 14px; height: 14px; background: #6E1E2B;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">02</span>
+              <span style="flex: 1; height: 1px; background: #E5DBCB;"></span>
+            </div>
+            <h3 class="h3" style="font-size: 22px;">Insediamento</h3>
+            <p class="mut" style="margin: 0; font-size: 15px;">Accettazione del Presidente, seduta di insediamento, scelta sul valore di lodo, regole di funzionamento, Segreteria.</p>
+            <span class="more" style="margin-top: auto; font-size: 14px;">Entro 15 giorni dall’accettazione →</span>
+          </a>
+        
+          <a href="/guide/" class="card" style="flex: 1 1 240px; min-width: 0; text-decoration: none; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="width: 14px; height: 14px; background: #6E1E2B;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">03</span>
+              <span style="flex: 1; height: 1px; background: #E5DBCB;"></span>
+            </div>
+            <h3 class="h3" style="font-size: 22px;">Attività del Collegio</h3>
+            <p class="mut" style="margin: 0; font-size: 15px;">Quesiti, pareri obbligatori, contraddittorio, audizioni, determinazioni a maggioranza, effetti.</p>
+            <span class="more" style="margin-top: auto; font-size: 14px;">Determinazioni entro 15 o 20 giorni →</span>
+          </a>
+        
+          <a href="/guide/" class="card" style="flex: 1 1 240px; min-width: 0; text-decoration: none; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="width: 14px; height: 14px; background: #6E1E2B;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">04</span>
+              <span style="flex: 1; height: 1px; background: #E5DBCB;"></span>
+            </div>
+            <h3 class="h3" style="font-size: 22px;">Chiusura</h3>
+            <p class="mut" style="margin: 0; font-size: 15px;">Scioglimento dopo collaudo o CRE, pronunce sulle riserve, compensi, comunicazioni all’Osservatorio, archivio.</p>
+            <span class="more" style="margin-top: auto; font-size: 14px;">Alla sottoscrizione del collaudo →</span>
+          </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="novita" style="padding-top: 72px; padding-bottom: 24px; display: flex; flex-wrap: wrap; gap: 32px 48px;">
+    <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px;">
+      <p class="kick">Novità</p>
+      <h2 id="novita" class="h2">Ultimi provvedimenti</h2>
+      <p class="mut" style="margin: 0;">Atti e pronunce sui CCT, con sintesi e link alla fonte. Ultima verifica: 13 ottobre 2026.</p>
+      <a href="/cct-update/" class="more">Ricevili con CCT Update →</a>
+    </div>
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column;">
+      
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-top: 1px solid #E5DBCB; align-items: baseline;">
+          <span style="flex: 0 0 120px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">04/09/2026</span>
+          <span class="tag" style="flex: none;">Stazioni appaltanti</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-weight: 600;"><span class="rif"><button type="button" class="rif-b">Regione Veneto, DGR n. 924/2026: nuovi indirizzi operativi sul CCT</button><span class="pop" role="note"><span class="pop-t">Regione Veneto — DGR 31 agosto 2026, n. 924</span><span class="pop-s">BUR n. 119 del 4 settembre 2026</span><span class="pop-x">Approva i nuovi «Indirizzi operativi per la nomina e il funzionamento del Collegio consultivo tecnico», che sostituiscono quelli della DGR 261/2024, recependo le modifiche del D.Lgs. 209/2024 e del D.L. 73/2025. Per i compensi richiama in via transitoria le Linee guida del D.M. 12/2022.</span><span class="pop-f"><a class="pop-l" href="https://burv-be.regione.veneto.it/api/PublicAtti/590775/DownloadAttachmentAtto/Dgr_924_26_AllegatoA.pdf" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span>
+            <span class="mut" style="font-size: 15px;">Sostituisce la DGR 261/2024 e recepisce correttivo e D.L. 73/2025.</span>
+          </div>
+        </div>
+      
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-top: 1px solid #E5DBCB; align-items: baseline;">
+          <span style="flex: 0 0 120px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">08/06/2026</span>
+          <span class="tag" style="flex: none;">Giurisprudenza</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-weight: 600;"><span class="rif"><button type="button" class="rif-b">Consiglio di Stato n. 4595/2026: al giudice ordinario le liti sul CCT facoltativo in esecuzione</button><span class="pop" role="note"><span class="pop-t">Consiglio di Stato, sent. 8 giugno 2026, n. 4595</span><span class="pop-s">Giurisprudenza · conferma TAR Veneto n. 1999/2025</span><span class="pop-x">Il collegio costituito facoltativamente dopo l'aggiudicazione, durante l'esecuzione di una concessione, non è espressione di potere amministrativo ma di un accordo negoziale paritetico. Le controversie sulla sua costituzione e sulle sue determinazioni spettano al giudice ordinario. L'accordo costitutivo non è un accordo ex art. 11 L. 241/1990; il rapporto con i componenti è riconducibile al mandato.</span><span class="pop-f"><a class="pop-l" href="https://www.lavoripubblici.it/normativa/20260608/Sentenza-Consiglio-di-Stato-8-giugno-2026-n-4595-30472.html" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span>
+            <span class="mut" style="font-size: 15px;">Conferma TAR Veneto n. 1999/2025.</span>
+          </div>
+        </div>
+      
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-top: 1px solid #E5DBCB; align-items: baseline;">
+          <span style="flex: 0 0 120px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">2026</span>
+          <span class="tag" style="flex: none;">MIT</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-weight: 600;"><span class="rif"><button type="button" class="rif-b">MIT, parere n. 4079/2026: il limite del D.L. 76/2020 vale per la sola parte fissa</button><span class="pop" role="note"><span class="pop-t">MIT — Parere n. 4079/2026 sui compensi del CCT</span><span class="pop-s">Fonte secondaria · testo ufficiale non ancora reperito</span><span class="pop-x">Secondo quanto riportato, il MIT chiarisce che dopo il correttivo il limite dell'art. 6, c. 7-bis, D.L. 76/2020 si applica alla sola parte fissa (Allegato V.2, art. 1, c. 4) e che il compenso complessivo incontra il solo limite del triplo della parte fissa (c. 5). Per i CCT di servizi e forniture già operanti al 31 dicembre 2024 continua ad applicarsi la disciplina previgente.</span><span class="pop-f"><a class="pop-l" href="https://acen.it/2026/06/10/collegio-consultivo-tecnico-il-mit-chiarisce-i-criteri-di-determinazione-dei-compensi-dopo-il-correttivo-al-codice-appalti/" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span>
+            <span class="mut" style="font-size: 15px;">Fonte secondaria: testo ufficiale da acquisire.</span>
+          </div>
+        </div>
+      
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-top: 1px solid #E5DBCB; align-items: baseline;">
+          <span style="flex: 0 0 120px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">01/2026</span>
+          <span class="tag" style="flex: none;">CSLP</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-weight: 600;"><span class="rif"><button type="button" class="rif-b">CSLP: avviata la piattaforma informatica dati CCT</button><span class="pop" role="note"><span class="pop-t">CSLP — Costituzione piattaforma informatica dati CCT</span><span class="pop-s">Comunicazione dell'Osservatorio a tutti i CCT · gennaio 2026</span><span class="pop-x">Avvia la piattaforma informatica dell'Osservatorio come banca dati sull'attività dei collegi. I CCT compilano l'applicativo con atto di costituzione, variazioni di composizione, scioglimento e determinazioni con valore di lodo. In fase di avvio la PEC osservatoriocct@pec.mit.gov.it resta attiva in parallelo. Supporto amministrativo: dl-supporto.cct@mit.gov.it; supporto tecnico: dl-tecnico.cct@mit.gov.it.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2026-01/A_tutti_I_CCT%20def.%20versione%20pubblicata%20sul%20Sito_signed.pdf" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span>
+            <span class="mut" style="font-size: 15px;">Nella fase di avvio resta attiva in parallelo la PEC dell’Osservatorio.</span>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="recenti" style="padding-top: 56px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 32px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
+      <h2 id="recenti" class="h2">Ultimi approfondimenti</h2>
+      <a href="/approfondimenti/" class="more">Tutti gli approfondimenti →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+      
+        <article style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 2px solid #2A2324;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px;">
+            <span class="tag">Insediamento</span>
+            <span class="mut">Aggiornato al 13 ottobre 2026</span>
+          </div>
+          <h3 class="h3" style="font-size: 23px;"><a href="/approfondimenti/fascicolo-digitale/" style="text-decoration: none;">Il fascicolo digitale del Collegio: struttura, nomenclatura, versioni</a></h3>
+          <p class="mut" style="margin: 0; font-size: 15px;">Un archivio che regge dall’insediamento allo scioglimento e dialoga con le richieste dell’Osservatorio.</p>
+          <p class="mut" style="margin: 0; font-size: 13px;"><strong style="color: #2A2324; font-weight: 600;">A chi serve:</strong> Presidente, Segreteria</p>
+        </article>
+      
+        <article style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 2px solid #2A2324;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px;">
+            <span class="tag">Attività</span>
+            <span class="mut">In preparazione</span>
+          </div>
+          <h3 class="h3" style="font-size: 23px;">Formulare un quesito al CCT: struttura, contenuto ed errori ricorrenti</h3>
+          <p class="mut" style="margin: 0; font-size: 15px;">Senza quesito di parte il Collegio non può pronunciarsi. Come si costruisce un quesito istruibile e cosa verificare prima del deposito.</p>
+          <p class="mut" style="margin: 0; font-size: 13px;"><strong style="color: #2A2324; font-weight: 600;">A chi serve:</strong> RUP, Parti, Segreteria</p>
+        </article>
+      
+        <article style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 2px solid #2A2324;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px;">
+            <span class="tag">Chiusura</span>
+            <span class="mut">In preparazione</span>
+          </div>
+          <h3 class="h3" style="font-size: 23px;">Compensi del CCT dopo il correttivo: parte fissa, variabile e tetto</h3>
+          <p class="mut" style="margin: 0; font-size: 15px;">Scaglioni del D.L. 76/2020, triplo della parte fissa, segreteria tra il 3% e il 10%, regime transitorio.</p>
+          <p class="mut" style="margin: 0; font-size: 13px;"><strong style="color: #2A2324; font-weight: 600;">A chi serve:</strong> Presidente, componenti, stazione appaltante</p>
+        </article>
+      
+    </div>
+  </section>
+
+  <section aria-labelledby="tools" style="background: #2A2324; color: #F3EFEA;">
+    <div class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 64ch;">
+        <p class="kick" style="color: #E8939F;">Strumenti</p>
+        <h2 id="tools" class="h2">Pronti da usare domani in Segreteria</h2>
+        <p style="margin: 0; color: #C9C2BA;">Checklist, modelli e calcolatori costruiti da zero su norme e documenti pubblici. Modificabili, scaricabili, senza registrazione.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        
+          <a href="Kit.dc.html" style="flex: 1 1 250px; min-width: 0; text-decoration: none; color: #F3EFEA; border: 1px solid #3A3536; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #221E1F;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #C9C2BA;">Kit operativo</span>
+            <h3 class="h3">Kit per la Segreteria del CCT</h3>
+            <p style="margin: 0; font-size: 15px; color: #C9C2BA;">Checklist di costituzione, insediamento e chiusura; modelli di convocazione, verbale e registro dei quesiti.</p>
+            <span style="margin-top: auto; font-size: 14px; font-weight: 600; color: #E8939F;">Apri il Kit →</span>
+          </a>
+        
+          <a href="Scadenzario.dc.html" style="flex: 1 1 250px; min-width: 0; text-decoration: none; color: #F3EFEA; border: 1px solid #3A3536; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #221E1F;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #C9C2BA;">Calcolatore</span>
+            <h3 class="h3">Scadenzario dei termini</h3>
+            <p style="margin: 0; font-size: 15px; color: #C9C2BA;">Inserisci le date chiave: lo scadenzario calcola i termini di legge con il riferimento normativo.</p>
+            <span style="margin-top: auto; font-size: 14px; font-weight: 600; color: #E8939F;">Calcola i termini →</span>
+          </a>
+        
+          <a href="Simulatore.dc.html" style="flex: 1 1 250px; min-width: 0; text-decoration: none; color: #F3EFEA; border: 1px solid #3A3536; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #221E1F;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #C9C2BA;">Simulatore</span>
+            <h3 class="h3">Simulatore dei compensi</h3>
+            <p style="margin: 0; font-size: 15px; color: #C9C2BA;">Tetto della parte fissa, tetto complessivo e compenso della Segreteria, collegio di tre o cinque.</p>
+            <span style="margin-top: auto; font-size: 14px; font-weight: 600; color: #E8939F;">Avvia la simulazione →</span>
+          </a>
+        
+          <a href="Regolamenti.dc.html" style="flex: 1 1 250px; min-width: 0; text-decoration: none; color: #F3EFEA; border: 1px solid #3A3536; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #221E1F;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #C9C2BA;">Archivio</span>
+            <h3 class="h3">Regolamenti delle stazioni appaltanti</h3>
+            <p style="margin: 0; font-size: 15px; color: #C9C2BA;">Indirizzi, disciplinari ed elenchi pubblicati da Regioni e stazioni appaltanti.</p>
+            <span style="margin-top: auto; font-size: 14px; font-weight: 600; color: #E8939F;">Consulta l’archivio →</span>
+          </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: 48px;">
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <h2 class="h2" style="font-size: 28px;">Il metodo: quattro etichette</h2>
+      <p class="mut" style="margin: 0;">In ogni contenuto è indicata la natura di ciò che si afferma. Nessun suggerimento viene presentato come un obbligo di legge.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag tag-n" style="width: 168px;">Norma</span><span>Una disposizione direttamente applicabile, con citazione.</span></div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag tag-i" style="width: 168px;">Interpretazione</span><span>Lettura sistematica, prassi ministeriale o giurisprudenza.</span></div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag" style="width: 168px;">Prassi</span><span>Come si procede di solito, senza obbligo di legge.</span></div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag tag-o" style="width: 168px;">Proposta operativa</span><span>Un metodo suggerito da Prassi CCT.</span></div>
+      </div>
+    </div>
+    <div class="card" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 18px; padding: 32px;">
+      <p class="lbl">Il progetto</p>
+      <h2 class="h3" style="font-size: 24px;">Una biblioteca operativa sui CCT, indipendente</h2>
+      <p style="margin: 0; font-size: 15px;">Prassi CCT raccoglie in un unico luogo norme, prassi e strumenti per chi lavora in un Collegio: Presidenti, componenti, segreterie, RUP e stazioni appaltanti.</p>
+      <p class="mut" style="margin: 0; font-size: 14px;">Non è affiliato al MIT, al Consiglio superiore dei lavori pubblici, ad ANAC né ad alcuna stazione appaltante o Collegio. Non utilizza documenti riservati.</p>
+      <a href="/progetto/" class="more">Scopri il progetto →</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="nl" style="background: #F3E4E1; border-top: 1px solid #E5DBCB;">
+    <div class="wrap" style="padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between;">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px;">
+        <h2 id="nl" class="h2" style="font-size: 28px; color: #561622;">CCT Update</h2>
+        <p style="margin: 0;">Normativa, provvedimenti MIT, CSLP e ANAC, giurisprudenza e prassi. Una mail breve, solo quando c'è qualcosa che conta.</p>
+      </div>
+      <div style="flex: 0 1 auto; display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="/cct-update/" class="btn">Iscriviti</a>
+        <a href="/cct-update/" class="btn btn-o">Leggi il numero 0</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</div>
+<template id="tpl">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/strumenti/">Strumenti</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-top: 80px; padding-bottom: 64px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end;">
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+      <p class="kick">Risorsa specialistica indipendente</p>
+      <h1 class="h1" style="max-width: 15ch;">Il metodo per gestire un Collegio Consultivo Tecnico</h1>
+      <p class="lead">Approfondimenti, guide e strumenti operativi su costituzione, insediamento, quesiti, termini, compensi e fascicolo del CCT. Ogni affermazione rinvia alla sua fonte ufficiale e distingue sempre norma, interpretazione e prassi.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
+        <a href="/guide/" class="btn">Inizia dalle guide operative</a>
+        <a href="/strumenti/kit/" class="btn btn-o">Apri il Kit della Segreteria</a>
+      </div>
+    </div>
+    <aside class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+      <p class="lbl">Quadro normativo · passa sopra un riferimento</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>D.Lgs. 36/2023,
+          <span class="{{r.a215.cls}}"><button type="button" class="rif-b" onClick="{{r.a215.tog}}">{{r.a215.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.a215.t}}</span><span class="pop-s">{{r.a215.s}}</span><span class="pop-x">{{r.a215.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.a215.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.a215.close}}">Chiudi</button></span></span></span>,
+          <span class="{{r.a216.cls}}"><button type="button" class="rif-b" onClick="{{r.a216.tog}}">{{r.a216.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.a216.t}}</span><span class="pop-s">{{r.a216.s}}</span><span class="pop-x">{{r.a216.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.a216.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.a216.close}}">Chiudi</button></span></span></span>,
+          <span class="{{r.a217.cls}}"><button type="button" class="rif-b" onClick="{{r.a217.tog}}">{{r.a217.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.a217.t}}</span><span class="pop-s">{{r.a217.s}}</span><span class="pop-x">{{r.a217.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.a217.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.a217.close}}">Chiudi</button></span></span></span>,
+          <span class="{{r.a218.cls}}"><button type="button" class="rif-b" onClick="{{r.a218.tog}}">{{r.a218.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.a218.t}}</span><span class="pop-s">{{r.a218.s}}</span><span class="pop-x">{{r.a218.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.a218.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.a218.close}}">Chiudi</button></span></span></span>,
+          <span class="{{r.a219.cls}}"><button type="button" class="rif-b" onClick="{{r.a219.tog}}">{{r.a219.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.a219.t}}</span><span class="pop-s">{{r.a219.s}}</span><span class="pop-x">{{r.a219.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.a219.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.a219.close}}">Chiudi</button></span></span></span></span></div>
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>Allegato V.2,
+          <span class="{{r.v1.cls}}"><button type="button" class="rif-b" onClick="{{r.v1.tog}}">{{r.v1.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1.t}}</span><span class="pop-s">{{r.v1.s}}</span><span class="pop-x">{{r.v1.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1.close}}">Chiudi</button></span></span></span>,
+          <span class="{{r.v2.cls}}"><button type="button" class="rif-b" onClick="{{r.v2.tog}}">{{r.v2.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v2.t}}</span><span class="pop-s">{{r.v2.s}}</span><span class="pop-x">{{r.v2.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v2.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v2.close}}">Chiudi</button></span></span></span>,
+          <span class="{{r.v3.cls}}"><button type="button" class="rif-b" onClick="{{r.v3.tog}}">{{r.v3.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v3.t}}</span><span class="pop-s">{{r.v3.s}}</span><span class="pop-x">{{r.v3.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v3.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v3.close}}">Chiudi</button></span></span></span> e ss.</span></div>
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>
+          <span class="{{r.dl76.cls}}"><button type="button" class="rif-b" onClick="{{r.dl76.tog}}">{{r.dl76.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.dl76.t}}</span><span class="pop-s">{{r.dl76.s}}</span><span class="pop-x">{{r.dl76.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.dl76.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.dl76.close}}">Chiudi</button></span></span></span> (limiti dei compensi)</span></div>
+        <div style="display: flex; gap: 10px; align-items: baseline;"><span class="sq" aria-hidden="true"></span><span>
+          <span class="{{r.lg22.cls}}"><button type="button" class="rif-b" onClick="{{r.lg22.tog}}">{{r.lg22.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg22.t}}</span><span class="pop-s">{{r.lg22.s}}</span><span class="pop-x">{{r.lg22.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg22.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg22.close}}">Chiudi</button></span></span></span> (in via transitoria)</span></div>
+      </div>
+      <a href="/fonti/" class="more">Tutte le fonti →</a>
+    </aside>
+  </section>
+
+  <section class="band" aria-labelledby="fasi">
+    <div class="wrap" style="padding-top: 64px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <p class="kick">Naviga per fase</p>
+          <h2 id="fasi" class="h2">La vita di un Collegio, dall'inizio alla fine</h2>
+        </div>
+        <p class="mut" style="margin: 0; max-width: 46ch;">Scegli la fase in cui si trova il Collegio: la guida operativa elenca adempimenti, termini e riferimenti di quel momento.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <sc-for list="{{fasi}}" as="f" hint-placeholder-count="4">
+          <a href="/guide/" class="card" style="flex: 1 1 240px; min-width: 0; text-decoration: none; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="width: 14px; height: 14px; background: #6E1E2B;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">{{f.n}}</span>
+              <span style="flex: 1; height: 1px; background: #E5DBCB;"></span>
+            </div>
+            <h3 class="h3" style="font-size: 22px;">{{f.titolo}}</h3>
+            <p class="mut" style="margin: 0; font-size: 15px;">{{f.temi}}</p>
+            <span class="more" style="margin-top: auto; font-size: 14px;">{{f.termine}} →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="novita" style="padding-top: 72px; padding-bottom: 24px; display: flex; flex-wrap: wrap; gap: 32px 48px;">
+    <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px;">
+      <p class="kick">Novità</p>
+      <h2 id="novita" class="h2">Ultimi provvedimenti</h2>
+      <p class="mut" style="margin: 0;">Atti e pronunce sui CCT, con sintesi e link alla fonte. Ultima verifica: 13 ottobre 2026.</p>
+      <a href="/cct-update/" class="more">Ricevili con CCT Update →</a>
+    </div>
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column;">
+      <sc-for list="{{novita}}" as="v" hint-placeholder-count="4">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-top: 1px solid #E5DBCB; align-items: baseline;">
+          <span style="flex: 0 0 120px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #6A5F59;">{{v.data}}</span>
+          <span class="tag" style="flex: none;">{{v.ambito}}</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-weight: 600;"><span class="{{v.r.cls}}"><button type="button" class="rif-b" onClick="{{v.r.tog}}">{{v.r.label}}</button><span class="pop" role="note"><span class="pop-t">{{v.r.t}}</span><span class="pop-s">{{v.r.s}}</span><span class="pop-x">{{v.r.x}}</span><span class="pop-f"><a class="pop-l" href="{{v.r.u}}" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c" onClick="{{v.r.close}}">Chiudi</button></span></span></span></span>
+            <span class="mut" style="font-size: 15px;">{{v.nota}}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="recenti" style="padding-top: 56px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 32px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
+      <h2 id="recenti" class="h2">Ultimi approfondimenti</h2>
+      <a href="/approfondimenti/" class="more">Tutti gli approfondimenti →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+      <sc-for list="{{articoli}}" as="a" hint-placeholder-count="3">
+        <article style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 2px solid #2A2324;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px;">
+            <span class="tag">{{a.fase}}</span>
+            <span class="mut">{{a.stato}}</span>
+          </div>
+          <h3 class="h3" style="font-size: 23px;"><sc-if value="{{a.pub}}" hint-placeholder-val="{{true}}"><a href="/approfondimenti/fascicolo-digitale/" style="text-decoration: none;">{{a.titolo}}</a></sc-if><sc-if value="{{a.nopub}}" hint-placeholder-val="{{false}}">{{a.titolo}}</sc-if></h3>
+          <p class="mut" style="margin: 0; font-size: 15px;">{{a.sintesi}}</p>
+          <p class="mut" style="margin: 0; font-size: 13px;"><strong style="color: #2A2324; font-weight: 600;">A chi serve:</strong> {{a.target}}</p>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section aria-labelledby="tools" style="background: #2A2324; color: #F3EFEA;">
+    <div class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 64ch;">
+        <p class="kick" style="color: #E8939F;">Strumenti</p>
+        <h2 id="tools" class="h2">Pronti da usare domani in Segreteria</h2>
+        <p style="margin: 0; color: #C9C2BA;">Checklist, modelli e calcolatori costruiti da zero su norme e documenti pubblici. Modificabili, scaricabili, senza registrazione.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <sc-for list="{{strumenti}}" as="s" hint-placeholder-count="4">
+          <a href="{{s.href}}" style="flex: 1 1 250px; min-width: 0; text-decoration: none; color: #F3EFEA; border: 1px solid #3A3536; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #221E1F;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #C9C2BA;">{{s.tipo}}</span>
+            <h3 class="h3">{{s.nome}}</h3>
+            <p style="margin: 0; font-size: 15px; color: #C9C2BA;">{{s.descr}}</p>
+            <span style="margin-top: auto; font-size: 14px; font-weight: 600; color: #E8939F;">{{s.cta}} →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: 48px;">
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <h2 class="h2" style="font-size: 28px;">Il metodo: quattro etichette</h2>
+      <p class="mut" style="margin: 0;">In ogni contenuto è indicata la natura di ciò che si afferma. Nessun suggerimento viene presentato come un obbligo di legge.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag tag-n" style="width: 168px;">Norma</span><span>Una disposizione direttamente applicabile, con citazione.</span></div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag tag-i" style="width: 168px;">Interpretazione</span><span>Lettura sistematica, prassi ministeriale o giurisprudenza.</span></div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag" style="width: 168px;">Prassi</span><span>Come si procede di solito, senza obbligo di legge.</span></div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;"><span class="tag tag-o" style="width: 168px;">Proposta operativa</span><span>Un metodo suggerito da Prassi CCT.</span></div>
+      </div>
+    </div>
+    <div class="card" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 18px; padding: 32px;">
+      <p class="lbl">Il progetto</p>
+      <h2 class="h3" style="font-size: 24px;">Una biblioteca operativa sui CCT, indipendente</h2>
+      <p style="margin: 0; font-size: 15px;">Prassi CCT raccoglie in un unico luogo norme, prassi e strumenti per chi lavora in un Collegio: Presidenti, componenti, segreterie, RUP e stazioni appaltanti.</p>
+      <p class="mut" style="margin: 0; font-size: 14px;">Non è affiliato al MIT, al Consiglio superiore dei lavori pubblici, ad ANAC né ad alcuna stazione appaltante o Collegio. Non utilizza documenti riservati.</p>
+      <a href="/progetto/" class="more">Scopri il progetto →</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="nl" style="background: #F3E4E1; border-top: 1px solid #E5DBCB;">
+    <div class="wrap" style="padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between;">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px;">
+        <h2 id="nl" class="h2" style="font-size: 28px; color: #561622;">CCT Update</h2>
+        <p style="margin: 0;">Normativa, provvedimenti MIT, CSLP e ANAC, giurisprudenza e prassi. Una mail breve, solo quando c'è qualcosa che conta.</p>
+      </div>
+      <div style="flex: 0 1 auto; display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="/cct-update/" class="btn">Iscriviti</a>
+        <a href="/cct-update/" class="btn btn-o">Leggi il numero 0</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</template>
+<noscript><p style="max-width:720px;margin:24px auto;padding:0 24px;font-family:system-ui">Per usare filtri, riquadri delle fonti e strumenti di calcolo è necessario JavaScript.</p></noscript>
+<script src="/assets/dc.js"></script>
+<script>
+class Component extends DCLogic {
+  componentDidMount() {
+    fetch('/assets/norme.json').then((r) => r.json()).then((j) => this.setState({ norme: j })).catch(() => this.setState({ norme: {} }));
+  }
+  rif(id, key, label) {
+    const s = this.state || {};
+    const m = (s.norme || {})[key] || {};
+    return {
+      label: label,
+      cls: s.open === id ? 'rif open' : 'rif',
+      tog: () => this.setState({ open: (this.state || {}).open === id ? null : id }),
+      close: () => this.setState({ open: null }),
+      t: m.t || 'Caricamento del testo…', s: m.s || '', x: m.x || '', u: m.u || 'https://www.normattiva.it/'
+    };
+  }
+  renderVals() {
+    const R = (id, key, label) => this.rif(id, key, label);
+    return {
+      r: {
+        a215: R('h215', 'a215', 'art. 215'), a216: R('h216', 'a216', '216'), a217: R('h217', 'a217', '217'),
+        a218: R('h218', 'a218', '218'), a219: R('h219', 'a219', '219'),
+        v1: R('hv1', 'v1', 'art. 1'), v2: R('hv2', 'v2', 'art. 2'), v3: R('hv3', 'v3', 'art. 3'),
+        dl76: R('hdl', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis'), lg22: R('hlg', 'lg22', 'Linee guida D.M. 12/2022')
+      },
+      fasi: [
+        { n: '01', titolo: 'Costituzione', temi: 'Obbligatorietà, tre o cinque componenti, nomine, Presidente, limiti agli incarichi, conflitto di interessi.', termine: 'Entro 10 giorni dall’avvio dell’esecuzione' },
+        { n: '02', titolo: 'Insediamento', temi: 'Accettazione del Presidente, seduta di insediamento, scelta sul valore di lodo, regole di funzionamento, Segreteria.', termine: 'Entro 15 giorni dall’accettazione' },
+        { n: '03', titolo: 'Attività del Collegio', temi: 'Quesiti, pareri obbligatori, contraddittorio, audizioni, determinazioni a maggioranza, effetti.', termine: 'Determinazioni entro 15 o 20 giorni' },
+        { n: '04', titolo: 'Chiusura', temi: 'Scioglimento dopo collaudo o CRE, pronunce sulle riserve, compensi, comunicazioni all’Osservatorio, archivio.', termine: 'Alla sottoscrizione del collaudo' }
+      ],
+      novita: [
+        { data: '04/09/2026', ambito: 'Stazioni appaltanti', r: R('n1', 'dgrv924', 'Regione Veneto, DGR n. 924/2026: nuovi indirizzi operativi sul CCT'), nota: 'Sostituisce la DGR 261/2024 e recepisce correttivo e D.L. 73/2025.' },
+        { data: '08/06/2026', ambito: 'Giurisprudenza', r: R('n2', 'cds4595', 'Consiglio di Stato n. 4595/2026: al giudice ordinario le liti sul CCT facoltativo in esecuzione'), nota: 'Conferma TAR Veneto n. 1999/2025.' },
+        { data: '2026', ambito: 'MIT', r: R('n3', 'mit4079', 'MIT, parere n. 4079/2026: il limite del D.L. 76/2020 vale per la sola parte fissa'), nota: 'Fonte secondaria: testo ufficiale da acquisire.' },
+        { data: '01/2026', ambito: 'CSLP', r: R('n4', 'piatt', 'CSLP: avviata la piattaforma informatica dati CCT'), nota: 'Nella fase di avvio resta attiva in parallelo la PEC dell’Osservatorio.' }
+      ],
+      articoli: [
+        { fase: 'Insediamento', pub: true, nopub: false, stato: 'Aggiornato al 13 ottobre 2026', titolo: 'Il fascicolo digitale del Collegio: struttura, nomenclatura, versioni', sintesi: 'Un archivio che regge dall’insediamento allo scioglimento e dialoga con le richieste dell’Osservatorio.', target: 'Presidente, Segreteria' },
+        { fase: 'Attività', pub: false, nopub: true, stato: 'In preparazione', titolo: 'Formulare un quesito al CCT: struttura, contenuto ed errori ricorrenti', sintesi: 'Senza quesito di parte il Collegio non può pronunciarsi. Come si costruisce un quesito istruibile e cosa verificare prima del deposito.', target: 'RUP, Parti, Segreteria' },
+        { fase: 'Chiusura', pub: false, nopub: true, stato: 'In preparazione', titolo: 'Compensi del CCT dopo il correttivo: parte fissa, variabile e tetto', sintesi: 'Scaglioni del D.L. 76/2020, triplo della parte fissa, segreteria tra il 3% e il 10%, regime transitorio.', target: 'Presidente, componenti, stazione appaltante' }
+      ],
+      strumenti: [
+        { tipo: 'Kit operativo', nome: 'Kit per la Segreteria del CCT', descr: 'Checklist di costituzione, insediamento e chiusura; modelli di convocazione, verbale e registro dei quesiti.', cta: 'Apri il Kit', href: 'Kit.dc.html' },
+        { tipo: 'Calcolatore', nome: 'Scadenzario dei termini', descr: 'Inserisci le date chiave: lo scadenzario calcola i termini di legge con il riferimento normativo.', cta: 'Calcola i termini', href: 'Scadenzario.dc.html' },
+        { tipo: 'Simulatore', nome: 'Simulatore dei compensi', descr: 'Tetto della parte fissa, tetto complessivo e compenso della Segreteria, collegio di tre o cinque.', cta: 'Avvia la simulazione', href: 'Simulatore.dc.html' },
+        { tipo: 'Archivio', nome: 'Regolamenti delle stazioni appaltanti', descr: 'Indirizzi, disciplinari ed elenchi pubblicati da Regioni e stazioni appaltanti.', cta: 'Consulta l’archivio', href: 'Regolamenti.dc.html' }
+      ]
+    };
+  }
+}
+
+DC.mount(Component);
+</script>
+</body>
+</html>

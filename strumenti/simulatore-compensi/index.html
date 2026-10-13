@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulatore dei compensi del CCT — Prassi CCT</title>
+<meta name="description" content="Tetto della parte fissa, tetto complessivo e compenso della Segreteria del Collegio Consultivo Tecnico, per collegio di tre o cinque componenti.">
+<link rel="canonical" href="https://prassicct.it/strumenti/simulatore-compensi/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prassi CCT">
+<meta property="og:title" content="Simulatore dei compensi del CCT — Prassi CCT">
+<meta property="og:description" content="Tetto della parte fissa, tetto complessivo e compenso della Segreteria del Collegio Consultivo Tecnico, per collegio di tre o cinque componenti.">
+<meta property="og:url" content="https://prassicct.it/strumenti/simulatore-compensi/">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/Lora-Bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/fonts/InstrumentSans-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+body{margin:0}*{box-sizing:border-box}
+a{color:inherit}
+.pg{min-height:100vh;background:#FAF6EF;color:#2A2324;font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.hd{background:#FFFDF9;border-bottom:1px solid #E5DBCB}
+.hd-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding-top:18px;padding-bottom:18px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#2A2324}
+.logo-p{font-family:'Lora',Georgia,serif;font-weight:600;font-size:28px;line-height:1;letter-spacing:-.01em}
+.logo-i{position:relative;display:inline-block}
+.logo-q{position:absolute;left:50%;top:.02em;width:.19em;height:.19em;margin-left:-.095em;background:#6E1E2B}
+.logo-c{font-weight:600;font-size:15px;letter-spacing:.2em;color:#6E1E2B}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;padding:8px 0}
+.nav a:hover{color:#6E1E2B}
+.nav a.on{color:#6E1E2B;font-weight:600;box-shadow:inset 0 -2px 0 #6E1E2B}
+.nav a.cta{padding:10px 16px;border-radius:8px;background:#6E1E2B;color:#fff;font-weight:600;font-size:14px;box-shadow:none}
+.kick{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E1E2B}
+.lbl{margin:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6A5F59}
+.h1{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:clamp(34px,4.6vw,52px);line-height:1.1;letter-spacing:-.015em}
+.h2{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:24px;line-height:1.25}
+.lead{margin:0;font-size:19px;line-height:1.6;color:#6A5F59;max-width:66ch}
+.mut{color:#6A5F59}
+.card{background:#FFFDF9;border:1px solid #E5DBCB;border-radius:8px;padding:24px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld label,.fld .fl{font-size:13px;font-weight:600}
+.inp{height:48px;padding:0 14px;border-radius:8px;border:1px solid #E5DBCB;background:#fff;font:inherit;font-family:'IBM Plex Mono',monospace;color:#2A2324;width:100%}
+.seg{display:flex;border:1px solid #E5DBCB;border-radius:8px;overflow:hidden}
+.seg button{flex:1;font:inherit;font-weight:600;font-size:15px;padding:0 16px;height:46px;border:0;background:#fff;color:#2A2324;cursor:pointer}
+.seg button.on{background:#6E1E2B;color:#fff}
+.mono{font-family:'IBM Plex Mono',monospace}
+.big{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;line-height:1.2}
+.tb{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+.tb th{text-align:left;padding:10px 14px;font-size:12.5px;font-weight:600;background:#F2EADD}
+.tb td{padding:10px 14px;border-top:1px solid #E5DBCB}
+.tb .n{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:14px;white-space:nowrap}
+.lab{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.05em}
+.l-n{background:#2A2324;color:#fff}.l-i{background:#F2EADD;color:#2A2324}
+.ft{border-top:1px solid #E5DBCB;background:#FFFDF9}
+.ft-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:32px;padding-bottom:32px;font-size:13px;color:#6A5F59}
+.rif{position:relative;display:inline}
+.rif-b{font:inherit;line-height:inherit;color:#561622;background:none;border:0;padding:0;margin:0;cursor:pointer;font-weight:600;text-decoration:underline dotted;text-underline-offset:3px}
+.pop{display:none;position:absolute;z-index:60;left:0;top:100%;margin-top:8px;width:min(440px,86vw);max-height:360px;overflow:auto;background:#FFFDF9;border:1px solid #E5DBCB;border-top:3px solid #6E1E2B;border-radius:8px;box-shadow:0 14px 36px rgba(42,35,36,.2);padding:16px 18px;font-family:'Instrument Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;color:#2A2324;text-align:left;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none}
+.pop::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
+@media (hover:hover){.rif:hover .pop{display:block}}
+.rif.open .pop{display:block}
+.pop-t{display:block;font-weight:700;font-size:14px;margin-bottom:2px}
+.pop-s{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6A5F59;margin-bottom:10px}
+.pop-x{display:block;white-space:pre-line}
+.pop-f{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #E5DBCB}
+.pop-l{font-weight:600;color:#561622}
+.pop-c{font:inherit;font-size:13px;font-weight:600;background:#F2EADD;color:#2A2324;border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+@media (max-width:700px){.pop{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:65vh;margin:0}}
+@media (hover:hover) and (min-width:701px){.pop-c{display:none}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/strumenti/" class="on">Strumenti</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 18px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/strumenti/" style="text-decoration: none;">Strumenti</a><span aria-hidden="true">/</span><span>Simulatore dei compensi</span></nav>
+    <p class="kick">Simulatore</p>
+    <h1 class="h1">Simulatore dei compensi del Collegio</h1>
+    <p class="lead">Calcola i tetti massimi previsti dalla legge per la parte fissa e per il compenso complessivo, e la quota della Segreteria. Il risultato è un tetto teorico: il compenso effettivo si determina con i parametri delle linee guida.</p>
+  </section>
+
+  <section class="wrap" style="padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+    <div class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <h2 class="h2">Dati</h2>
+      <div class="fld">
+        <label for="valore">Valore dell'appalto (euro)</label>
+        <input id="valore" class="inp" type="text" inputmode="numeric">
+      </div>
+      <div class="fld">
+        <span class="fl" id="comp-l">Componenti del Collegio</span>
+        <div class="seg" role="group" aria-labelledby="comp-l">
+          <button type="button" class="on" aria-pressed="true">Tre</button>
+          <button type="button" class="">Cinque</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label for="segr">Compenso della Segreteria: 5% di quello di ciascun componente</label>
+        <input id="segr" type="range" min="3" max="10" step="1" style="accent-color: #6E1E2B; height: 44px;">
+      </div>
+      <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; cursor: pointer;">
+        <input type="checkbox" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #6E1E2B;">
+        <span>Collegio facoltativo che opera prima dell'affidamento (riduzione del 20%)</span>
+      </label>
+      <p class="mut" style="margin: 0; font-size: 14px;">Base:
+        <span class="rif"><button type="button" class="rif-b">All. V.2, art. 1, cc. 4-5</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — Formazione del Collegio e compensi</span><span class="pop-s">Sintesi redazionale · modificato dal D.Lgs. 209/2024 e dal D.L. 73/2025</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee il Collegio è formato da tre componenti, o da cinque in caso di opera complessa ed eterogeneità delle professionalità richieste, a scelta della stazione appaltante o del concessionario. I componenti hanno comprovata esperienza nel settore dei contratti e degli investimenti pubblici, anche in relazione all'oggetto del contratto.
+c. 2 — Le parti nominano i componenti di comune accordo, oppure ciascuna ne nomina uno o due, anche tra il proprio personale o tra soggetti legati da rapporti di lavoro autonomo o collaborazione. Il Presidente è scelto dai componenti di parte; in mancanza di accordo è designato entro cinque giorni dal MIT (opere di interesse nazionale), dalla Regione, dalla Provincia autonoma o dalla Città metropolitana. Se il MIT finanzia l'opera o è concedente, nomina un componente.
+c. 3 — Ai componenti si applica l'art. 813, secondo comma, c.p.c.
+c. 4 — La parte fissa del compenso non può superare i limiti dell'art. 6, comma 7-bis, del D.L. 76/2020; per la parte di valore dell'appalto eccedente 1.000 milioni di euro il limite è pari allo 0,02% (collegio di tre) o allo 0,03% (collegio di cinque).
+c. 5 — Il compenso complessivo non può superare il triplo della parte fissa. Spetta il rimborso delle spese non remunerative. Il compenso è dovuto a tutti i componenti, indipendentemente dal rapporto con le parti, senza vincolo di solidarietà. Non si applica l'art. 3 della L. 136/2010.
+c. 6 — Un decreto MIT, su parere conforme del Consiglio superiore dei lavori pubblici, definirà i parametri dei compensi (anche della segreteria). Fino ad allora restano applicabili, per i compensi, le Linee guida del D.M. 17 gennaio 2022 (G.U. n. 55 del 7 marzo 2022).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+        <span class="rif"><button type="button" class="rif-b">D.L. 76/2020, art. 6, c. 7-bis</button><span class="pop" role="note"><span class="pop-t">Art. 6, comma 7-bis, D.L. 76/2020 — Limiti dei compensi</span><span class="pop-s">Sintesi redazionale · comma introdotto dal D.L. 152/2021</span><span class="pop-x">I compensi dei componenti del collegio non possono complessivamente superare:
+a) collegio di tre componenti: 0,5% del valore dell'appalto fino a 50 milioni di euro; 0,25% per la parte eccedente 50 e fino a 100 milioni; 0,15% per la parte eccedente 100 milioni;
+b) collegio di cinque componenti: 0,8% fino a 50 milioni; 0,4% per la parte eccedente 50 e fino a 100 milioni; 0,25% per la parte eccedente 100 milioni.
+Dopo il correttivo, l'Allegato V.2 (art. 1, c. 4) applica questi limiti alla sola parte fissa del compenso.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76~art6" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+        <span class="rif"><button type="button" class="rif-b">All. V.2, art. 8, c. 2</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 8 — Segreteria tecnico-amministrativa</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Per lavori di particolare complessità il Collegio può avvalersi di una segreteria tecnico-amministrativa, composta da uno o più membri scelti e nominati dal Presidente, con compiti di istruttoria e supporto amministrativo.
+c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello di ciascun componente; è a carico dei componenti ed è liquidato dalle parti con le stesse modalità e tempistiche previste per il Collegio.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>,
+        <span class="rif"><button type="button" class="rif-b">All. V.2, art. 7, c. 4</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 7 — Costituzione facoltativa del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il collegio facoltativo dell'art. 218 è formato da tre componenti: due nominati dalla stazione appaltante e uno dal MIT (opere di interesse nazionale) o da Regione, Provincia autonoma o Città metropolitana.
+c. 2 — Nei contratti misti il collegio è obbligatorio se la parte di lavori è pari o superiore alla soglia europea; per gli accordi quadro rileva l'importo dei singoli contratti attuativi.
+c. 3 — Negli appalti suddivisi in lotti il collegio è obbligatorio per i soli lotti di importo pari o superiore alla soglia europea.
+c. 4 — Se il collegio facoltativo opera prima dell'affidamento, i compensi sono ridotti del 20% rispetto all'art. 1.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>
+      </p>
+    </div>
+
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="lbl">Tetto parte fissa · Collegio</span>
+          <span class="big">125.000&nbsp;€</span>
+          <span class="mut" style="font-size: 13px;">Per componente, in parti uguali: 41.667&nbsp;€</span>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px; border-top: 3px solid #6E1E2B;">
+          <span class="lbl">Tetto complessivo · Collegio</span>
+          <span class="big" style="color: #561622;">375.000&nbsp;€</span>
+          <span class="mut" style="font-size: 13px;">Triplo della parte fissa · per componente: 125.000&nbsp;€</span>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="lbl">Segreteria · al tetto massimo</span>
+          <span class="big">18.750&nbsp;€</span>
+          <span class="mut" style="font-size: 13px;">5% per ciascun componente: 6.250&nbsp;€</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div style="padding: 18px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;"><span style="font-weight: 600;">Calcolo della parte fissa per scaglioni</span><span class="mut" style="font-size: 14px;">Collegio di tre componenti</span></div>
+        <div style="overflow-x: auto;">
+          
+                
+                
+                
+                <table class="tb">
+            <thead><tr><th>Scaglione di valore</th><th>Aliquota</th><th style="text-align: right;">Quota di valore</th><th style="text-align: right;">Limite</th></tr></thead>
+            <tbody>
+              <tr><td> <span></span></td><td class="mono" style="font-size: 14px;"></td><td class="n"></td><td class="n"></td></tr>
+              
+              <tr><td colspan="3">Riduzione del 20% (collegio facoltativo prima dell'affidamento)</td><td class="n">− 0&nbsp;€</td></tr>
+              
+              <tr style="background: #F2EADD;"><td colspan="3" style="font-weight: 600;">Tetto della parte fissa</td><td class="n" style="font-weight: 600;">125.000&nbsp;€</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px;">
+    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
+      <span style="font-weight: 600;">Tetto teorico e compenso effettivo</span>
+      <p style="margin: 0; font-size: 15px;">Il compenso effettivo è proporzionato a valore e complessità dell'opera, numero, qualità e tempestività delle determinazioni. Fino al nuovo decreto ministeriale i parametri sono quelli delle
+        <span class="rif"><button type="button" class="rif-b">Linee guida del D.M. 12/2022</button><span class="pop" role="note"><span class="pop-t">Linee guida CCT — D.M. 17 gennaio 2022, n. 12</span><span class="pop-s">MIT · G.U. n. 55 del 7 marzo 2022</span><span class="pop-x">Linee guida per l'omogenea applicazione delle funzioni del collegio consultivo tecnico, adottate sotto la disciplina del D.L. 76/2020. Dopo il correttivo restano applicabili in via transitoria per i compensi (Allegato V.2, art. 1, c. 6) e, per intero, ai collegi di servizi e forniture già costituiti al 31 dicembre 2024. Il punto 8 prevede la trasmissione all'Osservatorio degli atti del collegio, con firma digitale, entro cinque giorni dalla loro adozione.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2022-09/linee-guida-collegio-consultivo-tecnico.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>.</p>
+    </div>
+    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="lab l-i" style="align-self: flex-start;">INTERPRETAZIONE</span>
+      <span style="font-weight: 600;">Scelte di calcolo del simulatore</span>
+      <p style="margin: 0; font-size: 15px;">Il limite del D.L. 76/2020 è applicato alla sola parte fissa, come indica il
+        <span class="rif"><button type="button" class="rif-b">parere MIT n. 4079/2026</button><span class="pop" role="note"><span class="pop-t">MIT — Parere n. 4079/2026 sui compensi del CCT</span><span class="pop-s">Fonte secondaria · testo ufficiale non ancora reperito</span><span class="pop-x">Secondo quanto riportato, il MIT chiarisce che dopo il correttivo il limite dell'art. 6, c. 7-bis, D.L. 76/2020 si applica alla sola parte fissa (Allegato V.2, art. 1, c. 4) e che il compenso complessivo incontra il solo limite del triplo della parte fissa (c. 5). Per i CCT di servizi e forniture già operanti al 31 dicembre 2024 continua ad applicarsi la disciplina previgente.</span><span class="pop-f"><a class="pop-l" href="https://acen.it/2026/06/10/collegio-consultivo-tecnico-il-mit-chiarisce-i-criteri-di-determinazione-dei-compensi-dopo-il-correttivo-al-codice-appalti/" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>. L'aliquota dello 0,02% o 0,03% è applicata alla quota oltre 1.000 milioni in luogo di quella dello scaglione precedente. La ripartizione in parti uguali e la quota della Segreteria calcolata sul tetto massimo sono ipotesi semplificate.</p>
+    </div>
+    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="lab l-i" style="align-self: flex-start;">ATTENZIONE</span>
+      <span style="font-weight: 600;">Regime transitorio</span>
+      <p style="margin: 0; font-size: 15px;">Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 resta la disciplina previgente, in cui il limite riguardava il compenso complessivo:
+        <span class="rif"><button type="button" class="rif-b">art. 225-bis, c. 5</button><span class="pop" role="note"><span class="pop-t">Art. 225-bis, comma 5, D.Lgs. 36/2023 — Disciplina transitoria del CCT</span><span class="pop-s">Sintesi redazionale · come letta dal MIT (parere n. 4079/2026) e da ANAC (parere n. 15/2025)</span><span class="pop-x">Ai collegi già costituiti e operanti al 31 dicembre 2024 si applica la disciplina introdotta dal correttivo, salva diversa volontà delle parti, con eccezione dei collegi relativi a contratti di servizi e forniture già costituiti, per i quali resta ferma la disciplina previgente (incluse, per intero, le Linee guida del D.M. 17 gennaio 2022, n. 12).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art225bis" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>. In quel caso il simulatore non si applica.</p>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</div>
+<template id="tpl">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/strumenti/" class="on">Strumenti</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 18px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/strumenti/" style="text-decoration: none;">Strumenti</a><span aria-hidden="true">/</span><span>Simulatore dei compensi</span></nav>
+    <p class="kick">Simulatore</p>
+    <h1 class="h1">Simulatore dei compensi del Collegio</h1>
+    <p class="lead">Calcola i tetti massimi previsti dalla legge per la parte fissa e per il compenso complessivo, e la quota della Segreteria. Il risultato è un tetto teorico: il compenso effettivo si determina con i parametri delle linee guida.</p>
+  </section>
+
+  <section class="wrap" style="padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+    <div class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <h2 class="h2">Dati</h2>
+      <div class="fld">
+        <label for="valore">Valore dell'appalto (euro)</label>
+        <input id="valore" class="inp" type="text" inputmode="numeric" value="{{valoreTxt}}" onChange="{{setValore}}">
+      </div>
+      <div class="fld">
+        <span class="fl" id="comp-l">Componenti del Collegio</span>
+        <div class="seg" role="group" aria-labelledby="comp-l">
+          <button type="button" class="{{c3}}" aria-pressed="{{is3}}" onClick="{{set3}}">Tre</button>
+          <button type="button" class="{{c5}}" aria-pressed="{{is5}}" onClick="{{set5}}">Cinque</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label for="segr">Compenso della Segreteria: {{segr}}% di quello di ciascun componente</label>
+        <input id="segr" type="range" min="3" max="10" step="1" value="{{segr}}" onChange="{{setSegr}}" style="accent-color: #6E1E2B; height: 44px;">
+      </div>
+      <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; cursor: pointer;">
+        <input type="checkbox" checked="{{fac}}" onChange="{{setFac}}" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #6E1E2B;">
+        <span>Collegio facoltativo che opera prima dell'affidamento (riduzione del 20%)</span>
+      </label>
+      <p class="mut" style="margin: 0; font-size: 14px;">Base:
+        <span class="{{r.v1.cls}}"><button type="button" class="rif-b" onClick="{{r.v1.tog}}">{{r.v1.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1.t}}</span><span class="pop-s">{{r.v1.s}}</span><span class="pop-x">{{r.v1.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1.close}}">Chiudi</button></span></span></span>,
+        <span class="{{r.dl76.cls}}"><button type="button" class="rif-b" onClick="{{r.dl76.tog}}">{{r.dl76.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.dl76.t}}</span><span class="pop-s">{{r.dl76.s}}</span><span class="pop-x">{{r.dl76.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.dl76.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.dl76.close}}">Chiudi</button></span></span></span>,
+        <span class="{{r.v8.cls}}"><button type="button" class="rif-b" onClick="{{r.v8.tog}}">{{r.v8.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v8.t}}</span><span class="pop-s">{{r.v8.s}}</span><span class="pop-x">{{r.v8.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v8.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v8.close}}">Chiudi</button></span></span></span>,
+        <span class="{{r.v7.cls}}"><button type="button" class="rif-b" onClick="{{r.v7.tog}}">{{r.v7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v7.t}}</span><span class="pop-s">{{r.v7.s}}</span><span class="pop-x">{{r.v7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v7.close}}">Chiudi</button></span></span></span>
+      </p>
+    </div>
+
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="lbl">Tetto parte fissa · Collegio</span>
+          <span class="big">{{fisso}}</span>
+          <span class="mut" style="font-size: 13px;">Per componente, in parti uguali: {{fissoC}}</span>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px; border-top: 3px solid #6E1E2B;">
+          <span class="lbl">Tetto complessivo · Collegio</span>
+          <span class="big" style="color: #561622;">{{totale}}</span>
+          <span class="mut" style="font-size: 13px;">Triplo della parte fissa · per componente: {{totaleC}}</span>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="lbl">Segreteria · al tetto massimo</span>
+          <span class="big">{{segrTot}}</span>
+          <span class="mut" style="font-size: 13px;">{{segr}}% per ciascun componente: {{segrC}}</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div style="padding: 18px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;"><span style="font-weight: 600;">Calcolo della parte fissa per scaglioni</span><span class="mut" style="font-size: 14px;">Collegio di {{nTxt}} componenti</span></div>
+        <div style="overflow-x: auto;">
+          <table class="tb">
+            <thead><tr><th>Scaglione di valore</th><th>Aliquota</th><th style="text-align: right;">Quota di valore</th><th style="text-align: right;">Limite</th></tr></thead>
+            <tbody>
+              <sc-for list="{{righe}}" as="x" hint-placeholder-count="4">
+                <tr><td>{{x.da}} <span class="{{x.labCls}}">{{x.lab}}</span></td><td class="mono" style="font-size: 14px;">{{x.al}}</td><td class="n">{{x.quota}}</td><td class="n">{{x.imp}}</td></tr>
+              </sc-for>
+              <sc-if value="{{fac}}" hint-placeholder-val="{{false}}">
+                <tr><td colspan="3">Riduzione del 20% (collegio facoltativo prima dell'affidamento)</td><td class="n">{{riduz}}</td></tr>
+              </sc-if>
+              <tr style="background: #F2EADD;"><td colspan="3" style="font-weight: 600;">Tetto della parte fissa</td><td class="n" style="font-weight: 600;">{{fisso}}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px;">
+    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
+      <span style="font-weight: 600;">Tetto teorico e compenso effettivo</span>
+      <p style="margin: 0; font-size: 15px;">Il compenso effettivo è proporzionato a valore e complessità dell'opera, numero, qualità e tempestività delle determinazioni. Fino al nuovo decreto ministeriale i parametri sono quelli delle
+        <span class="{{r.lg22.cls}}"><button type="button" class="rif-b" onClick="{{r.lg22.tog}}">{{r.lg22.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg22.t}}</span><span class="pop-s">{{r.lg22.s}}</span><span class="pop-x">{{r.lg22.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg22.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg22.close}}">Chiudi</button></span></span></span>.</p>
+    </div>
+    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="lab l-i" style="align-self: flex-start;">INTERPRETAZIONE</span>
+      <span style="font-weight: 600;">Scelte di calcolo del simulatore</span>
+      <p style="margin: 0; font-size: 15px;">Il limite del D.L. 76/2020 è applicato alla sola parte fissa, come indica il
+        <span class="{{r.mit.cls}}"><button type="button" class="rif-b" onClick="{{r.mit.tog}}">{{r.mit.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.mit.t}}</span><span class="pop-s">{{r.mit.s}}</span><span class="pop-x">{{r.mit.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.mit.u}}" target="_blank" rel="noopener">Apri la fonte ↗</a><button type="button" class="pop-c" onClick="{{r.mit.close}}">Chiudi</button></span></span></span>. L'aliquota dello 0,02% o 0,03% è applicata alla quota oltre 1.000 milioni in luogo di quella dello scaglione precedente. La ripartizione in parti uguali e la quota della Segreteria calcolata sul tetto massimo sono ipotesi semplificate.</p>
+    </div>
+    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="lab l-i" style="align-self: flex-start;">ATTENZIONE</span>
+      <span style="font-weight: 600;">Regime transitorio</span>
+      <p style="margin: 0; font-size: 15px;">Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 resta la disciplina previgente, in cui il limite riguardava il compenso complessivo:
+        <span class="{{r.tr.cls}}"><button type="button" class="rif-b" onClick="{{r.tr.tog}}">{{r.tr.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.tr.t}}</span><span class="pop-s">{{r.tr.s}}</span><span class="pop-x">{{r.tr.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.tr.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.tr.close}}">Chiudi</button></span></span></span>. In quel caso il simulatore non si applica.</p>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</template>
+<noscript><p style="max-width:720px;margin:24px auto;padding:0 24px;font-family:system-ui">Per usare filtri, riquadri delle fonti e strumenti di calcolo è necessario JavaScript.</p></noscript>
+<script src="/assets/dc.js"></script>
+<script>
+class Component extends DCLogic {
+  componentDidMount() {
+    fetch('/assets/norme.json').then((r) => r.json()).then((j) => this.setState({ norme: j })).catch(() => this.setState({ norme: {} }));
+  }
+  rif(id, key, label) {
+    const s = this.state || {};
+    const m = (s.norme || {})[key] || {};
+    return {
+      label: label,
+      cls: s.open === id ? 'rif open' : 'rif',
+      tog: () => this.setState({ open: (this.state || {}).open === id ? null : id }),
+      close: () => this.setState({ open: null }),
+      t: m.t || 'Caricamento del testo…', s: m.s || '', x: m.x || '', u: m.u || 'https://www.normattiva.it/'
+    };
+  }
+  renderVals() {
+    const s = this.state || {};
+    const valore = s.valore == null ? 25000000 : s.valore;
+    const n = s.n || 3;
+    const segr = s.segr || 5;
+    const fac = !!s.fac;
+    const eur = (v) => v.toLocaleString('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+    const num = (v) => v.toLocaleString('it-IT', { maximumFractionDigits: 0 });
+    const M = 1000000;
+    const SC = n === 3
+      ? [[0, 50 * M, 0.005, '0,50%'], [50 * M, 100 * M, 0.0025, '0,25%'], [100 * M, 1000 * M, 0.0015, '0,15%'], [1000 * M, Infinity, 0.0002, '0,02%']]
+      : [[0, 50 * M, 0.008, '0,80%'], [50 * M, 100 * M, 0.004, '0,40%'], [100 * M, 1000 * M, 0.0025, '0,25%'], [1000 * M, Infinity, 0.0003, '0,03%']];
+    const NOMI = ['Fino a 50 milioni', 'Da 50 a 100 milioni', 'Da 100 a 1.000 milioni', 'Oltre 1.000 milioni'];
+    let lordo = 0;
+    const righe = SC.map((sc, i) => {
+      const quota = Math.max(0, Math.min(valore, sc[1]) - sc[0]);
+      const imp = quota * sc[2];
+      lordo += imp;
+      return { da: NOMI[i], al: sc[3], quota: eur(quota), imp: eur(imp), lab: i === 3 ? 'All. V.2, art. 1, c. 4' : '', labCls: i === 3 ? 'lab l-i' : '' };
+    });
+    const riduzione = fac ? lordo * 0.2 : 0;
+    const fisso = lordo - riduzione;
+    const totale = fisso * 3;
+    const segrC = (totale / n) * segr / 100;
+    return {
+      valoreTxt: num(valore),
+      setValore: (e) => { const v = parseInt(String(e.target.value).replace(/[^0-9]/g, ''), 10); this.setState({ valore: isNaN(v) ? 0 : v }); },
+      c3: n === 3 ? 'on' : '', c5: n === 5 ? 'on' : '', is3: n === 3, is5: n === 5, nTxt: n === 3 ? 'tre' : 'cinque',
+      set3: () => this.setState({ n: 3 }), set5: () => this.setState({ n: 5 }),
+      segr, setSegr: (e) => this.setState({ segr: parseInt(e.target.value, 10) }),
+      fac, setFac: () => this.setState({ fac: !fac }),
+      righe, riduz: '− ' + eur(riduzione),
+      fisso: eur(fisso), fissoC: eur(fisso / n), totale: eur(totale), totaleC: eur(totale / n),
+      segrC: eur(segrC), segrTot: eur(segrC * n),
+      r: {
+        v1: this.rif('s1', 'v1', 'All. V.2, art. 1, cc. 4-5'), dl76: this.rif('s2', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis'),
+        v8: this.rif('s3', 'v8', 'All. V.2, art. 8, c. 2'), v7: this.rif('s4', 'v7', 'All. V.2, art. 7, c. 4'),
+        lg22: this.rif('s5', 'lg22', 'Linee guida del D.M. 12/2022'), mit: this.rif('s6', 'mit4079', 'parere MIT n. 4079/2026'),
+        tr: this.rif('s7', 'a225b', 'art. 225-bis, c. 5')
+      }
+    };
+  }
+}
+
+DC.mount(Component);
+</script>
+</body>
+</html>
