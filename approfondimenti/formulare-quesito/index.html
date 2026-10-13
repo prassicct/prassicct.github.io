@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulare un quesito al CCT: struttura, contenuto ed errori ricorrenti — Prassi CCT</title>
+<meta name="description" content="Come si formula un quesito al Collegio Consultivo Tecnico: chi può proporlo, quesito congiunto o distinto, rapporto con le riserve e ruolo del RUP, contenuto, allegati ed errori ricorrenti.">
+<link rel="canonical" href="https://prassicct.it/approfondimenti/formulare-quesito/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prassi CCT">
+<meta property="og:title" content="Formulare un quesito al CCT: struttura, contenuto ed errori ricorrenti — Prassi CCT">
+<meta property="og:description" content="Come si formula un quesito al Collegio Consultivo Tecnico: chi può proporlo, quesito congiunto o distinto, rapporto con le riserve e ruolo del RUP, contenuto, allegati ed errori ricorrenti.">
+<meta property="og:url" content="https://prassicct.it/approfondimenti/formulare-quesito/">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/Lora-Bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/fonts/InstrumentSans-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+body{margin:0}*{box-sizing:border-box}
+a{color:inherit}
+.pg{min-height:100vh;background:#FAF6EF;color:#2A2324;font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.hd{background:#FFFDF9;border-bottom:1px solid #E5DBCB}
+.hd-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding-top:18px;padding-bottom:18px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#2A2324}
+.logo-p{font-family:'Lora',Georgia,serif;font-weight:600;font-size:28px;line-height:1;letter-spacing:-.01em}
+.logo-i{position:relative;display:inline-block}
+.logo-q{position:absolute;left:50%;top:.02em;width:.19em;height:.19em;margin-left:-.095em;background:#6E1E2B}
+.logo-c{font-weight:600;font-size:15px;letter-spacing:.2em;color:#6E1E2B}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;padding:8px 0}
+.nav a:hover{color:#6E1E2B}
+.nav a.on{color:#6E1E2B;font-weight:600;box-shadow:inset 0 -2px 0 #6E1E2B}
+.nav a.cta{padding:10px 16px;border-radius:8px;background:#6E1E2B;color:#fff;font-weight:600;font-size:14px;box-shadow:none}
+.btn{display:inline-block;text-decoration:none;padding:12px 20px;border-radius:8px;background:#6E1E2B;color:#fff;font-weight:600}
+.lbl{margin:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6A5F59}
+.h2{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:28px;line-height:1.25}
+.mut{color:#6A5F59}
+.card{background:#FFFDF9;border:1px solid #E5DBCB;border-radius:8px;padding:24px}
+.tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:12.5px;font-weight:600;background:#F3E4E1;color:#561622}
+.sq{display:inline-block;flex:none;width:7px;height:7px;background:#6E1E2B}
+.sec{display:flex;flex-direction:column;gap:16px;scroll-margin-top:24px}
+.p{margin:0;font-family:'Lora',Georgia,serif;font-size:18px;line-height:1.75}
+.blk{display:flex;flex-direction:column;gap:10px;padding-left:20px;border-left:3px solid #E5DBCB}
+.lab{align-self:flex-start;padding:3px 10px;border-radius:4px;font-size:11.5px;font-weight:700;letter-spacing:.05em}
+.l-n{background:#2A2324;color:#fff}.l-i{background:#F2EADD;color:#2A2324}.l-p{background:#F3E4E1;color:#561622}.l-o{background:#6E1E2B;color:#fff}
+.b-n{border-left-color:#2A2324}.b-o{border-left-color:#6E1E2B}.b-p{border-left-color:#E8C9C4}
+.tb{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+.tb th{text-align:left;padding:12px 16px;font-size:13px;font-weight:600;background:#F2EADD}
+.tb td{padding:12px 16px;border-top:1px solid #E5DBCB;vertical-align:top}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:13px}
+.li{display:flex;gap:10px;align-items:baseline}
+.ft{border-top:1px solid #E5DBCB;background:#FFFDF9}
+.ft-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:32px;padding-bottom:32px;font-size:13px;color:#6A5F59}
+.rif{position:relative;display:inline}
+.rif-b{font:inherit;line-height:inherit;color:#561622;background:none;border:0;padding:0;margin:0;cursor:pointer;font-weight:600;text-decoration:underline dotted;text-underline-offset:3px}
+.pop{display:none;position:absolute;z-index:60;left:0;top:100%;margin-top:8px;width:min(440px,86vw);max-height:360px;overflow:auto;background:#FFFDF9;border:1px solid #E5DBCB;border-top:3px solid #6E1E2B;border-radius:8px;box-shadow:0 14px 36px rgba(42,35,36,.2);padding:16px 18px;font-family:'Instrument Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;color:#2A2324;text-align:left;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none}
+.pop::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
+@media (hover:hover){.rif:hover .pop{display:block}}
+.rif.open .pop{display:block}
+.pop-t{display:block;font-weight:700;font-size:14px;margin-bottom:2px}
+.pop-s{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6A5F59;margin-bottom:10px}
+.pop-x{display:block;white-space:pre-line}
+.pop-f{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #E5DBCB}
+.pop-l{font-weight:600;color:#561622}
+.pop-c{font:inherit;font-size:13px;font-weight:600;background:#F2EADD;color:#2A2324;border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+@media (max-width:700px){.pop{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:65vh;margin:0}}
+@media (hover:hover) and (min-width:701px){.pop-c{display:none}}
+
+.p strong,.li strong{font-weight:600}
+.p em{font-style:italic}
+.box{background:#FFFDF9;border:1px solid #E5DBCB;border-radius:8px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/" class="on">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/strumenti/">Strumenti</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap" style="padding-top: 48px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span>
+      <a href="/approfondimenti/" style="text-decoration: none;">Approfondimenti</a><span aria-hidden="true">/</span>
+      <span>Attività</span>
+    </nav>
+    <div style="padding: 28px 0 40px; display: flex; flex-direction: column; gap: 18px; max-width: 880px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px;">
+        <span class="tag">Attività</span>
+        <span class="tag" style="background: #F2EADD; color: #2A2324;">Quesiti</span>
+        <span class="mut">Aggiornato al 13 ottobre 2026 · Lettura 8 minuti</span>
+      </div>
+      <h1 style="margin: 0; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.12; letter-spacing: -0.015em;">Formulare un quesito al CCT: struttura, contenuto ed errori ricorrenti</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #6A5F59; font-family: 'Lora', Georgia, serif; font-style: italic;">Senza un quesito di parte il Collegio non può pronunciarsi. Un quesito scritto bene accelera l'istruttoria; uno scritto male produce richieste di integrazione e consuma termini già brevi.</p>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom: 80px; display: flex; flex-wrap: wrap-reverse; gap: 48px; align-items: flex-start;">
+    <article style="flex: 999 1 560px; min-width: 0; max-width: 780px; display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <div class="card" style="flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+          <p class="lbl" style="color: #6E1E2B;">In sintesi</p>
+          <div class="li"><span class="sq" aria-hidden="true"></span><span>Il procedimento si avvia con un quesito scritto, inviato al Collegio e alla controparte.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Senza quesito di parte le determinazioni sono nulle.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare il quesito, il RUP è tenuto a formularlo.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Il termine per la determinazione decorre dal quesito congiunto o dalla formulazione dei quesiti distinti.</span></div>
+        </div>
+        <div style="flex: 1 1 200px; min-width: 0; background: #F2EADD; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px;">
+          <p class="lbl">A chi serve</p>
+          <span style="font-weight: 600;">RUP</span><span style="font-weight: 600;">Parti</span><span style="font-weight: 600;">Avvocati</span><span style="font-weight: 600;">Segreteria</span>
+        </div>
+      </div>
+      
+      <section id="premessa" class="sec">
+        <h2 class="h2">Premessa</h2>
+<p class="p">Il quesito è l'atto che delimita ciò su cui il Collegio deve decidere. La sua qualità condiziona tutto il resto: la rapidità dell'istruttoria, la possibilità di rispettare il termine di quindici giorni, la stessa tenuta della pronuncia. Dopo il correttivo è anche una condizione di validità.</p>
+</section>
+      <section id="il-quesito-come-atto-di-impulso" class="sec">
+        <h2 class="h2">Il quesito come atto di impulso</h2>
+<div class="blk b-n"><span class="lab l-n">NORMA</span><p class="p">Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni (<span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 3, c. 1</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 3 — Decisioni del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni. Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo.
+c. 2 — Il Collegio può operare anche in videoconferenza o con collegamento da remoto.
+c. 3 — Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio; non è ammessa la consulenza tecnica d'ufficio. Sono previste riunioni periodiche di monitoraggio, nelle quali il Collegio può formulare osservazioni.
+c. 4 — Le determinazioni sono adottate a maggioranza, con atto sottoscritto, entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti; il termine è di venti giorni per esigenze istruttorie. La motivazione può essere succinta e integrata nei successivi quindici giorni. Sono previste conseguenze sulle spese del giudizio per la parte che non ha osservato una determinazione poi confermata dalla sentenza.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>).</p></div>
+<div class="blk "><span class="lab l-i">INTERPRETAZIONE</span><p class="p">La nullità senza quesito impedisce al Collegio di pronunciarsi d'ufficio, ad esempio a seguito di una criticità emersa durante una riunione di monitoraggio. In quella sede il Collegio può formulare osservazioni (<span class="rif"><button type="button" class="rif-b">art. 3, c. 3</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 3 — Decisioni del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni. Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo.
+c. 2 — Il Collegio può operare anche in videoconferenza o con collegamento da remoto.
+c. 3 — Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio; non è ammessa la consulenza tecnica d'ufficio. Sono previste riunioni periodiche di monitoraggio, nelle quali il Collegio può formulare osservazioni.
+c. 4 — Le determinazioni sono adottate a maggioranza, con atto sottoscritto, entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti; il termine è di venti giorni per esigenze istruttorie. La motivazione può essere succinta e integrata nei successivi quindici giorni. Sono previste conseguenze sulle spese del giudizio per la parte che non ha osservato una determinazione poi confermata dalla sentenza.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>), ma una determinazione richiede che una parte ponga la questione.</p></div>
+</section>
+      <section id="riserve-e-quesito-il-ruolo-del-rup" class="sec">
+        <h2 class="h2">Riserve e quesito: il ruolo del RUP</h2>
+<div class="blk b-n"><span class="lab l-n">NORMA</span><p class="p">Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo (<span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 3, c. 1</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 3 — Decisioni del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni. Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo.
+c. 2 — Il Collegio può operare anche in videoconferenza o con collegamento da remoto.
+c. 3 — Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio; non è ammessa la consulenza tecnica d'ufficio. Sono previste riunioni periodiche di monitoraggio, nelle quali il Collegio può formulare osservazioni.
+c. 4 — Le determinazioni sono adottate a maggioranza, con atto sottoscritto, entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti; il termine è di venti giorni per esigenze istruttorie. La motivazione può essere succinta e integrata nei successivi quindici giorni. Sono previste conseguenze sulle spese del giudizio per la parte che non ha osservato una determinazione poi confermata dalla sentenza.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>). Per i lavori sopra soglia, su riserve, varianti e altre controversie tecniche il parere del Collegio è obbligatorio (<span class="rif"><button type="button" class="rif-b">art. 216, c. 1</button><span class="pop" role="note"><span class="pop-t">Art. 216 D.Lgs. 36/2023 — Pareri e determinazioni obbligatori</span><span class="pop-s">Sintesi redazionale · testo vigente dopo il D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee, in caso di riserve, proposte di variante e altre controversie tecniche in corso di esecuzione è obbligatoria l'acquisizione del parere del collegio o, su richiesta concorde delle parti, di una sua determinazione. Se le parti attribuiscono alla determinazione natura di lodo contrattuale, è precluso l'accordo bonario sulle riserve.
+c. 2 — Il parere è obbligatorio nei casi di risoluzione del contratto. Se i lavori non possono proseguire con il soggetto designato, il collegio valuta anche se ragioni tecniche ed economiche rendano preferibile proseguire con il medesimo soggetto.
+c. 3 — Nel parere il collegio valuta: a) l'esecuzione dei lavori in via diretta; b) l'interpello progressivo dei partecipanti alla procedura originaria; c) l'indizione di una nuova procedura; d) la proposta di nomina di un commissario straordinario.
+c. 4 — Quando la sospensione è imposta da gravi ragioni di ordine tecnico e le parti non concordano sulle modalità di prosecuzione, il collegio si pronuncia entro quindici giorni dalla comunicazione: accerta la legittimità della sospensione e indica le modalità di prosecuzione. La pronuncia assume natura di lodo contrattuale «solo se tale possibilità non sia stata espressamente esclusa ai sensi di quanto disposto dall'articolo 217».</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art216" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>).</p></div>
+<p class="p">Per il RUP si tratta quindi di un adempimento, non di una facoltà. La valutazione sull'incidenza della riserva sulla regolare esecuzione va motivata, e conviene annotarla nel fascicolo del contratto.</p>
+</section>
+      <section id="quesito-congiunto-o-quesiti-distinti" class="sec">
+        <h2 class="h2">Quesito congiunto o quesiti distinti</h2>
+<div class="blk b-n"><span class="lab l-n">NORMA</span><p class="p">Le determinazioni sono adottate entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti (<span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 3, c. 4</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 3 — Decisioni del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni. Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo.
+c. 2 — Il Collegio può operare anche in videoconferenza o con collegamento da remoto.
+c. 3 — Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio; non è ammessa la consulenza tecnica d'ufficio. Sono previste riunioni periodiche di monitoraggio, nelle quali il Collegio può formulare osservazioni.
+c. 4 — Le determinazioni sono adottate a maggioranza, con atto sottoscritto, entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti; il termine è di venti giorni per esigenze istruttorie. La motivazione può essere succinta e integrata nei successivi quindici giorni. Sono previste conseguenze sulle spese del giudizio per la parte che non ha osservato una determinazione poi confermata dalla sentenza.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>).</p></div>
+<div class="blk "><span class="lab l-i">INTERPRETAZIONE</span><p class="p">Il quesito congiunto ha il vantaggio di fissare con certezza l'oggetto e la decorrenza del termine. Con quesiti distinti, la formulazione della seconda parte serve a completare il perimetro della questione: per questo conviene che il Collegio, all'insediamento o alla ricezione del primo quesito, indichi un termine entro cui la controparte può formulare il proprio.</p></div>
+</section>
+      <section id="cosa-deve-contenere" class="sec">
+        <h2 class="h2">Cosa deve contenere</h2>
+<div class="blk b-o"><span class="lab l-o">PROPOSTA OPERATIVA</span><p class="p">La norma non prescrive un contenuto. Prassi CCT propone una struttura in sei parti, che consente al Collegio di istruire senza richieste di integrazione.</p></div>
+<div style="overflow-x: auto; border: 1px solid #E5DBCB; border-radius: 8px; background: #FFFDF9;"><table class="tb"><thead><tr><th>Parte</th><th>Contenuto</th><th>Perché serve</th></tr></thead><tbody><tr><td>Intestazione</td><td>Contratto, CIG e CUP, parte proponente, data</td><td>Identifica il procedimento nel registro</td></tr><tr><td>Oggetto</td><td>Una frase che descrive la questione</td><td>Delimita il perimetro della pronuncia</td></tr><tr><td>Fatti</td><td>Cronologia essenziale, con rinvio ai documenti</td><td>Riduce le richieste istruttorie</td></tr><tr><td>Riserve collegate</td><td>Numero, data di iscrizione, importo</td><td>Collega il quesito alla contabilità dei lavori</td></tr><tr><td>Domanda</td><td>La domanda precisa rivolta al Collegio, anche in forma alternativa</td><td>È ciò a cui il Collegio risponde</td></tr><tr><td>Allegati</td><td>Elenco numerato dei documenti</td><td>Rende verificabile la completezza</td></tr></tbody></table></div>
+<div style="background: #2A2324; color: #F3EFEA; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px;"><span class="lbl" style="color: #C9C2BA;">Esempio di domanda ben formulata</span><span class="mono" style="font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;">Si chiede al Collegio di esprimersi:</span><span class="mono" style="font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;">a) sulla fondatezza della riserva n. 7, iscritta il [data], relativa ai maggiori oneri per [descrizione];</span><span class="mono" style="font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;">b) in caso di fondatezza, anche parziale, sulla quantificazione degli importi spettanti, sulla base della documentazione allegata ai nn. 1-12.</span></div>
+</section>
+      <section id="gli-errori-ricorrenti" class="sec">
+        <h2 class="h2">Gli errori ricorrenti</h2>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 17px;"><div class="li"><span class="sq" aria-hidden="true"></span><span>Quesiti generici («si chiede al Collegio di valutare la situazione»), che non consentono una risposta puntuale.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Più questioni eterogenee in un solo quesito, con termini e istruttorie diverse.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Allegati non numerati o depositati in tempi diversi, che rendono incerta la base documentale.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Quesito inviato al solo Collegio e non alla controparte, come invece la norma richiede.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Mancato collegamento con le riserve iscritte, quando la questione ha contenuto economico.</span></div></div>
+</section>
+      <section id="dopo-il-deposito-cosa-fa-la-segreteria" class="sec">
+        <h2 class="h2">Dopo il deposito: cosa fa la Segreteria</h2>
+<div class="blk b-o"><span class="lab l-o">PROPOSTA OPERATIVA</span><p class="p">Registra il quesito con numero progressivo, data di ricezione e canale, e crea la sottocartella dedicata nel fascicolo.</p><p class="p">Verifica che sia stato inviato anche alla controparte e annota la data da cui decorre il termine.</p><p class="p">Inserisce nello scadenzario il termine ordinario e quello per esigenze istruttorie, e propone al Presidente il calendario di audizioni e riunioni.</p></div>
+</section>
+      <section id="conclusioni-pratiche" class="sec">
+        <h2 class="h2">Conclusioni pratiche</h2>
+<p class="p">Un buon quesito risponde a una domanda: che cosa deve decidere il Collegio? Se la risposta non è chiara a chi scrive, non lo sarà a chi decide. Per RUP e parti vale la pena dedicare al quesito lo stesso rigore di un atto difensivo; per la Segreteria, registrarlo con precisione è il primo atto di presidio dei termini.</p>
+      </section>
+      <a href="/strumenti/kit/" style="text-decoration: none; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; padding: 24px; border-radius: 8px; background: #F3E4E1;"><span style="display: flex; flex-direction: column; gap: 4px;"><span class="lbl" style="color: #561622;">Strumento collegato</span><span style="font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 21px;">Registro dei quesiti</span><span class="mut" style="font-size: 14px;">Kit operativo · colonne e campi da compilare</span></span><span class="btn">Apri nel Kit</span></a>
+      <section id="fonti" class="sec" style="padding-top: 12px; border-top: 1px solid #E5DBCB; gap: 12px;">
+        <h2 class="lbl" style="font-size: 13px;">Fonti citate</h2>
+        <div class="li" style="font-size: 15px;"><span class="sq" aria-hidden="true"></span><span><span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 3</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 3 — Decisioni del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni. Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo.
+c. 2 — Il Collegio può operare anche in videoconferenza o con collegamento da remoto.
+c. 3 — Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio; non è ammessa la consulenza tecnica d'ufficio. Sono previste riunioni periodiche di monitoraggio, nelle quali il Collegio può formulare osservazioni.
+c. 4 — Le determinazioni sono adottate a maggioranza, con atto sottoscritto, entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti; il termine è di venti giorni per esigenze istruttorie. La motivazione può essere succinta e integrata nei successivi quindici giorni. Sono previste conseguenze sulle spese del giudizio per la parte che non ha osservato una determinazione poi confermata dalla sentenza.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span></div><div class="li" style="font-size: 15px;"><span class="sq" aria-hidden="true"></span><span><span class="rif"><button type="button" class="rif-b">D.Lgs. 36/2023, art. 216</button><span class="pop" role="note"><span class="pop-t">Art. 216 D.Lgs. 36/2023 — Pareri e determinazioni obbligatori</span><span class="pop-s">Sintesi redazionale · testo vigente dopo il D.Lgs. 209/2024</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee, in caso di riserve, proposte di variante e altre controversie tecniche in corso di esecuzione è obbligatoria l'acquisizione del parere del collegio o, su richiesta concorde delle parti, di una sua determinazione. Se le parti attribuiscono alla determinazione natura di lodo contrattuale, è precluso l'accordo bonario sulle riserve.
+c. 2 — Il parere è obbligatorio nei casi di risoluzione del contratto. Se i lavori non possono proseguire con il soggetto designato, il collegio valuta anche se ragioni tecniche ed economiche rendano preferibile proseguire con il medesimo soggetto.
+c. 3 — Nel parere il collegio valuta: a) l'esecuzione dei lavori in via diretta; b) l'interpello progressivo dei partecipanti alla procedura originaria; c) l'indizione di una nuova procedura; d) la proposta di nomina di un commissario straordinario.
+c. 4 — Quando la sospensione è imposta da gravi ragioni di ordine tecnico e le parti non concordano sulle modalità di prosecuzione, il collegio si pronuncia entro quindici giorni dalla comunicazione: accerta la legittimità della sospensione e indica le modalità di prosecuzione. La pronuncia assume natura di lodo contrattuale «solo se tale possibilità non sia stata espressamente esclusa ai sensi di quanto disposto dall'articolo 217».</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art216" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></span></div>
+        <p class="mut" style="margin: 0; font-size: 13px;">Le sintesi nei riquadri sono redazionali: fa fede il testo pubblicato sulla fonte ufficiale.</p>
+      </section>
+    </article>
+    <aside style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+      <nav aria-label="In questo articolo" class="card" style="display: flex; flex-direction: column; gap: 10px; padding: 20px 24px;">
+        <p class="lbl">In questo articolo</p>
+        <a href="#premessa" style="text-decoration: none; font-size: 15px;">Premessa</a><a href="#il-quesito-come-atto-di-impulso" style="text-decoration: none; font-size: 15px;">Il quesito come atto di impulso</a><a href="#riserve-e-quesito-il-ruolo-del-rup" style="text-decoration: none; font-size: 15px;">Riserve e quesito: il ruolo del RUP</a><a href="#quesito-congiunto-o-quesiti-distinti" style="text-decoration: none; font-size: 15px;">Quesito congiunto o quesiti distinti</a><a href="#cosa-deve-contenere" style="text-decoration: none; font-size: 15px;">Cosa deve contenere</a><a href="#gli-errori-ricorrenti" style="text-decoration: none; font-size: 15px;">Gli errori ricorrenti</a><a href="#dopo-il-deposito-cosa-fa-la-segreteria" style="text-decoration: none; font-size: 15px;">Dopo il deposito: cosa fa la Segreteria</a><a href="#conclusioni-pratiche" style="text-decoration: none; font-size: 15px;">Conclusioni pratiche</a><a href="#fonti" style="text-decoration: none; font-size: 15px;">Fonti citate</a>
+      </nav>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 0 4px;">
+        <p class="lbl">Correlati</p>
+        <a href="/approfondimenti/pareri-determinazioni/" style="text-decoration: none; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 17px; line-height: 1.35;">Pareri e determinazioni: quando sono obbligatori e che effetti producono</a><a href="/approfondimenti/termini-procedimento/" style="text-decoration: none; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 17px; line-height: 1.35;">I termini del procedimento davanti al Collegio</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</div>
+<template id="tpl">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/" class="on">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/strumenti/">Strumenti</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap" style="padding-top: 48px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span>
+      <a href="/approfondimenti/" style="text-decoration: none;">Approfondimenti</a><span aria-hidden="true">/</span>
+      <span>Attività</span>
+    </nav>
+    <div style="padding: 28px 0 40px; display: flex; flex-direction: column; gap: 18px; max-width: 880px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px;">
+        <span class="tag">Attività</span>
+        <span class="tag" style="background: #F2EADD; color: #2A2324;">Quesiti</span>
+        <span class="mut">Aggiornato al 13 ottobre 2026 · Lettura 8 minuti</span>
+      </div>
+      <h1 style="margin: 0; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.12; letter-spacing: -0.015em;">Formulare un quesito al CCT: struttura, contenuto ed errori ricorrenti</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #6A5F59; font-family: 'Lora', Georgia, serif; font-style: italic;">Senza un quesito di parte il Collegio non può pronunciarsi. Un quesito scritto bene accelera l&#x27;istruttoria; uno scritto male produce richieste di integrazione e consuma termini già brevi.</p>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom: 80px; display: flex; flex-wrap: wrap-reverse; gap: 48px; align-items: flex-start;">
+    <article style="flex: 999 1 560px; min-width: 0; max-width: 780px; display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <div class="card" style="flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+          <p class="lbl" style="color: #6E1E2B;">In sintesi</p>
+          <div class="li"><span class="sq" aria-hidden="true"></span><span>Il procedimento si avvia con un quesito scritto, inviato al Collegio e alla controparte.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Senza quesito di parte le determinazioni sono nulle.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare il quesito, il RUP è tenuto a formularlo.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Il termine per la determinazione decorre dal quesito congiunto o dalla formulazione dei quesiti distinti.</span></div>
+        </div>
+        <div style="flex: 1 1 200px; min-width: 0; background: #F2EADD; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px;">
+          <p class="lbl">A chi serve</p>
+          <span style="font-weight: 600;">RUP</span><span style="font-weight: 600;">Parti</span><span style="font-weight: 600;">Avvocati</span><span style="font-weight: 600;">Segreteria</span>
+        </div>
+      </div>
+      
+      <section id="premessa" class="sec">
+        <h2 class="h2">Premessa</h2>
+<p class="p">Il quesito è l'atto che delimita ciò su cui il Collegio deve decidere. La sua qualità condiziona tutto il resto: la rapidità dell'istruttoria, la possibilità di rispettare il termine di quindici giorni, la stessa tenuta della pronuncia. Dopo il correttivo è anche una condizione di validità.</p>
+</section>
+      <section id="il-quesito-come-atto-di-impulso" class="sec">
+        <h2 class="h2">Il quesito come atto di impulso</h2>
+<div class="blk b-n"><span class="lab l-n">NORMA</span><p class="p">Il procedimento si avvia con un quesito scritto, proposto da una o da entrambe le parti, inviato al Collegio e alla controparte; resta fermo l'onere di iscrivere le riserve. Il Collegio non può pronunciarsi in assenza di quesiti di parte, a pena di nullità delle determinazioni (<span class="{{r.x0.cls}}"><button type="button" class="rif-b" onClick="{{r.x0.tog}}">{{r.x0.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x0.t}}</span><span class="pop-s">{{r.x0.s}}</span><span class="pop-x">{{r.x0.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x0.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x0.close}}">Chiudi</button></span></span></span>).</p></div>
+<div class="blk "><span class="lab l-i">INTERPRETAZIONE</span><p class="p">La nullità senza quesito impedisce al Collegio di pronunciarsi d'ufficio, ad esempio a seguito di una criticità emersa durante una riunione di monitoraggio. In quella sede il Collegio può formulare osservazioni (<span class="{{r.x1.cls}}"><button type="button" class="rif-b" onClick="{{r.x1.tog}}">{{r.x1.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x1.t}}</span><span class="pop-s">{{r.x1.s}}</span><span class="pop-x">{{r.x1.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x1.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x1.close}}">Chiudi</button></span></span></span>), ma una determinazione richiede che una parte ponga la questione.</p></div>
+</section>
+      <section id="riserve-e-quesito-il-ruolo-del-rup" class="sec">
+        <h2 class="h2">Riserve e quesito: il ruolo del RUP</h2>
+<div class="blk b-n"><span class="lab l-n">NORMA</span><p class="p">Se l'appaltatore iscrive riserve che incidono sulla regolare esecuzione senza formulare un quesito, il RUP è tenuto a formularlo (<span class="{{r.x2.cls}}"><button type="button" class="rif-b" onClick="{{r.x2.tog}}">{{r.x2.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x2.t}}</span><span class="pop-s">{{r.x2.s}}</span><span class="pop-x">{{r.x2.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x2.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x2.close}}">Chiudi</button></span></span></span>). Per i lavori sopra soglia, su riserve, varianti e altre controversie tecniche il parere del Collegio è obbligatorio (<span class="{{r.x3.cls}}"><button type="button" class="rif-b" onClick="{{r.x3.tog}}">{{r.x3.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x3.t}}</span><span class="pop-s">{{r.x3.s}}</span><span class="pop-x">{{r.x3.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x3.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x3.close}}">Chiudi</button></span></span></span>).</p></div>
+<p class="p">Per il RUP si tratta quindi di un adempimento, non di una facoltà. La valutazione sull'incidenza della riserva sulla regolare esecuzione va motivata, e conviene annotarla nel fascicolo del contratto.</p>
+</section>
+      <section id="quesito-congiunto-o-quesiti-distinti" class="sec">
+        <h2 class="h2">Quesito congiunto o quesiti distinti</h2>
+<div class="blk b-n"><span class="lab l-n">NORMA</span><p class="p">Le determinazioni sono adottate entro quindici giorni dalla comunicazione del quesito congiunto o dalla formulazione dei quesiti distinti (<span class="{{r.x4.cls}}"><button type="button" class="rif-b" onClick="{{r.x4.tog}}">{{r.x4.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x4.t}}</span><span class="pop-s">{{r.x4.s}}</span><span class="pop-x">{{r.x4.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x4.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x4.close}}">Chiudi</button></span></span></span>).</p></div>
+<div class="blk "><span class="lab l-i">INTERPRETAZIONE</span><p class="p">Il quesito congiunto ha il vantaggio di fissare con certezza l'oggetto e la decorrenza del termine. Con quesiti distinti, la formulazione della seconda parte serve a completare il perimetro della questione: per questo conviene che il Collegio, all'insediamento o alla ricezione del primo quesito, indichi un termine entro cui la controparte può formulare il proprio.</p></div>
+</section>
+      <section id="cosa-deve-contenere" class="sec">
+        <h2 class="h2">Cosa deve contenere</h2>
+<div class="blk b-o"><span class="lab l-o">PROPOSTA OPERATIVA</span><p class="p">La norma non prescrive un contenuto. Prassi CCT propone una struttura in sei parti, che consente al Collegio di istruire senza richieste di integrazione.</p></div>
+<div style="overflow-x: auto; border: 1px solid #E5DBCB; border-radius: 8px; background: #FFFDF9;"><table class="tb"><thead><tr><th>Parte</th><th>Contenuto</th><th>Perché serve</th></tr></thead><tbody><tr><td>Intestazione</td><td>Contratto, CIG e CUP, parte proponente, data</td><td>Identifica il procedimento nel registro</td></tr><tr><td>Oggetto</td><td>Una frase che descrive la questione</td><td>Delimita il perimetro della pronuncia</td></tr><tr><td>Fatti</td><td>Cronologia essenziale, con rinvio ai documenti</td><td>Riduce le richieste istruttorie</td></tr><tr><td>Riserve collegate</td><td>Numero, data di iscrizione, importo</td><td>Collega il quesito alla contabilità dei lavori</td></tr><tr><td>Domanda</td><td>La domanda precisa rivolta al Collegio, anche in forma alternativa</td><td>È ciò a cui il Collegio risponde</td></tr><tr><td>Allegati</td><td>Elenco numerato dei documenti</td><td>Rende verificabile la completezza</td></tr></tbody></table></div>
+<div style="background: #2A2324; color: #F3EFEA; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px;"><span class="lbl" style="color: #C9C2BA;">Esempio di domanda ben formulata</span><span class="mono" style="font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;">Si chiede al Collegio di esprimersi:</span><span class="mono" style="font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;">a) sulla fondatezza della riserva n. 7, iscritta il [data], relativa ai maggiori oneri per [descrizione];</span><span class="mono" style="font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;">b) in caso di fondatezza, anche parziale, sulla quantificazione degli importi spettanti, sulla base della documentazione allegata ai nn. 1-12.</span></div>
+</section>
+      <section id="gli-errori-ricorrenti" class="sec">
+        <h2 class="h2">Gli errori ricorrenti</h2>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 17px;"><div class="li"><span class="sq" aria-hidden="true"></span><span>Quesiti generici («si chiede al Collegio di valutare la situazione»), che non consentono una risposta puntuale.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Più questioni eterogenee in un solo quesito, con termini e istruttorie diverse.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Allegati non numerati o depositati in tempi diversi, che rendono incerta la base documentale.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Quesito inviato al solo Collegio e non alla controparte, come invece la norma richiede.</span></div><div class="li"><span class="sq" aria-hidden="true"></span><span>Mancato collegamento con le riserve iscritte, quando la questione ha contenuto economico.</span></div></div>
+</section>
+      <section id="dopo-il-deposito-cosa-fa-la-segreteria" class="sec">
+        <h2 class="h2">Dopo il deposito: cosa fa la Segreteria</h2>
+<div class="blk b-o"><span class="lab l-o">PROPOSTA OPERATIVA</span><p class="p">Registra il quesito con numero progressivo, data di ricezione e canale, e crea la sottocartella dedicata nel fascicolo.</p><p class="p">Verifica che sia stato inviato anche alla controparte e annota la data da cui decorre il termine.</p><p class="p">Inserisce nello scadenzario il termine ordinario e quello per esigenze istruttorie, e propone al Presidente il calendario di audizioni e riunioni.</p></div>
+</section>
+      <section id="conclusioni-pratiche" class="sec">
+        <h2 class="h2">Conclusioni pratiche</h2>
+<p class="p">Un buon quesito risponde a una domanda: che cosa deve decidere il Collegio? Se la risposta non è chiara a chi scrive, non lo sarà a chi decide. Per RUP e parti vale la pena dedicare al quesito lo stesso rigore di un atto difensivo; per la Segreteria, registrarlo con precisione è il primo atto di presidio dei termini.</p>
+      </section>
+      <a href="/strumenti/kit/" style="text-decoration: none; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; padding: 24px; border-radius: 8px; background: #F3E4E1;"><span style="display: flex; flex-direction: column; gap: 4px;"><span class="lbl" style="color: #561622;">Strumento collegato</span><span style="font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 21px;">Registro dei quesiti</span><span class="mut" style="font-size: 14px;">Kit operativo · colonne e campi da compilare</span></span><span class="btn">Apri nel Kit</span></a>
+      <section id="fonti" class="sec" style="padding-top: 12px; border-top: 1px solid #E5DBCB; gap: 12px;">
+        <h2 class="lbl" style="font-size: 13px;">Fonti citate</h2>
+        <div class="li" style="font-size: 15px;"><span class="sq" aria-hidden="true"></span><span><span class="{{r.x5.cls}}"><button type="button" class="rif-b" onClick="{{r.x5.tog}}">{{r.x5.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x5.t}}</span><span class="pop-s">{{r.x5.s}}</span><span class="pop-x">{{r.x5.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x5.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x5.close}}">Chiudi</button></span></span></span></span></div><div class="li" style="font-size: 15px;"><span class="sq" aria-hidden="true"></span><span><span class="{{r.x6.cls}}"><button type="button" class="rif-b" onClick="{{r.x6.tog}}">{{r.x6.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.x6.t}}</span><span class="pop-s">{{r.x6.s}}</span><span class="pop-x">{{r.x6.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.x6.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.x6.close}}">Chiudi</button></span></span></span></span></div>
+        <p class="mut" style="margin: 0; font-size: 13px;">Le sintesi nei riquadri sono redazionali: fa fede il testo pubblicato sulla fonte ufficiale.</p>
+      </section>
+    </article>
+    <aside style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+      <nav aria-label="In questo articolo" class="card" style="display: flex; flex-direction: column; gap: 10px; padding: 20px 24px;">
+        <p class="lbl">In questo articolo</p>
+        <a href="#premessa" style="text-decoration: none; font-size: 15px;">Premessa</a><a href="#il-quesito-come-atto-di-impulso" style="text-decoration: none; font-size: 15px;">Il quesito come atto di impulso</a><a href="#riserve-e-quesito-il-ruolo-del-rup" style="text-decoration: none; font-size: 15px;">Riserve e quesito: il ruolo del RUP</a><a href="#quesito-congiunto-o-quesiti-distinti" style="text-decoration: none; font-size: 15px;">Quesito congiunto o quesiti distinti</a><a href="#cosa-deve-contenere" style="text-decoration: none; font-size: 15px;">Cosa deve contenere</a><a href="#gli-errori-ricorrenti" style="text-decoration: none; font-size: 15px;">Gli errori ricorrenti</a><a href="#dopo-il-deposito-cosa-fa-la-segreteria" style="text-decoration: none; font-size: 15px;">Dopo il deposito: cosa fa la Segreteria</a><a href="#conclusioni-pratiche" style="text-decoration: none; font-size: 15px;">Conclusioni pratiche</a><a href="#fonti" style="text-decoration: none; font-size: 15px;">Fonti citate</a>
+      </nav>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 0 4px;">
+        <p class="lbl">Correlati</p>
+        <a href="/approfondimenti/pareri-determinazioni/" style="text-decoration: none; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 17px; line-height: 1.35;">Pareri e determinazioni: quando sono obbligatori e che effetti producono</a><a href="/approfondimenti/termini-procedimento/" style="text-decoration: none; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 17px; line-height: 1.35;">I termini del procedimento davanti al Collegio</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</template>
+<noscript><p style="max-width:720px;margin:24px auto;padding:0 24px;font-family:system-ui">Per usare filtri, riquadri delle fonti e strumenti di calcolo è necessario JavaScript.</p></noscript>
+<script src="/assets/dc.js"></script>
+<script>
+class Component extends DCLogic {
+  componentDidMount() {
+    fetch('/assets/norme.json').then((r) => r.json()).then((j) => this.setState({ norme: j })).catch(() => this.setState({ norme: {} }));
+  }
+  rif(id, key, label) {
+    const s = this.state || {};
+    const m = (s.norme || {})[key] || {};
+    return {
+      label: label,
+      cls: s.open === id ? 'rif open' : 'rif',
+      tog: () => this.setState({ open: (this.state || {}).open === id ? null : id }),
+      close: () => this.setState({ open: null }),
+      t: m.t || 'Caricamento del testo…', s: m.s || '', x: m.x || '', u: m.u || 'https://www.normattiva.it/'
+    };
+  }
+  renderVals() {
+    const R = (id, key, label) => this.rif(id, key, label);
+    return {
+      r: {
+        x0: R('x0', 'v3', "Allegato V.2, art. 3, c. 1"),
+        x1: R('x1', 'v3', "art. 3, c. 3"),
+        x2: R('x2', 'v3', "Allegato V.2, art. 3, c. 1"),
+        x3: R('x3', 'a216', "art. 216, c. 1"),
+        x4: R('x4', 'v3', "Allegato V.2, art. 3, c. 4"),
+        x5: R('x5', 'v3', "Allegato V.2, art. 3"),
+        x6: R('x6', 'a216', "D.Lgs. 36/2023, art. 216")
+      }
+    };
+  }
+}
+
+DC.mount(Component);
+</script>
+</body>
+</html>

@@ -129,7 +129,7 @@ a{color:inherit}
     <section id="contatti" class="row">
       <div class="side" style="display: flex; flex-direction: column; gap: 10px;">
         <h2 class="h2">Contatti e segnalazioni</h2>
-        <p class="mut" style="margin: 0;">Errori, fonti mancanti, regolamenti da aggiungere, proposte di intervento o collaborazione.</p>
+        <p class="mut" style="margin: 0;">Errori, fonti mancanti, proposte di intervento o collaborazione.</p>
         <p style="margin: 0; font-size: 15px;">Email: <a href="mailto:prassicct@gmail.com" style="font-family: 'IBM Plex Mono', monospace; color: #561622;">prassicct@gmail.com</a></p>
       </div>
       <div class="main">
@@ -137,7 +137,7 @@ a{color:inherit}
           <div class="fld">
             <label for="c-tipo">Motivo del messaggio</label>
             <select id="c-tipo" class="inp">
-              <option>Segnalazione di un errore</option><option>Fonte o regolamento da aggiungere</option><option>Proposta di intervento o webinar</option><option>Collaborazione editoriale</option><option>Altro</option>
+              <option>Segnalazione di un errore</option><option>Fonte da aggiungere</option><option>Proposta di intervento o webinar</option><option>Collaborazione editoriale</option><option>Altro</option>
             </select>
           </div>
           <p class="mut" style="margin: 0; font-size: 15px;">Indica la pagina e, se possibile, la fonte ufficiale di riferimento. Non inserire dati riservati di Collegi o di parti.</p>
@@ -248,7 +248,7 @@ a{color:inherit}
     <section id="contatti" class="row">
       <div class="side" style="display: flex; flex-direction: column; gap: 10px;">
         <h2 class="h2">Contatti e segnalazioni</h2>
-        <p class="mut" style="margin: 0;">Errori, fonti mancanti, regolamenti da aggiungere, proposte di intervento o collaborazione.</p>
+        <p class="mut" style="margin: 0;">Errori, fonti mancanti, proposte di intervento o collaborazione.</p>
         <p style="margin: 0; font-size: 15px;">Email: <a href="mailto:prassicct@gmail.com" style="font-family: 'IBM Plex Mono', monospace; color: #561622;">prassicct@gmail.com</a></p>
       </div>
       <div class="main">
@@ -301,7 +301,7 @@ a{color:inherit}
 class Component extends DCLogic {
   renderVals() {
     const s = this.state || {};
-    const motivi = ['Segnalazione di un errore', 'Fonte o regolamento da aggiungere', 'Proposta di intervento o webinar', 'Collaborazione editoriale', 'Altro'];
+    const motivi = ['Segnalazione di un errore', 'Fonte da aggiungere', 'Proposta di intervento o webinar', 'Collaborazione editoriale', 'Altro'];
     const motivo = s.motivo || motivi[0];
     return {
       motivi, motivo,

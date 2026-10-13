@@ -195,31 +195,6 @@ Dopo il correttivo, l'Allegato V.2 (art. 1, c. 4) applica questi limiti alla sol
           <div style="margin-top: auto; padding-top: 8px;"><a href="Simulatore.dc.html" class="btn">Avvia la simulazione</a></div>
         </article>
       
-        <article class="card" style="display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
-            <span class="lbl" style="color: #6E1E2B;">Archivio</span>
-            <span class="mut" style="font-size: 13px;">Online · aggiornato</span>
-          </div>
-          <h2 class="h3">Regolamenti delle stazioni appaltanti</h2>
-          <p class="mut" style="margin: 0;">Indirizzi regionali, disciplinari ed elenchi per la nomina dei componenti pubblicati dagli enti.</p>
-          <div style="display: flex; flex-direction: column; gap: 6px;">
-            
-              <div class="li"><span class="sq" aria-hidden="true"></span><span>Atto, data ed ente</span></div>
-            
-              <div class="li"><span class="sq" aria-hidden="true"></span><span>Sintesi dei contenuti rilevanti</span></div>
-            
-              <div class="li"><span class="sq" aria-hidden="true"></span><span>Link al documento originale</span></div>
-            
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; align-items: baseline;">
-            <span class="lbl">Base normativa</span>
-            
-              <span class="rif"><button type="button" class="rif-b">DGR Veneto 924/2026</button><span class="pop" role="note"><span class="pop-t">Regione Veneto — DGR 31 agosto 2026, n. 924</span><span class="pop-s">BUR n. 119 del 4 settembre 2026</span><span class="pop-x">Approva i nuovi «Indirizzi operativi per la nomina e il funzionamento del Collegio consultivo tecnico», che sostituiscono quelli della DGR 261/2024, recependo le modifiche del D.Lgs. 209/2024 e del D.L. 73/2025. Per i compensi richiama in via transitoria le Linee guida del D.M. 12/2022.</span><span class="pop-f"><a class="pop-l" href="https://burv-be.regione.veneto.it/api/PublicAtti/590775/DownloadAttachmentAtto/Dgr_924_26_AllegatoA.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>
-            
-          </div>
-          <div style="margin-top: auto; padding-top: 8px;"><a href="Regolamenti.dc.html" class="btn">Consulta l’archivio</a></div>
-        </article>
-      
     </div>
   </section>
 
@@ -373,8 +348,7 @@ class Component extends DCLogic {
       tools: [
         { tipo: 'Kit operativo', formato: 'Checklist e modelli · DOCX, XLSX', nome: 'Kit per la Segreteria del Collegio', descr: 'Tutto quello che serve per organizzare il lavoro del Collegio dalla costituzione allo scioglimento.', punti: ['Checklist di costituzione, insediamento e chiusura', 'Modelli di convocazione e di verbale di insediamento', 'Registro dei quesiti e registro documentale', 'Schema del fascicolo e legenda delle sigle'], refs: [R('k8', 'v8', 'All. V.2, art. 8'), R('k2', 'v2', 'All. V.2, art. 2')], cta: 'Apri il Kit', href: 'Kit.dc.html' },
         { tipo: 'Calcolatore', formato: 'Online', nome: 'Scadenzario dei termini', descr: 'Inserisci le date chiave e ottieni i termini del procedimento, ciascuno con il riferimento normativo.', punti: ['Costituzione e insediamento', 'Determinazioni ordinarie e con esigenze istruttorie', 'Sospensione, integrazione della motivazione, Osservatorio'], refs: [R('s2', 'v2', 'All. V.2, art. 2'), R('s3', 'v3', 'All. V.2, art. 3'), R('s216', 'a216', 'art. 216, c. 4')], cta: 'Calcola i termini', href: 'Scadenzario.dc.html' },
-        { tipo: 'Simulatore', formato: 'Online', nome: 'Simulatore dei compensi', descr: 'Dal valore dell’appalto al tetto della parte fissa, al tetto complessivo e al compenso della Segreteria.', punti: ['Collegio di tre o di cinque componenti', 'Calcolo per scaglioni, con dettaglio', 'Tetto teorico distinto dal compenso effettivo'], refs: [R('m1', 'v1', 'All. V.2, art. 1'), R('m76', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis')], cta: 'Avvia la simulazione', href: 'Simulatore.dc.html' },
-        { tipo: 'Archivio', formato: 'Online · aggiornato', nome: 'Regolamenti delle stazioni appaltanti', descr: 'Indirizzi regionali, disciplinari ed elenchi per la nomina dei componenti pubblicati dagli enti.', punti: ['Atto, data ed ente', 'Sintesi dei contenuti rilevanti', 'Link al documento originale'], refs: [R('rg', 'dgrv924', 'DGR Veneto 924/2026')], cta: 'Consulta l’archivio', href: 'Regolamenti.dc.html' }
+        { tipo: 'Simulatore', formato: 'Online', nome: 'Simulatore dei compensi', descr: 'Dal valore dell’appalto al tetto della parte fissa, al tetto complessivo e al compenso della Segreteria.', punti: ['Collegio di tre o di cinque componenti', 'Calcolo per scaglioni, con dettaglio', 'Tetto teorico distinto dal compenso effettivo'], refs: [R('m1', 'v1', 'All. V.2, art. 1'), R('m76', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis')], cta: 'Avvia la simulazione', href: 'Simulatore.dc.html' }
       ],
       prossimi: [
         { nome: 'Registro di pareri e determinazioni', descr: 'Numerazione, date, esito, trasmissione all’Osservatorio.' },
