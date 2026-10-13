@@ -34,6 +34,12 @@
     if (node.nodeType === 3) return { t: 'text', v: node.nodeValue };
     if (node.nodeType !== 1) return null;
     var tag = node.tagName.toLowerCase();
+    if (node.hasAttribute && node.hasAttribute('data-for-list')) {
+      /* Ciclo su <tr> o <option>: forma sicura dentro tabelle e select, dove il parser HTML sposta gli elementi sconosciuti. */
+      var fl = node.getAttribute('data-for-list'), fa = node.getAttribute('data-for-as') || 'item';
+      var cl = node.cloneNode(true); cl.removeAttribute('data-for-list'); cl.removeAttribute('data-for-as');
+      return { t: 'sc-for', a: [{ n: 'list', v: fl }, { n: 'as', v: fa }], c: [compile(cl)] };
+    }
     var attrs = [];
     for (var i = 0; i < node.attributes.length; i++) {
       var a = node.attributes[i];

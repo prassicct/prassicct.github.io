@@ -82,14 +82,16 @@ a{color:inherit}
 .big{font-size:22px}
 .tb tr.sub td{font-weight:600}
 .tb tr.tot td{font-weight:700;background:#F3E4E1}
+.chk2{display:flex;gap:12px;align-items:flex-start;font-size:15px;cursor:pointer}
+.chk2 input{width:20px;height:20px;margin:2px 0 0;accent-color:#6E1E2B;flex:none}
 .btn{border:0}
+select.inp{appearance:auto}
 </style>
 </head>
 <body>
 <div id="app">
 <div class="pg">
-
-  <header class="hd">
+<header class="hd">
     <div class="wrap hd-in">
       <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
       <nav class="nav" aria-label="Principale">
@@ -103,17 +105,25 @@ a{color:inherit}
       </nav>
     </div>
   </header>
-
   <section class="wrap" style="padding-top: 48px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 18px;">
     <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/strumenti/" style="text-decoration: none;">Strumenti</a><span aria-hidden="true">/</span><span>Simulatore dei compensi</span></nav>
     <p class="kick">Simulatore</p>
     <h1 class="h1">Simulatore dei compensi del Collegio</h1>
-    <p class="lead">Calcola la parte fissa secondo le linee guida, la confronta con il tetto di legge e restituisce un prospetto ordinato in PDF da allegare al verbale. I dati restano nel tuo browser.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px;">
-      <a href="#dati" class="chipl">1. Dati del Collegio</a>
-      <a href="#categorie" class="chipl">2. Categorie d'opera</a>
-      <a href="#risultati" class="chipl">3. Risultati</a>
-      <a href="#metodo" class="chipl">Metodo e fonti</a>
+    <p class="lead">Calcola la parte fissa secondo le linee guida, a partire dalle categorie d'opera del D.M. 17 giugno 2016, la confronta con il tetto di legge e restituisce un prospetto in PDF da allegare al verbale. I dati restano nel tuo browser.</p>
+  </section>
+
+  <section id="tipo" class="wrap" style="padding-bottom: 24px;">
+    <div class="card" style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 class="h2">Tipo di affidamento</h2>
+      <div class="seg" role="group" aria-label="Tipo di affidamento" style="max-width: 560px;">
+        <button type="button" class="on" aria-pressed="true">Contratto singolo o applicativo</button>
+        <button type="button" class="">Accordo quadro</button>
+      </div>
+      <p class="mut" style="margin: 0; font-size: 15px;">Per un appalto singolo o per un singolo contratto applicativo di un accordo quadro si compila un solo blocco di categorie.
+        <span class="rif"><button type="button" class="rif-b">All. V.2, art. 7, c. 2</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 7 — Costituzione facoltativa del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il collegio facoltativo dell'art. 218 è formato da tre componenti: due nominati dalla stazione appaltante e uno dal MIT (opere di interesse nazionale) o da Regione, Provincia autonoma o Città metropolitana.
+c. 2 — Nei contratti misti il collegio è obbligatorio se la parte di lavori è pari o superiore alla soglia europea; per gli accordi quadro rileva l'importo dei singoli contratti attuativi.
+c. 3 — Negli appalti suddivisi in lotti il collegio è obbligatorio per i soli lotti di importo pari o superiore alla soglia europea.
+c. 4 — Se il collegio facoltativo opera prima dell'affidamento, i compensi sono ridotti del 20% rispetto all'art. 1.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></p>
     </div>
   </section>
 
@@ -126,7 +136,7 @@ a{color:inherit}
         <div class="fld"><label for="f-cup">CUP</label><input id="f-cup" class="inp" type="text"></div>
         <div class="fld"><label for="f-data">Data del prospetto</label><input id="f-data" class="inp" type="date"></div>
         <div class="fld"><label for="f-red">Redatto da</label><input id="f-red" class="inp txt" type="text" placeholder="Es. Segreteria del Collegio"></div>
-        <div class="fld"><label for="f-app">Valore dell'appalto (euro)</label><input id="f-app" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie"></div>
+        
         <div class="fld">
           <span class="fl" id="comp-l">Componenti</span>
           <div class="seg" role="group" aria-labelledby="comp-l">
@@ -135,83 +145,91 @@ a{color:inherit}
           </div>
         </div>
         <div class="fld"><label for="segr">Segreteria: 5% del compenso di ciascun componente</label><input id="segr" type="range" min="3" max="10" step="1" style="accent-color: #6E1E2B; height: 44px;"></div>
-        <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; cursor: pointer; align-self: center;">
-          <input type="checkbox" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #6E1E2B;">
-          <span>Collegio facoltativo prima dell'affidamento (−20%)</span>
-        </label>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 32px;">
+        <label class="chk2"><input type="checkbox"><span>Collegio facoltativo prima dell'affidamento (−20%)</span></label>
+        <label class="chk2"><input type="checkbox"><span>Applica la maggiorazione del 20% per collaudo in corso d'opera</span></label>
       </div>
     </div>
   </section>
 
-  <section id="categorie" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
-        <h2 class="h2">Categorie d'opera</h2>
-        <span class="mut" style="font-size: 14px;">Una riga per ogni ID opera della Tavola Z-1 del D.M. 17 giugno 2016</span>
-      </div>
-      <p class="mut" style="margin: 0; font-size: 15px;">Per ciascuna categoria inserisci l'importo dei lavori (V) e il grado di complessità (G) dell'ID opera. Il parametro Q è quello della prestazione di collaudo tecnico-amministrativo (QdI.01): è precompilato e modificabile.</p>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
+  <section id="categorie" class="wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 16px;">
+    
+      <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h2 class="h2">Categorie d’opera</h2>
+          <span class="mut" style="font-size: 14px;">Una riga per ogni ID opera della Tavola Z-1 del D.M. 17 giugno 2016</span>
+        </div>
         
-          <div class="riga">
-            <div class="fld" style="flex: 0 1 110px;"><label for="r0id">ID opera</label><input id="r0id" class="inp" type="text" placeholder="E.20"></div>
-            <div class="fld" style="flex: 3 1 220px;"><label for="r0d">Descrizione</label><input id="r0d" class="inp txt" type="text" placeholder="Es. Opere edili"></div>
-            <div class="fld" style="flex: 2 1 170px;"><label for="r0v">Importo V (euro)</label><input id="r0v" class="inp" type="text" inputmode="decimal"></div>
-            <div class="fld" style="flex: 0 1 100px;"><label for="r0g">G</label><input id="r0g" class="inp" type="text" inputmode="decimal" placeholder="0,95"></div>
-            <div class="fld" style="flex: 0 1 100px;"><label for="r0q">Q</label><input id="r0q" class="inp" type="text" inputmode="decimal"></div>
-            <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso CP</span><span class="out">0,00&nbsp;€</span><span class="mut" style="font-size: 12px;">P = 0,000%</span></div>
-            <button type="button" class="btn-x" aria-label="Rimuovi la categoria 1">Rimuovi</button>
-          </div>
         
+          <div class="fld" style="max-width: 320px;"><label for="k0a">Valore dell'appalto (euro)</label><input id="k0a" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie"></div>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          
+            <div class="riga">
+              <div class="fld" style="flex: 2 1 260px;"><label for="k0r0i">ID opera (Tavola Z-1)</label>
+                <select id="k0r0i" class="inp txt">
+                  <option value="">Scegli la categoria…</option>
+                  <option value="E.01">E.01 · Edifici rurali e industriali di importanza corrente · G 0,65</option><option value="E.02">E.02 · Edifici rurali e industriali complessi · G 0,95</option><option value="E.03">E.03 · Ostelli, pensioni, ristoranti, negozi, mercati coperti semplici · G 0,95</option><option value="E.04">E.04 · Alberghi, villaggi turistici, centri commerciali complessi · G 1,20</option><option value="E.05">E.05 · Edifici e pertinenze semplici, edifici provvisori di modesta importanza · G 0,65</option><option value="E.06">E.06 · Edilizia residenziale di tipo corrente · G 0,95</option><option value="E.07">E.07 · Edilizia residenziale di pregio · G 1,20</option><option value="E.08">E.08 · Sedi sanitarie di base, asili, scuole fino a 24/25 classi · G 0,95</option><option value="E.09">E.09 · Scuole oltre 24/25 classi, case di cura · G 1,15</option><option value="E.10">E.10 · Ospedali, poliambulatori, istituti di ricerca, università · G 1,20</option><option value="E.11">E.11 · Padiglioni provvisori, opere cimiteriali normali, sport all’aperto semplici · G 0,95</option><option value="E.12">E.12 · Sport all’aperto complessi, palestre e piscine coperte · G 1,15</option><option value="E.13">E.13 · Biblioteche, teatri, musei, auditorium, stadi, chiese · G 1,20</option><option value="E.14">E.14 · Edifici provvisori a servizio di caserme · G 0,65</option><option value="E.15">E.15 · Caserme di importanza corrente · G 0,95</option><option value="E.16">E.16 · Sedi di enti e ministeri, tribunali, penitenziari, caserme complesse · G 1,20</option><option value="E.17">E.17 · Verde e arredo urbano semplici, campeggi · G 0,65</option><option value="E.18">E.18 · Arredo urbano, giardini, piazze e spazi pubblici · G 0,95</option><option value="E.19">E.19 · Arredi singolari, parchi urbani, piazze storiche · G 1,20</option><option value="E.20">E.20 · Manutenzione, ristrutturazione, riqualificazione di edifici esistenti · G 0,95</option><option value="E.21">E.21 · Interventi su edifici di interesse storico-artistico non tutelati · G 1,20</option><option value="E.22">E.22 · Restauro di edifici di interesse storico-artistico tutelati · G 1,55</option><option value="S.01">S.01 · C.a. non sismiche, interventi locali; provvisionali fino a 2 anni · G 0,70</option><option value="S.02">S.02 · Muratura, legno, metallo non sismiche, interventi locali · G 0,50</option><option value="S.03">S.03 · Strutture in c.a.; provvisionali oltre 2 anni · G 0,95</option><option value="S.04">S.04 · Muratura, legno, metallo; fondazioni, ponti, paratie, pendii · G 0,90</option><option value="S.05">S.05 · Dighe, gallerie, opere sotterranee, fondazioni speciali · G 1,05</option><option value="S.06">S.06 · Opere di notevole importanza costruttiva, edifici alti · G 1,15</option><option value="IA.01">IA.01 · Impianti idrici e sanitari, fognature, gas, antincendio · G 0,75</option><option value="IA.02">IA.02 · Riscaldamento, climatizzazione, trattamento aria · G 0,85</option><option value="IA.03">IA.03 · Impianti elettrici e speciali di importanza corrente · G 1,15</option><option value="IA.04">IA.04 · Impianti elettrici complessi, cablaggi strutturati, fibra ottica · G 1,30</option><option value="IB.04">IB.04 · Depositi e discariche senza trattamento rifiuti · G 0,55</option><option value="IB.05">IB.05 · Impianti per industrie alimentari, tessili, del legno e simili · G 0,70</option><option value="IB.06">IB.06 · Impianti industriali, termovalorizzatori, trattamento rifiuti · G 0,70</option><option value="IB.07">IB.07 · Impianti industriali complessi o a rilevante rischio ambientale · G 0,75</option><option value="IB.08">IB.08 · Linee e reti di trasmissione di energia e telecomunicazioni · G 0,50</option><option value="IB.09">IB.09 · Centrali idroelettriche, stazioni di trasformazione, trazione elettrica · G 0,60</option><option value="IB.10">IB.10 · Impianti termoelettrici ed elettrochimici · G 0,75</option><option value="IB.11">IB.11 · Campi fotovoltaici, parchi eolici · G 0,90</option><option value="IB.12">IB.12 · Micro centrali idroelettriche, impianti termoelettrici complessi · G 1,00</option><option value="V.01">V.01 · Manutenzione della viabilità ordinaria · G 0,40</option><option value="V.02">V.02 · Strade, linee tranviarie, ferrovie ordinarie, piste ciclabili · G 0,45</option><option value="V.03">V.03 · Viabilità speciale: funicolari, teleferiche, piste aeroportuali · G 0,75</option><option value="D.01">D.01 · Opere di navigazione interna e portuali · G 0,65</option><option value="D.02">D.02 · Bonifiche e irrigazioni a deflusso naturale, sistemazione corsi d’acqua · G 0,45</option><option value="D.03">D.03 · Bonifiche con sollevamento meccanico, derivazioni per energia · G 0,55</option><option value="D.04">D.04 · Acquedotti, fognature urbane, gasdotti ordinari · G 0,65</option><option value="D.05">D.05 · Acquedotti, fognature, gasdotti con problemi tecnici speciali · G 0,80</option><option value="T.01">T.01 · Sistemi informativi, data center, server farm · G 0,95</option><option value="T.02">T.02 · Reti, cablaggi, videosorveglianza, controllo accessi · G 0,70</option><option value="T.03">T.03 · Elettronica industriale, automazione, robotica · G 1,20</option><option value="P.01">P.01 · Sistemazione naturalistica e paesaggistica, aree protette · G 0,85</option><option value="P.02">P.02 · Opere a verde per attività ricreative o sportive · G 0,85</option><option value="P.03">P.03 · Riqualificazione di ambiti naturali, rurali, forestali o urbani · G 0,85</option><option value="P.04">P.04 · Bacini estrattivi: cave e torbiere · G 0,85</option><option value="P.05">P.05 · Assetto forestale, piste e strade forestali · G 0,85</option><option value="P.06">P.06 · Miglioramento fondiario agrario e rurale · G 0,85</option><option value="U.01">U.01 · Filiere agroalimentari e zootecniche, infrastrutture rurali · G 0,90</option><option value="U.02">U.02 · Filiera naturalistica e faunistica · G 0,95</option><option value="U.03">U.03 · Strumenti di pianificazione generale, attuativa e di settore · G 1,00</option>
+                  <option value="ALTRO">Altro: inserimento manuale</option>
+                </select>
+              </div>
+              <div class="fld" style="flex: 3 1 220px;"><label for="k0r0d">Descrizione</label><input id="k0r0d" class="inp txt" type="text"></div>
+              <div class="fld" style="flex: 2 1 160px;"><label for="k0r0v">Importo V (euro)</label><input id="k0r0v" class="inp" type="text" inputmode="decimal"></div>
+              <div class="fld" style="flex: 0 1 90px;"><label for="k0r0g">G</label><input id="k0r0g" class="inp" type="text" inputmode="decimal"></div>
+              <div class="fld" style="flex: 0 1 90px;"><label for="k0r0q">Q</label><input id="k0r0q" class="inp" type="text" inputmode="decimal"></div>
+              <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso CP</span><span class="out">0,00&nbsp;€</span><span class="mut" style="font-size: 12px;">P = 0,000%</span></div>
+              <button type="button" class="btn-x" aria-label="Rimuovi la categoria 1">Rimuovi</button>
+            </div>
+          
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+          <button type="button" class="btn-s">+ Aggiungi categoria</button>
+          
+          <span class="mut" style="font-size: 14px;"></span>
+        </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <button type="button" class="btn-s">+ Aggiungi categoria</button>
-        <button type="button" class="btn-s btn-so">Carica un esempio</button>
-        <button type="button" class="btn-s btn-so">Azzera</button>
-      </div>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       
-        <p style="margin: 0; padding: 12px 14px; border-radius: 8px; background: #F8EBD6; color: #7A4A00; font-size: 14px;">Inserisci almeno una categoria con importo, G e Q per calcolare la parte fissa.</p>
-      
+      <button type="button" class="btn-s btn-so">Carica un esempio</button>
+      <button type="button" class="btn-s btn-so">Azzera</button>
     </div>
+    
+      <p style="margin: 0; padding: 12px 14px; border-radius: 8px; background: #F8EBD6; color: #7A4A00; font-size: 14px;">Scegli almeno una categoria d’opera e inserisci l’importo per calcolare la parte fissa.</p>
+    
   </section>
 
   <section id="risultati" class="wrap" style="padding-bottom: 32px; display: flex; flex-direction: column; gap: 20px;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
-      <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Presidente (+10%): 0,00&nbsp;€</span></div>
-      <div class="card kpi"><span class="lbl">Parte fissa del Collegio</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Entro il tetto di legge (0,00&nbsp;€)</span></div>
-      <div class="card kpi" style="border-top: 3px solid #6E1E2B;"><span class="lbl">Tetto complessivo del Collegio</span><span class="big" style="color: #561622;">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Triplo della parte fissa riconoscibile</span></div>
-      <div class="card kpi"><span class="lbl">Segreteria sulla parte fissa</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Al tetto complessivo: 0,00&nbsp;€</span></div>
-    </div>
-
-    <div class="card" style="padding: 0;">
-      <div style="padding: 18px 20px; font-weight: 600;">Prospetto di calcolo</div>
-      <div style="overflow-x: auto;">
+    <h2 class="h2">Risultati</h2>
+    
+    
+      <div style="display: flex; flex-direction: column; gap: 16px;">
         
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <table class="tb">
-          <thead><tr><th>Voce</th><th>Base</th><th style="text-align: right;">Importo</th></tr></thead>
-          <tbody>
-            <tr><td></td><td class="mut" style="font-size: 13px;"></td><td class="n"></td></tr>
-            
-          </tbody>
-        </table>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+          <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Presidente (+10%): 0,00&nbsp;€</span></div>
+          <div class="card kpi"><span class="lbl">Parte fissa del Collegio</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Entro il tetto di legge (0,00&nbsp;€)</span></div>
+          <div class="card kpi" style="border-top: 3px solid #6E1E2B;"><span class="lbl">Tetto complessivo del Collegio</span><span class="big" style="color: #561622;">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Triplo della parte fissa riconoscibile</span></div>
+          <div class="card kpi"><span class="lbl">Segreteria sulla parte fissa</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Al tetto complessivo: 0,00&nbsp;€</span></div>
+        </div>
+        <div class="card" style="padding: 0;">
+          <div style="padding: 18px 20px; font-weight: 600;">Prospetto di calcolo</div>
+          <div style="overflow-x: auto;">
+            <table class="tb">
+              <thead><tr><th>Voce</th><th>Base</th><th style="text-align: right;">Importo</th></tr></thead>
+              <tbody>
+                <tr class=""><td>Valore complessivo delle categorie (ΣV)</td><td class="mut" style="font-size: 13px;">D.M. 17/6/2016</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Compenso di riferimento per il collaudo (ΣCP)</td><td class="mut" style="font-size: 13px;">CP = V × G × Q × P</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Coefficiente dopo la riduzione</td><td class="mut" style="font-size: 13px;">LG 7.2.1 a): −60%</td><td class="n">40,00%</td></tr><tr class=""><td>Parte fissa calcolata, per componente</td><td class="mut" style="font-size: 13px;">LG 7.2.1 a)</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Parte fissa calcolata, Presidente</td><td class="mut" style="font-size: 13px;">LG 7.5.1: +10%</td><td class="n">0,00&nbsp;€</td></tr><tr class="sub"><td>Parte fissa calcolata, Collegio di 3</td><td class="mut" style="font-size: 13px;">2 componenti + Presidente</td><td class="n">0,00&nbsp;€</td></tr><tr class="sub"><td>Tetto della parte fissa del Collegio</td><td class="mut" style="font-size: 13px;">D.L. 76/2020, art. 6, c. 7-bis · All. V.2, art. 1, c. 4</td><td class="n">0,00&nbsp;€</td></tr><tr class="tot"><td>Parte fissa riconoscibile, Collegio</td><td class="mut" style="font-size: 13px;">Entro il tetto</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>di cui per componente / Presidente</td><td class="mut" style="font-size: 13px;"></td><td class="n">0,00&nbsp;€ / 0,00&nbsp;€</td></tr><tr class="tot"><td>Tetto del compenso complessivo, Collegio</td><td class="mut" style="font-size: 13px;">All. V.2, art. 1, c. 5: triplo della parte fissa</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Spese forfettarie sulla parte fissa</td><td class="mut" style="font-size: 13px;">D.M. 17/6/2016, art. 5: 25,00%</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Segreteria, sulla parte fissa</td><td class="mut" style="font-size: 13px;">All. V.2, art. 8: 5%</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Segreteria, al tetto complessivo</td><td class="mut" style="font-size: 13px;">All. V.2, art. 8: 5%</td><td class="n">0,00&nbsp;€</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    </div>
+    
 
     <div class="card" style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; background: #F3E4E1; border-color: #F3E4E1;">
       <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 4px;">
         <span style="font-weight: 600;">Prospetto da allegare al verbale</span>
-        <span class="mut" style="font-size: 14px;">Il PDF riporta dati del Collegio, categorie, parametri, passaggi del calcolo, tetti e riferimenti normativi, con spazio per le sottoscrizioni.</span>
+        <span class="mut" style="font-size: 14px;">Il PDF riporta dati del Collegio, categorie, parametri, passaggi del calcolo, tetti e riferimenti normativi, con spazio per le sottoscrizioni. Per l'accordo quadro include il riepilogo e un prospetto per ogni contratto applicativo.</span>
       </div>
       <button type="button" class="btn">Scarica il prospetto in PDF</button>
     </div>
@@ -221,7 +239,7 @@ a{color:inherit}
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
       <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
       <span style="font-weight: 600;">La formula del compenso</span>
-      <p style="margin: 0; font-size: 15px;">Per ogni categoria CP = V × G × Q × P, con P = 0,03 + 10 / V<sup>0,4</sup>; il compenso è la somma sulle categorie (D.M. 17 giugno 2016, artt. 3 e 4). Le linee guida assumono come riferimento il collaudo tecnico-amministrativo, con riduzione del 60%, e dell'80% per la parte di lavori oltre 100 milioni:
+      <p style="margin: 0; font-size: 15px;">Per ogni categoria CP = V × G × Q × P, con P = 0,03 + 10 / V<sup>0,4</sup>; il compenso è la somma sulle categorie (D.M. 17 giugno 2016, artt. 3 e 4). G è precompilato dalla Tavola Z-1; Q = 0,08 è il parametro della prestazione QdI.01, collaudo tecnico-amministrativo, della Tavola Z-2, che prevede un aumento del 20% per il collaudo in corso d'opera. Le linee guida assumono come riferimento questo compenso, con riduzione del 60%, e dell'80% per la parte di lavori oltre 100 milioni:
         <span class="rif"><button type="button" class="rif-b">Linee guida, punto 7</button><span class="pop" role="note"><span class="pop-t">Linee guida D.M. 12/2022, punto 7 — Compensi</span><span class="pop-s">MIT · parametri applicabili in via transitoria (Allegato V.2, art. 1, c. 6)</span><span class="pop-x">7.2.1 a) — Parte fissa: proporzionata al valore dell'opera, calcolata con gli artt. 3 e 4 del D.M. Giustizia 17 giugno 2016 per il collaudo tecnico-amministrativo, ridotti del 60% (dell'80% per la parte di lavori oltre 100 milioni); spetta dopo almeno quattro riunioni con attività effettive.
 7.2.1 b) — Parte variabile: per ogni determinazione o parere, secondo qualità e carattere; se tecnico, importo orario massimo del D.M. 17 giugno 2016 maggiorato del 25%; se giuridico, parametri del D.M. 55/2014 come aggiornato dal D.M. 37/2018.
 7.2.4 — Per ogni pronuncia oltre i termini, senza giustificato motivo, la parte variabile è ridotta da un decimo a un terzo (riduzione dimezzata con più quesiti contestuali).
@@ -251,18 +269,17 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
       <span class="lab l-i" style="align-self: flex-start;">INTERPRETAZIONE</span>
       <span style="font-weight: 600;">Scelte di calcolo da verificare</span>
-      <p style="margin: 0; font-size: 15px;">Il parametro P è calcolato sull'importo di ciascuna categoria. La riduzione dell'80% oltre 100 milioni è ripartita in proporzione all'importo che eccede la soglia. La parte fissa calcolata è riferita a ciascun componente, con la maggiorazione del 10% per il Presidente; se la parte fissa del Collegio supera il tetto, è ridotta in proporzione. Spese forfettarie (art. 5 del D.M. 17 giugno 2016) e segreteria sono esposte a parte.</p>
+      <p style="margin: 0; font-size: 15px;">P è calcolato sull'importo di ciascuna categoria. La riduzione dell'80% oltre 100 milioni è ripartita in proporzione all'importo eccedente. La parte fissa è riferita a ciascun componente, con +10% per il Presidente; se la parte fissa del Collegio supera il tetto, è ridotta in proporzione. Nell'accordo quadro ogni contratto applicativo è trattato come un rapporto autonomo, con propri tetti, come l'Allegato V.2 fa per l'obbligo di costituzione.</p>
     </div>
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
       <span class="lab l-i" style="align-self: flex-start;">ATTENZIONE</span>
       <span style="font-weight: 600;">Regime transitorio e verifica</span>
       <p style="margin: 0; font-size: 15px;">Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 resta la disciplina previgente
-        (<span class="rif"><button type="button" class="rif-b">art. 225-bis, c. 5</button><span class="pop" role="note"><span class="pop-t">Art. 225-bis, comma 5, D.Lgs. 36/2023 — Disciplina transitoria del CCT</span><span class="pop-s">Sintesi redazionale · come letta dal MIT (parere n. 4079/2026) e da ANAC (parere n. 15/2025)</span><span class="pop-x">Ai collegi già costituiti e operanti al 31 dicembre 2024 si applica la disciplina introdotta dal correttivo, salva diversa volontà delle parti, con eccezione dei collegi relativi a contratti di servizi e forniture già costituiti, per i quali resta ferma la disciplina previgente (incluse, per intero, le Linee guida del D.M. 17 gennaio 2022, n. 12).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art225bis" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>). G e Q vanno verificati sulle tavole Z-1 e Z-2 del D.M. 17 giugno 2016. Q è precompilato a 0,08 per la prestazione QdI.01, il valore riportato nei calcoli pubblicati dalle stazioni appaltanti; alcune applicano maggiorazioni, per cui il campo resta modificabile. Il prospetto è un supporto al calcolo e non sostituisce la verifica delle parti.</p>
+        (<span class="rif"><button type="button" class="rif-b">art. 225-bis, c. 5</button><span class="pop" role="note"><span class="pop-t">Art. 225-bis, comma 5, D.Lgs. 36/2023 — Disciplina transitoria del CCT</span><span class="pop-s">Sintesi redazionale · come letta dal MIT (parere n. 4079/2026) e da ANAC (parere n. 15/2025)</span><span class="pop-x">Ai collegi già costituiti e operanti al 31 dicembre 2024 si applica la disciplina introdotta dal correttivo, salva diversa volontà delle parti, con eccezione dei collegi relativi a contratti di servizi e forniture già costituiti, per i quali resta ferma la disciplina previgente (incluse, per intero, le Linee guida del D.M. 17 gennaio 2022, n. 12).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art225bis" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>). G e Q restano modificabili: il prospetto è un supporto al calcolo e non sostituisce la verifica delle parti.</p>
     </div>
   </section>
 
-
-  <footer class="ft">
+<footer class="ft">
     <div class="wrap ft-in">
       <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
       <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
@@ -272,8 +289,7 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
 </div>
 <template id="tpl">
 <div class="pg">
-
-  <header class="hd">
+<header class="hd">
     <div class="wrap hd-in">
       <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
       <nav class="nav" aria-label="Principale">
@@ -287,17 +303,22 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
       </nav>
     </div>
   </header>
-
   <section class="wrap" style="padding-top: 48px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 18px;">
     <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/strumenti/" style="text-decoration: none;">Strumenti</a><span aria-hidden="true">/</span><span>Simulatore dei compensi</span></nav>
     <p class="kick">Simulatore</p>
     <h1 class="h1">Simulatore dei compensi del Collegio</h1>
-    <p class="lead">Calcola la parte fissa secondo le linee guida, la confronta con il tetto di legge e restituisce un prospetto ordinato in PDF da allegare al verbale. I dati restano nel tuo browser.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px;">
-      <a href="#dati" class="chipl">1. Dati del Collegio</a>
-      <a href="#categorie" class="chipl">2. Categorie d'opera</a>
-      <a href="#risultati" class="chipl">3. Risultati</a>
-      <a href="#metodo" class="chipl">Metodo e fonti</a>
+    <p class="lead">Calcola la parte fissa secondo le linee guida, a partire dalle categorie d'opera del D.M. 17 giugno 2016, la confronta con il tetto di legge e restituisce un prospetto in PDF da allegare al verbale. I dati restano nel tuo browser.</p>
+  </section>
+
+  <section id="tipo" class="wrap" style="padding-bottom: 24px;">
+    <div class="card" style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 class="h2">Tipo di affidamento</h2>
+      <div class="seg" role="group" aria-label="Tipo di affidamento" style="max-width: 560px;">
+        <button type="button" class="{{tipo.sCls}}" aria-pressed="{{tipo.isS}}" onClick="{{tipo.setS}}">Contratto singolo o applicativo</button>
+        <button type="button" class="{{tipo.aCls}}" aria-pressed="{{tipo.isA}}" onClick="{{tipo.setA}}">Accordo quadro</button>
+      </div>
+      <p class="mut" style="margin: 0; font-size: 15px;">{{tipo.help}}
+        <span class="{{r.v7.cls}}"><button type="button" class="rif-b" onClick="{{r.v7.tog}}">{{r.v7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v7.t}}</span><span class="pop-s">{{r.v7.s}}</span><span class="pop-x">{{r.v7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v7.close}}">Chiudi</button></span></span></span></p>
     </div>
   </section>
 
@@ -305,12 +326,14 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
     <div class="card" style="display: flex; flex-direction: column; gap: 20px;">
       <h2 class="h2">Dati del Collegio</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;">
-        <div class="fld" style="grid-column: 1 / -1;"><label for="f-nome">Collegio e contratto</label><input id="f-nome" class="inp txt" type="text" placeholder="Es. Collegio consultivo tecnico — Lavori di …" value="{{f.nome}}" onChange="{{set.nome}}"></div>
-        <div class="fld"><label for="f-cig">CIG</label><input id="f-cig" class="inp" type="text" value="{{f.cig}}" onChange="{{set.cig}}"></div>
+        <div class="fld" style="grid-column: 1 / -1;"><label for="f-nome">{{lab.nome}}</label><input id="f-nome" class="inp txt" type="text" placeholder="Es. Collegio consultivo tecnico — Lavori di …" value="{{f.nome}}" onChange="{{set.nome}}"></div>
+        <div class="fld"><label for="f-cig">{{lab.cig}}</label><input id="f-cig" class="inp" type="text" value="{{f.cig}}" onChange="{{set.cig}}"></div>
         <div class="fld"><label for="f-cup">CUP</label><input id="f-cup" class="inp" type="text" value="{{f.cup}}" onChange="{{set.cup}}"></div>
         <div class="fld"><label for="f-data">Data del prospetto</label><input id="f-data" class="inp" type="date" value="{{f.data}}" onChange="{{set.data}}"></div>
         <div class="fld"><label for="f-red">Redatto da</label><input id="f-red" class="inp txt" type="text" placeholder="Es. Segreteria del Collegio" value="{{f.red}}" onChange="{{set.red}}"></div>
-        <div class="fld"><label for="f-app">Valore dell'appalto (euro)</label><input id="f-app" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie" value="{{f.app}}" onChange="{{set.app}}"></div>
+        <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
+          <div class="fld"><label for="f-soglia">Soglia europea lavori vigente (euro)</label><input id="f-soglia" class="inp" type="text" inputmode="decimal" placeholder="Per verificare l'obbligo" value="{{f.soglia}}" onChange="{{set.soglia}}"></div>
+        </sc-if>
         <div class="fld">
           <span class="fl" id="comp-l">Componenti</span>
           <div class="seg" role="group" aria-labelledby="comp-l">
@@ -319,71 +342,109 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
           </div>
         </div>
         <div class="fld"><label for="segr">Segreteria: {{segr}}% del compenso di ciascun componente</label><input id="segr" type="range" min="3" max="10" step="1" value="{{segr}}" onChange="{{setSegr}}" style="accent-color: #6E1E2B; height: 44px;"></div>
-        <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; cursor: pointer; align-self: center;">
-          <input type="checkbox" checked="{{fac}}" onChange="{{setFac}}" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #6E1E2B;">
-          <span>Collegio facoltativo prima dell'affidamento (−20%)</span>
-        </label>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 32px;">
+        <label class="chk2"><input type="checkbox" checked="{{fac}}" onChange="{{setFac}}"><span>Collegio facoltativo prima dell'affidamento (−20%)</span></label>
+        <label class="chk2"><input type="checkbox" checked="{{cod}}" onChange="{{setCod}}"><span>Applica la maggiorazione del 20% per collaudo in corso d'opera</span></label>
       </div>
     </div>
   </section>
 
-  <section id="categorie" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
-        <h2 class="h2">Categorie d'opera</h2>
-        <span class="mut" style="font-size: 14px;">Una riga per ogni ID opera della Tavola Z-1 del D.M. 17 giugno 2016</span>
-      </div>
-      <p class="mut" style="margin: 0; font-size: 15px;">Per ciascuna categoria inserisci l'importo dei lavori (V) e il grado di complessità (G) dell'ID opera. Il parametro Q è quello della prestazione di collaudo tecnico-amministrativo (QdI.01): è precompilato e modificabile.</p>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <sc-for list="{{righe}}" as="r" hint-placeholder-count="2">
-          <div class="riga">
-            <div class="fld" style="flex: 0 1 110px;"><label for="{{r.idId}}">ID opera</label><input id="{{r.idId}}" class="inp" type="text" placeholder="E.20" value="{{r.id}}" onChange="{{r.setId}}"></div>
-            <div class="fld" style="flex: 3 1 220px;"><label for="{{r.dId}}">Descrizione</label><input id="{{r.dId}}" class="inp txt" type="text" placeholder="Es. Opere edili" value="{{r.descr}}" onChange="{{r.setDescr}}"></div>
-            <div class="fld" style="flex: 2 1 170px;"><label for="{{r.vId}}">Importo V (euro)</label><input id="{{r.vId}}" class="inp" type="text" inputmode="decimal" value="{{r.v}}" onChange="{{r.setV}}"></div>
-            <div class="fld" style="flex: 0 1 100px;"><label for="{{r.gId}}">G</label><input id="{{r.gId}}" class="inp" type="text" inputmode="decimal" placeholder="0,95" value="{{r.g}}" onChange="{{r.setG}}"></div>
-            <div class="fld" style="flex: 0 1 100px;"><label for="{{r.qId}}">Q</label><input id="{{r.qId}}" class="inp" type="text" inputmode="decimal" value="{{r.q}}" onChange="{{r.setQ}}"></div>
-            <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso CP</span><span class="out">{{r.cp}}</span><span class="mut" style="font-size: 12px;">P = {{r.p}}</span></div>
-            <button type="button" class="btn-x" onClick="{{r.del}}" aria-label="{{r.delLabel}}">Rimuovi</button>
+  <section id="categorie" class="wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 16px;">
+    <sc-for list="{{contratti}}" as="k" hint-placeholder-count="1">
+      <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h2 class="h2">{{k.titolo}}</h2>
+          <span class="mut" style="font-size: 14px;">Una riga per ogni ID opera della Tavola Z-1 del D.M. 17 giugno 2016</span>
+        </div>
+        <sc-if value="{{k.aq}}" hint-placeholder-val="{{false}}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
+            <div class="fld"><label for="{{k.nId}}">Denominazione del contratto applicativo</label><input id="{{k.nId}}" class="inp txt" type="text" value="{{k.nome}}" onChange="{{k.setNome}}"></div>
+            <div class="fld"><label for="{{k.cId}}">CIG derivato</label><input id="{{k.cId}}" class="inp" type="text" value="{{k.cig}}" onChange="{{k.setCig}}"></div>
+            <div class="fld"><label for="{{k.aId}}">Valore del contratto (euro)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie" value="{{k.app}}" onChange="{{k.setApp}}"></div>
           </div>
-        </sc-for>
+        </sc-if>
+        <sc-if value="{{k.singolo}}" hint-placeholder-val="{{true}}">
+          <div class="fld" style="max-width: 320px;"><label for="{{k.aId}}">Valore dell'appalto (euro)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie" value="{{k.app}}" onChange="{{k.setApp}}"></div>
+        </sc-if>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <sc-for list="{{k.righe}}" as="r" hint-placeholder-count="2">
+            <div class="riga">
+              <div class="fld" style="flex: 2 1 260px;"><label for="{{r.idId}}">ID opera (Tavola Z-1)</label>
+                <select id="{{r.idId}}" class="inp txt" value="{{r.sel}}" onChange="{{r.setSel}}">
+                  <option value="">Scegli la categoria…</option>
+                  <option data-for-list="{{opts}}" data-for-as="o" value="{{o.v}}">{{o.t}}</option>
+                  <option value="ALTRO">Altro: inserimento manuale</option>
+                </select>
+              </div>
+              <div class="fld" style="flex: 3 1 220px;"><label for="{{r.dId}}">Descrizione</label><input id="{{r.dId}}" class="inp txt" type="text" value="{{r.descr}}" onChange="{{r.setDescr}}"></div>
+              <div class="fld" style="flex: 2 1 160px;"><label for="{{r.vId}}">Importo V (euro)</label><input id="{{r.vId}}" class="inp" type="text" inputmode="decimal" value="{{r.v}}" onChange="{{r.setV}}"></div>
+              <div class="fld" style="flex: 0 1 90px;"><label for="{{r.gId}}">G</label><input id="{{r.gId}}" class="inp" type="text" inputmode="decimal" value="{{r.g}}" onChange="{{r.setG}}"></div>
+              <div class="fld" style="flex: 0 1 90px;"><label for="{{r.qId}}">Q</label><input id="{{r.qId}}" class="inp" type="text" inputmode="decimal" value="{{r.q}}" onChange="{{r.setQ}}"></div>
+              <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso CP</span><span class="out">{{r.cp}}</span><span class="mut" style="font-size: 12px;">P = {{r.p}}</span></div>
+              <button type="button" class="btn-x" onClick="{{r.del}}" aria-label="{{r.delLabel}}">Rimuovi</button>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+          <button type="button" class="btn-s" onClick="{{k.addRiga}}">+ Aggiungi categoria</button>
+          <sc-if value="{{k.aq}}" hint-placeholder-val="{{false}}"><button type="button" class="btn-s btn-so" onClick="{{k.del}}">Rimuovi il contratto</button></sc-if>
+          <span class="mut" style="font-size: 14px;">{{k.esito}}</span>
+        </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <button type="button" class="btn-s" onClick="{{addRiga}}">+ Aggiungi categoria</button>
-        <button type="button" class="btn-s btn-so" onClick="{{esempio}}">Carica un esempio</button>
-        <button type="button" class="btn-s btn-so" onClick="{{azzera}}">Azzera</button>
-      </div>
-      <sc-if value="{{avviso}}" hint-placeholder-val="{{false}}">
-        <p style="margin: 0; padding: 12px 14px; border-radius: 8px; background: #F8EBD6; color: #7A4A00; font-size: 14px;">{{avvisoTxt}}</p>
-      </sc-if>
+    </sc-for>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}"><button type="button" class="btn-s" onClick="{{addContratto}}">+ Aggiungi contratto applicativo</button></sc-if>
+      <button type="button" class="btn-s btn-so" onClick="{{esempio}}">Carica un esempio</button>
+      <button type="button" class="btn-s btn-so" onClick="{{azzera}}">Azzera</button>
     </div>
+    <sc-if value="{{avviso}}" hint-placeholder-val="{{false}}">
+      <p style="margin: 0; padding: 12px 14px; border-radius: 8px; background: #F8EBD6; color: #7A4A00; font-size: 14px;">{{avvisoTxt}}</p>
+    </sc-if>
   </section>
 
   <section id="risultati" class="wrap" style="padding-bottom: 32px; display: flex; flex-direction: column; gap: 20px;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
-      <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">{{k.fissaC}}</span><span class="mut" style="font-size: 13px;">Presidente (+10%): {{k.fissaP}}</span></div>
-      <div class="card kpi"><span class="lbl">Parte fissa del Collegio</span><span class="big">{{k.fissaColl}}</span><span class="mut" style="font-size: 13px;">{{k.tettoMsg}}</span></div>
-      <div class="card kpi" style="border-top: 3px solid #6E1E2B;"><span class="lbl">Tetto complessivo del Collegio</span><span class="big" style="color: #561622;">{{k.totColl}}</span><span class="mut" style="font-size: 13px;">Triplo della parte fissa riconoscibile</span></div>
-      <div class="card kpi"><span class="lbl">Segreteria sulla parte fissa</span><span class="big">{{k.segrF}}</span><span class="mut" style="font-size: 13px;">Al tetto complessivo: {{k.segrT}}</span></div>
-    </div>
-
-    <div class="card" style="padding: 0;">
-      <div style="padding: 18px 20px; font-weight: 600;">Prospetto di calcolo</div>
-      <div style="overflow-x: auto;">
-        <table class="tb">
-          <thead><tr><th>Voce</th><th>Base</th><th style="text-align: right;">Importo</th></tr></thead>
-          <tbody>
-            <sc-for list="{{prospetto}}" as="x" hint-placeholder-count="10">
-              <tr class="{{x.cls}}"><td>{{x.voce}}</td><td class="mut" style="font-size: 13px;">{{x.base}}</td><td class="n">{{x.imp}}</td></tr>
-            </sc-for>
-          </tbody>
-        </table>
+    <h2 class="h2">Risultati</h2>
+    <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
+      <div class="card" style="padding: 0;">
+        <div style="padding: 18px 20px; font-weight: 600;">Riepilogo dei contratti applicativi</div>
+        <div style="overflow-x: auto;">
+          <table class="tb">
+            <thead><tr><th>Contratto</th><th style="text-align: right;">Valore</th><th>Collegio</th><th style="text-align: right;">Parte fissa</th><th style="text-align: right;">Tetto complessivo</th></tr></thead>
+            <tbody>
+              <tr data-for-list="{{riepilogo}}" data-for-as="x" class="{{x.cls}}"><td>{{x.nome}}</td><td class="n">{{x.valore}}</td><td style="font-size: 13px;">{{x.obbl}}</td><td class="n">{{x.fissa}}</td><td class="n">{{x.tot}}</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </sc-if>
+    <sc-for list="{{risultati}}" as="z" hint-placeholder-count="1">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}"><h3 class="h3" style="font-family: 'Lora', Georgia, serif; font-size: 22px; margin: 8px 0 0;">{{z.titolo}}</h3></sc-if>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+          <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">{{z.k.fissaC}}</span><span class="mut" style="font-size: 13px;">Presidente (+10%): {{z.k.fissaP}}</span></div>
+          <div class="card kpi"><span class="lbl">Parte fissa del Collegio</span><span class="big">{{z.k.fissaColl}}</span><span class="mut" style="font-size: 13px;">{{z.k.tettoMsg}}</span></div>
+          <div class="card kpi" style="border-top: 3px solid #6E1E2B;"><span class="lbl">Tetto complessivo del Collegio</span><span class="big" style="color: #561622;">{{z.k.totColl}}</span><span class="mut" style="font-size: 13px;">Triplo della parte fissa riconoscibile</span></div>
+          <div class="card kpi"><span class="lbl">Segreteria sulla parte fissa</span><span class="big">{{z.k.segrF}}</span><span class="mut" style="font-size: 13px;">Al tetto complessivo: {{z.k.segrT}}</span></div>
+        </div>
+        <div class="card" style="padding: 0;">
+          <div style="padding: 18px 20px; font-weight: 600;">Prospetto di calcolo</div>
+          <div style="overflow-x: auto;">
+            <table class="tb">
+              <thead><tr><th>Voce</th><th>Base</th><th style="text-align: right;">Importo</th></tr></thead>
+              <tbody>
+                <tr data-for-list="{{z.prospetto}}" data-for-as="x" class="{{x.cls}}"><td>{{x.voce}}</td><td class="mut" style="font-size: 13px;">{{x.base}}</td><td class="n">{{x.imp}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </sc-for>
 
     <div class="card" style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; background: #F3E4E1; border-color: #F3E4E1;">
       <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 4px;">
         <span style="font-weight: 600;">Prospetto da allegare al verbale</span>
-        <span class="mut" style="font-size: 14px;">Il PDF riporta dati del Collegio, categorie, parametri, passaggi del calcolo, tetti e riferimenti normativi, con spazio per le sottoscrizioni.</span>
+        <span class="mut" style="font-size: 14px;">Il PDF riporta dati del Collegio, categorie, parametri, passaggi del calcolo, tetti e riferimenti normativi, con spazio per le sottoscrizioni. Per l'accordo quadro include il riepilogo e un prospetto per ogni contratto applicativo.</span>
       </div>
       <button type="button" class="btn" onClick="{{scaricaPdf}}">Scarica il prospetto in PDF</button>
     </div>
@@ -393,7 +454,7 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
       <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
       <span style="font-weight: 600;">La formula del compenso</span>
-      <p style="margin: 0; font-size: 15px;">Per ogni categoria CP = V × G × Q × P, con P = 0,03 + 10 / V<sup>0,4</sup>; il compenso è la somma sulle categorie (D.M. 17 giugno 2016, artt. 3 e 4). Le linee guida assumono come riferimento il collaudo tecnico-amministrativo, con riduzione del 60%, e dell'80% per la parte di lavori oltre 100 milioni:
+      <p style="margin: 0; font-size: 15px;">Per ogni categoria CP = V × G × Q × P, con P = 0,03 + 10 / V<sup>0,4</sup>; il compenso è la somma sulle categorie (D.M. 17 giugno 2016, artt. 3 e 4). G è precompilato dalla Tavola Z-1; Q = 0,08 è il parametro della prestazione QdI.01, collaudo tecnico-amministrativo, della Tavola Z-2, che prevede un aumento del 20% per il collaudo in corso d'opera. Le linee guida assumono come riferimento questo compenso, con riduzione del 60%, e dell'80% per la parte di lavori oltre 100 milioni:
         <span class="{{r.lg7.cls}}"><button type="button" class="rif-b" onClick="{{r.lg7.tog}}">{{r.lg7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg7.t}}</span><span class="pop-s">{{r.lg7.s}}</span><span class="pop-x">{{r.lg7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg7.close}}">Chiudi</button></span></span></span>.</p>
     </div>
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
@@ -407,18 +468,17 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
       <span class="lab l-i" style="align-self: flex-start;">INTERPRETAZIONE</span>
       <span style="font-weight: 600;">Scelte di calcolo da verificare</span>
-      <p style="margin: 0; font-size: 15px;">Il parametro P è calcolato sull'importo di ciascuna categoria. La riduzione dell'80% oltre 100 milioni è ripartita in proporzione all'importo che eccede la soglia. La parte fissa calcolata è riferita a ciascun componente, con la maggiorazione del 10% per il Presidente; se la parte fissa del Collegio supera il tetto, è ridotta in proporzione. Spese forfettarie (art. 5 del D.M. 17 giugno 2016) e segreteria sono esposte a parte.</p>
+      <p style="margin: 0; font-size: 15px;">P è calcolato sull'importo di ciascuna categoria. La riduzione dell'80% oltre 100 milioni è ripartita in proporzione all'importo eccedente. La parte fissa è riferita a ciascun componente, con +10% per il Presidente; se la parte fissa del Collegio supera il tetto, è ridotta in proporzione. Nell'accordo quadro ogni contratto applicativo è trattato come un rapporto autonomo, con propri tetti, come l'Allegato V.2 fa per l'obbligo di costituzione.</p>
     </div>
     <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
       <span class="lab l-i" style="align-self: flex-start;">ATTENZIONE</span>
       <span style="font-weight: 600;">Regime transitorio e verifica</span>
       <p style="margin: 0; font-size: 15px;">Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 resta la disciplina previgente
-        (<span class="{{r.tr.cls}}"><button type="button" class="rif-b" onClick="{{r.tr.tog}}">{{r.tr.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.tr.t}}</span><span class="pop-s">{{r.tr.s}}</span><span class="pop-x">{{r.tr.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.tr.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.tr.close}}">Chiudi</button></span></span></span>). G e Q vanno verificati sulle tavole Z-1 e Z-2 del D.M. 17 giugno 2016. Q è precompilato a 0,08 per la prestazione QdI.01, il valore riportato nei calcoli pubblicati dalle stazioni appaltanti; alcune applicano maggiorazioni, per cui il campo resta modificabile. Il prospetto è un supporto al calcolo e non sostituisce la verifica delle parti.</p>
+        (<span class="{{r.tr.cls}}"><button type="button" class="rif-b" onClick="{{r.tr.tog}}">{{r.tr.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.tr.t}}</span><span class="pop-s">{{r.tr.s}}</span><span class="pop-x">{{r.tr.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.tr.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.tr.close}}">Chiudi</button></span></span></span>). G e Q restano modificabili: il prospetto è un supporto al calcolo e non sostituisce la verifica delle parti.</p>
     </div>
   </section>
 
-
-  <footer class="ft">
+<footer class="ft">
     <div class="wrap ft-in">
       <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
       <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
@@ -429,6 +489,70 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
 <noscript><p style="max-width:720px;margin:24px auto;padding:0 24px;font-family:system-ui">Per usare filtri, riquadri delle fonti e strumenti di calcolo è necessario JavaScript.</p></noscript>
 <script src="/assets/dc.js"></script>
 <script>
+const Z1 = [
+  ['EDILIZIA', 'E.01', 'Edifici rurali e industriali di importanza corrente', '0,65'],
+  ['EDILIZIA', 'E.02', 'Edifici rurali e industriali complessi', '0,95'],
+  ['EDILIZIA', 'E.03', 'Ostelli, pensioni, ristoranti, negozi, mercati coperti semplici', '0,95'],
+  ['EDILIZIA', 'E.04', 'Alberghi, villaggi turistici, centri commerciali complessi', '1,20'],
+  ['EDILIZIA', 'E.05', 'Edifici e pertinenze semplici, edifici provvisori di modesta importanza', '0,65'],
+  ['EDILIZIA', 'E.06', 'Edilizia residenziale di tipo corrente', '0,95'],
+  ['EDILIZIA', 'E.07', 'Edilizia residenziale di pregio', '1,20'],
+  ['EDILIZIA', 'E.08', 'Sedi sanitarie di base, asili, scuole fino a 24/25 classi', '0,95'],
+  ['EDILIZIA', 'E.09', 'Scuole oltre 24/25 classi, case di cura', '1,15'],
+  ['EDILIZIA', 'E.10', 'Ospedali, poliambulatori, istituti di ricerca, università', '1,20'],
+  ['EDILIZIA', 'E.11', 'Padiglioni provvisori, opere cimiteriali normali, sport all’aperto semplici', '0,95'],
+  ['EDILIZIA', 'E.12', 'Sport all’aperto complessi, palestre e piscine coperte', '1,15'],
+  ['EDILIZIA', 'E.13', 'Biblioteche, teatri, musei, auditorium, stadi, chiese', '1,20'],
+  ['EDILIZIA', 'E.14', 'Edifici provvisori a servizio di caserme', '0,65'],
+  ['EDILIZIA', 'E.15', 'Caserme di importanza corrente', '0,95'],
+  ['EDILIZIA', 'E.16', 'Sedi di enti e ministeri, tribunali, penitenziari, caserme complesse', '1,20'],
+  ['EDILIZIA', 'E.17', 'Verde e arredo urbano semplici, campeggi', '0,65'],
+  ['EDILIZIA', 'E.18', 'Arredo urbano, giardini, piazze e spazi pubblici', '0,95'],
+  ['EDILIZIA', 'E.19', 'Arredi singolari, parchi urbani, piazze storiche', '1,20'],
+  ['EDILIZIA', 'E.20', 'Manutenzione, ristrutturazione, riqualificazione di edifici esistenti', '0,95'],
+  ['EDILIZIA', 'E.21', 'Interventi su edifici di interesse storico-artistico non tutelati', '1,20'],
+  ['EDILIZIA', 'E.22', 'Restauro di edifici di interesse storico-artistico tutelati', '1,55'],
+  ['STRUTTURE', 'S.01', 'C.a. non sismiche, interventi locali; provvisionali fino a 2 anni', '0,70'],
+  ['STRUTTURE', 'S.02', 'Muratura, legno, metallo non sismiche, interventi locali', '0,50'],
+  ['STRUTTURE', 'S.03', 'Strutture in c.a.; provvisionali oltre 2 anni', '0,95'],
+  ['STRUTTURE', 'S.04', 'Muratura, legno, metallo; fondazioni, ponti, paratie, pendii', '0,90'],
+  ['STRUTTURE', 'S.05', 'Dighe, gallerie, opere sotterranee, fondazioni speciali', '1,05'],
+  ['STRUTTURE', 'S.06', 'Opere di notevole importanza costruttiva, edifici alti', '1,15'],
+  ['IMPIANTI', 'IA.01', 'Impianti idrici e sanitari, fognature, gas, antincendio', '0,75'],
+  ['IMPIANTI', 'IA.02', 'Riscaldamento, climatizzazione, trattamento aria', '0,85'],
+  ['IMPIANTI', 'IA.03', 'Impianti elettrici e speciali di importanza corrente', '1,15'],
+  ['IMPIANTI', 'IA.04', 'Impianti elettrici complessi, cablaggi strutturati, fibra ottica', '1,30'],
+  ['IMPIANTI', 'IB.04', 'Depositi e discariche senza trattamento rifiuti', '0,55'],
+  ['IMPIANTI', 'IB.05', 'Impianti per industrie alimentari, tessili, del legno e simili', '0,70'],
+  ['IMPIANTI', 'IB.06', 'Impianti industriali, termovalorizzatori, trattamento rifiuti', '0,70'],
+  ['IMPIANTI', 'IB.07', 'Impianti industriali complessi o a rilevante rischio ambientale', '0,75'],
+  ['IMPIANTI', 'IB.08', 'Linee e reti di trasmissione di energia e telecomunicazioni', '0,50'],
+  ['IMPIANTI', 'IB.09', 'Centrali idroelettriche, stazioni di trasformazione, trazione elettrica', '0,60'],
+  ['IMPIANTI', 'IB.10', 'Impianti termoelettrici ed elettrochimici', '0,75'],
+  ['IMPIANTI', 'IB.11', 'Campi fotovoltaici, parchi eolici', '0,90'],
+  ['IMPIANTI', 'IB.12', 'Micro centrali idroelettriche, impianti termoelettrici complessi', '1,00'],
+  ['MOBILITÀ', 'V.01', 'Manutenzione della viabilità ordinaria', '0,40'],
+  ['MOBILITÀ', 'V.02', 'Strade, linee tranviarie, ferrovie ordinarie, piste ciclabili', '0,45'],
+  ['MOBILITÀ', 'V.03', 'Viabilità speciale: funicolari, teleferiche, piste aeroportuali', '0,75'],
+  ['IDRAULICA', 'D.01', 'Opere di navigazione interna e portuali', '0,65'],
+  ['IDRAULICA', 'D.02', 'Bonifiche e irrigazioni a deflusso naturale, sistemazione corsi d’acqua', '0,45'],
+  ['IDRAULICA', 'D.03', 'Bonifiche con sollevamento meccanico, derivazioni per energia', '0,55'],
+  ['IDRAULICA', 'D.04', 'Acquedotti, fognature urbane, gasdotti ordinari', '0,65'],
+  ['IDRAULICA', 'D.05', 'Acquedotti, fognature, gasdotti con problemi tecnici speciali', '0,80'],
+  ['ICT', 'T.01', 'Sistemi informativi, data center, server farm', '0,95'],
+  ['ICT', 'T.02', 'Reti, cablaggi, videosorveglianza, controllo accessi', '0,70'],
+  ['ICT', 'T.03', 'Elettronica industriale, automazione, robotica', '1,20'],
+  ['PAESAGGIO', 'P.01', 'Sistemazione naturalistica e paesaggistica, aree protette', '0,85'],
+  ['PAESAGGIO', 'P.02', 'Opere a verde per attività ricreative o sportive', '0,85'],
+  ['PAESAGGIO', 'P.03', 'Riqualificazione di ambiti naturali, rurali, forestali o urbani', '0,85'],
+  ['PAESAGGIO', 'P.04', 'Bacini estrattivi: cave e torbiere', '0,85'],
+  ['PAESAGGIO', 'P.05', 'Assetto forestale, piste e strade forestali', '0,85'],
+  ['PAESAGGIO', 'P.06', 'Miglioramento fondiario agrario e rurale', '0,85'],
+  ['TERRITORIO', 'U.01', 'Filiere agroalimentari e zootecniche, infrastrutture rurali', '0,90'],
+  ['TERRITORIO', 'U.02', 'Filiera naturalistica e faunistica', '0,95'],
+  ['TERRITORIO', 'U.03', 'Strumenti di pianificazione generale, attuativa e di settore', '1,00']
+];
+
 class Component extends DCLogic {
   componentDidMount() {
     fetch('/assets/norme.json').then((r) => r.json()).then((j) => this.setState({ norme: j })).catch(() => this.setState({ norme: {} }));
@@ -452,46 +576,49 @@ class Component extends DCLogic {
     const n = parseFloat(s);
     return isNaN(n) ? 0 : n;
   }
-  calc() {
+  rigaVuota() { return { sel: '', id: '', descr: '', v: '', g: '', q: '0,08' }; }
+  contrattoVuoto() { return { nome: '', cig: '', app: '', righe: [this.rigaVuota()] }; }
+  contratti() {
     const s = this.state || {};
-    const n = s.n || 3;
-    const fac = !!s.fac;
-    const segr = s.segr || 5;
-    const M = 1000000;
-    const righe = (s.righe || [{ id: '', descr: '', v: '', g: '', q: '0,08' }]).map((r) => {
-      const V = this.num(r.v), G = this.num(r.g), Q = this.num(r.q);
+    const list = s.contratti && s.contratti.length ? s.contratti : [this.contrattoVuoto()];
+    return s.tipo === 'aq' ? list : [list[0]];
+  }
+  calc(k) {
+    const s = this.state || {};
+    const n = s.n || 3, fac = !!s.fac, cod = !!s.cod, segr = s.segr || 5, M = 1000000;
+    const righe = k.righe.map((r) => {
+      const V = this.num(r.v), G = this.num(r.g), Q = this.num(r.q) * (cod ? 1.2 : 1);
       const P = V > 0 ? 0.03 + 10 / Math.pow(V, 0.4) : 0;
       return { src: r, V, G, Q, P, CP: V * G * Q * P };
     });
     const Vtot = righe.reduce((a, r) => a + r.V, 0);
     const CP = righe.reduce((a, r) => a + r.CP, 0);
-    const app = this.num((s.f || {}).app) || Vtot;
-    const fattore = Vtot <= 100 * M || Vtot === 0 ? 0.4 : (0.4 * 100 * M + 0.2 * (Vtot - 100 * M)) / Vtot;
-    let fissaC = CP * fattore;
+    const app = this.num(k.app) || Vtot;
+    const fattore = Vtot <= 100 * M ? 0.4 : (0.4 * 100 * M + 0.2 * (Vtot - 100 * M)) / Vtot;
     const ridFac = fac ? 0.8 : 1;
-    fissaC = fissaC * ridFac;
-    const fissaP = fissaC * 1.1;
-    const fissaColl = fissaC * (n - 1) + fissaP;
+    const fissaC = CP * fattore * ridFac, fissaP = fissaC * 1.1, fissaColl = fissaC * (n - 1) + fissaP;
     const SC = n === 3
       ? [[0, 50 * M, 0.005, '0,50%'], [50 * M, 100 * M, 0.0025, '0,25%'], [100 * M, 1000 * M, 0.0015, '0,15%'], [1000 * M, Infinity, 0.0002, '0,02%']]
       : [[0, 50 * M, 0.008, '0,80%'], [50 * M, 100 * M, 0.004, '0,40%'], [100 * M, 1000 * M, 0.0025, '0,25%'], [1000 * M, Infinity, 0.0003, '0,03%']];
     const NOMI = ['fino a 50 milioni', 'da 50 a 100 milioni', 'da 100 a 1.000 milioni', 'oltre 1.000 milioni'];
     const scaglioni = SC.map((c, i) => { const quota = Math.max(0, Math.min(app, c[1]) - c[0]); return { nome: NOMI[i], al: c[3], quota, imp: quota * c[2] }; });
     const tetto = scaglioni.reduce((a, x) => a + x.imp, 0) * ridFac;
-    const k = fissaColl > tetto && tetto > 0 ? tetto / fissaColl : 1;
-    const fissaCr = fissaC * k, fissaPr = fissaP * k, fissaCollR = fissaColl * k;
+    const kk = fissaColl > tetto && tetto > 0 ? tetto / fissaColl : 1;
+    const fissaCr = fissaC * kk, fissaPr = fissaP * kk, fissaCollR = fissaColl * kk;
     const speseAl = Vtot <= M ? 0.25 : Vtot >= 25 * M ? 0.10 : 0.25 - (Vtot - M) / (24 * M) * 0.15;
-    return { n, fac, segr, righe, Vtot, CP, app, fattore, ridFac, fissaC, fissaP, fissaColl, scaglioni, tetto, k, fissaCr, fissaPr, fissaCollR,
-      totColl: fissaCollR * 3, totC: fissaCr * 3, totP: fissaPr * 3, speseAl, spese: fissaCollR * speseAl,
-      segrF: fissaCollR * segr / 100, segrT: fissaCollR * 3 * segr / 100 };
+    const soglia = this.num((s.f || {}).soglia);
+    return { n, fac, cod, segr, righe, Vtot, CP, app, fattore, fissaC, fissaP, fissaColl, scaglioni, tetto, k: kk, fissaCr, fissaPr, fissaCollR,
+      totColl: fissaCollR * 3, speseAl, spese: fissaCollR * speseAl, segrF: fissaCollR * segr / 100, segrT: fissaCollR * 3 * segr / 100,
+      obbl: soglia > 0 ? (app >= soglia ? 'Obbligatorio (pari o sopra soglia)' : 'Facoltativo (sotto soglia)') : 'Soglia non indicata' };
   }
   eur(v) { return (v || 0).toLocaleString('it-IT', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
   pct(v, d) { return (v * 100).toLocaleString('it-IT', { minimumFractionDigits: d == null ? 2 : d, maximumFractionDigits: d == null ? 2 : d }) + '%'; }
   dec(v, d) { return (v || 0).toLocaleString('it-IT', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  titolo(k, i) { return (this.state || {}).tipo === 'aq' ? 'Contratto applicativo n. ' + (i + 1) + (k.nome ? ' — ' + k.nome : '') : 'Categorie d’opera'; }
   prospetto(c) {
     const out = [];
     out.push({ voce: 'Valore complessivo delle categorie (ΣV)', base: 'D.M. 17/6/2016', imp: this.eur(c.Vtot) });
-    out.push({ voce: 'Compenso di riferimento per il collaudo (ΣCP)', base: 'CP = V × G × Q × P', imp: this.eur(c.CP) });
+    out.push({ voce: 'Compenso di riferimento per il collaudo (ΣCP)', base: 'CP = V × G × Q × P' + (c.cod ? ' · Q +20% in corso d’opera' : ''), imp: this.eur(c.CP) });
     out.push({ voce: 'Coefficiente dopo la riduzione', base: c.Vtot > 100000000 ? 'LG 7.2.1 a): −60% fino a 100 mln, −80% oltre' : 'LG 7.2.1 a): −60%', imp: this.pct(c.fattore) });
     if (c.fac) out.push({ voce: 'Riduzione collegio facoltativo ante operam', base: 'All. V.2, art. 7, c. 4', imp: '−20%' });
     out.push({ voce: 'Parte fissa calcolata, per componente', base: 'LG 7.2.1 a)', imp: this.eur(c.fissaC) });
@@ -509,18 +636,20 @@ class Component extends DCLogic {
     return out.map((x) => Object.assign({ cls: '' }, x));
   }
   pdf() {
-    const c = this.calc();
     const s = this.state || {};
     const f = s.f || {};
+    const aq = s.tipo === 'aq';
+    const ks = this.contratti();
+    const calcs = ks.map((k) => this.calc(k));
     const W = 595.28, H = 841.89, L = 48, R = W - 48;
     const pages = [];
     let ops = [], y = H - 56;
     const enc = (str) => {
-      const map = { '€': 128, '‚': 130, '„': 132, '…': 133, '‘': 145, '’': 146, '“': 147, '”': 148, '•': 149, '–': 150, '—': 151, '×': 215, 'Σ': 83, '−': 45 };
+      const map = { '€': 128, '…': 133, '‘': 145, '’': 146, '“': 147, '”': 148, '•': 149, '–': 150, '—': 151, '×': 215, '−': 45 };
       let o = '';
       for (const ch of String(str)) {
-        let code = map[ch] != null ? map[ch] : ch.charCodeAt(0);
         if (ch === 'Σ') { o += 'Somma '; continue; }
+        let code = map[ch] != null ? map[ch] : ch.charCodeAt(0);
         if (code > 255) code = 63;
         const b = String.fromCharCode(code);
         o += b === '(' || b === ')' || b === '\\' ? '\\' + b : b;
@@ -530,19 +659,14 @@ class Component extends DCLogic {
     const width = (str, size, bold) => String(str).length * size * (bold ? 0.58 : 0.53);
     const newPage = () => { pages.push(ops); ops = []; y = H - 56; };
     const need = (h) => { if (y - h < 64) newPage(); };
-    const text = (x, yy, str, size, bold, color) => {
-      ops.push((color || '0.165 0.137 0.141') + ' rg BT /' + (bold ? 'F2' : 'F1') + ' ' + size + ' Tf ' + x.toFixed(2) + ' ' + yy.toFixed(2) + ' Td (' + enc(str) + ') Tj ET');
-    };
+    const text = (x, yy, str, size, bold, color) => { ops.push((color || '0.165 0.137 0.141') + ' rg BT /' + (bold ? 'F2' : 'F1') + ' ' + size + ' Tf ' + x.toFixed(2) + ' ' + yy.toFixed(2) + ' Td (' + enc(str) + ') Tj ET'); };
     const rtext = (xr, yy, str, size, bold) => text(xr - width(str, size, bold), yy, str, size, bold);
     const line = (x1, y1, x2, y2, gray) => ops.push((gray || '0.85') + ' G 0.6 w ' + x1 + ' ' + y1 + ' m ' + x2 + ' ' + y2 + ' l S');
     const rect = (x, yy, w, h, rgb) => ops.push(rgb + ' rg ' + x + ' ' + yy + ' ' + w + ' ' + h + ' re f');
-    const wrap = (str, size, maxW) => {
-      const words = String(str).split(' '); const lines = []; let cur = '';
-      words.forEach((w) => { const t = cur ? cur + ' ' + w : w; if (width(t, size) > maxW && cur) { lines.push(cur); cur = w; } else cur = t; });
-      if (cur) lines.push(cur); return lines;
-    };
+    const wrap = (str, size, maxW) => { const words = String(str).split(' '); const lines = []; let cur = ''; words.forEach((w) => { const t = cur ? cur + ' ' + w : w; if (width(t, size) > maxW && cur) { lines.push(cur); cur = w; } else cur = t; }); if (cur) lines.push(cur); return lines; };
     const para = (str, size, maxW, x) => { wrap(str, size, maxW).forEach((l) => { need(size + 4); text(x || L, y, l, size); y -= size + 4; }); };
-    const heading = (str) => { need(30); y -= 8; text(L, y, str, 11.5, true, '0.431 0.118 0.169'); y -= 6; line(L, y, R, y, '0.431 0.118 0.169'); y -= 14; };
+    const heading = (str) => { need(34); y -= 8; text(L, y, str, 11.5, true, '0.431 0.118 0.169'); y -= 6; line(L, y, R, y, '0.431 0.118 0.169'); y -= 14; };
+    const kv = (k, v) => { need(14); text(L, y, k, 9, true); wrap(v, 9, R - L - 160).forEach((l, i) => { if (i) { y -= 12; need(12); } text(L + 160, y, l, 9); }); y -= 14; };
 
     rect(0, H - 6, W, 6, '0.431 0.118 0.169');
     text(L, y, 'Prassi CCT', 10, true, '0.431 0.118 0.169'); rtext(R, y, 'Prospetto di calcolo · ' + (f.data ? f.data.split('-').reverse().join('/') : new Date().toLocaleDateString('it-IT')), 9, false); y -= 26;
@@ -550,55 +674,70 @@ class Component extends DCLogic {
     text(L, y, 'Collegio consultivo tecnico · D.Lgs. 36/2023, Allegato V.2 · Linee guida D.M. 17 gennaio 2022, n. 12', 9, false, '0.415 0.373 0.349'); y -= 22;
 
     heading('Dati del Collegio');
-    const dati = [['Collegio e contratto', f.nome || '—'], ['CIG', f.cig || '—'], ['CUP', f.cup || '—'], ['Componenti', String(c.n) + (c.fac ? ' · collegio facoltativo ante operam' : '')], ['Valore dell\'appalto', this.eur(c.app)], ['Redatto da', f.red || '—']];
-    dati.forEach((d) => { need(14); text(L, y, d[0], 9, true); wrap(d[1], 9, R - L - 150).forEach((l, i) => { if (i) { y -= 12; need(12); } text(L + 150, y, l, 9); }); y -= 14; });
+    kv('Tipo di affidamento', aq ? 'Accordo quadro, con ' + ks.length + (ks.length === 1 ? ' contratto applicativo' : ' contratti applicativi') : 'Contratto singolo o applicativo');
+    kv(aq ? 'Collegio e accordo quadro' : 'Collegio e contratto', f.nome || '—');
+    kv(aq ? 'CIG dell’accordo quadro' : 'CIG', f.cig || '—');
+    kv('CUP', f.cup || '—');
+    kv('Componenti', String(calcs[0].n) + (calcs[0].fac ? ' · collegio facoltativo ante operam' : '') + (calcs[0].cod ? ' · collaudo in corso d’opera (Q +20%)' : ''));
+    if (!aq) kv('Valore dell’appalto', this.eur(calcs[0].app));
+    if (aq && this.num(f.soglia)) kv('Soglia europea lavori', this.eur(this.num(f.soglia)));
+    kv('Redatto da', f.red || '—');
 
-    heading('Categorie d\'opera e compenso di riferimento (collaudo tecnico-amministrativo)');
-    const cols = [L, L + 52, L + 208, L + 300, L + 340, L + 380, L + 432];
-    const hdr = ['ID', 'Descrizione', 'V (euro)', 'G', 'Q', 'P', 'CP (euro)'];
-    need(18); rect(L, y - 4, R - L, 16, '0.949 0.918 0.867');
-    hdr.forEach((h, i) => { if (i === 2 || i === 6) rtext(i === 6 ? R - 4 : cols[3] - 8, y + 1, h, 8.5, true); else text(cols[i] + 3, y + 1, h, 8.5, true); }); y -= 18;
-    c.righe.forEach((r) => {
-      need(16);
-      text(cols[0] + 3, y, r.src.id || '—', 8.5);
-      text(cols[1] + 3, y, (r.src.descr || '').slice(0, 30), 8.5);
-      rtext(cols[3] - 8, y, this.dec(r.V, 2), 8.5);
-      text(cols[3] + 3, y, this.dec(r.G, 2), 8.5);
-      text(cols[4] + 3, y, this.dec(r.Q, 3), 8.5);
-      text(cols[5] + 3, y, this.pct(r.P, 3), 8.5);
-      rtext(R - 4, y, this.dec(r.CP, 2), 8.5);
-      y -= 5; line(L, y, R, y); y -= 11;
-    });
-    need(16); text(L + 3, y, 'Totale', 8.5, true); rtext(cols[3] - 8, y, this.dec(c.Vtot, 2), 8.5, true); rtext(R - 4, y, this.dec(c.CP, 2), 8.5, true); y -= 16;
-    para('CP = V × G × Q × P per ciascuna categoria, con P = 0,03 + 10 / V^0,4 (D.M. 17 giugno 2016, artt. 3 e 4). Q: prestazione QdI.01, collaudo tecnico-amministrativo.', 8, R - L);
+    if (aq) {
+      heading('Riepilogo dei contratti applicativi');
+      const cx = [L, L + 200, L + 238, L + 350];
+      need(18); rect(L, y - 4, R - L, 16, '0.949 0.918 0.867');
+      text(cx[0] + 3, y + 1, 'Contratto', 8.5, true); rtext(cx[2] - 8, y + 1, 'Valore', 8.5, true); text(cx[2] + 3, y + 1, 'Collegio', 8.5, true); rtext(cx[3] + 60, y + 1, 'Parte fissa', 8.5, true); rtext(R - 4, y + 1, 'Tetto compl.', 8.5, true); y -= 18;
+      ks.forEach((k, i) => { const c = calcs[i]; need(16); text(cx[0] + 3, y, ('n. ' + (i + 1) + (k.nome ? ' ' + k.nome : '')).slice(0, 30), 8.5); rtext(cx[2] - 8, y, this.dec(c.app, 2), 8.5); text(cx[2] + 3, y, c.obbl.split(' (')[0], 8.5); rtext(cx[3] + 60, y, this.dec(c.fissaCollR, 2), 8.5); rtext(R - 4, y, this.dec(c.totColl, 2), 8.5); y -= 5; line(L, y, R, y); y -= 11; });
+      const tf = calcs.reduce((a, c) => a + c.fissaCollR, 0), tt = calcs.reduce((a, c) => a + c.totColl, 0);
+      need(16); text(L + 3, y, 'Totale', 8.5, true); rtext(cx[3] + 60, y, this.dec(tf, 2), 8.5, true); rtext(R - 4, y, this.dec(tt, 2), 8.5, true); y -= 16;
+      para('Ogni contratto applicativo è considerato un rapporto autonomo, con propri tetti (Allegato V.2, art. 7, c. 2, per l’obbligo di costituzione: scelta interpretativa).', 8, R - L);
+    }
 
-    heading('Passaggi del calcolo');
-    this.prospetto(c).forEach((x) => {
-      const bold = x.cls === 'tot';
-      const baseLines = wrap(x.base, 7.5, 190);
-      const h = Math.max(12, baseLines.length * 10) + 4;
-      need(h + 2);
-      if (bold) rect(L, y - h + 9, R - L, h, '0.953 0.894 0.882');
-      wrap(x.voce, 8.5, 215).forEach((l, i) => text(L + 3, y - i * 10, l, 8.5, bold || x.cls === 'sub'));
-      baseLines.forEach((l, i) => text(L + 232, y - i * 10, l, 7.5, false, '0.415 0.373 0.349'));
-      rtext(R - 4, y, x.imp, 8.5, bold);
-      y -= h; line(L, y + 6, R, y + 6);
+    ks.forEach((k, i) => {
+      const c = calcs[i];
+      if (aq) { heading('Contratto applicativo n. ' + (i + 1) + (k.nome ? ' — ' + k.nome : '')); kv('CIG derivato', k.cig || '—'); kv('Valore del contratto', this.eur(c.app)); kv('Collegio', c.obbl); }
+      heading((aq ? 'Categorie d’opera' : 'Categorie d’opera e compenso di riferimento') + ' (collaudo tecnico-amministrativo)');
+      const cols = [L, L + 52, L + 208, L + 300, L + 340, L + 380, L + 432];
+      const hdr = ['ID', 'Descrizione', 'V (euro)', 'G', 'Q', 'P', 'CP (euro)'];
+      need(18); rect(L, y - 4, R - L, 16, '0.949 0.918 0.867');
+      hdr.forEach((h, j) => { if (j === 2 || j === 6) rtext(j === 6 ? R - 4 : cols[3] - 8, y + 1, h, 8.5, true); else text(cols[j] + 3, y + 1, h, 8.5, true); }); y -= 18;
+      c.righe.forEach((r) => {
+        need(16);
+        text(cols[0] + 3, y, r.src.id || '—', 8.5); text(cols[1] + 3, y, (r.src.descr || '').slice(0, 30), 8.5);
+        rtext(cols[3] - 8, y, this.dec(r.V, 2), 8.5); text(cols[3] + 3, y, this.dec(r.G, 2), 8.5); text(cols[4] + 3, y, this.dec(r.Q, 3), 8.5);
+        text(cols[5] + 3, y, this.pct(r.P, 3), 8.5); rtext(R - 4, y, this.dec(r.CP, 2), 8.5);
+        y -= 5; line(L, y, R, y); y -= 11;
+      });
+      need(16); text(L + 3, y, 'Totale', 8.5, true); rtext(cols[3] - 8, y, this.dec(c.Vtot, 2), 8.5, true); rtext(R - 4, y, this.dec(c.CP, 2), 8.5, true); y -= 16;
+      if (i === 0) para('CP = V × G × Q × P per ciascuna categoria, con P = 0,03 + 10 / V^0,4 (D.M. 17 giugno 2016, artt. 3 e 4). G dalla Tavola Z-1; Q dalla Tavola Z-2, prestazione QdI.01 (0,08; +20% per il collaudo in corso d’opera).', 8, R - L);
+      heading('Passaggi del calcolo' + (aq ? ' — contratto n. ' + (i + 1) : ''));
+      this.prospetto(c).forEach((x) => {
+        const bold = x.cls === 'tot';
+        const baseLines = wrap(x.base, 7.5, 190);
+        const h = Math.max(12, baseLines.length * 10) + 4;
+        need(h + 2);
+        if (bold) rect(L, y - h + 9, R - L, h, '0.953 0.894 0.882');
+        wrap(x.voce, 8.5, 215).forEach((l, j) => text(L + 3, y - j * 10, l, 8.5, bold || x.cls === 'sub'));
+        baseLines.forEach((l, j) => text(L + 232, y - j * 10, l, 7.5, false, '0.415 0.373 0.349'));
+        rtext(R - 4, y, x.imp, 8.5, bold);
+        y -= h; line(L, y + 6, R, y + 6);
+      });
     });
 
     heading('Note');
-    ['Il prospetto applica, in via transitoria, i parametri delle Linee guida di cui al D.M. 17 gennaio 2022, n. 12 (Allegato V.2, art. 1, c. 6) e i limiti dell\'art. 6, c. 7-bis, del D.L. 76/2020 alla sola parte fissa (Allegato V.2, art. 1, cc. 4 e 5).',
-     'Scelte interpretative: P calcolato sull\'importo di ciascuna categoria; riduzione dell\'80% ripartita in proporzione all\'importo eccedente 100 milioni; parte fissa riferita a ciascun componente con maggiorazione del 10% per il Presidente; riduzione proporzionale se la parte fissa del Collegio supera il tetto.',
-     'Il compenso effettivo comprende la parte variabile per ogni determinazione o parere (Linee guida, punto 7.2.1, lett. b), entro il tetto complessivo. I valori di G e Q vanno verificati sulle tavole del D.M. 17 giugno 2016.',
+    ['Il prospetto applica, in via transitoria, i parametri delle Linee guida di cui al D.M. 17 gennaio 2022, n. 12 (Allegato V.2, art. 1, c. 6) e i limiti dell’art. 6, c. 7-bis, del D.L. 76/2020 alla sola parte fissa (Allegato V.2, art. 1, cc. 4 e 5).',
+     'Scelte interpretative: P calcolato sull’importo di ciascuna categoria; riduzione dell’80% ripartita in proporzione all’importo eccedente 100 milioni; parte fissa riferita a ciascun componente con maggiorazione del 10% per il Presidente; riduzione proporzionale se la parte fissa del Collegio supera il tetto.',
+     'Il compenso effettivo comprende la parte variabile per ogni determinazione o parere (Linee guida, punto 7.2.1, lett. b), entro il tetto complessivo.',
      'Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 resta la disciplina previgente (D.Lgs. 36/2023, art. 225-bis, c. 5).'].forEach((t) => { para('• ' + t, 8, R - L); y -= 2; });
-
     need(70); y -= 18;
     text(L, y, 'Il Presidente', 9, true); text(L + 260, y, 'I componenti', 9, true); y -= 30;
     line(L, y, L + 200, y, '0.5'); line(L + 260, y, R, y, '0.5'); y -= 24;
     newPage();
 
     const objs = [];
-    const add = (s) => { objs.push(s); return objs.length; };
-    const catalog = add(''); const pagesObj = add('');
+    const add = (o) => { objs.push(o); return objs.length; };
+    const catalog = add(''), pagesObj = add('');
     const f1 = add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
     const f2 = add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
     const kids = [];
@@ -618,57 +757,87 @@ class Component extends DCLogic {
     out += 'trailer\n<< /Size ' + (objs.length + 1) + ' /Root ' + catalog + ' 0 R >>\nstartxref\n' + xref + '\n%%EOF';
     const bytes = new Uint8Array(out.length);
     for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 255;
-    const blob = new Blob([bytes], { type: 'application/pdf' });
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
+    a.href = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
     a.download = 'prospetto-compenso-cct' + (f.data ? '-' + f.data : '') + '.pdf';
     document.body.appendChild(a); a.click();
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
-    return out;
   }
   renderVals() {
     const s = this.state || {};
-    const c = this.calc();
     const f = s.f || {};
-    const righeSrc = s.righe || [{ id: '', descr: '', v: '', g: '', q: '0,08' }];
-    const setRow = (i, key) => (e) => { const rr = ((this.state || {}).righe || righeSrc).map((x) => Object.assign({}, x)); rr[i][key] = e.target.value; this.setState({ righe: rr }); };
+    const aq = s.tipo === 'aq';
+    const ks = this.contratti();
+    const calcs = ks.map((k) => this.calc(k));
+    const all = () => { const st = this.state || {}; const l = st.contratti && st.contratti.length ? st.contratti : [this.contrattoVuoto()]; return l.map((k) => Object.assign({}, k, { righe: k.righe.map((r) => Object.assign({}, r)) })); };
     const setF = (key) => (e) => { const nf = Object.assign({}, (this.state || {}).f || {}); nf[key] = e.target.value; this.setState({ f: nf }); };
-    const righe = c.righe.map((r, i) => ({
-      id: r.src.id, descr: r.src.descr, v: r.src.v, g: r.src.g, q: r.src.q,
-      idId: 'r' + i + 'id', dId: 'r' + i + 'd', vId: 'r' + i + 'v', gId: 'r' + i + 'g', qId: 'r' + i + 'q',
-      setId: setRow(i, 'id'), setDescr: setRow(i, 'descr'), setV: setRow(i, 'v'), setG: setRow(i, 'g'), setQ: setRow(i, 'q'),
-      cp: this.eur(r.CP), p: this.pct(r.P, 3), delLabel: 'Rimuovi la categoria ' + (i + 1),
-      del: () => { const rr = ((this.state || {}).righe || righeSrc).filter((x, j) => j !== i); this.setState({ righe: rr.length ? rr : [{ id: '', descr: '', v: '', g: '', q: '0,08' }] }); }
-    }));
-    const incomplete = c.righe.some((r) => r.V > 0 && (!r.G || !r.Q));
+    const z1map = {}; Z1.forEach((z) => { z1map[z[1]] = z; });
+    const contratti = ks.map((k, ki) => {
+      const c = calcs[ki];
+      const setK = (key) => (e) => { const l = all(); l[ki][key] = e.target.value; this.setState({ contratti: l }); };
+      const setR = (ri, key) => (e) => { const l = all(); l[ki].righe[ri][key] = e.target.value; this.setState({ contratti: l }); };
+      return {
+        titolo: this.titolo(k, ki), aq, singolo: !aq, nome: k.nome, cig: k.cig, app: k.app,
+        nId: 'k' + ki + 'n', cId: 'k' + ki + 'c', aId: 'k' + ki + 'a',
+        setNome: setK('nome'), setCig: setK('cig'), setApp: setK('app'),
+        addRiga: () => { const l = all(); l[ki].righe.push(this.rigaVuota()); this.setState({ contratti: l }); },
+        del: () => { const l = all().filter((x, j) => j !== ki); this.setState({ contratti: l.length ? l : [this.contrattoVuoto()] }); },
+        esito: c.Vtot > 0 ? 'Parte fissa riconoscibile del Collegio: ' + this.eur(c.fissaCollR) + (aq ? ' · ' + c.obbl : '') : '',
+        righe: c.righe.map((r, ri) => ({
+          sel: r.src.sel || '', descr: r.src.descr, v: r.src.v, g: r.src.g, q: r.src.q,
+          idId: 'k' + ki + 'r' + ri + 'i', dId: 'k' + ki + 'r' + ri + 'd', vId: 'k' + ki + 'r' + ri + 'v', gId: 'k' + ki + 'r' + ri + 'g', qId: 'k' + ki + 'r' + ri + 'q',
+          setSel: (e) => { const v = e.target.value; const l = all(); const rr = l[ki].righe[ri]; rr.sel = v; const z = z1map[v]; if (z) { rr.id = z[1]; rr.descr = z[2]; rr.g = z[3]; } else if (v === 'ALTRO') { rr.id = ''; } this.setState({ contratti: l }); },
+          setDescr: setR(ri, 'descr'), setV: setR(ri, 'v'), setG: setR(ri, 'g'), setQ: setR(ri, 'q'),
+          cp: this.eur(r.CP), p: this.pct(r.P, 3), delLabel: 'Rimuovi la categoria ' + (ri + 1),
+          del: () => { const l = all(); l[ki].righe = l[ki].righe.filter((x, j) => j !== ri); if (!l[ki].righe.length) l[ki].righe = [this.rigaVuota()]; this.setState({ contratti: l }); }
+        }))
+      };
+    });
+    const vuoto = calcs.every((c) => c.Vtot === 0);
+    const incompleto = calcs.some((c) => c.righe.some((r) => r.V > 0 && (!r.G || !r.Q)));
+    const ex = (sel, v) => { const z = z1map[sel]; return { sel, id: z[1], descr: z[2], v, g: z[3], q: '0,08' }; };
     return {
-      f: { nome: f.nome || '', cig: f.cig || '', cup: f.cup || '', data: f.data || '', red: f.red || '', app: f.app || '' },
-      set: { nome: setF('nome'), cig: setF('cig'), cup: setF('cup'), data: setF('data'), red: setF('red'), app: setF('app') },
-      c3: c.n === 3 ? 'on' : '', c5: c.n === 5 ? 'on' : '', is3: c.n === 3, is5: c.n === 5,
-      set3: () => this.setState({ n: 3 }), set5: () => this.setState({ n: 5 }),
-      segr: c.segr, setSegr: (e) => this.setState({ segr: parseInt(e.target.value, 10) }),
-      fac: c.fac, setFac: () => this.setState({ fac: !c.fac }),
-      righe,
-      addRiga: () => this.setState({ righe: righeSrc.concat([{ id: '', descr: '', v: '', g: '', q: '0,08' }]) }),
-      esempio: () => this.setState({ righe: [
-        { id: 'E.20', descr: 'Edilizia (esempio)', v: '18.000.000', g: '0,95', q: '0,08' },
-        { id: 'S.03', descr: 'Strutture (esempio)', v: '9.500.000', g: '0,95', q: '0,08' },
-        { id: 'IA.03', descr: 'Impianti (esempio)', v: '4.200.000', g: '1,15', q: '0,08' }
-      ], f: Object.assign({}, f, { nome: f.nome || 'Esempio di calcolo', app: f.app || '' }) }),
-      azzera: () => this.setState({ righe: null, f: {}, fac: false }),
-      avviso: incomplete || c.Vtot === 0,
-      avvisoTxt: c.Vtot === 0 ? 'Inserisci almeno una categoria con importo, G e Q per calcolare la parte fissa.' : 'Una o più categorie hanno importo ma G o Q mancanti: il loro compenso è pari a zero.',
-      k: {
-        fissaC: this.eur(c.fissaCr), fissaP: this.eur(c.fissaPr), fissaColl: this.eur(c.fissaCollR), totColl: this.eur(c.totColl),
-        tettoMsg: c.k < 1 ? 'Ridotta al tetto di legge (' + this.eur(c.tetto) + ')' : 'Entro il tetto di legge (' + this.eur(c.tetto) + ')',
-        segrF: this.eur(c.segrF), segrT: this.eur(c.segrT)
+      opts: Z1.map((z) => ({ v: z[1], t: z[1] + ' · ' + z[2] + ' · G ' + z[3] })),
+      isAQ: aq,
+      tipo: {
+        isS: !aq, isA: aq, sCls: aq ? '' : 'on', aCls: aq ? 'on' : '',
+        setS: () => this.setState({ tipo: 's' }), setA: () => this.setState({ tipo: 'aq' }),
+        help: aq ? 'Nell’accordo quadro obbligo e calcolo si riferiscono ai singoli contratti applicativi: inserisci un blocco per ciascuno.' : 'Per un appalto singolo o per un singolo contratto applicativo di un accordo quadro si compila un solo blocco di categorie.'
       },
-      prospetto: this.prospetto(c),
+      lab: { nome: aq ? 'Collegio e accordo quadro' : 'Collegio e contratto', cig: aq ? 'CIG dell’accordo quadro' : 'CIG' },
+      f: { nome: f.nome || '', cig: f.cig || '', cup: f.cup || '', data: f.data || '', red: f.red || '', soglia: f.soglia || '' },
+      set: { nome: setF('nome'), cig: setF('cig'), cup: setF('cup'), data: setF('data'), red: setF('red'), soglia: setF('soglia') },
+      c3: (s.n || 3) === 3 ? 'on' : '', c5: s.n === 5 ? 'on' : '', is3: (s.n || 3) === 3, is5: s.n === 5,
+      set3: () => this.setState({ n: 3 }), set5: () => this.setState({ n: 5 }),
+      segr: s.segr || 5, setSegr: (e) => this.setState({ segr: parseInt(e.target.value, 10) }),
+      fac: !!s.fac, setFac: () => this.setState({ fac: !s.fac }),
+      cod: !!s.cod, setCod: () => this.setState({ cod: !s.cod }),
+      contratti,
+      addContratto: () => { const l = all(); l.push(this.contrattoVuoto()); this.setState({ contratti: l }); },
+      esempio: () => this.setState(aq ? { contratti: [
+          { nome: 'Lotto A', cig: '', app: '', righe: [ex('E.20', '6.500.000'), ex('IA.02', '1.200.000')] },
+          { nome: 'Lotto B', cig: '', app: '', righe: [ex('E.10', '12.000.000'), ex('S.03', '4.000.000'), ex('IA.04', '2.500.000')] }
+        ], f: Object.assign({}, f, { nome: f.nome || 'Esempio di accordo quadro', soglia: f.soglia || '' }) }
+        : { contratti: [{ nome: '', cig: '', app: '', righe: [ex('E.20', '18.000.000'), ex('S.03', '9.500.000'), ex('IA.03', '4.200.000')] }], f: Object.assign({}, f, { nome: f.nome || 'Esempio di calcolo' }) }),
+      azzera: () => this.setState({ contratti: null, f: {}, fac: false, cod: false }),
+      avviso: vuoto || incompleto,
+      avvisoTxt: vuoto ? 'Scegli almeno una categoria d’opera e inserisci l’importo per calcolare la parte fissa.' : 'Una o più categorie hanno importo ma G o Q mancanti: il loro compenso è pari a zero.',
+      riepilogo: ks.map((k, i) => ({ nome: 'n. ' + (i + 1) + (k.nome ? ' — ' + k.nome : ''), valore: this.eur(calcs[i].app), obbl: calcs[i].obbl, fissa: this.eur(calcs[i].fissaCollR), tot: this.eur(calcs[i].totColl), cls: '' }))
+        .concat([{ nome: 'Totale', valore: this.eur(calcs.reduce((a, c) => a + c.app, 0)), obbl: '', fissa: this.eur(calcs.reduce((a, c) => a + c.fissaCollR, 0)), tot: this.eur(calcs.reduce((a, c) => a + c.totColl, 0)), cls: 'tot' }]),
+      risultati: ks.map((k, i) => {
+        const c = calcs[i];
+        return {
+          titolo: this.titolo(k, i),
+          k: { fissaC: this.eur(c.fissaCr), fissaP: this.eur(c.fissaPr), fissaColl: this.eur(c.fissaCollR), totColl: this.eur(c.totColl),
+            tettoMsg: c.k < 1 ? 'Ridotta al tetto di legge (' + this.eur(c.tetto) + ')' : 'Entro il tetto di legge (' + this.eur(c.tetto) + ')', segrF: this.eur(c.segrF), segrT: this.eur(c.segrT) },
+          prospetto: this.prospetto(c)
+        };
+      }),
       scaricaPdf: () => this.pdf(),
       r: {
         lg7: this.rif('s5', 'lg7', 'Linee guida, punto 7'), dl76: this.rif('s2', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis'),
         v1: this.rif('s1', 'v1', 'All. V.2, art. 1, cc. 4-5'), v8: this.rif('s3', 'v8', 'All. V.2, art. 8, c. 2'),
-        tr: this.rif('s7', 'a225b', 'art. 225-bis, c. 5')
+        v7: this.rif('s8', 'v7', 'All. V.2, art. 7, c. 2'), tr: this.rif('s7', 'a225b', 'art. 225-bis, c. 5')
       }
     };
   }

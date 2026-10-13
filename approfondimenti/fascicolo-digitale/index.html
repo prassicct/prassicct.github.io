@@ -163,17 +163,10 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
           <p class="p">Un albero stabile per tutta la vita del Collegio, una cartella per ciascuna funzione, con un prefisso numerico che ne fissa l'ordine. Ogni quesito ha una propria sottocartella: è l'unità di lavoro del Collegio.</p>
         </div>
         <div style="overflow-x: auto; border: 1px solid #E5DBCB; border-radius: 8px; background: #FFFDF9;">
-          
-                
-                
-                
-                
-                
-                <table class="tb">
+          <table class="tb">
             <thead><tr><th>Cartella</th><th>Contenuto</th><th>Origine</th></tr></thead>
             <tbody>
-              <tr><td class="mono" style="white-space: nowrap;"></td><td></td><td class="mut" style="font-size: 14px;"></td></tr>
-              
+              <tr><td class="mono" style="white-space: nowrap;">00_Costituzione</td><td>Atti di nomina, accettazioni, dichiarazioni dei componenti, atto di costituzione.</td><td class="mut" style="font-size: 14px;">All. V.2, artt. 1 e 2</td></tr><tr><td class="mono" style="white-space: nowrap;">01_Insediamento</td><td>Verbale di insediamento, regole di funzionamento, legenda delle sigle, recapiti e canali di deposito.</td><td class="mut" style="font-size: 14px;">All. V.2, art. 2</td></tr><tr><td class="mono" style="white-space: nowrap;">02_Quesiti</td><td>Una sottocartella per quesito (Q01, Q02…): quesito, memorie, documenti, verbali di audizione, pronuncia.</td><td class="mut" style="font-size: 14px;">All. V.2, art. 3</td></tr><tr><td class="mono" style="white-space: nowrap;">03_Riunioni</td><td>Convocazioni, verbali delle riunioni periodiche e dei sopralluoghi.</td><td class="mut" style="font-size: 14px;">All. V.2, artt. 2 e 3</td></tr><tr><td class="mono" style="white-space: nowrap;">04_Comunicazioni</td><td>Corrispondenza con parti e RUP, ricevute PEC, trasmissioni all’Osservatorio.</td><td class="mut" style="font-size: 14px;">All. V.2, art. 6</td></tr><tr><td class="mono" style="white-space: nowrap;">05_Chiusura</td><td>Compensi, atto di scioglimento, indice finale del fascicolo.</td><td class="mut" style="font-size: 14px;">Art. 219; All. V.2, art. 1</td></tr>
             </tbody>
           </table>
         </div>
@@ -222,17 +215,10 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
           <p class="p">Una sola persona ha i permessi di scrittura sull'archivio definitivo. Dove il Collegio si avvale della segreteria, è naturale che sia questa ad averli; altrimenti il Presidente o un componente da lui indicato.</p>
         </div>
         <div style="overflow-x: auto; border: 1px solid #E5DBCB; border-radius: 8px; background: #FFFDF9;">
-          
-                
-                
-                
-                
-                
-                <table class="tb">
+          <table class="tb">
             <thead><tr><th>Attività</th><th>Presidente</th><th>Segreteria</th><th>Componenti</th><th>Parti</th></tr></thead>
             <tbody>
-              <tr><td></td><td></td><td></td><td></td><td></td></tr>
-              
+              <tr><td>Definire struttura e regole</td><td>D</td><td>E</td><td>C</td><td>I</td></tr><tr><td>Registrare i depositi</td><td>I</td><td>E</td><td>I</td><td>—</td></tr><tr><td>Redigere le bozze di verbale</td><td>D</td><td>E</td><td>C</td><td>—</td></tr><tr><td>Sottoscrivere le pronunce</td><td>E</td><td>—</td><td>E</td><td>I</td></tr><tr><td>Trasmettere all’Osservatorio</td><td>D</td><td>E</td><td>I</td><td>—</td></tr><tr><td>Indice finale e consegna</td><td>D</td><td>E</td><td>I</td><td>I</td></tr>
             </tbody>
           </table>
         </div>
@@ -418,9 +404,7 @@ c. 1-bis — Il contratto si considera eseguito alla data di sottoscrizione dell
           <table class="tb">
             <thead><tr><th>Cartella</th><th>Contenuto</th><th>Origine</th></tr></thead>
             <tbody>
-              <sc-for list="{{cartelle}}" as="c" hint-placeholder-count="6">
-                <tr><td class="mono" style="white-space: nowrap;">{{c.nome}}</td><td>{{c.contenuto}}</td><td class="mut" style="font-size: 14px;">{{c.origine}}</td></tr>
-              </sc-for>
+              <tr data-for-list="{{cartelle}}" data-for-as="c"><td class="mono" style="white-space: nowrap;">{{c.nome}}</td><td>{{c.contenuto}}</td><td class="mut" style="font-size: 14px;">{{c.origine}}</td></tr>
             </tbody>
           </table>
         </div>
@@ -472,9 +456,7 @@ c. 1-bis — Il contratto si considera eseguito alla data di sottoscrizione dell
           <table class="tb">
             <thead><tr><th>Attività</th><th>Presidente</th><th>Segreteria</th><th>Componenti</th><th>Parti</th></tr></thead>
             <tbody>
-              <sc-for list="{{raci}}" as="x" hint-placeholder-count="5">
-                <tr><td>{{x.a}}</td><td>{{x.p}}</td><td>{{x.s}}</td><td>{{x.c}}</td><td>{{x.o}}</td></tr>
-              </sc-for>
+              <tr data-for-list="{{raci}}" data-for-as="x"><td>{{x.a}}</td><td>{{x.p}}</td><td>{{x.s}}</td><td>{{x.c}}</td><td>{{x.o}}</td></tr>
             </tbody>
           </table>
         </div>

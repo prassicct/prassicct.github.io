@@ -256,7 +256,7 @@ a{color:inherit}
           <div class="fld">
             <label for="c-tipo">Motivo del messaggio</label>
             <select id="c-tipo" class="inp" value="{{motivo}}" onChange="{{setMotivo}}">
-              <sc-for list="{{motivi}}" as="m" hint-placeholder-count="5"><option value="{{m}}">{{m}}</option></sc-for>
+              <option data-for-list="{{motivi}}" data-for-as="m" value="{{m}}">{{m}}</option>
             </select>
           </div>
           <p class="mut" style="margin: 0; font-size: 15px;">Indica la pagina e, se possibile, la fonte ufficiale di riferimento. Non inserire dati riservati di Collegi o di parti.</p>

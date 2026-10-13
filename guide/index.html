@@ -124,7 +124,7 @@ a{color:inherit}
             <span class="lbl">Termine chiave</span>
             <span style="font-weight: 600;">Prima dell’avvio dell’esecuzione o entro 10 giorni</span>
           </div>
-          <a href="Kit.dc.html" class="more">Checklist di costituzione nel Kit →</a>
+          <a href="/strumenti/kit/" class="more">Checklist di costituzione nel Kit →</a>
         </div>
         <ol style="flex: 999 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
           
@@ -341,7 +341,7 @@ c. 4 — L'Osservatorio tiene l'elenco dei soggetti, anche appartenenti o già a
             <span class="lbl">Termine chiave</span>
             <span style="font-weight: 600;">Seduta entro 15 giorni dall’accettazione del Presidente</span>
           </div>
-          <a href="Kit.dc.html" class="more">Modello di verbale di insediamento →</a>
+          <a href="/strumenti/kit/" class="more">Modello di verbale di insediamento →</a>
         </div>
         <ol style="flex: 999 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
           
@@ -499,7 +499,7 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
             <span class="lbl">Termine chiave</span>
             <span style="font-weight: 600;">Determinazione entro 15 giorni, 20 per esigenze istruttorie</span>
           </div>
-          <a href="Scadenzario.dc.html" class="more">Calcola i termini nello Scadenzario →</a>
+          <a href="/strumenti/scadenzario/" class="more">Calcola i termini nello Scadenzario →</a>
         </div>
         <ol style="flex: 999 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
           
@@ -684,7 +684,7 @@ c. 4 — L'Osservatorio tiene l'elenco dei soggetti, anche appartenenti o già a
             <span class="lbl">Termine chiave</span>
             <span style="font-weight: 600;">Sottoscrizione del collaudo o del CRE, salvo riserve</span>
           </div>
-          <a href="Simulatore.dc.html" class="more">Simula i compensi →</a>
+          <a href="/strumenti/simulatore-compensi/" class="more">Simula i compensi →</a>
         </div>
         <ol style="flex: 999 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
           
@@ -974,7 +974,7 @@ class Component extends DCLogic {
     };
     const LAB = { N: ['Norma', 'lab l-n'], I: ['Interpretazione', 'lab l-i'], P: ['Prassi', 'lab l-p'], O: ['Proposta operativa', 'lab l-o'] };
     const G = [
-      { id: 'costituzione', n: '01', titolo: 'Costituzione del Collegio', intro: 'Dalla verifica dell’obbligo alla comunicazione all’Osservatorio: le decisioni che la stazione appaltante e le parti devono prendere prima che il Collegio esista.', termine: 'Prima dell’avvio dell’esecuzione o entro 10 giorni', tool: 'Checklist di costituzione nel Kit', toolHref: 'Kit.dc.html', steps: [
+      { id: 'costituzione', n: '01', titolo: 'Costituzione del Collegio', intro: 'Dalla verifica dell’obbligo alla comunicazione all’Osservatorio: le decisioni che la stazione appaltante e le parti devono prendere prima che il Collegio esista.', termine: 'Prima dell’avvio dell’esecuzione o entro 10 giorni', tool: 'Checklist di costituzione nel Kit', toolHref: '/strumenti/kit/', steps: [
         ['Verifica se il Collegio è obbligatorio', 'N', 'Obbligatorio per i lavori di importo pari o superiore alle soglie europee, anche in concessione o partenariato pubblico-privato; facoltativo negli altri casi. Nei contratti misti conta la parte di lavori, negli accordi quadro l’importo dei singoli contratti attuativi, negli appalti per lotti i soli lotti sopra soglia.', ['a215', 'a218', 'v7']],
         ['Controlla la disciplina transitoria', 'I', 'Per servizi e forniture la costituzione è oggi facoltativa, ma per le gare bandite prima del 31 dicembre 2024 con collegio non ancora costituito ANAC ritiene che resti l’obbligo previsto dalla disciplina previgente e dal bando.', ['anac15', 'a225b']],
         ['Scegli la composizione', 'N', 'Tre componenti, oppure cinque se l’opera è complessa e richiede professionalità eterogenee. La scelta spetta alla stazione appaltante o al concessionario.', ['v1']],
@@ -985,7 +985,7 @@ class Component extends DCLogic {
         ['Rispetta il termine di costituzione', 'N', 'Il Collegio va costituito prima dell’avvio dell’esecuzione o entro dieci giorni. Il ritardo rileva per la responsabilità dirigenziale ed erariale; in caso di mancata designazione la parte interessata può rivolgersi al presidente del tribunale.', ['v2']],
         ['Comunica la costituzione all’Osservatorio', 'N', 'Il Presidente trasmette l’atto di costituzione all’Osservatorio presso il CSLP. Le linee guida indicano cinque giorni dall’adozione, con firma digitale; dal 2026 si usa la piattaforma, con la PEC ancora attiva in parallelo.', ['v6', 'lg22', 'piatt']]
       ] },
-      { id: 'insediamento', n: '02', titolo: 'Insediamento', intro: 'Il momento in cui il Collegio fissa le proprie regole. Le scelte fatte qui, soprattutto sul valore di lodo, condizionano tutta l’attività successiva.', termine: 'Seduta entro 15 giorni dall’accettazione del Presidente', tool: 'Modello di verbale di insediamento', toolHref: 'Kit.dc.html', steps: [
+      { id: 'insediamento', n: '02', titolo: 'Insediamento', intro: 'Il momento in cui il Collegio fissa le proprie regole. Le scelte fatte qui, soprattutto sul valore di lodo, condizionano tutta l’attività successiva.', termine: 'Seduta entro 15 giorni dall’accettazione del Presidente', tool: 'Modello di verbale di insediamento', toolHref: '/strumenti/kit/', steps: [
         ['Acquisisci l’accettazione del Presidente', 'N', 'Il Collegio si intende istituito con l’accettazione dell’incarico da parte del Presidente: da questa data decorre il termine per l’insediamento.', ['v2']],
         ['Convoca la seduta di insediamento', 'N', 'La seduta si tiene entro quindici giorni dall’accettazione. Il Collegio può riunirsi anche in videoconferenza.', ['v2', 'v3']],
         ['Raccogli la scelta sul valore di lodo', 'N', 'Le parti dichiarano a verbale se intendono escludere che le determinazioni abbiano natura di lodo contrattuale. La scelta va fatta dopo la nomina del Presidente e non oltre l’insediamento; il valore di lodo è comunque escluso per le pronunce su risoluzione, sospensione coattiva e modalità di prosecuzione.', ['v2', 'a217', 'cpc808']],
@@ -994,7 +994,7 @@ class Component extends DCLogic {
         ['Apri il fascicolo e i canali di deposito', 'O', 'Crea l’archivio con struttura e nomenclatura stabili e indica nel verbale gli indirizzi PEC e le modalità con cui le parti depositano quesiti e memorie.', []],
         ['Aggiorna l’Osservatorio sulle variazioni', 'P', 'Ogni variazione dei dati del Collegio va comunicata aggiornando le schede, con PDF denominati come nella scheda trasmessa.', ['regoss', 'piatt']]
       ] },
-      { id: 'attivita', n: '03', titolo: 'Attività del Collegio', intro: 'Dal quesito alla pronuncia: come si istruisce una questione, entro quali termini si decide e quali effetti producono pareri e determinazioni.', termine: 'Determinazione entro 15 giorni, 20 per esigenze istruttorie', tool: 'Calcola i termini nello Scadenzario', toolHref: 'Scadenzario.dc.html', steps: [
+      { id: 'attivita', n: '03', titolo: 'Attività del Collegio', intro: 'Dal quesito alla pronuncia: come si istruisce una questione, entro quali termini si decide e quali effetti producono pareri e determinazioni.', termine: 'Determinazione entro 15 giorni, 20 per esigenze istruttorie', tool: 'Calcola i termini nello Scadenzario', toolHref: '/strumenti/scadenzario/', steps: [
         ['Ricevi e registra il quesito', 'N', 'Il procedimento si avvia con quesito scritto inviato al Collegio e alla controparte. Senza quesito di parte il Collegio non può pronunciarsi, a pena di nullità; se l’appaltatore iscrive riserve che incidono sulla regolare esecuzione senza quesito, il RUP deve formularlo.', ['v3']],
         ['Verifica se il parere è obbligatorio', 'N', 'Sopra soglia è obbligatorio per riserve, proposte di variante e altre controversie tecniche; è obbligatorio in caso di risoluzione, con la valutazione delle opzioni di prosecuzione; sulla sospensione per gravi ragioni tecniche il Collegio si pronuncia entro quindici giorni.', ['a216']],
         ['Istruisci in contraddittorio', 'N', 'Il Collegio può procedere ad audizioni informali e convocare le parti per il contraddittorio. Non è ammessa la consulenza tecnica d’ufficio.', ['v3']],
@@ -1004,7 +1004,7 @@ class Component extends DCLogic {
         ['Evita i ritardi', 'N', 'Il ritardo nell’adozione di tre determinazioni, o di una oltre sessanta giorni, comporta l’esclusione per tre anni da altri collegi; solo il ritardo ingiustificato genera responsabilità verso le parti.', ['v5']],
         ['Trasmetti le pronunce all’Osservatorio', 'N', 'Il Presidente trasmette le principali pronunce; le disposizioni dell’Osservatorio richiedono in particolare le determinazioni con valore di lodo che incidono su termini, condizioni o corrispettivo.', ['v6', 'regoss']]
       ] },
-      { id: 'chiusura', n: '04', titolo: 'Chiusura e scioglimento', intro: 'L’ultimo tratto: individuare il momento esatto dello scioglimento, chiudere le pendenze, liquidare i compensi e consegnare un archivio completo.', termine: 'Sottoscrizione del collaudo o del CRE, salvo riserve', tool: 'Simula i compensi', toolHref: 'Simulatore.dc.html', steps: [
+      { id: 'chiusura', n: '04', titolo: 'Chiusura e scioglimento', intro: 'L’ultimo tratto: individuare il momento esatto dello scioglimento, chiudere le pendenze, liquidare i compensi e consegnare un archivio completo.', termine: 'Sottoscrizione del collaudo o del CRE, salvo riserve', tool: 'Simula i compensi', toolHref: '/strumenti/simulatore-compensi/', steps: [
         ['Individua il momento dello scioglimento', 'N', 'Il Collegio si scioglie al termine dell’esecuzione, cioè alla sottoscrizione del collaudo o del certificato di regolare esecuzione; se sul collaudo restano riserve, con l’adozione della relativa pronuncia. Se non era obbligatorio può essere sciolto prima, per accordo tra le parti.', ['a219']],
         ['Chiudi i quesiti pendenti', 'O', 'Verifica nel registro che ogni quesito abbia una pronuncia sottoscritta e comunicata, e che non restino integrazioni di motivazione in sospeso.', ['v3']],
         ['Determina i compensi dei componenti', 'N', 'La parte fissa non supera i limiti del D.L. 76/2020; il compenso complessivo non supera il triplo della parte fissa; spetta il rimborso delle spese non remunerative. Fino al nuovo decreto, i parametri restano quelli delle linee guida del 2022.', ['v1', 'dl76', 'lg22']],
