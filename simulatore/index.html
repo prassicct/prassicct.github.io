@@ -94,6 +94,59 @@ select.inp{appearance:auto}
 .opt.on .opt-t{color:#561622}
 .parte{border:1px solid #E5DBCB;border-radius:8px;padding:16px;margin:0;display:flex;flex-direction:column;gap:12px;background:#FFFDF9;min-width:0}
 .parte legend{padding:0 6px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#561622}
+
+html{scroll-behavior:smooth}
+.step{padding-top:40px;padding-bottom:8px;display:flex;flex-direction:column;gap:16px;scroll-margin-top:72px}
+.step-h{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.step-h>div:nth-child(2){flex:1 1 300px}
+.step-p{margin:4px 0 0;font-size:15px}
+.step-a{display:flex;gap:16px;align-items:center;padding-top:6px}
+.sn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#E5DBCB;color:#2A2324;font-size:12px;font-weight:700;flex:none}
+.sn-l{width:34px;height:34px;font-size:15px;background:#6E1E2B;color:#fff;margin-top:2px}
+.sbar{position:sticky;top:0;z-index:30;background:rgba(250,246,239,.96);backdrop-filter:blur(6px);border-bottom:1px solid #E5DBCB}
+.sbar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.steps{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.steps a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+.steps a:hover{background:#F2EADD}
+.sbar-r{display:flex;align-items:center;gap:14px}
+.sbar-v{font-size:14px;white-space:nowrap}
+.sbar-v strong{font-family:'IBM Plex Mono',monospace;font-weight:500;margin-left:4px}
+.stack{display:flex;flex-direction:column;gap:22px}
+.q{display:flex;flex-direction:column;gap:10px;min-width:0}
+.q-t{font-weight:700;font-size:16px}
+.q-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px}
+.hint{font-size:13px}
+.lnk{font:inherit;font-size:14px;font-weight:600;color:#561622;background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.warn{margin:0;padding:12px 14px;border-radius:8px;background:#F8EBD6;color:#7A4A00;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.kpi-m{border:2px solid #6E1E2B;padding:23px}
+.kpi-m .big{color:#561622}
+.ks{font-size:13px}
+.h3r{font-family:'Lora',Georgia,serif;font-size:21px;font-weight:600;margin:8px 0 0}
+.t-h{padding:16px 20px;font-weight:700}
+.det{padding:16px 20px}
+.det summary{cursor:pointer;font-weight:600;color:#561622;list-style-position:inside}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}
+.pdf-box{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.dl{display:flex;flex-direction:column;gap:14px;background:#F3E4E1;border-color:#E9CFCB;position:sticky;top:76px}
+.dl-t{font-family:'Lora',Georgia,serif;font-weight:600;font-size:20px}
+.dl-l{margin:0;padding:0 0 0 18px;font-size:15px;display:flex;flex-direction:column;gap:4px}
+.b-pdf{font:inherit;font-weight:700;font-size:17px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#6E1E2B;color:#fff;border:0;border-radius:10px;height:56px;padding:0 22px;cursor:pointer;width:100%}
+.b-pdf:hover{background:#561622}
+.b-pdf:disabled{background:#BFAFA9;cursor:not-allowed}
+.b-pdf.b-sm{width:auto;height:40px;font-size:14px;padding:0 16px;border-radius:8px}
+.met{margin-top:64px;background:#F2EADD;border-top:1px solid #E5DBCB}
+.met-in{padding-top:56px;padding-bottom:72px;display:flex;flex-direction:column;gap:28px}
+.mstep{margin:0;padding:0;list-style:none;counter-reset:m;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.mstep li{counter-increment:m;background:#FFFDF9;border:1px solid #E5DBCB;border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.mstep li::before{content:counter(m);display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#6E1E2B;color:#fff;font-size:13px;font-weight:700}
+.ms-t{font-weight:700;font-size:16px}
+.met-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;align-items:start}
+.x-del{width:44px;padding:0;font-size:22px;line-height:1}
+.refs{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.b-sm{white-space:nowrap}
+@media (max-width:520px){.steps .sn{display:none}.steps{gap:0}.steps a{padding:8px 5px;font-size:13px}.sbar-in{gap:6px;padding-left:12px;padding-right:12px}.b-pdf.b-sm{padding:0 10px;font-size:13px}}
+@media (max-width:700px){.sbar-v{display:none}.steps a{padding:8px 8px}.dl{position:static}.step-a{width:100%;padding-left:48px;padding-top:0}}
 </style>
 </head>
 <body>
@@ -113,201 +166,254 @@ select.inp{appearance:auto}
       </nav>
     </div>
   </header>
-  <section class="wrap" style="padding-top: 48px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 18px;">
-    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Simulatore dei compensi</span></nav>
-    <p class="kick">Simulatore</p>
-    <h1 class="h1">Simulatore dei compensi del Collegio</h1>
-    <p class="lead">Calcola la parte fissa secondo le linee guida, a partire dalle categorie d'opera del D.M. 17 giugno 2016, la confronta con il tetto di legge e restituisce un prospetto in PDF da allegare al verbale. I dati restano nel tuo browser.</p>
+  <section class="wrap" style="padding-top: 40px; padding-bottom: 20px; display: flex; flex-direction: column; gap: 14px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Simulatore compensi</span></nav>
+    <h1 class="h1">Simulatore compensi del Collegio</h1>
+    <p class="lead">Quattro passaggi per calcolare la parte fissa del compenso, verificare i limiti di legge e scaricare un prospetto PDF da allegare al verbale. I dati restano sul tuo dispositivo.</p>
   </section>
 
-  <section id="disciplina" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 14px;">
-      <h2 class="h2">Disciplina applicabile</h2>
-      <div class="opts" role="group" aria-label="Disciplina applicabile">
-        
-          <button type="button" class="opt on" aria-pressed="true"><span class="opt-t">D.Lgs. 36/2023 dopo il correttivo</span><span class="opt-d">Dal 31 dicembre 2024. Si applica anche ai collegi di lavori già costituiti a quella data, salvo espressa volontà contraria delle parti. Il limite di legge riguarda la sola parte fissa; il compenso complessivo non supera il triplo.</span></button>
-        
-          <button type="button" class="opt"><span class="opt-t">D.Lgs. 36/2023, testo originario</span><span class="opt-d">Allegato V.2 in vigore fino al 30 dicembre 2024. Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 e per i collegi di lavori in cui le parti hanno escluso la nuova disciplina. Limite di legge sulla parte fissa, triplo come tetto complessivo, Segreteria fino al 20%.</span></button>
-        
-          <button type="button" class="opt"><span class="opt-t">D.L. 76/2020, art. 6</span><span class="opt-d">Collegi costituiti ai sensi dell’art. 6 del D.L. 76/2020, per contratti regolati dal D.Lgs. 50/2016. Il limite di legge riguarda i compensi complessivi del Collegio; Segreteria fino al 20%.</span></button>
-        
+  <div class="sbar">
+    <div class="wrap sbar-in">
+      <nav class="steps" aria-label="Passaggi">
+        <a href="#regole"><span class="sn">1</span>Regole</a>
+        <a href="#opere"><span class="sn">2</span>Opere</a>
+        <a href="#risultato"><span class="sn">3</span>Risultato</a>
+        <a href="#prospetto"><span class="sn">4</span>PDF</a>
+      </nav>
+      <div class="sbar-r">
+        <span class="sbar-v"><span class="mut">Parte fissa del Collegio</span> <strong>—</strong></span>
+        <button type="button" class="b-pdf b-sm" disabled="">Scarica PDF</button>
       </div>
-      <p class="mut" style="margin: 0; font-size: 14px;">La scelta cambia i limiti di legge, il tetto complessivo, la misura della Segreteria e il riferimento della riduzione per il collegio facoltativo. Fonti: <span class="rif"><button type="button" class="rif-b">D.Lgs. 36/2023, art. 225-bis, c. 5</button><span class="pop" role="note"><span class="pop-t">Art. 225-bis, comma 5, D.Lgs. 36/2023 — Disciplina transitoria del CCT</span><span class="pop-s">Testo vigente su Normattiva · articolo introdotto dal D.Lgs. 209/2024</span><span class="pop-x">Le disposizioni degli articoli da 215 a 219 e dell'Allegato V.2, entrate in vigore con il correttivo, si applicano, in assenza di una espressa volontà contraria delle parti, anche ai collegi già costituiti e operanti alla medesima data, ad eccezione di quelli relativi ai contratti di servizi e forniture già costituiti alla data di entrata in vigore della disposizione.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art225bis" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> · <span class="rif"><button type="button" class="rif-b">All. V.2, testo originario, art. 1</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — testo originario (1 aprile 2023 – 30 dicembre 2024)</span><span class="pop-s">Sintesi redazionale del testo originario del D.Lgs. 36/2023 · efficace dal 1° luglio 2023</span><span class="pop-x">c. 3 — Requisiti, incompatibilità e parametri dei compensi sono definiti da linee guida MIT; nelle more continuano ad applicarsi le linee guida del D.M. 17 gennaio 2022.
-c. 5 — Fermo il diritto a un compenso proporzionato al valore dell'opera e al numero, alla qualità e alla tempestività delle determinazioni, la parte fissa del compenso non può superare gli importi dell'art. 6, comma 7-bis, del D.L. 76/2020. Il compenso spettante ai componenti non può superare il triplo della parte fissa.
-Il testo originario non prevedeva lo scaglione oltre 1.000 milioni, la riduzione del 20% per il collegio facoltativo (art. 7) né la misura del 3-10% per la Segreteria (art. 8), introdotti dal correttivo: su questi punti valgono le linee guida.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> · <span class="rif"><button type="button" class="rif-b">D.L. 76/2020, art. 6, c. 7-bis</button><span class="pop" role="note"><span class="pop-t">Art. 6, comma 7-bis, D.L. 76/2020 — Limiti dei compensi</span><span class="pop-s">Testo vigente su Normattiva (versione in vigore dal 30 giugno 2022) · comma introdotto dal D.L. 152/2021, riformulato dal D.L. 36/2022</span><span class="pop-x">I compensi dei componenti, determinati ai sensi del comma 7, non possono complessivamente superare, con riferimento all'intero collegio:
-a) collegio di tre componenti: 0,5% del valore dell'appalto fino a 50 milioni; 0,25% per la parte da 50 a 100 milioni; 0,15% da 100 a 200 milioni; 0,10% da 200 a 500 milioni; 0,07% oltre 500 milioni;
-b) collegio di cinque componenti: 0,8% fino a 50 milioni; 0,4% da 50 a 100 milioni; 0,25% da 100 a 200 milioni; 0,15% da 200 a 500 milioni; 0,10% oltre 500 milioni.
-Nel D.L. 76/2020 il limite riguarda il compenso complessivo; l'Allegato V.2 del D.Lgs. 36/2023 lo riferisce alla sola parte fissa.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76~art6" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>.</p>
     </div>
-  </section>
+  </div>
 
-  <section id="tipo" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 14px;">
-      <h2 class="h2">Tipo di affidamento</h2>
-      <div class="seg" role="group" aria-label="Tipo di affidamento" style="max-width: 560px;">
-        <button type="button" class="on" aria-pressed="true">Contratto singolo o applicativo</button>
-        <button type="button" class="">Accordo quadro</button>
+  <section id="regole" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">1</span><div><h2 class="h2">Le regole del Collegio</h2><p class="mut step-p">Tre scelte che decidono quali limiti si applicano.</p></div></div>
+    <div class="card stack">
+      <div class="q">
+        <span class="q-t">Quale disciplina si applica?</span>
+        <div class="opts" role="group" aria-label="Disciplina applicabile">
+          
+            <button type="button" class="opt on" aria-pressed="true"><span class="opt-t">Regole attuali</span><span class="opt-d">Codice dei contratti dopo il correttivo. Per i collegi costituiti dal 31 dicembre 2024 e per quelli di lavori già attivi, salvo diverso accordo delle parti.</span></button>
+          
+            <button type="button" class="opt"><span class="opt-t">Regole originarie del Codice 2023</span><span class="opt-d">Allegato V.2 in vigore fino al 30 dicembre 2024. Per i collegi di servizi e forniture già costituiti a quella data, o di lavori se le parti hanno scelto le vecchie regole.</span></button>
+          
+            <button type="button" class="opt"><span class="opt-t">D.L. 76/2020</span><span class="opt-d">Per i collegi nati con l’art. 6 del D.L. 76/2020 su contratti del vecchio codice (D.Lgs. 50/2016).</span></button>
+          
+        </div>
+        <span class="mut hint">Se non sei sicuro, controlla la data di costituzione del Collegio e il verbale di insediamento. Le differenze sono spiegate nel <a href="#metodo">metodo</a>.</span>
       </div>
-      <p class="mut" style="margin: 0; font-size: 15px;">Per un appalto singolo o per un singolo contratto applicativo di un accordo quadro si compila un solo blocco di categorie.
-        <span class="rif"><button type="button" class="rif-b">All. V.2, art. 7, c. 2</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 7 — Costituzione facoltativa del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il collegio facoltativo dell'art. 218 è formato da tre componenti: due nominati dalla stazione appaltante e uno dal MIT (opere di interesse nazionale) o da Regione, Provincia autonoma o Città metropolitana.
-c. 2 — Nei contratti misti il collegio è obbligatorio se la parte di lavori è pari o superiore alla soglia europea; per gli accordi quadro rileva l'importo dei singoli contratti attuativi.
-c. 3 — Negli appalti suddivisi in lotti il collegio è obbligatorio per i soli lotti di importo pari o superiore alla soglia europea.
-c. 4 — Se il collegio facoltativo opera prima dell'affidamento, i compensi sono ridotti del 20% rispetto all'art. 1.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></p>
-    </div>
-  </section>
-
-  <section id="dati" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 20px;">
-      <h2 class="h2">Dati del Collegio</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;">
-        <div class="fld" style="grid-column: 1 / -1;"><label for="f-nome">Collegio e contratto</label><input id="f-nome" class="inp txt" type="text" placeholder="Es. Collegio consultivo tecnico — Lavori di …"></div>
-        <div class="fld"><label for="f-cig">CIG</label><input id="f-cig" class="inp" type="text"></div>
-        <div class="fld"><label for="f-cup">CUP</label><input id="f-cup" class="inp" type="text"></div>
-        <div class="fld"><label for="f-data">Data del prospetto</label><input id="f-data" class="inp" type="date"></div>
-        <div class="fld"><label for="f-red">Redatto da</label><input id="f-red" class="inp txt" type="text" placeholder="Es. Segreteria del Collegio"></div>
-        
-        <div class="fld">
-          <span class="fl" id="comp-l">Componenti</span>
+      <div class="q-row">
+        <div class="q">
+          <span class="q-t" id="tipo-l">Che tipo di contratto?</span>
+          <div class="seg" role="group" aria-labelledby="tipo-l">
+            <button type="button" class="on" aria-pressed="true">Contratto singolo</button>
+            <button type="button" class="">Accordo quadro</button>
+          </div>
+          <span class="mut hint">Vale anche per un solo contratto applicativo di un accordo quadro.</span>
+        </div>
+        <div class="q">
+          <span class="q-t" id="comp-l">Quanti componenti?</span>
           <div class="seg" role="group" aria-labelledby="comp-l">
             <button type="button" class="on" aria-pressed="true">Tre</button>
             <button type="button" class="">Cinque</button>
           </div>
+          <span class="mut hint">Presidente compreso.</span>
         </div>
-        <div class="fld"><label for="segr">Segreteria: 5% del compenso di ciascun componente (tra il 3% e il 10%, All. V.2, art. 8)</label><input id="segr" type="range" min="3" max="10" step="1" style="accent-color: #6E1E2B; height: 44px;"></div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-        <fieldset class="parte">
-          <legend>Stazione appaltante</legend>
-          <div class="fld"><label for="f-sa">Denominazione</label><input id="f-sa" class="inp txt" type="text" placeholder="Es. Comune di …"></div>
-          <div class="fld"><label for="f-sacf">Codice fiscale</label><input id="f-sacf" class="inp" type="text" autocomplete="off"></div>
-        </fieldset>
-        <fieldset class="parte">
-          <legend>Operatore economico</legend>
-          <div class="fld"><label for="f-oe">Denominazione</label><input id="f-oe" class="inp txt" type="text" placeholder="Es. Impresa … S.p.A."></div>
-          <div class="fld"><label for="f-oecf">Codice fiscale</label><input id="f-oecf" class="inp" type="text" autocomplete="off"></div>
-        </fieldset>
+      <div class="q">
+        <span class="q-t">Ci sono situazioni particolari?</span>
+        <label class="chk2"><input type="checkbox"><span>Il Collegio è facoltativo ed è costituito prima dell’affidamento <span class="mut">(compensi ridotti del 20%)</span></span></label>
+        <label class="chk2"><input type="checkbox"><span>Il collaudo è in corso d’opera <span class="mut">(compenso di riferimento aumentato del 20%)</span></span></label>
+        
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px 32px;">
-        <label class="chk2"><input type="checkbox"><span>Collegio facoltativo prima dell'affidamento (−20%, All. V.2, art. 7, c. 4)</span></label>
-        <label class="chk2"><input type="checkbox"><span>Applica la maggiorazione del 20% per collaudo in corso d'opera</span></label>
-      </div>
-      
     </div>
   </section>
 
-  <section id="categorie" class="wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 16px;">
+  <section id="opere" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">2</span><div><h2 class="h2">Le opere</h2><p class="mut step-p">Scegli la categoria e inserisci l’importo dei lavori: G e Q si compilano da soli.</p></div>
+      <div class="step-a"><button type="button" class="lnk">Prova con un esempio</button><button type="button" class="lnk">Ricomincia</button></div></div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
     
       <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <h2 class="h2">Categorie d’opera</h2>
-          <span class="mut" style="font-size: 14px;">Una riga per ogni ID opera della Tavola Z-1 del D.M. 17 giugno 2016</span>
+          
+          
         </div>
         
         
-          <div class="fld" style="max-width: 320px;"><label for="k0a">Valore dell'appalto (euro)</label><input id="k0a" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie"></div>
+          <div class="fld" style="max-width: 320px;"><label for="k0a">Valore dell’appalto (€)</label><input id="k0a" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto, somma degli importi"></div>
         
         <div style="display: flex; flex-direction: column; gap: 12px;">
           
             <div class="riga">
-              <div class="fld" style="flex: 2 1 260px;"><label for="k0r0i">ID opera (Tavola Z-1)</label>
+              <div class="fld" style="flex: 3 1 240px;"><label for="k0r0i">Categoria d’opera</label>
                 <select id="k0r0i" class="inp txt">
-                  <option value="">Scegli la categoria…</option>
+                  <option value="">Scegli dalla Tavola Z-1…</option>
                   <option value="E.01">E.01 · Edifici rurali e industriali di importanza corrente · G 0,65</option><option value="E.02">E.02 · Edifici rurali e industriali complessi · G 0,95</option><option value="E.03">E.03 · Ostelli, pensioni, ristoranti, negozi, mercati coperti semplici · G 0,95</option><option value="E.04">E.04 · Alberghi, villaggi turistici, centri commerciali complessi · G 1,20</option><option value="E.05">E.05 · Edifici e pertinenze semplici, edifici provvisori di modesta importanza · G 0,65</option><option value="E.06">E.06 · Edilizia residenziale di tipo corrente · G 0,95</option><option value="E.07">E.07 · Edilizia residenziale di pregio · G 1,20</option><option value="E.08">E.08 · Sedi sanitarie di base, asili, scuole fino a 24/25 classi · G 0,95</option><option value="E.09">E.09 · Scuole oltre 24/25 classi, case di cura · G 1,15</option><option value="E.10">E.10 · Ospedali, poliambulatori, istituti di ricerca, università · G 1,20</option><option value="E.11">E.11 · Padiglioni provvisori, opere cimiteriali normali, sport all’aperto semplici · G 0,95</option><option value="E.12">E.12 · Sport all’aperto complessi, palestre e piscine coperte · G 1,15</option><option value="E.13">E.13 · Biblioteche, teatri, musei, auditorium, stadi, chiese · G 1,20</option><option value="E.14">E.14 · Edifici provvisori a servizio di caserme · G 0,65</option><option value="E.15">E.15 · Caserme di importanza corrente · G 0,95</option><option value="E.16">E.16 · Sedi di enti e ministeri, tribunali, penitenziari, caserme complesse · G 1,20</option><option value="E.17">E.17 · Verde e arredo urbano semplici, campeggi · G 0,65</option><option value="E.18">E.18 · Arredo urbano, giardini, piazze e spazi pubblici · G 0,95</option><option value="E.19">E.19 · Arredi singolari, parchi urbani, piazze storiche · G 1,20</option><option value="E.20">E.20 · Manutenzione, ristrutturazione, riqualificazione di edifici esistenti · G 0,95</option><option value="E.21">E.21 · Interventi su edifici di interesse storico-artistico non tutelati · G 1,20</option><option value="E.22">E.22 · Restauro di edifici di interesse storico-artistico tutelati · G 1,55</option><option value="S.01">S.01 · C.a. non sismiche, interventi locali; provvisionali fino a 2 anni · G 0,70</option><option value="S.02">S.02 · Muratura, legno, metallo non sismiche, interventi locali · G 0,50</option><option value="S.03">S.03 · Strutture in c.a.; provvisionali oltre 2 anni · G 0,95</option><option value="S.04">S.04 · Muratura, legno, metallo; fondazioni, ponti, paratie, pendii · G 0,90</option><option value="S.05">S.05 · Dighe, gallerie, opere sotterranee, fondazioni speciali · G 1,05</option><option value="S.06">S.06 · Opere di notevole importanza costruttiva, edifici alti · G 1,15</option><option value="IA.01">IA.01 · Impianti idrici e sanitari, fognature, gas, antincendio · G 0,75</option><option value="IA.02">IA.02 · Riscaldamento, climatizzazione, trattamento aria · G 0,85</option><option value="IA.03">IA.03 · Impianti elettrici e speciali di importanza corrente · G 1,15</option><option value="IA.04">IA.04 · Impianti elettrici complessi, cablaggi strutturati, fibra ottica · G 1,30</option><option value="IB.04">IB.04 · Depositi e discariche senza trattamento rifiuti · G 0,55</option><option value="IB.05">IB.05 · Impianti per industrie alimentari, tessili, del legno e simili · G 0,70</option><option value="IB.06">IB.06 · Impianti industriali, termovalorizzatori, trattamento rifiuti · G 0,70</option><option value="IB.07">IB.07 · Impianti industriali complessi o a rilevante rischio ambientale · G 0,75</option><option value="IB.08">IB.08 · Linee e reti di trasmissione di energia e telecomunicazioni · G 0,50</option><option value="IB.09">IB.09 · Centrali idroelettriche, stazioni di trasformazione, trazione elettrica · G 0,60</option><option value="IB.10">IB.10 · Impianti termoelettrici ed elettrochimici · G 0,75</option><option value="IB.11">IB.11 · Campi fotovoltaici, parchi eolici · G 0,90</option><option value="IB.12">IB.12 · Micro centrali idroelettriche, impianti termoelettrici complessi · G 1,00</option><option value="V.01">V.01 · Manutenzione della viabilità ordinaria · G 0,40</option><option value="V.02">V.02 · Strade, linee tranviarie, ferrovie ordinarie, piste ciclabili · G 0,45</option><option value="V.03">V.03 · Viabilità speciale: funicolari, teleferiche, piste aeroportuali · G 0,75</option><option value="D.01">D.01 · Opere di navigazione interna e portuali · G 0,65</option><option value="D.02">D.02 · Bonifiche e irrigazioni a deflusso naturale, sistemazione corsi d’acqua · G 0,45</option><option value="D.03">D.03 · Bonifiche con sollevamento meccanico, derivazioni per energia · G 0,55</option><option value="D.04">D.04 · Acquedotti, fognature urbane, gasdotti ordinari · G 0,65</option><option value="D.05">D.05 · Acquedotti, fognature, gasdotti con problemi tecnici speciali · G 0,80</option><option value="T.01">T.01 · Sistemi informativi, data center, server farm · G 0,95</option><option value="T.02">T.02 · Reti, cablaggi, videosorveglianza, controllo accessi · G 0,70</option><option value="T.03">T.03 · Elettronica industriale, automazione, robotica · G 1,20</option><option value="P.01">P.01 · Sistemazione naturalistica e paesaggistica, aree protette · G 0,85</option><option value="P.02">P.02 · Opere a verde per attività ricreative o sportive · G 0,85</option><option value="P.03">P.03 · Riqualificazione di ambiti naturali, rurali, forestali o urbani · G 0,85</option><option value="P.04">P.04 · Bacini estrattivi: cave e torbiere · G 0,85</option><option value="P.05">P.05 · Assetto forestale, piste e strade forestali · G 0,85</option><option value="P.06">P.06 · Miglioramento fondiario agrario e rurale · G 0,85</option><option value="U.01">U.01 · Filiere agroalimentari e zootecniche, infrastrutture rurali · G 0,90</option><option value="U.02">U.02 · Filiera naturalistica e faunistica · G 0,95</option><option value="U.03">U.03 · Strumenti di pianificazione generale, attuativa e di settore · G 1,00</option>
-                  <option value="ALTRO">Altro: inserimento manuale</option>
+                  <option value="ALTRO">Altra categoria: inserisco io i valori</option>
                 </select>
               </div>
-              <div class="fld" style="flex: 3 1 220px;"><label for="k0r0d">Descrizione</label><input id="k0r0d" class="inp txt" type="text"></div>
-              <div class="fld" style="flex: 2 1 160px;"><label for="k0r0v">Importo V (euro)</label><input id="k0r0v" class="inp" type="text" inputmode="decimal"></div>
-              <div class="fld" style="flex: 0 1 90px;"><label for="k0r0g">G</label><input id="k0r0g" class="inp" type="text" inputmode="decimal"></div>
-              <div class="fld" style="flex: 0 1 90px;"><label for="k0r0q">Q</label><input id="k0r0q" class="inp" type="text" inputmode="decimal"></div>
-              <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso CP</span><span class="out">0,00&nbsp;€</span><span class="mut" style="font-size: 12px;">P = 0,000%</span></div>
-              <button type="button" class="btn-x" aria-label="Rimuovi la categoria 1">Rimuovi</button>
+              <div class="fld" style="flex: 2 1 170px;"><label for="k0r0d">Descrizione</label><input id="k0r0d" class="inp txt" type="text"></div>
+              <div class="fld" style="flex: 2 1 150px;"><label for="k0r0v">Importo dei lavori (€)</label><input id="k0r0v" class="inp" type="text" inputmode="decimal"></div>
+              <div class="fld" style="flex: 0 1 76px;"><label for="k0r0g" title="Grado di complessità, dalla Tavola Z-1">G</label><input id="k0r0g" class="inp" type="text" inputmode="decimal"></div>
+              <div class="fld" style="flex: 0 1 76px;"><label for="k0r0q" title="Parametro della prestazione di collaudo, Tavola Z-2">Q</label><input id="k0r0q" class="inp" type="text" inputmode="decimal"></div>
+              <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso rif.</span><span class="out">0,00&nbsp;€</span><span class="mut" style="font-size: 12px;">P = 0,000%</span></div>
+              <button type="button" class="btn-x x-del" aria-label="Rimuovi la categoria 1" title="Rimuovi la categoria">×</button>
             </div>
           
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
-          <button type="button" class="btn-s">+ Aggiungi categoria</button>
+          <button type="button" class="btn-s">+ Aggiungi una categoria</button>
           
           <span class="mut" style="font-size: 14px;"></span>
         </div>
       </div>
     
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       
-      <button type="button" class="btn-s btn-so">Carica un esempio</button>
-      <button type="button" class="btn-s btn-so">Azzera</button>
     </div>
+  </section>
+
+  <section id="risultato" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">3</span><div><h2 class="h2">Il risultato</h2><p class="mut step-p">Il risultato compare qui appena inserisci almeno una categoria con il suo importo.</p></div></div>
     
-      <p style="margin: 0; padding: 12px 14px; border-radius: 8px; background: #F8EBD6; color: #7A4A00; font-size: 14px;">Scegli almeno una categoria d’opera e inserisci l’importo per calcolare la parte fissa.</p>
     
   </section>
 
-  <section id="risultati" class="wrap" style="padding-bottom: 32px; display: flex; flex-direction: column; gap: 20px;">
-    <h2 class="h2">Risultati</h2>
-    
-    
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
-          <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Presidente (+10%): 0,00&nbsp;€</span></div>
-          <div class="card kpi"><span class="lbl">Parte fissa del Collegio</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Entro il tetto di legge (0,00&nbsp;€)</span></div>
-          <div class="card kpi" style="border-top: 3px solid #6E1E2B;"><span class="lbl">Tetto complessivo del Collegio</span><span class="big" style="color: #561622;">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Triplo della parte fissa riconoscibile</span></div>
-          <div class="card kpi"><span class="lbl">Segreteria sulla parte fissa</span><span class="big">0,00&nbsp;€</span><span class="mut" style="font-size: 13px;">Al tetto complessivo: 0,00&nbsp;€</span></div>
+  <section id="prospetto" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">4</span><div><h2 class="h2">Il prospetto PDF</h2><p class="mut step-p">Completa i dati che vuoi riportare nel documento: sono tutti facoltativi.</p></div></div>
+    <div class="pdf-box">
+      <div class="card stack" style="flex: 2 1 560px;">
+        <div class="grid2">
+          <div class="fld" style="grid-column: 1 / -1;"><label for="f-nome">Collegio e contratto</label><input id="f-nome" class="inp txt" type="text" placeholder="Es. Collegio consultivo tecnico — Lavori di …"></div>
+          <div class="fld"><label for="f-cig">CIG</label><input id="f-cig" class="inp" type="text"></div>
+          <div class="fld"><label for="f-cup">CUP</label><input id="f-cup" class="inp" type="text"></div>
+        </div>
+        <div class="grid2">
+          <fieldset class="parte">
+            <legend>Stazione appaltante</legend>
+            <div class="fld"><label for="f-sa">Denominazione</label><input id="f-sa" class="inp txt" type="text" placeholder="Es. Comune di …"></div>
+            <div class="fld"><label for="f-sacf">Codice fiscale</label><input id="f-sacf" class="inp" type="text" autocomplete="off"></div>
+          </fieldset>
+          <fieldset class="parte">
+            <legend>Operatore economico</legend>
+            <div class="fld"><label for="f-oe">Denominazione</label><input id="f-oe" class="inp txt" type="text" placeholder="Es. Impresa … S.p.A."></div>
+            <div class="fld"><label for="f-oecf">Codice fiscale</label><input id="f-oecf" class="inp" type="text" autocomplete="off"></div>
+          </fieldset>
+        </div>
+        <div class="grid2">
+          <div class="fld"><label for="f-data">Data del prospetto</label><input id="f-data" class="inp" type="date"></div>
+          <div class="fld"><label for="f-red">Redatto da</label><input id="f-red" class="inp txt" type="text" placeholder="Es. Segreteria del Collegio"></div>
+          
+        </div>
+      </div>
+      <div class="card dl" style="flex: 1 1 300px;">
+        <span class="dl-t">Pronto da allegare al verbale</span>
+        <ul class="dl-l">
+          <li>Dati del Collegio e delle parti</li>
+          <li>Categorie d’opera e parametri</li>
+          <li>Calcolo passo per passo</li>
+          <li>Spazi per le firme: Presidente, due componenti e Segretario</li>
+        </ul>
+        <button type="button" class="b-pdf" disabled=""><svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Scarica il prospetto PDF</button>
+        <span class="mut hint" style="text-align: center;">Inserisci almeno una categoria per scaricare il prospetto.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" class="met">
+    <div class="wrap met-in">
+      <div style="display: flex; flex-direction: column; gap: 8px; max-width: 70ch;">
+        <p class="kick">Metodo</p>
+        <h2 class="h2">Come funziona il calcolo</h2>
+        <p class="mut" style="margin: 0;">Il simulatore segue cinque passaggi. Per ognuno trovi la regola applicata e la sua fonte: tieni il cursore sul riferimento, o toccalo, per leggerne il testo.</p>
+      </div>
+      <ol class="mstep">
+        <li><span class="ms-t">Compenso di riferimento</span><span>Per ogni categoria: <strong>CP = V × G × Q × P</strong>, dove V è l’importo dei lavori, G il grado di complessità della Tavola Z-1, Q = 0,08 il parametro del collaudo tecnico-amministrativo (Tavola Z-2, QdI.01, aumentato del 20% per il collaudo in corso d’opera) e P = 0,03 + 10 / V<sup>0,4</sup>. Fonte: D.M. 17 giugno 2016, artt. 3 e 4, verificato sulla Gazzetta Ufficiale n. 174 del 27 luglio 2016.</span></li>
+        <li><span class="ms-t">Parte fissa</span><span>Il compenso di riferimento si riduce del 60%, e dell’80% per la parte di lavori oltre 100 milioni. È la parte fissa di ciascun componente; il Presidente ha il 10% in più. Le riduzioni per collegio facoltativo e lavori già in corso si applicano qui. Fonte: <span class="rif"><button type="button" class="rif-b">Linee guida D.M. 12/2022, punto 7</button><span class="pop" role="note"><span class="pop-t">Linee guida D.M. 12/2022, punto 7 — Compensi</span><span class="pop-s">MIT · testo verificato sul PDF del CSLP · parametri applicabili in via transitoria (Allegato V.2, art. 1, c. 6)</span><span class="pop-x">7.2.1 a) — Parte fissa per ciascun componente: artt. 3 e 4 del D.M. Giustizia 17 giugno 2016 per il collaudo tecnico-amministrativo, ridotta del 60%; per la parte di lavori oltre 100 milioni la riduzione è dell'80%. Spetta dopo almeno quattro riunioni con determinazioni, pareri o attività istruttoria.
+7.2.1 b) — Parte variabile per ciascuna determinazione o parere: se tecnico, importo orario massimo del D.M. 17 giugno 2016 aumentato del 25%; se giuridico, D.M. 55/2014 come aggiornato dal D.M. 37/2018.
+7.2.2 — Il compenso complessivo di ciascun componente non può superare il triplo della parte fissa.
+7.2.3 — Per i lavori in corso alla data di pubblicazione del D.L. 76/2020 e CCT non ancora costituiti, la parte fissa è ridotta del 30% se l'avanzamento supera il 50% e del 60% se supera l'85%.
+7.2.4 — Per ogni pronuncia oltre i termini, senza giustificato motivo, la parte variabile è ridotta da un decimo a un terzo (riduzione dimezzata con più quesiti contestuali).
+7.3.1 — CCT facoltativo ante operam: compensi dei punti 7.2.1 e 7.2.2 ridotti del 20%.
+7.4.1 — Spese forfettarie secondo l'art. 5 del D.M. 17 giugno 2016.
+7.5.1 — Il Presidente percepisce il compenso degli altri componenti maggiorato del 10%.
+7.6.1 — Segreteria: fino a un massimo del 20% dei compensi fissi e variabili di ciascun componente, a carico dei componenti.
+7.7.1 — Il compenso di ciascun componente grava per metà su ciascuna parte.
+7.7.2 — Pagamento entro 90 giorni dalla pronuncia; la quota fissa alla quarta riunione.
+7.7.3 — Acconto del 20% della parte fissa, se richiesto nel verbale di costituzione, previa polizza fideiussoria.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2022-09/linee-guida-collegio-consultivo-tecnico.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>.</span></li>
+        <li><span class="ms-t">Limite di legge</span><span>La somma per il Collegio non può superare il limite per scaglioni del <span class="rif"><button type="button" class="rif-b">D.L. 76/2020, art. 6, comma 7-bis</button><span class="pop" role="note"><span class="pop-t">Art. 6, comma 7-bis, D.L. 76/2020 — Limiti dei compensi</span><span class="pop-s">Testo vigente su Normattiva (versione in vigore dal 30 giugno 2022) · comma introdotto dal D.L. 152/2021, riformulato dal D.L. 36/2022</span><span class="pop-x">I compensi dei componenti, determinati ai sensi del comma 7, non possono complessivamente superare, con riferimento all'intero collegio:
+a) collegio di tre componenti: 0,5% del valore dell'appalto fino a 50 milioni; 0,25% per la parte da 50 a 100 milioni; 0,15% da 100 a 200 milioni; 0,10% da 200 a 500 milioni; 0,07% oltre 500 milioni;
+b) collegio di cinque componenti: 0,8% fino a 50 milioni; 0,4% da 50 a 100 milioni; 0,25% da 100 a 200 milioni; 0,15% da 200 a 500 milioni; 0,10% oltre 500 milioni.
+Nel D.L. 76/2020 il limite riguarda il compenso complessivo; l'Allegato V.2 del D.Lgs. 36/2023 lo riferisce alla sola parte fissa.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76~art6" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>. Se lo supera, la parte fissa di tutti è ridotta in proporzione. Dopo il correttivo si aggiunge lo scaglione oltre 1.000 milioni (<span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 1, c. 4</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — Formazione del Collegio e compensi</span><span class="pop-s">Sintesi redazionale · testo vigente, modificato dal D.Lgs. 209/2024 (dal 31/12/2024) e dal D.L. 73/2025</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee il Collegio è formato da tre componenti, o da cinque in caso di opera complessa ed eterogeneità delle professionalità richieste, a scelta della stazione appaltante o del concessionario. I componenti hanno comprovata esperienza nel settore dei contratti e degli investimenti pubblici, anche in relazione all'oggetto del contratto.
+c. 2 — Le parti nominano i componenti di comune accordo, oppure ciascuna ne nomina uno o due, anche tra il proprio personale o tra soggetti legati da rapporti di lavoro autonomo o collaborazione. Il Presidente è scelto dai componenti di parte; in mancanza di accordo è designato entro cinque giorni dal MIT (opere di interesse nazionale), dalla Regione, dalla Provincia autonoma o dalla Città metropolitana. Se il MIT finanzia l'opera o è concedente, nomina un componente.
+c. 3 — Ai componenti si applica l'art. 813, secondo comma, c.p.c.
+c. 4 — La parte fissa del compenso non può superare i limiti dell'art. 6, comma 7-bis, del D.L. 76/2020; per la parte di valore dell'appalto eccedente 1.000 milioni di euro il limite è pari allo 0,02% (collegio di tre) o allo 0,03% (collegio di cinque).
+c. 5 — Il compenso complessivo non può superare il triplo della parte fissa. Spetta il rimborso delle spese non remunerative. Il compenso è dovuto a tutti i componenti, indipendentemente dal rapporto con le parti, senza vincolo di solidarietà. Non si applica l'art. 3 della L. 136/2010.
+c. 6 — Un decreto MIT, su parere conforme del Consiglio superiore dei lavori pubblici, definirà i parametri dei compensi (anche della segreteria). Fino ad allora restano applicabili, per i compensi, le Linee guida del D.M. 17 gennaio 2022 (G.U. n. 55 del 7 marzo 2022).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>).</span></li>
+        <li><span class="ms-t">Compenso massimo</span><span>Parte fissa e parte variabile insieme non superano il triplo della parte fissa. Con il D.L. 76/2020 il limite di legge vale anche per il compenso complessivo. La parte variabile, che dipende dalle singole pronunce, non è calcolata.</span></li>
+        <li><span class="ms-t">Spese e Segreteria</span><span>Le spese forfettarie seguono l’art. 5 del D.M. 17 giugno 2016. La Segreteria è pagata dai componenti in percentuale del loro compenso: dal 3% al 10% dopo il correttivo (<span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 8</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 8 — Segreteria tecnico-amministrativa</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Per lavori di particolare complessità il Collegio può avvalersi di una segreteria tecnico-amministrativa, composta da uno o più membri scelti e nominati dal Presidente, con compiti di istruttoria e supporto amministrativo.
+c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello di ciascun componente; è a carico dei componenti ed è liquidato dalle parti con le stesse modalità e tempistiche previste per il Collegio.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>), fino al 20% con le regole precedenti.</span></li>
+      </ol>
+
+      <div class="met-g">
+        <div class="card" style="padding: 0;">
+          <div class="t-h">Limiti di legge sulla parte del valore dell’appalto</div>
+          <div style="overflow-x: auto;">
+            <table class="tb" style="min-width: 420px;">
+              <thead><tr><th>Valore dell’appalto</th><th style="text-align: right;">3 componenti</th><th style="text-align: right;">5 componenti</th></tr></thead>
+              <tbody>
+                <tr><td>fino a 50 milioni</td><td class="n">0,50%</td><td class="n">0,80%</td></tr>
+                <tr><td>da 50 a 100 milioni</td><td class="n">0,25%</td><td class="n">0,40%</td></tr>
+                <tr><td>da 100 a 200 milioni</td><td class="n">0,15%</td><td class="n">0,25%</td></tr>
+                <tr><td>da 200 a 500 milioni</td><td class="n">0,10%</td><td class="n">0,15%</td></tr>
+                <tr><td>oltre 500 milioni</td><td class="n">0,07%</td><td class="n">0,10%</td></tr>
+                <tr><td>oltre 1.000 milioni, solo dopo il correttivo</td><td class="n">0,02%</td><td class="n">0,03%</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="card" style="padding: 0;">
-          <div style="padding: 18px 20px; font-weight: 600;">Prospetto di calcolo</div>
+          <div class="t-h">Cosa cambia con la disciplina scelta</div>
           <div style="overflow-x: auto;">
-            <table class="tb">
-              <thead><tr><th>Voce</th><th>Base</th><th style="text-align: right;">Importo</th></tr></thead>
+            <table class="tb" style="min-width: 520px;">
+              <thead><tr><th></th><th>Regole attuali</th><th>Regole originarie</th><th>D.L. 76/2020</th></tr></thead>
               <tbody>
-                <tr class=""><td>Valore complessivo delle categorie (ΣV)</td><td class="mut" style="font-size: 13px;">D.M. 17/6/2016</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Compenso di riferimento per il collaudo (ΣCP)</td><td class="mut" style="font-size: 13px;">CP = V × G × Q × P</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Coefficiente dopo la riduzione</td><td class="mut" style="font-size: 13px;">LG 7.2.1 a): −60%</td><td class="n">40,00%</td></tr><tr class=""><td>Parte fissa calcolata, per componente</td><td class="mut" style="font-size: 13px;">LG 7.2.1 a)</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Parte fissa calcolata, Presidente</td><td class="mut" style="font-size: 13px;">LG 7.5.1: +10%</td><td class="n">0,00&nbsp;€</td></tr><tr class="sub"><td>Parte fissa calcolata, Collegio di 3</td><td class="mut" style="font-size: 13px;">2 componenti + Presidente</td><td class="n">0,00&nbsp;€</td></tr><tr class="sub"><td>Tetto della parte fissa del Collegio</td><td class="mut" style="font-size: 13px;">D.L. 76/2020, art. 6, c. 7-bis · All. V.2, art. 1, c. 4</td><td class="n">0,00&nbsp;€</td></tr><tr class="tot"><td>Parte fissa riconoscibile, Collegio</td><td class="mut" style="font-size: 13px;">Entro il limite</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>di cui per componente / Presidente</td><td class="mut" style="font-size: 13px;"></td><td class="n">0,00&nbsp;€ / 0,00&nbsp;€</td></tr><tr class="tot"><td>Tetto del compenso complessivo, Collegio</td><td class="mut" style="font-size: 13px;">All. V.2, art. 1, c. 5: triplo della parte fissa</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Spese forfettarie sulla parte fissa</td><td class="mut" style="font-size: 13px;">D.M. 17/6/2016, art. 5: 25,00%</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Segreteria, sulla parte fissa</td><td class="mut" style="font-size: 13px;">All. V.2, art. 8, c. 2: 5%</td><td class="n">0,00&nbsp;€</td></tr><tr class=""><td>Segreteria, al tetto complessivo</td><td class="mut" style="font-size: 13px;">All. V.2, art. 8, c. 2: 5%</td><td class="n">0,00&nbsp;€</td></tr>
+                <tr><td>Limite di legge</td><td>sulla parte fissa</td><td>sulla parte fissa</td><td>sul compenso complessivo</td></tr>
+                <tr><td>Oltre 1.000 milioni</td><td>0,02% o 0,03%</td><td>come oltre 500</td><td>come oltre 500</td></tr>
+                <tr><td>Compenso massimo</td><td>triplo della parte fissa</td><td>triplo della parte fissa</td><td>triplo e limite di legge</td></tr>
+                <tr><td>Segreteria</td><td>dal 3% al 10%</td><td>fino al 20%</td><td>fino al 20%</td></tr>
+                <tr><td>Collegio facoltativo</td><td>−20%, anche sul limite</td><td>−20% sui compensi</td><td>−20% sui compensi</td></tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    
 
-    <div class="card" style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; background: #F3E4E1; border-color: #F3E4E1;">
-      <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 4px;">
-        <span style="font-weight: 600;">Prospetto da allegare al verbale</span>
-        <span class="mut" style="font-size: 14px;">Il PDF riporta dati del Collegio, categorie, parametri, passaggi del calcolo, tetti e riferimenti normativi, con spazio per le sottoscrizioni. Per l'accordo quadro include il riepilogo e un prospetto per ogni contratto applicativo.</span>
-      </div>
-      <button type="button" class="btn">Scarica il prospetto in PDF</button>
-    </div>
-  </section>
-
-  <section id="metodo" class="wrap" style="padding-bottom: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
-      <span style="font-weight: 600;">La formula del compenso</span>
-      <p style="margin: 0; font-size: 15px;">Per ogni categoria CP = V × G × Q × P, con P = 0,03 + 10 / V<sup>0,4</sup>; il compenso è la somma sulle categorie (D.M. 17 giugno 2016, artt. 3 e 4). G è precompilato dalla Tavola Z-1, verificata sul testo pubblicato nella Gazzetta Ufficiale n. 174 del 27 luglio 2016; Q = 0,08 è il parametro della prestazione QdI.01, collaudo tecnico-amministrativo, della Tavola Z-2, che prevede un aumento del 20% per il collaudo in corso d'opera. Le linee guida assumono come riferimento questo compenso, con riduzione del 60%, e dell'80% per la parte di lavori oltre 100 milioni:
-        <span class="rif"><button type="button" class="rif-b">Linee guida, punto 7</button><span class="pop" role="note"><span class="pop-t">Linee guida D.M. 12/2022, punto 7 — Compensi</span><span class="pop-s">MIT · testo verificato sul PDF del CSLP · parametri applicabili in via transitoria (Allegato V.2, art. 1, c. 6)</span><span class="pop-x">7.2.1 a) — Parte fissa per ciascun componente: artt. 3 e 4 del D.M. Giustizia 17 giugno 2016 per il collaudo tecnico-amministrativo, ridotta del 60%; per la parte di lavori oltre 100 milioni la riduzione è dell'80%. Spetta dopo almeno quattro riunioni con determinazioni, pareri o attività istruttoria.
-7.2.1 b) — Parte variabile per ciascuna determinazione o parere: se tecnico, importo orario massimo del D.M. 17 giugno 2016 aumentato del 25%; se giuridico, D.M. 55/2014 come aggiornato dal D.M. 37/2018.
-7.2.2 — Il compenso complessivo di ciascun componente non può superare il triplo della parte fissa.
-7.2.3 — Per i lavori in corso alla data di pubblicazione del D.L. 76/2020 e CCT non ancora costituiti, la parte fissa è ridotta del 30% se l'avanzamento supera il 50% e del 60% se supera l'85%.
-7.2.4 — Per ogni pronuncia oltre i termini, senza giustificato motivo, la parte variabile è ridotta da un decimo a un terzo (riduzione dimezzata con più quesiti contestuali).
-7.3.1 — CCT facoltativo ante operam: compensi dei punti 7.2.1 e 7.2.2 ridotti del 20%.
-7.4.1 — Spese forfettarie secondo l'art. 5 del D.M. 17 giugno 2016.
-7.5.1 — Il Presidente percepisce il compenso degli altri componenti maggiorato del 10%.
-7.6.1 — Segreteria: fino a un massimo del 20% dei compensi fissi e variabili di ciascun componente, a carico dei componenti.
-7.7.1 — Il compenso di ciascun componente grava per metà su ciascuna parte.
-7.7.2 — Pagamento entro 90 giorni dalla pronuncia; la quota fissa alla quarta riunione.
-7.7.3 — Acconto del 20% della parte fissa, se richiesto nel verbale di costituzione, previa polizza fideiussoria.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2022-09/linee-guida-collegio-consultivo-tecnico.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>.</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
-      <span style="font-weight: 600;">I limiti di legge</span>
-      <p style="margin: 0; font-size: 15px;">Il <span class="rif"><button type="button" class="rif-b">D.L. 76/2020, art. 6, c. 7-bis</button><span class="pop" role="note"><span class="pop-t">Art. 6, comma 7-bis, D.L. 76/2020 — Limiti dei compensi</span><span class="pop-s">Testo vigente su Normattiva (versione in vigore dal 30 giugno 2022) · comma introdotto dal D.L. 152/2021, riformulato dal D.L. 36/2022</span><span class="pop-x">I compensi dei componenti, determinati ai sensi del comma 7, non possono complessivamente superare, con riferimento all'intero collegio:
+      <div class="met-g">
+        <div class="card stack">
+          <span class="ms-t">Riferimenti normativi</span>
+          <ul class="refs">
+            <li>D.M. Giustizia 17 giugno 2016, artt. 3, 4 e 5, Tavole Z-1 e Z-2</li>
+            <li><span class="rif"><button type="button" class="rif-b">D.L. 76/2020, art. 6, c. 7-bis</button><span class="pop" role="note"><span class="pop-t">Art. 6, comma 7-bis, D.L. 76/2020 — Limiti dei compensi</span><span class="pop-s">Testo vigente su Normattiva (versione in vigore dal 30 giugno 2022) · comma introdotto dal D.L. 152/2021, riformulato dal D.L. 36/2022</span><span class="pop-x">I compensi dei componenti, determinati ai sensi del comma 7, non possono complessivamente superare, con riferimento all'intero collegio:
 a) collegio di tre componenti: 0,5% del valore dell'appalto fino a 50 milioni; 0,25% per la parte da 50 a 100 milioni; 0,15% da 100 a 200 milioni; 0,10% da 200 a 500 milioni; 0,07% oltre 500 milioni;
 b) collegio di cinque componenti: 0,8% fino a 50 milioni; 0,4% da 50 a 100 milioni; 0,25% da 100 a 200 milioni; 0,15% da 200 a 500 milioni; 0,10% oltre 500 milioni.
-Nel D.L. 76/2020 il limite riguarda il compenso complessivo; l'Allegato V.2 del D.Lgs. 36/2023 lo riferisce alla sola parte fissa.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76~art6" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> fissa limiti per cinque scaglioni di valore, riferiti all'intero Collegio. Nel D.L. 76/2020 valgono per i compensi complessivi; nel D.Lgs. 36/2023, sia nel testo originario sia dopo il correttivo, per la sola parte fissa, e il compenso complessivo non supera il triplo di questa (<span class="rif"><button type="button" class="rif-b">All. V.2, art. 1, cc. 4-5</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — Formazione del Collegio e compensi</span><span class="pop-s">Sintesi redazionale · testo vigente, modificato dal D.Lgs. 209/2024 (dal 31/12/2024) e dal D.L. 73/2025</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee il Collegio è formato da tre componenti, o da cinque in caso di opera complessa ed eterogeneità delle professionalità richieste, a scelta della stazione appaltante o del concessionario. I componenti hanno comprovata esperienza nel settore dei contratti e degli investimenti pubblici, anche in relazione all'oggetto del contratto.
+Nel D.L. 76/2020 il limite riguarda il compenso complessivo; l'Allegato V.2 del D.Lgs. 36/2023 lo riferisce alla sola parte fissa.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76~art6" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></li>
+            <li><span class="rif"><button type="button" class="rif-b">All. V.2, testo originario, art. 1</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — testo originario (1 aprile 2023 – 30 dicembre 2024)</span><span class="pop-s">Sintesi redazionale del testo originario del D.Lgs. 36/2023 · efficace dal 1° luglio 2023</span><span class="pop-x">c. 3 — Requisiti, incompatibilità e parametri dei compensi sono definiti da linee guida MIT; nelle more continuano ad applicarsi le linee guida del D.M. 17 gennaio 2022.
+c. 5 — Fermo il diritto a un compenso proporzionato al valore dell'opera e al numero, alla qualità e alla tempestività delle determinazioni, la parte fissa del compenso non può superare gli importi dell'art. 6, comma 7-bis, del D.L. 76/2020. Il compenso spettante ai componenti non può superare il triplo della parte fissa.
+Il testo originario non prevedeva lo scaglione oltre 1.000 milioni, la riduzione del 20% per il collegio facoltativo (art. 7) né la misura del 3-10% per la Segreteria (art. 8), introdotti dal correttivo: su questi punti valgono le linee guida.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> e <span class="rif"><button type="button" class="rif-b">Allegato V.2 vigente, art. 1</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 1 — Formazione del Collegio e compensi</span><span class="pop-s">Sintesi redazionale · testo vigente, modificato dal D.Lgs. 209/2024 (dal 31/12/2024) e dal D.L. 73/2025</span><span class="pop-x">c. 1 — Per i lavori di importo pari o superiore alle soglie europee il Collegio è formato da tre componenti, o da cinque in caso di opera complessa ed eterogeneità delle professionalità richieste, a scelta della stazione appaltante o del concessionario. I componenti hanno comprovata esperienza nel settore dei contratti e degli investimenti pubblici, anche in relazione all'oggetto del contratto.
 c. 2 — Le parti nominano i componenti di comune accordo, oppure ciascuna ne nomina uno o due, anche tra il proprio personale o tra soggetti legati da rapporti di lavoro autonomo o collaborazione. Il Presidente è scelto dai componenti di parte; in mancanza di accordo è designato entro cinque giorni dal MIT (opere di interesse nazionale), dalla Regione, dalla Provincia autonoma o dalla Città metropolitana. Se il MIT finanzia l'opera o è concedente, nomina un componente.
 c. 3 — Ai componenti si applica l'art. 813, secondo comma, c.p.c.
 c. 4 — La parte fissa del compenso non può superare i limiti dell'art. 6, comma 7-bis, del D.L. 76/2020; per la parte di valore dell'appalto eccedente 1.000 milioni di euro il limite è pari allo 0,02% (collegio di tre) o allo 0,03% (collegio di cinque).
 c. 5 — Il compenso complessivo non può superare il triplo della parte fissa. Spetta il rimborso delle spese non remunerative. Il compenso è dovuto a tutti i componenti, indipendentemente dal rapporto con le parti, senza vincolo di solidarietà. Non si applica l'art. 3 della L. 136/2010.
-c. 6 — Un decreto MIT, su parere conforme del Consiglio superiore dei lavori pubblici, definirà i parametri dei compensi (anche della segreteria). Fino ad allora restano applicabili, per i compensi, le Linee guida del D.M. 17 gennaio 2022 (G.U. n. 55 del 7 marzo 2022).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>). Il correttivo aggiunge lo scaglione oltre 1.000 milioni (0,02% o 0,03%) e fissa la Segreteria tra il 3% e il 10% (<span class="rif"><button type="button" class="rif-b">All. V.2, art. 8, c. 2</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 8 — Segreteria tecnico-amministrativa</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Per lavori di particolare complessità il Collegio può avvalersi di una segreteria tecnico-amministrativa, composta da uno o più membri scelti e nominati dal Presidente, con compiti di istruttoria e supporto amministrativo.
-c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello di ciascun componente; è a carico dei componenti ed è liquidato dalle parti con le stesse modalità e tempistiche previste per il Collegio.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>); nella disciplina previgente la Segreteria arriva fino al 20% (<span class="rif"><button type="button" class="rif-b">Linee guida 2022, punto 7</button><span class="pop" role="note"><span class="pop-t">Linee guida D.M. 12/2022, punto 7 — Compensi</span><span class="pop-s">MIT · testo verificato sul PDF del CSLP · parametri applicabili in via transitoria (Allegato V.2, art. 1, c. 6)</span><span class="pop-x">7.2.1 a) — Parte fissa per ciascun componente: artt. 3 e 4 del D.M. Giustizia 17 giugno 2016 per il collaudo tecnico-amministrativo, ridotta del 60%; per la parte di lavori oltre 100 milioni la riduzione è dell'80%. Spetta dopo almeno quattro riunioni con determinazioni, pareri o attività istruttoria.
+c. 6 — Un decreto MIT, su parere conforme del Consiglio superiore dei lavori pubblici, definirà i parametri dei compensi (anche della segreteria). Fino ad allora restano applicabili, per i compensi, le Linee guida del D.M. 17 gennaio 2022 (G.U. n. 55 del 7 marzo 2022).</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></li>
+            <li><span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 7</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 7 — Costituzione facoltativa del Collegio</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Il collegio facoltativo dell'art. 218 è formato da tre componenti: due nominati dalla stazione appaltante e uno dal MIT (opere di interesse nazionale) o da Regione, Provincia autonoma o Città metropolitana.
+c. 2 — Nei contratti misti il collegio è obbligatorio se la parte di lavori è pari o superiore alla soglia europea; per gli accordi quadro rileva l'importo dei singoli contratti attuativi.
+c. 3 — Negli appalti suddivisi in lotti il collegio è obbligatorio per i soli lotti di importo pari o superiore alla soglia europea.
+c. 4 — Se il collegio facoltativo opera prima dell'affidamento, i compensi sono ridotti del 20% rispetto all'art. 1.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span> · <span class="rif"><button type="button" class="rif-b">Allegato V.2, art. 8</button><span class="pop" role="note"><span class="pop-t">Allegato V.2, art. 8 — Segreteria tecnico-amministrativa</span><span class="pop-s">Sintesi redazionale</span><span class="pop-x">c. 1 — Per lavori di particolare complessità il Collegio può avvalersi di una segreteria tecnico-amministrativa, composta da uno o più membri scelti e nominati dal Presidente, con compiti di istruttoria e supporto amministrativo.
+c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello di ciascun componente; è a carico dei componenti ed è liquidato dalle parti con le stesse modalità e tempistiche previste per il Collegio.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></li>
+            <li><span class="rif"><button type="button" class="rif-b">D.Lgs. 36/2023, art. 225-bis, c. 5</button><span class="pop" role="note"><span class="pop-t">Art. 225-bis, comma 5, D.Lgs. 36/2023 — Disciplina transitoria del CCT</span><span class="pop-s">Testo vigente su Normattiva · articolo introdotto dal D.Lgs. 209/2024</span><span class="pop-x">Le disposizioni degli articoli da 215 a 219 e dell'Allegato V.2, entrate in vigore con il correttivo, si applicano, in assenza di una espressa volontà contraria delle parti, anche ai collegi già costituiti e operanti alla medesima data, ad eccezione di quelli relativi ai contratti di servizi e forniture già costituiti alla data di entrata in vigore della disposizione.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art225bis" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></li>
+            <li><span class="rif"><button type="button" class="rif-b">Linee guida 2022, punto 7</button><span class="pop" role="note"><span class="pop-t">Linee guida D.M. 12/2022, punto 7 — Compensi</span><span class="pop-s">MIT · testo verificato sul PDF del CSLP · parametri applicabili in via transitoria (Allegato V.2, art. 1, c. 6)</span><span class="pop-x">7.2.1 a) — Parte fissa per ciascun componente: artt. 3 e 4 del D.M. Giustizia 17 giugno 2016 per il collaudo tecnico-amministrativo, ridotta del 60%; per la parte di lavori oltre 100 milioni la riduzione è dell'80%. Spetta dopo almeno quattro riunioni con determinazioni, pareri o attività istruttoria.
 7.2.1 b) — Parte variabile per ciascuna determinazione o parere: se tecnico, importo orario massimo del D.M. 17 giugno 2016 aumentato del 25%; se giuridico, D.M. 55/2014 come aggiornato dal D.M. 37/2018.
 7.2.2 — Il compenso complessivo di ciascun componente non può superare il triplo della parte fissa.
 7.2.3 — Per i lavori in corso alla data di pubblicazione del D.L. 76/2020 e CCT non ancora costituiti, la parte fissa è ridotta del 30% se l'avanzamento supera il 50% e del 60% se supera l'85%.
@@ -318,17 +424,21 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
 7.6.1 — Segreteria: fino a un massimo del 20% dei compensi fissi e variabili di ciascun componente, a carico dei componenti.
 7.7.1 — Il compenso di ciascun componente grava per metà su ciascuna parte.
 7.7.2 — Pagamento entro 90 giorni dalla pronuncia; la quota fissa alla quarta riunione.
-7.7.3 — Acconto del 20% della parte fissa, se richiesto nel verbale di costituzione, previa polizza fideiussoria.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2022-09/linee-guida-collegio-consultivo-tecnico.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>).</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-i" style="align-self: flex-start;">INTERPRETAZIONE</span>
-      <span style="font-weight: 600;">Scelte di calcolo da verificare</span>
-      <p style="margin: 0; font-size: 15px;">P è calcolato sull'importo di ciascuna categoria. La riduzione dell'80% oltre 100 milioni è ripartita in proporzione all'importo eccedente. La parte fissa è riferita a ciascun componente, con +10% per il Presidente; se la parte fissa del Collegio supera il tetto, è ridotta in proporzione. Nell'accordo quadro ogni contratto applicativo è trattato come un rapporto autonomo, con propri tetti, come l'Allegato V.2 fa per l'obbligo di costituzione. Lo scaglione oltre 1.000 milioni sostituisce, per quella parte di valore, l'aliquota precedente. La riduzione del 20% per il collegio facoltativo si applica, dopo il correttivo, anche al limite di legge; nella disciplina previgente solo ai compensi delle linee guida.</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-i" style="align-self: flex-start;">ATTENZIONE</span>
-      <span style="font-weight: 600;">Quale disciplina scegliere</span>
-      <p style="margin: 0; font-size: 15px;">Il correttivo si applica anche ai collegi di lavori già costituiti al 31 dicembre 2024, salvo espressa volontà contraria delle parti, e non a quelli di servizi e forniture già costituiti (<span class="rif"><button type="button" class="rif-b">art. 225-bis, c. 5</button><span class="pop" role="note"><span class="pop-t">Art. 225-bis, comma 5, D.Lgs. 36/2023 — Disciplina transitoria del CCT</span><span class="pop-s">Testo vigente su Normattiva · articolo introdotto dal D.Lgs. 209/2024</span><span class="pop-x">Le disposizioni degli articoli da 215 a 219 e dell'Allegato V.2, entrate in vigore con il correttivo, si applicano, in assenza di una espressa volontà contraria delle parti, anche ai collegi già costituiti e operanti alla medesima data, ad eccezione di quelli relativi ai contratti di servizi e forniture già costituiti alla data di entrata in vigore della disposizione.</span><span class="pop-f"><a class="pop-l" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-31;36~art225bis" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span>). La disciplina dei collegi costituiti ai sensi del D.L. 76/2020 per contratti del D.Lgs. 50/2016 è una ricostruzione interpretativa: va verificata nel verbale di costituzione. G e Q restano modificabili; il prospetto è un supporto al calcolo e non sostituisce la verifica delle parti.</p>
+7.7.3 — Acconto del 20% della parte fissa, se richiesto nel verbale di costituzione, previa polizza fideiussoria.</span><span class="pop-f"><a class="pop-l" href="https://cslp.mit.gov.it/sites/default/files/2022-09/linee-guida-collegio-consultivo-tecnico.pdf" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c">Chiudi</button></span></span></span></li>
+          </ul>
+          <span class="mut hint">Fonti verificate su Normattiva, Gazzetta Ufficiale e sito del Consiglio superiore dei lavori pubblici il 14 ottobre 2026.</span>
+        </div>
+        <div class="card stack">
+          <span class="ms-t">Precauzioni</span>
+          <ul class="refs">
+            <li><strong>È un supporto al calcolo.</strong> Il compenso è stabilito dal Collegio e dalle parti: il prospetto va verificato prima di allegarlo al verbale.</li>
+            <li><strong>Controlla categorie, G e Q.</strong> Sono precompilati ma modificabili: la scelta della categoria d’opera resta una valutazione tecnica.</li>
+            <li><strong>Alcune scelte sono interpretative.</strong> P calcolato per categoria; riduzione dell’80% in proporzione alla parte oltre 100 milioni; ogni contratto applicativo di un accordo quadro trattato come rapporto autonomo; scaglione oltre 1.000 milioni al posto dell’aliquota precedente; collocazione dei collegi D.L. 76/2020 sui contratti del vecchio codice.</li>
+            <li><strong>La disciplina va accertata.</strong> Il correttivo vale anche per i collegi di lavori già costituiti al 31 dicembre 2024, salvo diverso accordo delle parti, ma non per quelli di servizi e forniture già costituiti.</li>
+            <li><strong>Nessun dato viene inviato.</strong> Il calcolo avviene nel browser e nulla viene salvato: ricaricando la pagina i dati si perdono.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -356,207 +466,289 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
       </nav>
     </div>
   </header>
-  <section class="wrap" style="padding-top: 48px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 18px;">
-    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Simulatore dei compensi</span></nav>
-    <p class="kick">Simulatore</p>
-    <h1 class="h1">Simulatore dei compensi del Collegio</h1>
-    <p class="lead">Calcola la parte fissa secondo le linee guida, a partire dalle categorie d'opera del D.M. 17 giugno 2016, la confronta con il tetto di legge e restituisce un prospetto in PDF da allegare al verbale. I dati restano nel tuo browser.</p>
+  <section class="wrap" style="padding-top: 40px; padding-bottom: 20px; display: flex; flex-direction: column; gap: 14px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Simulatore compensi</span></nav>
+    <h1 class="h1">Simulatore compensi del Collegio</h1>
+    <p class="lead">Quattro passaggi per calcolare la parte fissa del compenso, verificare i limiti di legge e scaricare un prospetto PDF da allegare al verbale. I dati restano sul tuo dispositivo.</p>
   </section>
 
-  <section id="disciplina" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 14px;">
-      <h2 class="h2">Disciplina applicabile</h2>
-      <div class="opts" role="group" aria-label="Disciplina applicabile">
-        <sc-for list="{{regimi}}" as="g" hint-placeholder-count="3">
-          <button type="button" class="{{g.cls}}" aria-pressed="{{g.on}}" onClick="{{g.set}}"><span class="opt-t">{{g.nome}}</span><span class="opt-d">{{g.descr}}</span></button>
-        </sc-for>
+  <div class="sbar">
+    <div class="wrap sbar-in">
+      <nav class="steps" aria-label="Passaggi">
+        <a href="#regole"><span class="sn">1</span>Regole</a>
+        <a href="#opere"><span class="sn">2</span>Opere</a>
+        <a href="#risultato"><span class="sn">3</span>Risultato</a>
+        <a href="#prospetto"><span class="sn">4</span>PDF</a>
+      </nav>
+      <div class="sbar-r">
+        <span class="sbar-v"><span class="mut">Parte fissa del Collegio</span> <strong>{{bar.fissa}}</strong></span>
+        <button type="button" class="b-pdf b-sm" onClick="{{scaricaPdf}}" disabled="{{noPdf}}">Scarica PDF</button>
       </div>
-      <p class="mut" style="margin: 0; font-size: 14px;">La scelta cambia i limiti di legge, il tetto complessivo, la misura della Segreteria e il riferimento della riduzione per il collegio facoltativo. Fonti: <span class="{{r.tr2.cls}}"><button type="button" class="rif-b" onClick="{{r.tr2.tog}}">{{r.tr2.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.tr2.t}}</span><span class="pop-s">{{r.tr2.s}}</span><span class="pop-x">{{r.tr2.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.tr2.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.tr2.close}}">Chiudi</button></span></span></span> · <span class="{{r.v1o.cls}}"><button type="button" class="rif-b" onClick="{{r.v1o.tog}}">{{r.v1o.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1o.t}}</span><span class="pop-s">{{r.v1o.s}}</span><span class="pop-x">{{r.v1o.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1o.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1o.close}}">Chiudi</button></span></span></span> · <span class="{{r.dl76b.cls}}"><button type="button" class="rif-b" onClick="{{r.dl76b.tog}}">{{r.dl76b.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.dl76b.t}}</span><span class="pop-s">{{r.dl76b.s}}</span><span class="pop-x">{{r.dl76b.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.dl76b.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.dl76b.close}}">Chiudi</button></span></span></span>.</p>
     </div>
-  </section>
+  </div>
 
-  <section id="tipo" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 14px;">
-      <h2 class="h2">Tipo di affidamento</h2>
-      <div class="seg" role="group" aria-label="Tipo di affidamento" style="max-width: 560px;">
-        <button type="button" class="{{tipo.sCls}}" aria-pressed="{{tipo.isS}}" onClick="{{tipo.setS}}">Contratto singolo o applicativo</button>
-        <button type="button" class="{{tipo.aCls}}" aria-pressed="{{tipo.isA}}" onClick="{{tipo.setA}}">Accordo quadro</button>
+  <section id="regole" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">1</span><div><h2 class="h2">Le regole del Collegio</h2><p class="mut step-p">Tre scelte che decidono quali limiti si applicano.</p></div></div>
+    <div class="card stack">
+      <div class="q">
+        <span class="q-t">Quale disciplina si applica?</span>
+        <div class="opts" role="group" aria-label="Disciplina applicabile">
+          <sc-for list="{{regimi}}" as="g" hint-placeholder-count="3">
+            <button type="button" class="{{g.cls}}" aria-pressed="{{g.on}}" onClick="{{g.set}}"><span class="opt-t">{{g.nome}}</span><span class="opt-d">{{g.descr}}</span></button>
+          </sc-for>
+        </div>
+        <span class="mut hint">Se non sei sicuro, controlla la data di costituzione del Collegio e il verbale di insediamento. Le differenze sono spiegate nel <a href="#metodo">metodo</a>.</span>
       </div>
-      <p class="mut" style="margin: 0; font-size: 15px;">{{tipo.help}}
-        <span class="{{r.v7.cls}}"><button type="button" class="rif-b" onClick="{{r.v7.tog}}">{{r.v7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v7.t}}</span><span class="pop-s">{{r.v7.s}}</span><span class="pop-x">{{r.v7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v7.close}}">Chiudi</button></span></span></span></p>
-    </div>
-  </section>
-
-  <section id="dati" class="wrap" style="padding-bottom: 24px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 20px;">
-      <h2 class="h2">Dati del Collegio</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;">
-        <div class="fld" style="grid-column: 1 / -1;"><label for="f-nome">{{lab.nome}}</label><input id="f-nome" class="inp txt" type="text" placeholder="Es. Collegio consultivo tecnico — Lavori di …" value="{{f.nome}}" onChange="{{set.nome}}"></div>
-        <div class="fld"><label for="f-cig">{{lab.cig}}</label><input id="f-cig" class="inp" type="text" value="{{f.cig}}" onChange="{{set.cig}}"></div>
-        <div class="fld"><label for="f-cup">CUP</label><input id="f-cup" class="inp" type="text" value="{{f.cup}}" onChange="{{set.cup}}"></div>
-        <div class="fld"><label for="f-data">Data del prospetto</label><input id="f-data" class="inp" type="date" value="{{f.data}}" onChange="{{set.data}}"></div>
-        <div class="fld"><label for="f-red">Redatto da</label><input id="f-red" class="inp txt" type="text" placeholder="Es. Segreteria del Collegio" value="{{f.red}}" onChange="{{set.red}}"></div>
-        <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
-          <div class="fld"><label for="f-soglia">Soglia europea lavori vigente (euro)</label><input id="f-soglia" class="inp" type="text" inputmode="decimal" placeholder="Per verificare l'obbligo" value="{{f.soglia}}" onChange="{{set.soglia}}"></div>
-        </sc-if>
-        <div class="fld">
-          <span class="fl" id="comp-l">Componenti</span>
+      <div class="q-row">
+        <div class="q">
+          <span class="q-t" id="tipo-l">Che tipo di contratto?</span>
+          <div class="seg" role="group" aria-labelledby="tipo-l">
+            <button type="button" class="{{tipo.sCls}}" aria-pressed="{{tipo.isS}}" onClick="{{tipo.setS}}">Contratto singolo</button>
+            <button type="button" class="{{tipo.aCls}}" aria-pressed="{{tipo.isA}}" onClick="{{tipo.setA}}">Accordo quadro</button>
+          </div>
+          <span class="mut hint">{{tipo.help}}</span>
+        </div>
+        <div class="q">
+          <span class="q-t" id="comp-l">Quanti componenti?</span>
           <div class="seg" role="group" aria-labelledby="comp-l">
             <button type="button" class="{{c3}}" aria-pressed="{{is3}}" onClick="{{set3}}">Tre</button>
             <button type="button" class="{{c5}}" aria-pressed="{{is5}}" onClick="{{set5}}">Cinque</button>
           </div>
+          <span class="mut hint">Presidente compreso.</span>
         </div>
-        <div class="fld"><label for="segr">Segreteria: {{segr}}% del compenso di ciascun componente ({{segrLab}})</label><input id="segr" type="range" min="{{segrMin}}" max="{{segrMax}}" step="1" value="{{segr}}" onChange="{{setSegr}}" style="accent-color: #6E1E2B; height: 44px;"></div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-        <fieldset class="parte">
-          <legend>Stazione appaltante</legend>
-          <div class="fld"><label for="f-sa">Denominazione</label><input id="f-sa" class="inp txt" type="text" placeholder="Es. Comune di …" value="{{f.sa}}" onChange="{{set.sa}}"></div>
-          <div class="fld"><label for="f-sacf">Codice fiscale</label><input id="f-sacf" class="inp" type="text" autocomplete="off" value="{{f.sacf}}" onChange="{{set.sacf}}"></div>
-        </fieldset>
-        <fieldset class="parte">
-          <legend>Operatore economico</legend>
-          <div class="fld"><label for="f-oe">Denominazione</label><input id="f-oe" class="inp txt" type="text" placeholder="Es. Impresa … S.p.A." value="{{f.oe}}" onChange="{{set.oe}}"></div>
-          <div class="fld"><label for="f-oecf">Codice fiscale</label><input id="f-oecf" class="inp" type="text" autocomplete="off" value="{{f.oecf}}" onChange="{{set.oecf}}"></div>
-        </fieldset>
+      <div class="q">
+        <span class="q-t">Ci sono situazioni particolari?</span>
+        <label class="chk2"><input type="checkbox" checked="{{fac}}" onChange="{{setFac}}"><span>Il Collegio è facoltativo ed è costituito prima dell’affidamento <span class="mut">(compensi ridotti del 20%)</span></span></label>
+        <label class="chk2"><input type="checkbox" checked="{{cod}}" onChange="{{setCod}}"><span>Il collaudo è in corso d’opera <span class="mut">(compenso di riferimento aumentato del 20%)</span></span></label>
+        <sc-if value="{{isD}}" hint-placeholder-val="{{false}}">
+          <div class="fld" style="max-width: 640px; padding-top: 4px;"><label for="f-av">I lavori erano già in corso al 16 luglio 2020?</label>
+            <select id="f-av" class="inp txt" value="{{av}}" onChange="{{setAv}}">
+              <option value="0">No, oppure il Collegio esisteva già</option>
+              <option value="50">Sì, avanzamento oltre il 50%: parte fissa −30%</option>
+              <option value="85">Sì, avanzamento oltre l’85%: parte fissa −60%</option>
+            </select>
+          </div>
+        </sc-if>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px 32px;">
-        <label class="chk2"><input type="checkbox" checked="{{fac}}" onChange="{{setFac}}"><span>Collegio facoltativo prima dell'affidamento (−20%, {{facLab}})</span></label>
-        <label class="chk2"><input type="checkbox" checked="{{cod}}" onChange="{{setCod}}"><span>Applica la maggiorazione del 20% per collaudo in corso d'opera</span></label>
-      </div>
-      <sc-if value="{{isD}}" hint-placeholder-val="{{false}}">
-        <div class="fld" style="max-width: 640px;"><label for="f-av">Lavori già in corso al 16 luglio 2020, con collegio costituito dopo (Linee guida, punto 7.2.3)</label>
-          <select id="f-av" class="inp txt" value="{{av}}" onChange="{{setAv}}">
-            <option value="0">Non ricorre</option>
-            <option value="50">Avanzamento oltre il 50%: parte fissa ridotta del 30%</option>
-            <option value="85">Avanzamento oltre l'85%: parte fissa ridotta del 60%</option>
-          </select>
-        </div>
-      </sc-if>
     </div>
   </section>
 
-  <section id="categorie" class="wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 16px;">
+  <section id="opere" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">2</span><div><h2 class="h2">Le opere</h2><p class="mut step-p">Scegli la categoria e inserisci l’importo dei lavori: G e Q si compilano da soli.</p></div>
+      <div class="step-a"><button type="button" class="lnk" onClick="{{esempio}}">Prova con un esempio</button><button type="button" class="lnk" onClick="{{azzera}}">Ricomincia</button></div></div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
     <sc-for list="{{contratti}}" as="k" hint-placeholder-count="1">
       <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <h2 class="h2">{{k.titolo}}</h2>
-          <span class="mut" style="font-size: 14px;">Una riga per ogni ID opera della Tavola Z-1 del D.M. 17 giugno 2016</span>
+          <sc-if value="{{k.aq}}" hint-placeholder-val="{{false}}"><h3 class="h3r" style="margin: 0;">{{k.titolo}}</h3></sc-if>
+          
         </div>
         <sc-if value="{{k.aq}}" hint-placeholder-val="{{false}}">
           <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
             <div class="fld"><label for="{{k.nId}}">Denominazione del contratto applicativo</label><input id="{{k.nId}}" class="inp txt" type="text" value="{{k.nome}}" onChange="{{k.setNome}}"></div>
             <div class="fld"><label for="{{k.cId}}">CIG derivato</label><input id="{{k.cId}}" class="inp" type="text" value="{{k.cig}}" onChange="{{k.setCig}}"></div>
-            <div class="fld"><label for="{{k.aId}}">Valore del contratto (euro)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie" value="{{k.app}}" onChange="{{k.setApp}}"></div>
+            <div class="fld"><label for="{{k.aId}}">Valore del contratto (€)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto, somma degli importi" value="{{k.app}}" onChange="{{k.setApp}}"></div>
           </div>
         </sc-if>
         <sc-if value="{{k.singolo}}" hint-placeholder-val="{{true}}">
-          <div class="fld" style="max-width: 320px;"><label for="{{k.aId}}">Valore dell'appalto (euro)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto: somma delle categorie" value="{{k.app}}" onChange="{{k.setApp}}"></div>
+          <div class="fld" style="max-width: 320px;"><label for="{{k.aId}}">Valore dell’appalto (€)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto, somma degli importi" value="{{k.app}}" onChange="{{k.setApp}}"></div>
         </sc-if>
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <sc-for list="{{k.righe}}" as="r" hint-placeholder-count="2">
             <div class="riga">
-              <div class="fld" style="flex: 2 1 260px;"><label for="{{r.idId}}">ID opera (Tavola Z-1)</label>
+              <div class="fld" style="flex: 3 1 240px;"><label for="{{r.idId}}">Categoria d’opera</label>
                 <select id="{{r.idId}}" class="inp txt" value="{{r.sel}}" onChange="{{r.setSel}}">
-                  <option value="">Scegli la categoria…</option>
+                  <option value="">Scegli dalla Tavola Z-1…</option>
                   <option data-for-list="{{opts}}" data-for-as="o" value="{{o.v}}">{{o.t}}</option>
-                  <option value="ALTRO">Altro: inserimento manuale</option>
+                  <option value="ALTRO">Altra categoria: inserisco io i valori</option>
                 </select>
               </div>
-              <div class="fld" style="flex: 3 1 220px;"><label for="{{r.dId}}">Descrizione</label><input id="{{r.dId}}" class="inp txt" type="text" value="{{r.descr}}" onChange="{{r.setDescr}}"></div>
-              <div class="fld" style="flex: 2 1 160px;"><label for="{{r.vId}}">Importo V (euro)</label><input id="{{r.vId}}" class="inp" type="text" inputmode="decimal" value="{{r.v}}" onChange="{{r.setV}}"></div>
-              <div class="fld" style="flex: 0 1 90px;"><label for="{{r.gId}}">G</label><input id="{{r.gId}}" class="inp" type="text" inputmode="decimal" value="{{r.g}}" onChange="{{r.setG}}"></div>
-              <div class="fld" style="flex: 0 1 90px;"><label for="{{r.qId}}">Q</label><input id="{{r.qId}}" class="inp" type="text" inputmode="decimal" value="{{r.q}}" onChange="{{r.setQ}}"></div>
-              <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso CP</span><span class="out">{{r.cp}}</span><span class="mut" style="font-size: 12px;">P = {{r.p}}</span></div>
-              <button type="button" class="btn-x" onClick="{{r.del}}" aria-label="{{r.delLabel}}">Rimuovi</button>
+              <div class="fld" style="flex: 2 1 170px;"><label for="{{r.dId}}">Descrizione</label><input id="{{r.dId}}" class="inp txt" type="text" value="{{r.descr}}" onChange="{{r.setDescr}}"></div>
+              <div class="fld" style="flex: 2 1 150px;"><label for="{{r.vId}}">Importo dei lavori (€)</label><input id="{{r.vId}}" class="inp" type="text" inputmode="decimal" value="{{r.v}}" onChange="{{r.setV}}"></div>
+              <div class="fld" style="flex: 0 1 76px;"><label for="{{r.gId}}" title="Grado di complessità, dalla Tavola Z-1">G</label><input id="{{r.gId}}" class="inp" type="text" inputmode="decimal" value="{{r.g}}" onChange="{{r.setG}}"></div>
+              <div class="fld" style="flex: 0 1 76px;"><label for="{{r.qId}}" title="Parametro della prestazione di collaudo, Tavola Z-2">Q</label><input id="{{r.qId}}" class="inp" type="text" inputmode="decimal" value="{{r.q}}" onChange="{{r.setQ}}"></div>
+              <div class="fld" style="flex: 1 1 130px;"><span class="fl">Compenso rif.</span><span class="out">{{r.cp}}</span><span class="mut" style="font-size: 12px;">P = {{r.p}}</span></div>
+              <button type="button" class="btn-x x-del" onClick="{{r.del}}" aria-label="{{r.delLabel}}" title="Rimuovi la categoria">×</button>
             </div>
           </sc-for>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
-          <button type="button" class="btn-s" onClick="{{k.addRiga}}">+ Aggiungi categoria</button>
-          <sc-if value="{{k.aq}}" hint-placeholder-val="{{false}}"><button type="button" class="btn-s btn-so" onClick="{{k.del}}">Rimuovi il contratto</button></sc-if>
+          <button type="button" class="btn-s" onClick="{{k.addRiga}}">+ Aggiungi una categoria</button>
+          <sc-if value="{{k.aq}}" hint-placeholder-val="{{false}}"><button type="button" class="btn-s btn-so" onClick="{{k.del}}">Elimina questo contratto</button></sc-if>
           <span class="mut" style="font-size: 14px;">{{k.esito}}</span>
         </div>
       </div>
     </sc-for>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}"><button type="button" class="btn-s" onClick="{{addContratto}}">+ Aggiungi contratto applicativo</button></sc-if>
-      <button type="button" class="btn-s btn-so" onClick="{{esempio}}">Carica un esempio</button>
-      <button type="button" class="btn-s btn-so" onClick="{{azzera}}">Azzera</button>
+      <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}"><div><button type="button" class="btn-s btn-so" onClick="{{addContratto}}">+ Aggiungi un contratto applicativo</button></div></sc-if>
     </div>
-    <sc-if value="{{avviso}}" hint-placeholder-val="{{false}}">
-      <p style="margin: 0; padding: 12px 14px; border-radius: 8px; background: #F8EBD6; color: #7A4A00; font-size: 14px;">{{avvisoTxt}}</p>
-    </sc-if>
   </section>
 
-  <section id="risultati" class="wrap" style="padding-bottom: 32px; display: flex; flex-direction: column; gap: 20px;">
-    <h2 class="h2">Risultati</h2>
-    <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
-      <div class="card" style="padding: 0;">
-        <div style="padding: 18px 20px; font-weight: 600;">Riepilogo dei contratti applicativi</div>
-        <div style="overflow-x: auto;">
-          <table class="tb">
-            <thead><tr><th>Contratto</th><th style="text-align: right;">Valore</th><th>Collegio</th><th style="text-align: right;">Parte fissa</th><th style="text-align: right;">Tetto complessivo</th></tr></thead>
-            <tbody>
-              <tr data-for-list="{{riepilogo}}" data-for-as="x" class="{{x.cls}}"><td>{{x.nome}}</td><td class="n">{{x.valore}}</td><td style="font-size: 13px;">{{x.obbl}}</td><td class="n">{{x.fissa}}</td><td class="n">{{x.tot}}</td></tr>
-            </tbody>
-          </table>
+  <section id="risultato" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">3</span><div><h2 class="h2">Il risultato</h2><p class="mut step-p">{{esitoTxt}}</p></div></div>
+    <sc-if value="{{avviso}}" hint-placeholder-val="{{false}}">
+      <p class="warn">{{avvisoTxt}}</p>
+    </sc-if>
+    <sc-if value="{{haDati}}" hint-placeholder-val="{{true}}">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
+          <div class="card" style="padding: 0;">
+            <div class="t-h">Riepilogo dei contratti applicativi</div>
+            <div style="overflow-x: auto;">
+              <table class="tb">
+                <thead><tr><th>Contratto</th><th style="text-align: right;">Valore</th><th style="text-align: right;">Parte fissa</th><th style="text-align: right;">Compenso massimo</th></tr></thead>
+                <tbody>
+                  <tr data-for-list="{{riepilogo}}" data-for-as="x" class="{{x.cls}}"><td>{{x.nome}}</td><td class="n">{{x.valore}}</td><td class="n">{{x.fissa}}</td><td class="n">{{x.tot}}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </sc-if>
+        <sc-for list="{{risultati}}" as="z" hint-placeholder-count="1">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}"><h3 class="h3r">{{z.titolo}}</h3></sc-if>
+            <div class="kpis">
+              <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">{{z.k.fissaC}}</span><span class="mut ks">Presidente: {{z.k.fissaP}}</span></div>
+              <div class="card kpi kpi-m"><span class="lbl">Parte fissa del Collegio</span><span class="big">{{z.k.fissaColl}}</span><span class="mut ks">{{z.k.tettoMsg}}</span></div>
+              <div class="card kpi"><span class="lbl">Compenso massimo del Collegio</span><span class="big">{{z.k.totColl}}</span><span class="mut ks">{{z.k.totMsg}}</span></div>
+              <div class="card kpi"><span class="lbl">Segreteria</span><span class="big">{{z.k.segrF}}</span><span class="mut ks">{{z.k.segrMsg}}</span></div>
+            </div>
+            <details class="card det">
+              <summary>Vedi il calcolo passo per passo</summary>
+              <div style="overflow-x: auto; margin-top: 12px;">
+                <table class="tb">
+                  <thead><tr><th>Passaggio</th><th>Come</th><th style="text-align: right;">Importo</th></tr></thead>
+                  <tbody>
+                    <tr data-for-list="{{z.prospetto}}" data-for-as="x" class="{{x.cls}}"><td>{{x.voce}}</td><td class="mut" style="font-size: 13px;">{{x.base}}</td><td class="n">{{x.imp}}</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </sc-for>
+        <div class="card stack" style="max-width: 640px;">
+          <div class="fld"><label for="segr">Compenso della Segreteria: <strong>{{segr}}%</strong> del compenso di ciascun componente</label><input id="segr" type="range" min="{{segrMin}}" max="{{segrMax}}" step="1" value="{{segr}}" onChange="{{setSegr}}" style="accent-color: #6E1E2B; height: 36px;"><span class="mut hint">{{segrLab}}</span></div>
         </div>
       </div>
     </sc-if>
-    <sc-for list="{{risultati}}" as="z" hint-placeholder-count="1">
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}"><h3 class="h3" style="font-family: 'Lora', Georgia, serif; font-size: 22px; margin: 8px 0 0;">{{z.titolo}}</h3></sc-if>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
-          <div class="card kpi"><span class="lbl">Parte fissa per componente</span><span class="big">{{z.k.fissaC}}</span><span class="mut" style="font-size: 13px;">Presidente (+10%): {{z.k.fissaP}}</span></div>
-          <div class="card kpi"><span class="lbl">Parte fissa del Collegio</span><span class="big">{{z.k.fissaColl}}</span><span class="mut" style="font-size: 13px;">{{z.k.tettoMsg}}</span></div>
-          <div class="card kpi" style="border-top: 3px solid #6E1E2B;"><span class="lbl">Tetto complessivo del Collegio</span><span class="big" style="color: #561622;">{{z.k.totColl}}</span><span class="mut" style="font-size: 13px;">Triplo della parte fissa riconoscibile</span></div>
-          <div class="card kpi"><span class="lbl">Segreteria sulla parte fissa</span><span class="big">{{z.k.segrF}}</span><span class="mut" style="font-size: 13px;">Al tetto complessivo: {{z.k.segrT}}</span></div>
+  </section>
+
+  <section id="prospetto" class="wrap step">
+    <div class="step-h"><span class="sn sn-l">4</span><div><h2 class="h2">Il prospetto PDF</h2><p class="mut step-p">Completa i dati che vuoi riportare nel documento: sono tutti facoltativi.</p></div></div>
+    <div class="pdf-box">
+      <div class="card stack" style="flex: 2 1 560px;">
+        <div class="grid2">
+          <div class="fld" style="grid-column: 1 / -1;"><label for="f-nome">{{lab.nome}}</label><input id="f-nome" class="inp txt" type="text" placeholder="Es. Collegio consultivo tecnico — Lavori di …" value="{{f.nome}}" onChange="{{set.nome}}"></div>
+          <div class="fld"><label for="f-cig">{{lab.cig}}</label><input id="f-cig" class="inp" type="text" value="{{f.cig}}" onChange="{{set.cig}}"></div>
+          <div class="fld"><label for="f-cup">CUP</label><input id="f-cup" class="inp" type="text" value="{{f.cup}}" onChange="{{set.cup}}"></div>
+        </div>
+        <div class="grid2">
+          <fieldset class="parte">
+            <legend>Stazione appaltante</legend>
+            <div class="fld"><label for="f-sa">Denominazione</label><input id="f-sa" class="inp txt" type="text" placeholder="Es. Comune di …" value="{{f.sa}}" onChange="{{set.sa}}"></div>
+            <div class="fld"><label for="f-sacf">Codice fiscale</label><input id="f-sacf" class="inp" type="text" autocomplete="off" value="{{f.sacf}}" onChange="{{set.sacf}}"></div>
+          </fieldset>
+          <fieldset class="parte">
+            <legend>Operatore economico</legend>
+            <div class="fld"><label for="f-oe">Denominazione</label><input id="f-oe" class="inp txt" type="text" placeholder="Es. Impresa … S.p.A." value="{{f.oe}}" onChange="{{set.oe}}"></div>
+            <div class="fld"><label for="f-oecf">Codice fiscale</label><input id="f-oecf" class="inp" type="text" autocomplete="off" value="{{f.oecf}}" onChange="{{set.oecf}}"></div>
+          </fieldset>
+        </div>
+        <div class="grid2">
+          <div class="fld"><label for="f-data">Data del prospetto</label><input id="f-data" class="inp" type="date" value="{{f.data}}" onChange="{{set.data}}"></div>
+          <div class="fld"><label for="f-red">Redatto da</label><input id="f-red" class="inp txt" type="text" placeholder="Es. Segreteria del Collegio" value="{{f.red}}" onChange="{{set.red}}"></div>
+          <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
+            <div class="fld"><label for="f-soglia">Soglia europea dei lavori (€)</label><input id="f-soglia" class="inp" type="text" inputmode="decimal" placeholder="Per indicare se il Collegio è obbligatorio" value="{{f.soglia}}" onChange="{{set.soglia}}"></div>
+          </sc-if>
+        </div>
+      </div>
+      <div class="card dl" style="flex: 1 1 300px;">
+        <span class="dl-t">Pronto da allegare al verbale</span>
+        <ul class="dl-l">
+          <li>Dati del Collegio e delle parti</li>
+          <li>Categorie d’opera e parametri</li>
+          <li>Calcolo passo per passo</li>
+          <li>{{firmeTxt}}</li>
+        </ul>
+        <button type="button" class="b-pdf" onClick="{{scaricaPdf}}" disabled="{{noPdf}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Scarica il prospetto PDF</button>
+        <span class="mut hint" style="text-align: center;">{{pdfHint}}</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" class="met">
+    <div class="wrap met-in">
+      <div style="display: flex; flex-direction: column; gap: 8px; max-width: 70ch;">
+        <p class="kick">Metodo</p>
+        <h2 class="h2">Come funziona il calcolo</h2>
+        <p class="mut" style="margin: 0;">Il simulatore segue cinque passaggi. Per ognuno trovi la regola applicata e la sua fonte: tieni il cursore sul riferimento, o toccalo, per leggerne il testo.</p>
+      </div>
+      <ol class="mstep">
+        <li><span class="ms-t">Compenso di riferimento</span><span>Per ogni categoria: <strong>CP = V × G × Q × P</strong>, dove V è l’importo dei lavori, G il grado di complessità della Tavola Z-1, Q = 0,08 il parametro del collaudo tecnico-amministrativo (Tavola Z-2, QdI.01, aumentato del 20% per il collaudo in corso d’opera) e P = 0,03 + 10 / V<sup>0,4</sup>. Fonte: D.M. 17 giugno 2016, artt. 3 e 4, verificato sulla Gazzetta Ufficiale n. 174 del 27 luglio 2016.</span></li>
+        <li><span class="ms-t">Parte fissa</span><span>Il compenso di riferimento si riduce del 60%, e dell’80% per la parte di lavori oltre 100 milioni. È la parte fissa di ciascun componente; il Presidente ha il 10% in più. Le riduzioni per collegio facoltativo e lavori già in corso si applicano qui. Fonte: <span class="{{r.lg7.cls}}"><button type="button" class="rif-b" onClick="{{r.lg7.tog}}">{{r.lg7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg7.t}}</span><span class="pop-s">{{r.lg7.s}}</span><span class="pop-x">{{r.lg7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg7.close}}">Chiudi</button></span></span></span>.</span></li>
+        <li><span class="ms-t">Limite di legge</span><span>La somma per il Collegio non può superare il limite per scaglioni del <span class="{{r.dl76.cls}}"><button type="button" class="rif-b" onClick="{{r.dl76.tog}}">{{r.dl76.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.dl76.t}}</span><span class="pop-s">{{r.dl76.s}}</span><span class="pop-x">{{r.dl76.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.dl76.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.dl76.close}}">Chiudi</button></span></span></span>. Se lo supera, la parte fissa di tutti è ridotta in proporzione. Dopo il correttivo si aggiunge lo scaglione oltre 1.000 milioni (<span class="{{r.v1.cls}}"><button type="button" class="rif-b" onClick="{{r.v1.tog}}">{{r.v1.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1.t}}</span><span class="pop-s">{{r.v1.s}}</span><span class="pop-x">{{r.v1.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1.close}}">Chiudi</button></span></span></span>).</span></li>
+        <li><span class="ms-t">Compenso massimo</span><span>Parte fissa e parte variabile insieme non superano il triplo della parte fissa. Con il D.L. 76/2020 il limite di legge vale anche per il compenso complessivo. La parte variabile, che dipende dalle singole pronunce, non è calcolata.</span></li>
+        <li><span class="ms-t">Spese e Segreteria</span><span>Le spese forfettarie seguono l’art. 5 del D.M. 17 giugno 2016. La Segreteria è pagata dai componenti in percentuale del loro compenso: dal 3% al 10% dopo il correttivo (<span class="{{r.v8.cls}}"><button type="button" class="rif-b" onClick="{{r.v8.tog}}">{{r.v8.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v8.t}}</span><span class="pop-s">{{r.v8.s}}</span><span class="pop-x">{{r.v8.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v8.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v8.close}}">Chiudi</button></span></span></span>), fino al 20% con le regole precedenti.</span></li>
+      </ol>
+
+      <div class="met-g">
+        <div class="card" style="padding: 0;">
+          <div class="t-h">Limiti di legge sulla parte del valore dell’appalto</div>
+          <div style="overflow-x: auto;">
+            <table class="tb" style="min-width: 420px;">
+              <thead><tr><th>Valore dell’appalto</th><th style="text-align: right;">3 componenti</th><th style="text-align: right;">5 componenti</th></tr></thead>
+              <tbody>
+                <tr><td>fino a 50 milioni</td><td class="n">0,50%</td><td class="n">0,80%</td></tr>
+                <tr><td>da 50 a 100 milioni</td><td class="n">0,25%</td><td class="n">0,40%</td></tr>
+                <tr><td>da 100 a 200 milioni</td><td class="n">0,15%</td><td class="n">0,25%</td></tr>
+                <tr><td>da 200 a 500 milioni</td><td class="n">0,10%</td><td class="n">0,15%</td></tr>
+                <tr><td>oltre 500 milioni</td><td class="n">0,07%</td><td class="n">0,10%</td></tr>
+                <tr><td>oltre 1.000 milioni, solo dopo il correttivo</td><td class="n">0,02%</td><td class="n">0,03%</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="card" style="padding: 0;">
-          <div style="padding: 18px 20px; font-weight: 600;">Prospetto di calcolo</div>
+          <div class="t-h">Cosa cambia con la disciplina scelta</div>
           <div style="overflow-x: auto;">
-            <table class="tb">
-              <thead><tr><th>Voce</th><th>Base</th><th style="text-align: right;">Importo</th></tr></thead>
+            <table class="tb" style="min-width: 520px;">
+              <thead><tr><th></th><th>Regole attuali</th><th>Regole originarie</th><th>D.L. 76/2020</th></tr></thead>
               <tbody>
-                <tr data-for-list="{{z.prospetto}}" data-for-as="x" class="{{x.cls}}"><td>{{x.voce}}</td><td class="mut" style="font-size: 13px;">{{x.base}}</td><td class="n">{{x.imp}}</td></tr>
+                <tr><td>Limite di legge</td><td>sulla parte fissa</td><td>sulla parte fissa</td><td>sul compenso complessivo</td></tr>
+                <tr><td>Oltre 1.000 milioni</td><td>0,02% o 0,03%</td><td>come oltre 500</td><td>come oltre 500</td></tr>
+                <tr><td>Compenso massimo</td><td>triplo della parte fissa</td><td>triplo della parte fissa</td><td>triplo e limite di legge</td></tr>
+                <tr><td>Segreteria</td><td>dal 3% al 10%</td><td>fino al 20%</td><td>fino al 20%</td></tr>
+                <tr><td>Collegio facoltativo</td><td>−20%, anche sul limite</td><td>−20% sui compensi</td><td>−20% sui compensi</td></tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    </sc-for>
 
-    <div class="card" style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; background: #F3E4E1; border-color: #F3E4E1;">
-      <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 4px;">
-        <span style="font-weight: 600;">Prospetto da allegare al verbale</span>
-        <span class="mut" style="font-size: 14px;">Il PDF riporta dati del Collegio, categorie, parametri, passaggi del calcolo, tetti e riferimenti normativi, con spazio per le sottoscrizioni. Per l'accordo quadro include il riepilogo e un prospetto per ogni contratto applicativo.</span>
+      <div class="met-g">
+        <div class="card stack">
+          <span class="ms-t">Riferimenti normativi</span>
+          <ul class="refs">
+            <li>D.M. Giustizia 17 giugno 2016, artt. 3, 4 e 5, Tavole Z-1 e Z-2</li>
+            <li><span class="{{r.dl76b.cls}}"><button type="button" class="rif-b" onClick="{{r.dl76b.tog}}">{{r.dl76b.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.dl76b.t}}</span><span class="pop-s">{{r.dl76b.s}}</span><span class="pop-x">{{r.dl76b.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.dl76b.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.dl76b.close}}">Chiudi</button></span></span></span></li>
+            <li><span class="{{r.v1o.cls}}"><button type="button" class="rif-b" onClick="{{r.v1o.tog}}">{{r.v1o.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1o.t}}</span><span class="pop-s">{{r.v1o.s}}</span><span class="pop-x">{{r.v1o.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1o.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1o.close}}">Chiudi</button></span></span></span> e <span class="{{r.v1b.cls}}"><button type="button" class="rif-b" onClick="{{r.v1b.tog}}">{{r.v1b.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1b.t}}</span><span class="pop-s">{{r.v1b.s}}</span><span class="pop-x">{{r.v1b.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1b.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1b.close}}">Chiudi</button></span></span></span></li>
+            <li><span class="{{r.v7.cls}}"><button type="button" class="rif-b" onClick="{{r.v7.tog}}">{{r.v7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v7.t}}</span><span class="pop-s">{{r.v7.s}}</span><span class="pop-x">{{r.v7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v7.close}}">Chiudi</button></span></span></span> · <span class="{{r.v8b.cls}}"><button type="button" class="rif-b" onClick="{{r.v8b.tog}}">{{r.v8b.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v8b.t}}</span><span class="pop-s">{{r.v8b.s}}</span><span class="pop-x">{{r.v8b.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v8b.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v8b.close}}">Chiudi</button></span></span></span></li>
+            <li><span class="{{r.tr.cls}}"><button type="button" class="rif-b" onClick="{{r.tr.tog}}">{{r.tr.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.tr.t}}</span><span class="pop-s">{{r.tr.s}}</span><span class="pop-x">{{r.tr.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.tr.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.tr.close}}">Chiudi</button></span></span></span></li>
+            <li><span class="{{r.lg7b.cls}}"><button type="button" class="rif-b" onClick="{{r.lg7b.tog}}">{{r.lg7b.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg7b.t}}</span><span class="pop-s">{{r.lg7b.s}}</span><span class="pop-x">{{r.lg7b.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg7b.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg7b.close}}">Chiudi</button></span></span></span></li>
+          </ul>
+          <span class="mut hint">Fonti verificate su Normattiva, Gazzetta Ufficiale e sito del Consiglio superiore dei lavori pubblici il 14 ottobre 2026.</span>
+        </div>
+        <div class="card stack">
+          <span class="ms-t">Precauzioni</span>
+          <ul class="refs">
+            <li><strong>È un supporto al calcolo.</strong> Il compenso è stabilito dal Collegio e dalle parti: il prospetto va verificato prima di allegarlo al verbale.</li>
+            <li><strong>Controlla categorie, G e Q.</strong> Sono precompilati ma modificabili: la scelta della categoria d’opera resta una valutazione tecnica.</li>
+            <li><strong>Alcune scelte sono interpretative.</strong> P calcolato per categoria; riduzione dell’80% in proporzione alla parte oltre 100 milioni; ogni contratto applicativo di un accordo quadro trattato come rapporto autonomo; scaglione oltre 1.000 milioni al posto dell’aliquota precedente; collocazione dei collegi D.L. 76/2020 sui contratti del vecchio codice.</li>
+            <li><strong>La disciplina va accertata.</strong> Il correttivo vale anche per i collegi di lavori già costituiti al 31 dicembre 2024, salvo diverso accordo delle parti, ma non per quelli di servizi e forniture già costituiti.</li>
+            <li><strong>Nessun dato viene inviato.</strong> Il calcolo avviene nel browser e nulla viene salvato: ricaricando la pagina i dati si perdono.</li>
+          </ul>
+        </div>
       </div>
-      <button type="button" class="btn" onClick="{{scaricaPdf}}">Scarica il prospetto in PDF</button>
-    </div>
-  </section>
-
-  <section id="metodo" class="wrap" style="padding-bottom: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px;">
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
-      <span style="font-weight: 600;">La formula del compenso</span>
-      <p style="margin: 0; font-size: 15px;">Per ogni categoria CP = V × G × Q × P, con P = 0,03 + 10 / V<sup>0,4</sup>; il compenso è la somma sulle categorie (D.M. 17 giugno 2016, artt. 3 e 4). G è precompilato dalla Tavola Z-1, verificata sul testo pubblicato nella Gazzetta Ufficiale n. 174 del 27 luglio 2016; Q = 0,08 è il parametro della prestazione QdI.01, collaudo tecnico-amministrativo, della Tavola Z-2, che prevede un aumento del 20% per il collaudo in corso d'opera. Le linee guida assumono come riferimento questo compenso, con riduzione del 60%, e dell'80% per la parte di lavori oltre 100 milioni:
-        <span class="{{r.lg7.cls}}"><button type="button" class="rif-b" onClick="{{r.lg7.tog}}">{{r.lg7.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg7.t}}</span><span class="pop-s">{{r.lg7.s}}</span><span class="pop-x">{{r.lg7.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg7.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg7.close}}">Chiudi</button></span></span></span>.</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-n" style="align-self: flex-start;">NORMA</span>
-      <span style="font-weight: 600;">I limiti di legge</span>
-      <p style="margin: 0; font-size: 15px;">Il <span class="{{r.dl76.cls}}"><button type="button" class="rif-b" onClick="{{r.dl76.tog}}">{{r.dl76.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.dl76.t}}</span><span class="pop-s">{{r.dl76.s}}</span><span class="pop-x">{{r.dl76.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.dl76.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.dl76.close}}">Chiudi</button></span></span></span> fissa limiti per cinque scaglioni di valore, riferiti all'intero Collegio. Nel D.L. 76/2020 valgono per i compensi complessivi; nel D.Lgs. 36/2023, sia nel testo originario sia dopo il correttivo, per la sola parte fissa, e il compenso complessivo non supera il triplo di questa (<span class="{{r.v1.cls}}"><button type="button" class="rif-b" onClick="{{r.v1.tog}}">{{r.v1.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v1.t}}</span><span class="pop-s">{{r.v1.s}}</span><span class="pop-x">{{r.v1.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v1.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v1.close}}">Chiudi</button></span></span></span>). Il correttivo aggiunge lo scaglione oltre 1.000 milioni (0,02% o 0,03%) e fissa la Segreteria tra il 3% e il 10% (<span class="{{r.v8.cls}}"><button type="button" class="rif-b" onClick="{{r.v8.tog}}">{{r.v8.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.v8.t}}</span><span class="pop-s">{{r.v8.s}}</span><span class="pop-x">{{r.v8.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.v8.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.v8.close}}">Chiudi</button></span></span></span>); nella disciplina previgente la Segreteria arriva fino al 20% (<span class="{{r.lg7b.cls}}"><button type="button" class="rif-b" onClick="{{r.lg7b.tog}}">{{r.lg7b.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.lg7b.t}}</span><span class="pop-s">{{r.lg7b.s}}</span><span class="pop-x">{{r.lg7b.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.lg7b.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.lg7b.close}}">Chiudi</button></span></span></span>).</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-i" style="align-self: flex-start;">INTERPRETAZIONE</span>
-      <span style="font-weight: 600;">Scelte di calcolo da verificare</span>
-      <p style="margin: 0; font-size: 15px;">P è calcolato sull'importo di ciascuna categoria. La riduzione dell'80% oltre 100 milioni è ripartita in proporzione all'importo eccedente. La parte fissa è riferita a ciascun componente, con +10% per il Presidente; se la parte fissa del Collegio supera il tetto, è ridotta in proporzione. Nell'accordo quadro ogni contratto applicativo è trattato come un rapporto autonomo, con propri tetti, come l'Allegato V.2 fa per l'obbligo di costituzione. Lo scaglione oltre 1.000 milioni sostituisce, per quella parte di valore, l'aliquota precedente. La riduzione del 20% per il collegio facoltativo si applica, dopo il correttivo, anche al limite di legge; nella disciplina previgente solo ai compensi delle linee guida.</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
-      <span class="lab l-i" style="align-self: flex-start;">ATTENZIONE</span>
-      <span style="font-weight: 600;">Quale disciplina scegliere</span>
-      <p style="margin: 0; font-size: 15px;">Il correttivo si applica anche ai collegi di lavori già costituiti al 31 dicembre 2024, salvo espressa volontà contraria delle parti, e non a quelli di servizi e forniture già costituiti (<span class="{{r.tr.cls}}"><button type="button" class="rif-b" onClick="{{r.tr.tog}}">{{r.tr.label}}</button><span class="pop" role="note"><span class="pop-t">{{r.tr.t}}</span><span class="pop-s">{{r.tr.s}}</span><span class="pop-x">{{r.tr.x}}</span><span class="pop-f"><a class="pop-l" href="{{r.tr.u}}" target="_blank" rel="noopener">Apri la fonte ufficiale ↗</a><button type="button" class="pop-c" onClick="{{r.tr.close}}">Chiudi</button></span></span></span>). La disciplina dei collegi costituiti ai sensi del D.L. 76/2020 per contratti del D.Lgs. 50/2016 è una ricostruzione interpretativa: va verificata nel verbale di costituzione. G e Q restano modificabili; il prospetto è un supporto al calcolo e non sostituisce la verifica delle parti.</p>
     </div>
   </section>
 
@@ -902,7 +1094,7 @@ class Component extends DCLogic {
         setNome: setK('nome'), setCig: setK('cig'), setApp: setK('app'),
         addRiga: () => { const l = all(); l[ki].righe.push(this.rigaVuota()); this.setState({ contratti: l }); },
         del: () => { const l = all().filter((x, j) => j !== ki); this.setState({ contratti: l.length ? l : [this.contrattoVuoto()] }); },
-        esito: c.Vtot > 0 ? 'Parte fissa riconoscibile del Collegio: ' + this.eur(c.fissaCollR) + (aq ? ' · ' + c.obbl : '') : '',
+        esito: c.Vtot > 0 ? 'Parte fissa del Collegio: ' + this.eur(c.fissaCollR) + (aq && this.num(((this.state || {}).f || {}).soglia) ? ' · ' + c.obbl : '') : '',
         righe: c.righe.map((r, ri) => ({
           sel: r.src.sel || '', descr: r.src.descr, v: r.src.v, g: r.src.g, q: r.src.q,
           idId: 'k' + ki + 'r' + ri + 'i', dId: 'k' + ki + 'r' + ri + 'd', vId: 'k' + ki + 'r' + ri + 'v', gId: 'k' + ki + 'r' + ri + 'g', qId: 'k' + ki + 'r' + ri + 'q',
@@ -922,7 +1114,7 @@ class Component extends DCLogic {
       tipo: {
         isS: !aq, isA: aq, sCls: aq ? '' : 'on', aCls: aq ? 'on' : '',
         setS: () => this.setState({ tipo: 's' }), setA: () => this.setState({ tipo: 'aq' }),
-        help: aq ? 'Nell’accordo quadro obbligo e calcolo si riferiscono ai singoli contratti applicativi: inserisci un blocco per ciascuno.' : 'Per un appalto singolo o per un singolo contratto applicativo di un accordo quadro si compila un solo blocco di categorie.'
+        help: aq ? 'Il calcolo si fa su ogni contratto applicativo: ne aggiungi quanti ne servono al passaggio 2.' : 'Vale anche per un solo contratto applicativo di un accordo quadro.'
       },
       lab: { nome: aq ? 'Collegio e accordo quadro' : 'Collegio e contratto', cig: aq ? 'CIG dell’accordo quadro' : 'CIG' },
       f: { nome: f.nome || '', cig: f.cig || '', cup: f.cup || '', data: f.data || '', red: f.red || '', soglia: f.soglia || '', sa: f.sa || '', sacf: f.sacf || '', oe: f.oe || '', oecf: f.oecf || '' },
@@ -930,14 +1122,15 @@ class Component extends DCLogic {
       c3: (s.n || 3) === 3 ? 'on' : '', c5: s.n === 5 ? 'on' : '', is3: (s.n || 3) === 3, is5: s.n === 5,
       set3: () => this.setState({ n: 3 }), set5: () => this.setState({ n: 5 }),
       segr: this.segrVal(), segrMin: this.segrRange()[0], segrMax: this.segrRange()[1], setSegr: (e) => this.setState({ segr: parseInt(e.target.value, 10) }),
-      segrLab: this.regime() === 'c' ? 'tra il 3% e il 10%, All. V.2, art. 8' : 'fino al 20%, Linee guida, punto 7.6.1',
+      segrLab: this.regime() === 'c' ? 'Con le regole attuali va dal 3% al 10%.' : 'Con questa disciplina può arrivare al 20%.',
       facLab: this.regime() === 'c' ? 'All. V.2, art. 7, c. 4' : 'Linee guida, punto 7.3.1',
       isD: this.regime() === 'd',
       av: (s.av || '0'), setAv: (e) => this.setState({ av: e.target.value }),
-      regimi: ['c', 'o', 'd'].map((r) => ({ cls: this.regime() === r ? 'opt on' : 'opt', on: this.regime() === r, nome: this.regInfo(r).nome,
-        descr: ({ c: 'Dal 31 dicembre 2024. Si applica anche ai collegi di lavori già costituiti a quella data, salvo espressa volontà contraria delle parti. Il limite di legge riguarda la sola parte fissa; il compenso complessivo non supera il triplo.',
-          o: 'Allegato V.2 in vigore fino al 30 dicembre 2024. Per i collegi di servizi e forniture già costituiti al 31 dicembre 2024 e per i collegi di lavori in cui le parti hanno escluso la nuova disciplina. Limite di legge sulla parte fissa, triplo come tetto complessivo, Segreteria fino al 20%.',
-          d: 'Collegi costituiti ai sensi dell’art. 6 del D.L. 76/2020, per contratti regolati dal D.Lgs. 50/2016. Il limite di legge riguarda i compensi complessivi del Collegio; Segreteria fino al 20%.' })[r],
+      regimi: ['c', 'o', 'd'].map((r) => ({ cls: this.regime() === r ? 'opt on' : 'opt', on: this.regime() === r,
+        nome: ({ c: 'Regole attuali', o: 'Regole originarie del Codice 2023', d: 'D.L. 76/2020' })[r],
+        descr: ({ c: 'Codice dei contratti dopo il correttivo. Per i collegi costituiti dal 31 dicembre 2024 e per quelli di lavori già attivi, salvo diverso accordo delle parti.',
+          o: 'Allegato V.2 in vigore fino al 30 dicembre 2024. Per i collegi di servizi e forniture già costituiti a quella data, o di lavori se le parti hanno scelto le vecchie regole.',
+          d: 'Per i collegi nati con l’art. 6 del D.L. 76/2020 su contratti del vecchio codice (D.Lgs. 50/2016).' })[r],
         set: () => this.setState({ reg: r }) })),
       fac: !!s.fac, setFac: () => this.setState({ fac: !s.fac }),
       cod: !!s.cod, setCod: () => this.setState({ cod: !s.cod }),
@@ -949,8 +1142,8 @@ class Component extends DCLogic {
         ], f: Object.assign({}, f, { nome: f.nome || 'Esempio di accordo quadro', soglia: f.soglia || '' }) }
         : { contratti: [{ nome: '', cig: '', app: '', righe: [ex('E.20', '18.000.000'), ex('S.03', '9.500.000'), ex('IA.03', '4.200.000')] }], f: Object.assign({}, f, { nome: f.nome || 'Esempio di calcolo' }) }),
       azzera: () => this.setState({ contratti: null, f: {}, fac: false, cod: false, av: '0' }),
-      avviso: vuoto || incompleto,
-      avvisoTxt: vuoto ? 'Scegli almeno una categoria d’opera e inserisci l’importo per calcolare la parte fissa.' : 'Una o più categorie hanno importo ma G o Q mancanti: il loro compenso è pari a zero.',
+      avviso: !vuoto && incompleto,
+      avvisoTxt: vuoto ? 'Scegli almeno una categoria d’opera e inserisci l’importo per calcolare la parte fissa.' : 'Attenzione: una categoria ha l’importo ma non G o Q, quindi non entra nel calcolo.',
       riepilogo: ks.map((k, i) => ({ nome: 'n. ' + (i + 1) + (k.nome ? ' — ' + k.nome : ''), valore: this.eur(calcs[i].app), obbl: calcs[i].obbl, fissa: this.eur(calcs[i].fissaCollR), tot: this.eur(calcs[i].totColl), cls: '' }))
         .concat([{ nome: 'Totale', valore: this.eur(calcs.reduce((a, c) => a + c.app, 0)), obbl: '', fissa: this.eur(calcs.reduce((a, c) => a + c.fissaCollR, 0)), tot: this.eur(calcs.reduce((a, c) => a + c.totColl, 0)), cls: 'tot' }]),
       risultati: ks.map((k, i) => {
@@ -958,16 +1151,23 @@ class Component extends DCLogic {
         return {
           titolo: this.titolo(k, i),
           k: { fissaC: this.eur(c.fissaCr), fissaP: this.eur(c.fissaPr), fissaColl: this.eur(c.fissaCollR), totColl: this.eur(c.totColl),
-            tettoMsg: c.k < 1 ? 'Ridotta al tetto di legge (' + this.eur(c.tetto) + ')' : 'Entro il tetto di legge (' + this.eur(c.tetto) + ')', segrF: this.eur(c.segrF), segrT: this.eur(c.segrT) },
+            tettoMsg: c.k < 1 ? 'Ridotta al limite di legge di ' + this.eur(c.tetto) : 'Entro il limite di legge di ' + this.eur(c.tetto),
+            totMsg: c.reg === 'd' ? 'Parte fissa e variabile, entro il limite di legge' : 'Parte fissa e variabile: al massimo il triplo',
+            segrF: this.eur(c.segrF), segrT: this.eur(c.segrT), segrMsg: c.segr + '% · fino a ' + this.eur(c.segrT) + ' con il compenso massimo' },
           prospetto: this.prospetto(c)
         };
       }),
-      scaricaPdf: () => this.pdf(),
+      scaricaPdf: () => { if (!vuoto) this.pdf(); },
+      noPdf: vuoto, haDati: !vuoto,
+      bar: { fissa: vuoto ? '—' : this.eur(calcs.reduce((a, c) => a + c.fissaCollR, 0)) },
+      esitoTxt: vuoto ? 'Il risultato compare qui appena inserisci almeno una categoria con il suo importo.' : 'Importi calcolati con le regole scelte al passaggio 1.',
+      pdfHint: vuoto ? 'Inserisci almeno una categoria per scaricare il prospetto.' : 'Il file si scarica subito, senza registrazione.',
+      firmeTxt: 'Spazi per le firme: Presidente, ' + ((s.n || 3) === 5 ? 'quattro componenti' : 'due componenti') + ' e Segretario',
       r: {
-        lg7: this.rif('s5', 'lg7', 'Linee guida, punto 7'), dl76: this.rif('s2', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis'),
-        v1: this.rif('s1', 'v1', 'All. V.2, art. 1, cc. 4-5'), v8: this.rif('s3', 'v8', 'All. V.2, art. 8, c. 2'),
-        v7: this.rif('s8', 'v7', 'All. V.2, art. 7, c. 2'), tr: this.rif('s7', 'a225b', 'art. 225-bis, c. 5'),
-        tr2: this.rif('s9', 'a225b', 'D.Lgs. 36/2023, art. 225-bis, c. 5'), v1o: this.rif('s10', 'v1o', 'All. V.2, testo originario, art. 1'), dl76b: this.rif('s11', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis'), lg7b: this.rif('s12', 'lg7', 'Linee guida 2022, punto 7')
+        lg7: this.rif('s5', 'lg7', 'Linee guida D.M. 12/2022, punto 7'), dl76: this.rif('s2', 'dl76', 'D.L. 76/2020, art. 6, comma 7-bis'),
+        v1: this.rif('s1', 'v1', 'Allegato V.2, art. 1, c. 4'), v8: this.rif('s3', 'v8', 'Allegato V.2, art. 8'),
+        v7: this.rif('s8', 'v7', 'Allegato V.2, art. 7'), tr: this.rif('s7', 'a225b', 'D.Lgs. 36/2023, art. 225-bis, c. 5'),
+        tr2: this.rif('s9', 'a225b', 'D.Lgs. 36/2023, art. 225-bis, c. 5'), v1o: this.rif('s10', 'v1o', 'All. V.2, testo originario, art. 1'), dl76b: this.rif('s11', 'dl76', 'D.L. 76/2020, art. 6, c. 7-bis'), lg7b: this.rif('s12', 'lg7', 'Linee guida 2022, punto 7'), v1b: this.rif('s13', 'v1', 'Allegato V.2 vigente, art. 1'), v8b: this.rif('s14', 'v8', 'Allegato V.2, art. 8')
       }
     };
   }
