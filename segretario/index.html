@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parla con il segretario online — Prassi CCT</title>
 <meta name="description" content="Assistente di intelligenza artificiale sui Collegi Consultivi Tecnici: risposte semplici con il riferimento alla norma su costituzione, quesiti, termini, compensi e verbali.">
-<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://prassicct.it/segretario/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prassi CCT">
@@ -29,7 +28,8 @@ a{color:inherit}
 .logo-i{position:relative;display:inline-block}
 .logo-q{position:absolute;left:50%;top:.02em;width:.19em;height:.19em;margin-left:-.095em;background:#6E1E2B}
 .logo-c{font-weight:600;font-size:15px;letter-spacing:.2em;color:#6E1E2B}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:15px;font-weight:500}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font-size:15px;font-weight:500}
+@media (min-width:1000px) and (max-width:1180px){.nav{gap:4px 14px;font-size:14px}}
 .nav a{text-decoration:none;padding:8px 0}
 .nav a:hover{color:#6E1E2B}
 .nav a.cta{padding:10px 16px;border-radius:8px;background:#6E1E2B;color:#fff;font-weight:600;font-size:14px;box-shadow:none}
@@ -94,6 +94,7 @@ a{color:inherit}
 .c-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;font-size:13px;color:#6A5F59;padding:0 4px}
 .lnk{font:inherit;font-size:13px;font-weight:600;color:#561622;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .err{margin:0 24px 16px;padding:10px 14px;border-radius:8px;background:#F8EBD6;color:#7A4A00;font-size:14px}
+.fonti{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:#6A5F59;padding:2px 4px}.fonti a{color:#561622;font-weight:600}
 .off{padding:14px 16px;border-radius:8px;background:#F3E4E1;color:#561622;font-size:15px}
 @media (max-width:600px){.msgs{padding:16px;max-height:none;min-height:300px}.m{max-width:100%}.send span{display:none}.send{padding:0 16px}}
 </style>
@@ -111,8 +112,9 @@ a{color:inherit}
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
         <a href="/eventi/">Eventi</a>
+        <a href="/segretario/" class="on">Segretario online</a>
         <a href="/progetto/">Il progetto</a>
-        <a href="/segretario/" class="cta on" aria-current="page">Segretario online</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
       </nav>
     </div>
   </header>
@@ -122,12 +124,10 @@ a{color:inherit}
     <p class="lead">Fai una domanda sui Collegi Consultivi Tecnici e sugli appalti collegati: costituzione, quesiti, termini, compensi, verbali. Ti risponde in modo semplice, con il riferimento alla norma.</p>
     <div class="ai-note" role="note">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v5h1"></path></svg>
-      <span><strong>Stai parlando con un assistente di intelligenza artificiale</strong> (Claude, di Anthropic), non con una persona. Le risposte sono informazioni generali e possono contenere errori: verificale sulle fonti indicate e non usarle come parere legale. Non inserire nomi delle parti, dati personali o contenuti riservati del Collegio.</span>
+      
+      <span><strong>Il segretario online cerca la risposta nei contenuti di Prassi CCT</strong> e ti mostra i passaggi più pertinenti, con il link alla pagina completa. È un assistente automatico, non una persona: le informazioni sono generali e non sostituiscono un parere legale.</span>
     </div>
 
-    
-      <p class="off">Il segretario online è in fase di attivazione. Nel frattempo trovi le risposte nelle <a href="/guide/">guide operative</a> e negli <a href="/approfondimenti/">approfondimenti</a>.</p>
-    
 
     <div class="chat">
       <div class="msgs" id="msgs" aria-live="polite">
@@ -135,7 +135,7 @@ a{color:inherit}
           <div class="empty">
             <span class="empty-t">Da dove vuoi iniziare?</span>
             <div class="chips">
-              <button type="button" class="chip" disabled="">Quando è obbligatorio costituire il CCT?</button><button type="button" class="chip" disabled="">Come si calcola la parte fissa del compenso?</button><button type="button" class="chip" disabled="">Entro quanto tempo il Collegio decide su un quesito?</button><button type="button" class="chip" disabled="">Che differenza c’è tra parere e determinazione?</button><button type="button" class="chip" disabled="">Cosa fa la Segreteria tecnico-amministrativa?</button><button type="button" class="chip" disabled="">Cosa cambia per i collegi costituiti prima del correttivo?</button>
+              <button type="button" class="chip">Quando è obbligatorio costituire il CCT?</button><button type="button" class="chip">Come si calcola la parte fissa del compenso?</button><button type="button" class="chip">Entro quanto tempo il Collegio decide su un quesito?</button><button type="button" class="chip">Che differenza c’è tra parere e determinazione?</button><button type="button" class="chip">Cosa fa la Segreteria tecnico-amministrativa?</button><button type="button" class="chip">Cosa cambia per i collegi costituiti prima del correttivo?</button>
             </div>
           </div>
         
@@ -144,15 +144,15 @@ a{color:inherit}
       
       <div class="comp">
         <label for="domanda" class="sr" style="position: absolute; left: -9999px;">La tua domanda</label>
-        <textarea id="domanda" rows="2" maxlength="2000" placeholder="Servizio in attivazione" disabled=""></textarea>
+        <textarea id="domanda" rows="2" maxlength="2000" placeholder="Scrivi la tua domanda…"></textarea>
         <button type="button" class="send" disabled=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span>Invia</span></button>
       </div>
     </div>
     <div class="c-foot">
-      <span>Invio per inviare, Maiusc+Invio per andare a capo. Fino a 8 domande al minuto.</span>
+      <span>Invio per inviare, Maiusc+Invio per andare a capo.</span>
       <span style="display: flex; gap: 16px;"><button type="button" class="lnk">Nuova conversazione</button></span>
     </div>
-    <p class="mut" style="margin: 0; font-size: 13px;">La conversazione resta solo in questo browser. Il testo delle domande viene inviato al servizio Claude di Anthropic per generare la risposta e non viene conservato da Prassi CCT. Dettagli nell’<a href="/privacy/#segretario">informativa</a>.</p>
+    <p class="mut" style="margin: 0; font-size: 13px;">La ricerca avviene nel tuo browser: le domande non vengono inviate a nessuno. La conversazione resta solo in questo browser per 30 giorni. Dettagli nell’<a href="/privacy/#segretario">informativa</a>.</p>
   </section>
 
   <footer class="ft">
@@ -176,8 +176,9 @@ a{color:inherit}
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
         <a href="/eventi/">Eventi</a>
+        <a href="/segretario/" class="on">Segretario online</a>
         <a href="/progetto/">Il progetto</a>
-        <a href="/segretario/" class="cta on" aria-current="page">Segretario online</a>
+        <a href="/cct-update/" class="cta">CCT Update</a>
       </nav>
     </div>
   </header>
@@ -187,12 +188,10 @@ a{color:inherit}
     <p class="lead">Fai una domanda sui Collegi Consultivi Tecnici e sugli appalti collegati: costituzione, quesiti, termini, compensi, verbali. Ti risponde in modo semplice, con il riferimento alla norma.</p>
     <div class="ai-note" role="note">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v5h1"/></svg>
-      <span><strong>Stai parlando con un assistente di intelligenza artificiale</strong> (Claude, di Anthropic), non con una persona. Le risposte sono informazioni generali e possono contenere errori: verificale sulle fonti indicate e non usarle come parere legale. Non inserire nomi delle parti, dati personali o contenuti riservati del Collegio.</span>
+      <sc-if value="{{ai}}" hint-placeholder-val="{{false}}"><span><strong>Stai parlando con un assistente di intelligenza artificiale</strong>, non con una persona. Risponde usando i contenuti di Prassi CCT, ma può sbagliare: verifica sulle fonti indicate e non usare le risposte come parere legale. Non inserire nomi delle parti, dati personali o contenuti riservati del Collegio.</span></sc-if>
+      <sc-if value="{{noAi}}" hint-placeholder-val="{{true}}"><span><strong>Il segretario online cerca la risposta nei contenuti di Prassi CCT</strong> e ti mostra i passaggi più pertinenti, con il link alla pagina completa. È un assistente automatico, non una persona: le informazioni sono generali e non sostituiscono un parere legale.</span></sc-if>
     </div>
 
-    <sc-if value="{{spento}}" hint-placeholder-val="{{false}}">
-      <p class="off">Il segretario online è in fase di attivazione. Nel frattempo trovi le risposte nelle <a href="/guide/">guide operative</a> e negli <a href="/approfondimenti/">approfondimenti</a>.</p>
-    </sc-if>
 
     <div class="chat">
       <div class="msgs" id="msgs" aria-live="polite">
@@ -215,13 +214,14 @@ a{color:inherit}
                 <sc-if value="{{b.l}}" hint-placeholder-val="{{false}}"><ul><sc-for list="{{b.items}}" as="it" hint-placeholder-count="2"><li><sc-for list="{{it}}" as="g" hint-placeholder-count="1"><sc-if value="{{g.a}}" hint-placeholder-val="{{false}}"><a href="{{g.href}}" target="_blank" rel="noopener">{{g.t}}</a></sc-if><sc-if value="{{g.s}}" hint-placeholder-val="{{false}}"><strong>{{g.t}}</strong></sc-if><sc-if value="{{g.n}}" hint-placeholder-val="{{true}}">{{g.t}}</sc-if></sc-for></li></sc-for></ul></sc-if>
               </sc-for>
             </div>
+            <sc-if value="{{m.haFonti}}" hint-placeholder-val="{{false}}"><div class="fonti"><span>Fonti consultate:</span><sc-for list="{{m.fonti}}" as="f" hint-placeholder-count="2"><a href="{{f.href}}" target="_blank" rel="noopener">{{f.t}}</a></sc-for></div></sc-if>
           </div>
         </sc-for>
       </div>
       <sc-if value="{{errore}}" hint-placeholder-val="{{false}}"><p class="err" role="alert">{{errTxt}}</p></sc-if>
       <div class="comp">
         <label for="domanda" class="sr" style="position: absolute; left: -9999px;">La tua domanda</label>
-        <textarea id="domanda" rows="2" maxlength="2000" placeholder="{{ph}}" value="{{testo}}" onChange="{{setTesto}}" onKeyDown="{{tasto}}" disabled="{{spento}}"></textarea>
+        <textarea id="domanda" rows="2" maxlength="2000" placeholder="{{ph}}" value="{{testo}}" onChange="{{setTesto}}" onKeyDown="{{tasto}}" ></textarea>
         <button type="button" class="send" onClick="{{invia}}" disabled="{{noInvio}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg><span>Invia</span></button>
       </div>
     </div>
@@ -229,7 +229,7 @@ a{color:inherit}
       <span>{{stato}}</span>
       <span style="display: flex; gap: 16px;"><button type="button" class="lnk" onClick="{{nuova}}">Nuova conversazione</button></span>
     </div>
-    <p class="mut" style="margin: 0; font-size: 13px;">La conversazione resta solo in questo browser. Il testo delle domande viene inviato al servizio Claude di Anthropic per generare la risposta e non viene conservato da Prassi CCT. Dettagli nell’<a href="/privacy/#segretario">informativa</a>.</p>
+    <p class="mut" style="margin: 0; font-size: 13px;">{{privTxt}} Dettagli nell’<a href="/privacy/#segretario">informativa</a>.</p>
   </section>
 
   <footer class="ft">
@@ -245,7 +245,46 @@ a{color:inherit}
 <script src="/assets/dc.js"></script>
 <script>
 const ENDPOINT = "";
+const CERCA = (() => {
+  const STOP = new Set('a ad al alla alle allo agli ai anche che chi con cosa come cui da dal dalla dalle dei del della delle dello degli di e ed è il in la le lo gli i ma mi ne nel nella nelle non o per più può puo quale quali quando quanto se si sia sono su sul sulla tra fra un una uno questo questa quello quella essere ha hanno deve devono fare viene come cos è c ci vi ti dopo prima entro ogni tutto tutti qual cosi molto poco sempre mai solo ancora gia stato stata fatto fare'.split(' '));
+  const SIN = { cct: 'collegio', collegi: 'collegio', compenso: 'compens', compensi: 'compens', parcella: 'compens', onorario: 'compens', onorari: 'compens', rup: 'responsabile', sa: 'stazione', segretario: 'segreteria', scadenza: 'termin', scadenze: 'termin', tempo: 'termin', tempi: 'termin', giorni: 'termin', sciogliere: 'scioglimento', chiusura: 'scioglimento', domanda: 'quesit', domande: 'quesit', richiesta: 'quesit', prende: 'compens', guadagna: 'compens', paga: 'compens', pagato: 'compens', costa: 'compens', decide: 'determinazione', decidere: 'determinazione', decisione: 'determinazione', pronuncia: 'determinazione', durata: 'termin', impugnare: 'giurisdizione', ricorso: 'giurisdizione', giudice: 'giurisdizione' };
+  const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, ' ');
+  const cut = (w) => (w.length > 6 ? w.slice(0, 6) : w);
+  const stem = (w) => cut(SIN[w] || w);
+  const tok = (t) => norm(t).split(/[^a-z0-9]+/).filter((w) => w && (w.length > 2 || /\d/.test(w)) && !STOP.has(w)).map(stem);
+  function indice(chunks) {
+    const docs = chunks.map((c) => { const ta = tok(c.t); const ts = tok(c.s); const tx = tok(c.x); return { c, ta, ts, tt: ta.concat(ts), tx, len: tx.length + ts.length }; });
+    const df = new Map();
+    docs.forEach((d) => new Set(d.tt.concat(d.tx)).forEach((w) => df.set(w, (df.get(w) || 0) + 1)));
+    const avg = docs.reduce((a, d) => a + d.len, 0) / Math.max(1, docs.length);
+    return { docs, df, avg, N: docs.length };
+  }
+  function cerca(ix, domanda, k) {
+    const q = Array.from(new Set(tok(domanda)));
+    if (!q.length) return [];
+    const k1 = 1.2, b = 0.7;
+    const out = ix.docs.map((d) => {
+      let s = 0, hit = 0;
+      q.forEach((w) => {
+        const n = ix.df.get(w); if (!n) return;
+        const idf = Math.log(1 + (ix.N - n + 0.5) / (n + 0.5));
+        const f = d.tx.filter((x) => x === w).length + 2 * d.ts.filter((x) => x === w).length + 0.8 * d.ta.filter((x) => x === w).length;
+        if (f) { hit++; s += idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * d.len / ix.avg)); }
+      });
+      if (hit / q.length < (q.length >= 3 ? 0.5 : 0.5)) s = 0;
+      if (d.c.f) s *= 0.85;
+      if (/^(Premessa|Conclusioni pratiche)$/.test(d.c.s)) s *= 0.8;
+      return { c: d.c, s };
+    }).filter((r) => r.s > 1.2).sort((a, b2) => b2.s - a.s);
+    const visti = new Set(), sel = [];
+    for (const r of out) { const key = r.c.u.split('#')[0] + '|' + r.c.s; if (visti.has(key)) continue; visti.add(key); sel.push(r); if (sel.length >= (k || 4)) break; }
+    return sel;
+  }
+  return { indice, cerca, tok };
+})();
+
 const CHAT_KEY = 'prassicct.segretario.chat.v1';
+let KBIX = null;
 const SPUNTI = [
   'Quando è obbligatorio costituire il CCT?',
   'Come si calcola la parte fissa del compenso?',
@@ -264,6 +303,7 @@ class Component extends DCLogic {
         else localStorage.removeItem(CHAT_KEY);
       }
     } catch (e) {}
+    fetch('/assets/segretario-kb.json').then((r) => r.json()).then((kb) => { KBIX = CERCA.indice(kb); this.setState({ kbOk: true }); }).catch(() => this.setState({ kbOk: false }));
     setTimeout(() => this.scorri(), 50);
   }
   salva(msgs) {
@@ -309,49 +349,62 @@ class Component extends DCLogic {
     chiudiP(); chiudiL();
     return out;
   }
+  assoluto(u) { return u && u.startsWith('/') ? 'https://prassicct.it' + u : u; }
+  estratto(x) {
+    const t = String(x || '').replace(/\n+/g, ' ').replace(/^(Norma|Interpretazione|Prassi|Proposta operativa): /, '');
+    if (t.length <= 320) return t;
+    const cut = t.slice(0, 320); const p = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('; '));
+    return (p > 160 ? cut.slice(0, p + 1) : cut.replace(/\s+\S*$/, '') + '…');
+  }
+  rispostaLocale(domanda, motivo) {
+    const trovati = KBIX ? CERCA.cerca(KBIX, domanda, 3) : [];
+    let md = (motivo ? motivo + ' ' : '') + (trovati.length ? 'Ecco i passaggi di Prassi CCT più vicini alla tua domanda:' : 'Non ho trovato passaggi pertinenti nei contenuti di Prassi CCT. Prova a riformulare la domanda con parole diverse, oppure consulta le guide operative: https://prassicct.it/guide/');
+    trovati.forEach((r) => { md += '\n\n**' + r.c.t + (r.c.f ? '' : ' — ' + r.c.s) + '**\n' + this.estratto(r.c.x) + '\n[Leggi tutto](' + this.assoluto(r.c.u) + ')'; });
+    return { role: 'assistant', content: md, modo: 'ricerca' };
+  }
   async chiedi(domanda) {
     const s = this.state || {};
     const q = String(domanda || '').trim();
-    if (!q || s.attesa || !ENDPOINT) return;
+    if (!q || s.attesa) return;
     const storia = (s.msgs || []).concat([{ role: 'user', content: q }]);
-    const risposta = { role: 'assistant', content: '' };
+    const fine = (m) => { const finali = storia.concat([m]); this.setState({ msgs: finali, attesa: false, testo: '' }); this.salva(finali); setTimeout(() => this.scorri(), 30); };
+    if (!ENDPOINT) { this.setState({ msgs: storia, testo: '' }); fine(this.rispostaLocale(q)); return; }
+    const risposta = { role: 'assistant', content: '', modo: 'ai' };
     this.setState({ msgs: storia.concat([risposta]), testo: '', attesa: true, errore: '' });
     setTimeout(() => this.scorri(), 30);
     try {
       const r = await fetch(ENDPOINT.replace(/\/$/, '') + '/chat', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: storia.slice(-16).map((m) => ({ role: m.role, content: m.content })) })
+        body: JSON.stringify({ messages: storia.slice(-6).map((m) => ({ role: m.role, content: m.content })) })
       });
       if (!r.ok || !r.body) {
-        let msg = 'Il servizio non è disponibile in questo momento: riprova tra poco.';
-        try { const j = await r.json(); if (j && j.errore) msg = j.errore; } catch (e) {}
-        throw new Error(msg);
+        let j = null; try { j = await r.json(); } catch (e) {}
+        if (r.status === 429) { this.setState({ msgs: storia.slice(0, -1), testo: q, attesa: false, errore: (j && j.errore) || 'Troppe domande in poco tempo: riprova tra un minuto.' }); return; }
+        fine(this.rispostaLocale(q, 'In questo momento il segretario non può elaborare una risposta.')); return;
       }
+      let fonti = [];
+      try { fonti = JSON.parse(decodeURIComponent(r.headers.get('X-Fonti') || '[]')); } catch (e) {}
       const reader = r.body.getReader(), dec = new TextDecoder();
       let testo = '';
       for (;;) {
         const { done, value } = await reader.read();
         if (done) break;
         testo += dec.decode(value, { stream: true });
-        risposta.content = testo;
-        this.setState({ msgs: storia.concat([Object.assign({}, risposta)]) });
+        this.setState({ msgs: storia.concat([{ role: 'assistant', content: testo, modo: 'ai' }]) });
         requestAnimationFrame(() => this.scorri());
       }
       testo += dec.decode();
-      if (!testo.trim()) throw new Error('Non è arrivata alcuna risposta: riprova.');
-      const finali = storia.concat([{ role: 'assistant', content: testo }]);
-      this.setState({ msgs: finali, attesa: false });
-      this.salva(finali);
+      if (!testo.trim()) { fine(this.rispostaLocale(q, 'Non è arrivata una risposta.')); return; }
+      fine({ role: 'assistant', content: testo, modo: 'ai', fonti });
     } catch (e) {
-      this.setState({ msgs: storia.slice(0, -1).concat([]), testo: q, attesa: false, errore: (e && e.message) || 'Errore di connessione: riprova.' });
-      this.salva(storia.slice(0, -1));
+      fine(this.rispostaLocale(q, 'Il segretario non è raggiungibile in questo momento.'));
     }
-    setTimeout(() => this.scorri(), 30);
   }
   renderVals() {
     const s = this.state || {};
     const msgs = s.msgs || [];
-    const spento = !ENDPOINT;
+    const spento = false;
+    const ai = !!ENDPOINT;
     const ultima = msgs.length - 1;
     return {
       spento,
@@ -360,16 +413,19 @@ class Component extends DCLogic {
       msgs: msgs.map((m, i) => {
         const u = m.role === 'user';
         const attesa = !u && i === ultima && !!s.attesa && !m.content;
-        return { cls: u ? 'm m-u' : 'm m-a', who: u ? 'Tu' : 'Segretario online', isU: u, testo: u ? m.content : '', attesa, blocchi: u ? [] : this.blocchi(m.content) };
+        const fonti = (m.fonti || []).map((f) => ({ t: f.t, href: this.assoluto(f.u) }));
+        return { cls: u ? 'm m-u' : 'm m-a', who: u ? 'Tu' : (m.modo === 'ricerca' ? 'Segretario online · ricerca nel sito' : 'Segretario online'), isU: u, testo: u ? m.content : '', attesa, blocchi: u ? [] : this.blocchi(m.content), haFonti: fonti.length > 0, fonti };
       }),
       testo: s.testo || '',
       setTesto: (e) => this.setState({ testo: e.target.value }),
       tasto: (e) => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); this.chiedi((this.state || {}).testo); } },
       invia: () => this.chiedi((this.state || {}).testo),
       noInvio: spento || !!s.attesa || !String(s.testo || '').trim(),
-      ph: spento ? 'Servizio in attivazione' : 'Scrivi la tua domanda…',
+      ph: 'Scrivi la tua domanda…',
+      ai, noAi: !ai,
+      privTxt: ai ? 'La conversazione resta solo in questo browser. Il testo delle domande è inviato al servizio di intelligenza artificiale di Cloudflare per generare la risposta e non è conservato da Prassi CCT.' : 'La ricerca avviene nel tuo browser: le domande non vengono inviate a nessuno. La conversazione resta solo in questo browser per 30 giorni.',
       errore: !!s.errore, errTxt: s.errore || '',
-      stato: s.attesa ? 'Il segretario sta scrivendo…' : msgs.length ? 'Conversazione salvata solo in questo browser per 30 giorni.' : 'Invio per inviare, Maiusc+Invio per andare a capo. Fino a 8 domande al minuto.',
+      stato: s.attesa ? 'Il segretario sta scrivendo…' : msgs.length ? 'Conversazione salvata solo in questo browser per 30 giorni.' : 'Invio per inviare, Maiusc+Invio per andare a capo.',
       nuova: () => { this.setState({ msgs: [], errore: '', testo: '' }); this.salva([]); }
     };
   }

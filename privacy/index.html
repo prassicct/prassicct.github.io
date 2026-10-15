@@ -28,7 +28,8 @@ a{color:inherit}
 .logo-i{position:relative;display:inline-block}
 .logo-q{position:absolute;left:50%;top:.02em;width:.19em;height:.19em;margin-left:-.095em;background:#6E1E2B}
 .logo-c{font-weight:600;font-size:15px;letter-spacing:.2em;color:#6E1E2B}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:15px;font-weight:500}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font-size:15px;font-weight:500}
+@media (min-width:1000px) and (max-width:1180px){.nav{gap:4px 14px;font-size:14px}}
 .nav a{text-decoration:none;padding:8px 0}
 .nav a:hover{color:#6E1E2B}
 .nav a.on{color:#6E1E2B;font-weight:600;box-shadow:inset 0 -2px 0 #6E1E2B}
@@ -69,6 +70,7 @@ a{color:inherit}
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
         <a href="/eventi/">Eventi</a>
+        <a href="/segretario/">Segretario online</a>
         <a href="/progetto/">Il progetto</a>
         <a href="/cct-update/" class="cta">CCT Update</a>
       </nav>
@@ -114,17 +116,17 @@ a{color:inherit}
     <section id="destinatari" class="row">
       <div class="side"><h2 class="h2">Destinatari e trasferimenti</h2></div>
       <div class="main">
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>Google (servizio Gmail), per la gestione della posta elettronica; GitHub (servizio GitHub Pages), per l’ospitalità del sito; Cloudflare (Cloudflare Workers) e Anthropic (API Claude), per il segretario online. Tutti possono trattare dati anche fuori dall’Unione europea, sulla base del Data Privacy Framework UE-USA o di clausole contrattuali standard.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>Google (servizio Gmail), per la gestione della posta elettronica; GitHub (servizio GitHub Pages), per l’ospitalità del sito; Cloudflare (Cloudflare Workers e Workers AI), per le risposte con intelligenza artificiale del segretario online, quando attive. Tutti possono trattare dati anche fuori dall’Unione europea, sulla base del Data Privacy Framework UE-USA o di clausole contrattuali standard.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>I dati non sono ceduti né comunicati a terzi per finalità commerciali.</span></div>
       </div>
     </section>
     <section id="segretario" class="row">
       <div class="side"><h2 class="h2">Segretario online</h2></div>
       <div class="main">
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Che cos’è.</strong> “Parla con il segretario online!” è un assistente di intelligenza artificiale basato su Claude, il modello di Anthropic. Chi lo usa è informato che interagisce con un sistema di IA, come richiede l’art. 50 del Regolamento (UE) 2024/1689 (AI Act).</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Quali dati.</strong> Il testo delle domande e la conversazione in corso. Non è richiesta alcuna registrazione e non vanno inseriti dati personali, nomi delle parti o contenuti riservati.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Come vengono trattati.</strong> Il testo è inviato a un servizio di Cloudflare (Cloudflare Workers), che lo inoltra ad Anthropic per generare la risposta. Prassi CCT non registra né conserva il contenuto delle conversazioni. L’indirizzo IP è usato da Cloudflare solo per limitare il numero di domande e per la sicurezza del servizio.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Conservazione presso Anthropic.</strong> Secondo le condizioni di Anthropic per l’uso tramite API, i dati sono cancellati entro 30 giorni, salvo tempi più lunghi in caso di violazione delle regole d’uso o di obblighi di legge, e non sono usati per addestrare i modelli.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Che cos’è.</strong> “Parla con il segretario online!” è un assistente automatico che risponde alle domande sui Collegi Consultivi Tecnici usando i contenuti di Prassi CCT.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Ricerca nel sito.</strong> In modalità di ricerca la domanda è confrontata con i contenuti di Prassi CCT direttamente nel browser: il testo non viene inviato a nessuno.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Risposte con intelligenza artificiale.</strong> Quando è attiva, la domanda e gli ultimi messaggi della conversazione sono inviati a un servizio di Cloudflare (Cloudflare Workers e Workers AI), che genera la risposta con un modello open source a partire dai passaggi di Prassi CCT. In questo caso la pagina informa l’utente che interagisce con un sistema di intelligenza artificiale, come richiede l’art. 50 del Regolamento (UE) 2024/1689. Prassi CCT non registra né conserva il contenuto delle conversazioni; Cloudflare dichiara di non usare i contenuti per addestrare i modelli. L’indirizzo IP è usato da Cloudflare solo per limitare il numero di domande e per la sicurezza del servizio.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Quali dati.</strong> Il testo delle domande. Non è richiesta alcuna registrazione e non vanno inseriti dati personali, nomi delle parti o contenuti riservati.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Base giuridica.</strong> Il trattamento serve a fornire il servizio richiesto dall’utente con l’invio della domanda.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Nel browser.</strong> La conversazione è conservata nella memoria locale del browser per 30 giorni, solo per permettere di riprenderla; si cancella con “Nuova conversazione”.</span></div>
       </div>
@@ -167,6 +169,7 @@ a{color:inherit}
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
         <a href="/eventi/">Eventi</a>
+        <a href="/segretario/">Segretario online</a>
         <a href="/progetto/">Il progetto</a>
         <a href="/cct-update/" class="cta">CCT Update</a>
       </nav>
@@ -212,17 +215,17 @@ a{color:inherit}
     <section id="destinatari" class="row">
       <div class="side"><h2 class="h2">Destinatari e trasferimenti</h2></div>
       <div class="main">
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>Google (servizio Gmail), per la gestione della posta elettronica; GitHub (servizio GitHub Pages), per l’ospitalità del sito; Cloudflare (Cloudflare Workers) e Anthropic (API Claude), per il segretario online. Tutti possono trattare dati anche fuori dall’Unione europea, sulla base del Data Privacy Framework UE-USA o di clausole contrattuali standard.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>Google (servizio Gmail), per la gestione della posta elettronica; GitHub (servizio GitHub Pages), per l’ospitalità del sito; Cloudflare (Cloudflare Workers e Workers AI), per le risposte con intelligenza artificiale del segretario online, quando attive. Tutti possono trattare dati anche fuori dall’Unione europea, sulla base del Data Privacy Framework UE-USA o di clausole contrattuali standard.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>I dati non sono ceduti né comunicati a terzi per finalità commerciali.</span></div>
       </div>
     </section>
     <section id="segretario" class="row">
       <div class="side"><h2 class="h2">Segretario online</h2></div>
       <div class="main">
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Che cos’è.</strong> “Parla con il segretario online!” è un assistente di intelligenza artificiale basato su Claude, il modello di Anthropic. Chi lo usa è informato che interagisce con un sistema di IA, come richiede l’art. 50 del Regolamento (UE) 2024/1689 (AI Act).</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Quali dati.</strong> Il testo delle domande e la conversazione in corso. Non è richiesta alcuna registrazione e non vanno inseriti dati personali, nomi delle parti o contenuti riservati.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Come vengono trattati.</strong> Il testo è inviato a un servizio di Cloudflare (Cloudflare Workers), che lo inoltra ad Anthropic per generare la risposta. Prassi CCT non registra né conserva il contenuto delle conversazioni. L’indirizzo IP è usato da Cloudflare solo per limitare il numero di domande e per la sicurezza del servizio.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Conservazione presso Anthropic.</strong> Secondo le condizioni di Anthropic per l’uso tramite API, i dati sono cancellati entro 30 giorni, salvo tempi più lunghi in caso di violazione delle regole d’uso o di obblighi di legge, e non sono usati per addestrare i modelli.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Che cos’è.</strong> “Parla con il segretario online!” è un assistente automatico che risponde alle domande sui Collegi Consultivi Tecnici usando i contenuti di Prassi CCT.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Ricerca nel sito.</strong> In modalità di ricerca la domanda è confrontata con i contenuti di Prassi CCT direttamente nel browser: il testo non viene inviato a nessuno.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Risposte con intelligenza artificiale.</strong> Quando è attiva, la domanda e gli ultimi messaggi della conversazione sono inviati a un servizio di Cloudflare (Cloudflare Workers e Workers AI), che genera la risposta con un modello open source a partire dai passaggi di Prassi CCT. In questo caso la pagina informa l’utente che interagisce con un sistema di intelligenza artificiale, come richiede l’art. 50 del Regolamento (UE) 2024/1689. Prassi CCT non registra né conserva il contenuto delle conversazioni; Cloudflare dichiara di non usare i contenuti per addestrare i modelli. L’indirizzo IP è usato da Cloudflare solo per limitare il numero di domande e per la sicurezza del servizio.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Quali dati.</strong> Il testo delle domande. Non è richiesta alcuna registrazione e non vanno inseriti dati personali, nomi delle parti o contenuti riservati.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Base giuridica.</strong> Il trattamento serve a fornire il servizio richiesto dall’utente con l’invio della domanda.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span><strong style="font-weight: 600;">Nel browser.</strong> La conversazione è conservata nella memoria locale del browser per 30 giorni, solo per permettere di riprenderla; si cancella con “Nuova conversazione”.</span></div>
       </div>
