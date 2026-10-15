@@ -142,6 +142,13 @@ html{scroll-behavior:smooth}
 .mstep li::before{content:counter(m);display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#6E1E2B;color:#fff;font-size:13px;font-weight:700}
 .ms-t{font-weight:700;font-size:16px}
 .met-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;align-items:start}
+.bz{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 14px;border-radius:8px;background:#EEF3EC;color:#24452B;font-size:14px;max-width:880px}
+.bz-off{background:#F2EADD;color:#2A2324}
+.bz-t{flex:1 1 320px}
+.bz-a{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}
+.bz-c{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:13px}
+.bz-c input{accent-color:#6E1E2B;width:16px;height:16px;margin:0}
+.bz .lnk{font-size:13px}
 .x-del{width:44px;padding:0;font-size:22px;line-height:1}
 .refs{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:10px;font-size:15px}
 .b-sm{white-space:nowrap}
@@ -170,6 +177,14 @@ html{scroll-behavior:smooth}
     <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Simulatore compensi</span></nav>
     <h1 class="h1">Simulatore compensi del Collegio</h1>
     <p class="lead">Quattro passaggi per calcolare la parte fissa del compenso, verificare i limiti di legge e scaricare un prospetto PDF da allegare al verbale. I dati restano sul tuo dispositivo.</p>
+    <div class="bz" role="status">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+      <span class="bz-t">I dati si salvano automaticamente come bozza, solo in questo browser. Nessun dato viene inviato a Prassi CCT.</span>
+      <span class="bz-a">
+        <label class="bz-c"><input type="checkbox"> Non salvare su questo dispositivo</label>
+        <button type="button" class="lnk">Cancella la bozza</button>
+      </span>
+    </div>
   </section>
 
   <div class="sbar">
@@ -315,7 +330,7 @@ html{scroll-behavior:smooth}
           <li>Calcolo passo per passo</li>
           <li>Spazi per le firme: Presidente, due componenti e Segretario</li>
         </ul>
-        <button type="button" class="b-pdf" disabled=""><svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Scarica il prospetto PDF</button>
+        <button type="button" class="b-pdf" disabled=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Scarica il prospetto PDF</button>
         <span class="mut hint" style="text-align: center;">Inserisci almeno una categoria per scaricare il prospetto.</span>
       </div>
     </div>
@@ -435,7 +450,7 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
             <li><strong>Controlla categorie, G e Q.</strong> Sono precompilati ma modificabili: la scelta della categoria d’opera resta una valutazione tecnica.</li>
             <li><strong>Alcune scelte sono interpretative.</strong> P calcolato per categoria; riduzione dell’80% in proporzione alla parte oltre 100 milioni; ogni contratto applicativo di un accordo quadro trattato come rapporto autonomo; scaglione oltre 1.000 milioni al posto dell’aliquota precedente; collocazione dei collegi D.L. 76/2020 sui contratti del vecchio codice.</li>
             <li><strong>La disciplina va accertata.</strong> Il correttivo vale anche per i collegi di lavori già costituiti al 31 dicembre 2024, salvo diverso accordo delle parti, ma non per quelli di servizi e forniture già costituiti.</li>
-            <li><strong>Nessun dato viene inviato.</strong> Il calcolo avviene nel browser e nulla viene salvato: ricaricando la pagina i dati si perdono.</li>
+            <li><strong>Nessun dato viene inviato.</strong> Il calcolo avviene nel browser. La bozza è conservata solo nella memoria di questo browser, non è visibile ad altri utenti né a Prassi CCT e si cancella dopo 90 giorni di inattività. Su un computer condiviso attiva “Non salvare su questo dispositivo” o cancella la bozza al termine.</li>
           </ul>
         </div>
       </div>
@@ -470,6 +485,14 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
     <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Simulatore compensi</span></nav>
     <h1 class="h1">Simulatore compensi del Collegio</h1>
     <p class="lead">Quattro passaggi per calcolare la parte fissa del compenso, verificare i limiti di legge e scaricare un prospetto PDF da allegare al verbale. I dati restano sul tuo dispositivo.</p>
+    <div class="{{bozza.cls}}" role="status">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <span class="bz-t">{{bozza.stato}} Nessun dato viene inviato a Prassi CCT.</span>
+      <span class="bz-a">
+        <label class="bz-c"><input type="checkbox" checked="{{bozza.noSave}}" onChange="{{bozza.setNoSave}}"> Non salvare su questo dispositivo</label>
+        <button type="button" class="lnk" onClick="{{bozza.cancella}}">Cancella la bozza</button>
+      </span>
+    </div>
   </section>
 
   <div class="sbar">
@@ -753,7 +776,7 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
             <li><strong>Controlla categorie, G e Q.</strong> Sono precompilati ma modificabili: la scelta della categoria d’opera resta una valutazione tecnica.</li>
             <li><strong>Alcune scelte sono interpretative.</strong> P calcolato per categoria; riduzione dell’80% in proporzione alla parte oltre 100 milioni; ogni contratto applicativo di un accordo quadro trattato come rapporto autonomo; scaglione oltre 1.000 milioni al posto dell’aliquota precedente; collocazione dei collegi D.L. 76/2020 sui contratti del vecchio codice.</li>
             <li><strong>La disciplina va accertata.</strong> Il correttivo vale anche per i collegi di lavori già costituiti al 31 dicembre 2024, salvo diverso accordo delle parti, ma non per quelli di servizi e forniture già costituiti.</li>
-            <li><strong>Nessun dato viene inviato.</strong> Il calcolo avviene nel browser e nulla viene salvato: ricaricando la pagina i dati si perdono.</li>
+            <li><strong>Nessun dato viene inviato.</strong> Il calcolo avviene nel browser. La bozza è conservata solo nella memoria di questo browser, non è visibile ad altri utenti né a Prassi CCT e si cancella dopo 90 giorni di inattività. Su un computer condiviso attiva “Non salvare su questo dispositivo” o cancella la bozza al termine.</li>
           </ul>
         </div>
       </div>
@@ -836,7 +859,53 @@ const Z1 = [
 ];
 
 class Component extends DCLogic {
+  setState(p) { super.setState(p); this.salva(); }
+  bozzaKey() { return 'prassicct.simulatore.bozza.v1'; }
+  salva() {
+    if (this.__loading) return;
+    clearTimeout(this.__t);
+    this.__t = setTimeout(() => {
+      const s = this.state || {};
+      try {
+        if (s.noSave) { localStorage.removeItem(this.bozzaKey()); return; }
+        const d = {};
+        ['reg', 'tipo', 'n', 'fac', 'cod', 'av', 'segr', 'contratti', 'f'].forEach((k) => { if (s[k] !== undefined) d[k] = s[k]; });
+        const pieno = (d.contratti || []).some((k) => k.nome || k.cig || k.app || (k.righe || []).some((r) => r.sel || r.v || r.descr))
+          || Object.values(d.f || {}).some(Boolean) || d.reg || d.tipo || d.n || d.segr || d.fac || d.cod || (d.av && d.av !== '0');
+        if (!pieno) { localStorage.removeItem(this.bozzaKey()); return; }
+        const t = Date.now();
+        localStorage.setItem(this.bozzaKey(), JSON.stringify({ v: 1, t, d }));
+        if (!s.salvatoT || t - s.salvatoT > 1500) { this.__loading = true; super.setState({ salvatoT: t }); this.__loading = false; }
+      } catch (e) { /* archiviazione non disponibile: la pagina funziona comunque */ }
+    }, 400);
+  }
+  carica() {
+    try {
+      if (localStorage.getItem('prassicct.simulatore.nosave') === '1') { this.__loading = true; super.setState({ noSave: true }); this.__loading = false; return; }
+      const raw = localStorage.getItem(this.bozzaKey());
+      if (!raw) return;
+      const b = JSON.parse(raw);
+      if (!b || !b.d || Date.now() - (b.t || 0) > 90 * 864e5) { localStorage.removeItem(this.bozzaKey()); return; }
+      this.__loading = true; super.setState(Object.assign({}, b.d, { salvatoT: b.t, ripristinata: true })); this.__loading = false;
+    } catch (e) { this.__loading = false; }
+  }
+  cancellaBozza() {
+    clearTimeout(this.__t);
+    try { localStorage.removeItem(this.bozzaKey()); } catch (e) {}
+    this.__loading = true;
+    super.setState({ contratti: null, f: {}, fac: false, cod: false, av: '0', reg: undefined, tipo: undefined, n: undefined, segr: undefined, salvatoT: null, ripristinata: false });
+    this.__loading = false;
+  }
+  toggleNoSave() {
+    const ns = !(this.state || {}).noSave;
+    try {
+      if (ns) { localStorage.setItem('prassicct.simulatore.nosave', '1'); localStorage.removeItem(this.bozzaKey()); }
+      else localStorage.removeItem('prassicct.simulatore.nosave');
+    } catch (e) {}
+    this.setState({ noSave: ns, salvatoT: null });
+  }
   componentDidMount() {
+    this.carica();
     fetch('/assets/norme.json').then((r) => r.json()).then((j) => this.setState({ norme: j })).catch(() => this.setState({ norme: {} }));
   }
   rif(id, key, label) {
@@ -1189,6 +1258,16 @@ class Component extends DCLogic {
           prospetto: this.prospetto(c)
         };
       }),
+      bozza: (() => {
+        const st = this.state || {};
+        const ora = st.salvatoT ? new Date(st.salvatoT) : null;
+        const fmt = ora ? ora.toLocaleDateString('it-IT') + ' alle ' + ora.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }) : '';
+        let stato;
+        if (st.noSave) stato = 'Salvataggio disattivato: i dati restano solo finché la pagina è aperta.';
+        else if (ora) stato = (st.ripristinata ? 'Bozza ripristinata. ' : '') + 'Ultimo salvataggio ' + fmt + ', solo in questo browser.';
+        else stato = 'I dati si salvano automaticamente come bozza, solo in questo browser.';
+        return { stato, noSave: !!st.noSave, setNoSave: () => this.toggleNoSave(), cancella: () => this.cancellaBozza(), cls: st.noSave ? 'bz bz-off' : 'bz' };
+      })(),
       scaricaPdf: () => { if (!vuoto) this.pdf(); },
       noPdf: vuoto, haDati: !vuoto,
       bar: { fissa: vuoto ? '—' : this.eur(calcs.reduce((a, c) => a + c.fissaCollR, 0)) },

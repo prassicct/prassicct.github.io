@@ -95,10 +95,11 @@
     return t;
   }
 
+  var SVG_TAGS = { svg: 1, path: 1, rect: 1, circle: 1, line: 1, polyline: 1, polygon: 1, g: 1, ellipse: 1 };
   /* Crea e aggiorna il DOM. */
   function create(v) {
     if (typeof v === 'string') return document.createTextNode(v);
-    var el = document.createElement(v.tag);
+    var el = SVG_TAGS[v.tag] ? document.createElementNS('http://www.w3.org/2000/svg', v.tag) : document.createElement(v.tag);
     el.__h = {};
     update(el, null, v);
     return el;
