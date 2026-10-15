@@ -149,6 +149,10 @@ html{scroll-behavior:smooth}
 .bz-c{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:13px}
 .bz-c input{accent-color:#6E1E2B;width:16px;height:16px;margin:0}
 .bz .lnk{font-size:13px}
+.avz{display:flex;flex-direction:column;gap:8px;padding:14px;border:1px dashed #D6C8B4;border-radius:8px}
+.seg3{flex-wrap:wrap;max-width:760px}
+.seg3 button{height:auto;min-height:44px;padding:8px 14px;line-height:1.3}
+@media (max-width:600px){.seg3 button{flex:1 1 100%}}
 .x-del{width:44px;padding:0;font-size:22px;line-height:1}
 .refs{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:10px;font-size:15px}
 .b-sm{white-space:nowrap}
@@ -256,16 +260,16 @@ html{scroll-behavior:smooth}
         </div>
         
         
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; max-width: 720px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; max-width: 360px;">
             <div class="fld"><label for="k0a">Valore dell’appalto (€)</label><input id="k0a" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto, somma degli importi"></div>
-            <div class="fld"><label for="k0av" title="Linee guida, punto 7.2.3">Riduzione per avanzamento lavori</label>
-              <select id="k0av" class="inp txt">
-                <option value="0">Nessuna (facoltativa)</option>
-                <option value="50">Oltre il 50%: −30%</option>
-                <option value="85">Oltre l’85%: −60%</option>
-              </select></div>
           </div>
         
+        <div class="avz">
+          <span class="q-t" id="k0av-l" style="font-size: 15px;">Riduzione per avanzamento dei lavori <span class="mut" style="font-weight: 400; font-size: 13px;">facoltativa · Linee guida, punto 7.2.3</span></span>
+          <div class="seg seg3" role="group" aria-labelledby="k0av-l">
+            <button type="button" id="k0av0" class="on" aria-pressed="true">Nessuna</button><button type="button" id="k0av50" class="">Avanzamento oltre il 50%: −30%</button><button type="button" id="k0av85" class="">Avanzamento oltre l’85%: −60%</button>
+          </div>
+        </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
           
             <div class="riga">
@@ -571,25 +575,19 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
             <div class="fld"><label for="{{k.nId}}">Denominazione del contratto applicativo</label><input id="{{k.nId}}" class="inp txt" type="text" value="{{k.nome}}" onChange="{{k.setNome}}"></div>
             <div class="fld"><label for="{{k.cId}}">CIG derivato</label><input id="{{k.cId}}" class="inp" type="text" value="{{k.cig}}" onChange="{{k.setCig}}"></div>
             <div class="fld"><label for="{{k.aId}}">Valore del contratto (€)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto, somma degli importi" value="{{k.app}}" onChange="{{k.setApp}}"></div>
-            <div class="fld"><label for="{{k.avId}}" title="Linee guida, punto 7.2.3">Riduzione per avanzamento lavori</label>
-              <select id="{{k.avId}}" class="inp txt" value="{{k.av}}" onChange="{{k.setAv}}">
-                <option value="0">Nessuna (facoltativa)</option>
-                <option value="50">Oltre il 50%: −30%</option>
-                <option value="85">Oltre l’85%: −60%</option>
-              </select></div>
           </div>
         </sc-if>
         <sc-if value="{{k.singolo}}" hint-placeholder-val="{{true}}">
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; max-width: 720px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; max-width: 360px;">
             <div class="fld"><label for="{{k.aId}}">Valore dell’appalto (€)</label><input id="{{k.aId}}" class="inp" type="text" inputmode="decimal" placeholder="Se vuoto, somma degli importi" value="{{k.app}}" onChange="{{k.setApp}}"></div>
-            <div class="fld"><label for="{{k.avId}}" title="Linee guida, punto 7.2.3">Riduzione per avanzamento lavori</label>
-              <select id="{{k.avId}}" class="inp txt" value="{{k.av}}" onChange="{{k.setAv}}">
-                <option value="0">Nessuna (facoltativa)</option>
-                <option value="50">Oltre il 50%: −30%</option>
-                <option value="85">Oltre l’85%: −60%</option>
-              </select></div>
           </div>
         </sc-if>
+        <div class="avz">
+          <span class="q-t" id="{{k.avId}}-l" style="font-size: 15px;">Riduzione per avanzamento dei lavori <span class="mut" style="font-weight: 400; font-size: 13px;">facoltativa · Linee guida, punto 7.2.3</span></span>
+          <div class="seg seg3" role="group" aria-labelledby="{{k.avId}}-l">
+            <sc-for list="{{k.avOpts}}" as="o" hint-placeholder-count="3"><button type="button" id="{{o.id}}" class="{{o.cls}}" aria-pressed="{{o.on}}" onClick="{{o.set}}">{{o.t}}</button></sc-for>
+          </div>
+        </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <sc-for list="{{k.righe}}" as="r" hint-placeholder-count="2">
             <div class="riga">
@@ -1212,7 +1210,11 @@ class Component extends DCLogic {
       return {
         titolo: this.titolo(k, ki), aq, singolo: !aq, nome: k.nome, cig: k.cig, app: k.app,
         nId: 'k' + ki + 'n', cId: 'k' + ki + 'c', aId: 'k' + ki + 'a',
-        setNome: setK('nome'), setCig: setK('cig'), setApp: setK('app'), avId: 'k' + ki + 'av', av: k.av || (this.regime() === 'd' && s.av ? s.av : '0'), setAv: setK('av'),
+        setNome: setK('nome'), setCig: setK('cig'), setApp: setK('app'), avId: 'k' + ki + 'av',
+        avOpts: [['0', 'Nessuna'], ['50', 'Avanzamento oltre il 50%: −30%'], ['85', 'Avanzamento oltre l’85%: −60%']].map((o) => {
+          const cur = k.av || (this.regime() === 'd' && s.av ? s.av : '0');
+          return { id: 'k' + ki + 'av' + o[0], t: o[1], on: cur === o[0], cls: cur === o[0] ? 'on' : '', set: () => { const l = all(); l[ki].av = o[0]; this.setState({ contratti: l }); } };
+        }),
         addRiga: () => { const l = all(); l[ki].righe.push(this.rigaVuota()); this.setState({ contratti: l }); },
         del: () => { const l = all().filter((x, j) => j !== ki); this.setState({ contratti: l.length ? l : [this.contrattoVuoto()] }); },
         esito: c.Vtot > 0 ? 'Parte fissa del Collegio: ' + this.eur(c.fissaCollR) + (aq && this.num(((this.state || {}).f || {}).soglia) ? ' · ' + c.obbl : '') : '',
