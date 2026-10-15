@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parla con il segretario online — Prassi CCT</title>
+<meta name="description" content="Assistente di intelligenza artificiale sui Collegi Consultivi Tecnici: risposte semplici con il riferimento alla norma su costituzione, quesiti, termini, compensi e verbali.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://prassicct.it/segretario/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prassi CCT">
+<meta property="og:title" content="Parla con il segretario online — Prassi CCT">
+<meta property="og:description" content="Assistente di intelligenza artificiale sui Collegi Consultivi Tecnici: risposte semplici con il riferimento alla norma su costituzione, quesiti, termini, compensi e verbali.">
+<meta property="og:url" content="https://prassicct.it/segretario/">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/Lora-Bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/fonts/InstrumentSans-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+body{margin:0}*{box-sizing:border-box}
+a{color:inherit}
+.pg{min-height:100vh;background:#FAF6EF;color:#2A2324;font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.hd{background:#FFFDF9;border-bottom:1px solid #E5DBCB}
+.hd-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding-top:18px;padding-bottom:18px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#2A2324}
+.logo-p{font-family:'Lora',Georgia,serif;font-weight:600;font-size:28px;line-height:1;letter-spacing:-.01em}
+.logo-i{position:relative;display:inline-block}
+.logo-q{position:absolute;left:50%;top:.02em;width:.19em;height:.19em;margin-left:-.095em;background:#6E1E2B}
+.logo-c{font-weight:600;font-size:15px;letter-spacing:.2em;color:#6E1E2B}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;padding:8px 0}
+.nav a:hover{color:#6E1E2B}
+.nav a.cta{padding:10px 16px;border-radius:8px;background:#6E1E2B;color:#fff;font-weight:600;font-size:14px;box-shadow:none}
+.nav a.cta.on{background:#561622;box-shadow:inset 0 -3px 0 #2A2324}
+.kick{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E1E2B}
+.lbl{margin:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6A5F59}
+.h1{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:clamp(34px,4.6vw,52px);line-height:1.1;letter-spacing:-.015em}
+.h2{margin:0;font-family:'Lora',Georgia,serif;font-weight:600;font-size:28px;line-height:1.25}
+.lead{margin:0;font-size:19px;line-height:1.6;color:#6A5F59;max-width:62ch}
+.mut{color:#6A5F59}
+.card{background:#FFFDF9;border:1px solid #E5DBCB;border-radius:8px;padding:24px}
+.btn{display:inline-block;text-decoration:none;padding:0 22px;height:48px;line-height:48px;border-radius:8px;background:#6E1E2B;color:#fff;font:inherit;font-weight:600;border:0;cursor:pointer}
+.inp{height:48px;padding:0 14px;border-radius:8px;border:1px solid #E5DBCB;background:#fff;font:inherit;color:#2A2324;width:100%}
+.sq{display:inline-block;flex:none;width:7px;height:7px;background:#6E1E2B}
+.li{display:flex;gap:10px;align-items:baseline}
+.ft{border-top:1px solid #E5DBCB;background:#FFFDF9}
+.ft-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:32px;padding-bottom:32px;font-size:13px;color:#6A5F59}
+.rif{position:relative;display:inline}
+.rif-b{font:inherit;line-height:inherit;color:#561622;background:none;border:0;padding:0;margin:0;cursor:pointer;font-weight:600;text-decoration:underline dotted;text-underline-offset:3px;text-align:left}
+.pop{display:none;position:absolute;z-index:60;left:0;top:100%;margin-top:8px;width:min(440px,86vw);max-height:360px;overflow:auto;background:#FFFDF9;border:1px solid #E5DBCB;border-top:3px solid #6E1E2B;border-radius:8px;box-shadow:0 14px 36px rgba(42,35,36,.2);padding:16px 18px;font-family:'Instrument Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;color:#2A2324;text-align:left;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none}
+.pop::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
+.rif.hov .pop{display:block}
+.rif.open .pop{display:block}
+.pop-t{display:block;font-weight:700;font-size:14px;margin-bottom:2px}
+.pop-s{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6A5F59;margin-bottom:10px}
+.pop-x{display:block;white-space:pre-line}
+.pop-f{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #E5DBCB}
+.pop-l{font-weight:600;color:#561622}
+.pop-c{font:inherit;font-size:13px;font-weight:600;background:#F2EADD;color:#2A2324;border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+@media (max-width:700px){.pop{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:65vh;margin:0}}
+@media (hover:hover) and (min-width:701px){.rif:not(.open) .pop-c{display:none}}
+
+.chat-w{max-width:860px}
+.ai-note{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:8px;background:#F2EADD;font-size:14px;line-height:1.5}
+.ai-note svg{flex:none;margin-top:2px;color:#6E1E2B}
+.chat{display:flex;flex-direction:column;border:1px solid #E5DBCB;border-radius:12px;background:#FFFDF9;overflow:hidden}
+.msgs{display:flex;flex-direction:column;gap:16px;padding:24px;min-height:340px;max-height:62vh;overflow-y:auto;scroll-behavior:smooth}
+.m{display:flex;flex-direction:column;gap:4px;max-width:88%}
+.m-u{align-self:flex-end;align-items:flex-end}
+.m-a{align-self:flex-start}
+.m-who{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6A5F59}
+.bub{padding:12px 16px;border-radius:14px;font-size:16px;line-height:1.6;overflow-wrap:anywhere}
+.m-u .bub{background:#6E1E2B;color:#fff;border-bottom-right-radius:4px}
+.ut{white-space:pre-wrap}
+.m-a .bub{background:#F6F0E6;border:1px solid #EADFCD;border-bottom-left-radius:4px}
+.bub p{margin:0 0 10px}.bub p:last-child{margin-bottom:0}
+.bub ul{margin:0 0 10px;padding-left:20px}.bub ul:last-child{margin-bottom:0}.bub li{margin:2px 0}
+.bub a{color:#561622;font-weight:600}
+.typing{display:inline-flex;gap:4px;padding:4px 0}.typing i{width:7px;height:7px;border-radius:50%;background:#B9A9A0;animation:tp 1.2s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.empty{display:flex;flex-direction:column;gap:14px;margin:auto 0}
+.empty-t{font-family:'Lora',Georgia,serif;font-size:21px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14px;text-align:left;padding:9px 14px;border-radius:999px;border:1px solid #D6C8B4;background:#fff;color:#2A2324;cursor:pointer}
+.chip:hover{border-color:#6E1E2B;color:#561622}
+.comp{display:flex;gap:10px;align-items:flex-end;padding:14px;border-top:1px solid #E5DBCB;background:#FAF6EF}
+.comp textarea{flex:1;min-height:52px;max-height:180px;resize:vertical;padding:13px 14px;border-radius:10px;border:1px solid #D6C8B4;background:#fff;font:inherit;font-size:16px;line-height:1.45;color:#2A2324}
+.comp textarea:focus{outline:2px solid #6E1E2B;outline-offset:1px}
+.send{font:inherit;font-weight:700;font-size:15px;height:52px;padding:0 20px;border:0;border-radius:10px;background:#6E1E2B;color:#fff;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.send:disabled{background:#BFAFA9;cursor:not-allowed}
+.c-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;font-size:13px;color:#6A5F59;padding:0 4px}
+.lnk{font:inherit;font-size:13px;font-weight:600;color:#561622;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.err{margin:0 24px 16px;padding:10px 14px;border-radius:8px;background:#F8EBD6;color:#7A4A00;font-size:14px}
+.off{padding:14px 16px;border-radius:8px;background:#F3E4E1;color:#561622;font-size:15px}
+@media (max-width:600px){.msgs{padding:16px;max-height:none;min-height:300px}.m{max-width:100%}.send span{display:none}.send{padding:0 16px}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/simulatore/">Simulatore compensi</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/segretario/" class="cta on" aria-current="page">Segretario online</a>
+      </nav>
+    </div>
+  </header>
+  <section class="wrap chat-w" style="padding-top: 48px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 18px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Segretario online</span></nav>
+    <h1 class="h1">Parla con il segretario online!</h1>
+    <p class="lead">Fai una domanda sui Collegi Consultivi Tecnici e sugli appalti collegati: costituzione, quesiti, termini, compensi, verbali. Ti risponde in modo semplice, con il riferimento alla norma.</p>
+    <div class="ai-note" role="note">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v5h1"></path></svg>
+      <span><strong>Stai parlando con un assistente di intelligenza artificiale</strong> (Claude, di Anthropic), non con una persona. Le risposte sono informazioni generali e possono contenere errori: verificale sulle fonti indicate e non usarle come parere legale. Non inserire nomi delle parti, dati personali o contenuti riservati del Collegio.</span>
+    </div>
+
+    
+      <p class="off">Il segretario online è in fase di attivazione. Nel frattempo trovi le risposte nelle <a href="/guide/">guide operative</a> e negli <a href="/approfondimenti/">approfondimenti</a>.</p>
+    
+
+    <div class="chat">
+      <div class="msgs" id="msgs" aria-live="polite">
+        
+          <div class="empty">
+            <span class="empty-t">Da dove vuoi iniziare?</span>
+            <div class="chips">
+              <button type="button" class="chip" disabled="">Quando è obbligatorio costituire il CCT?</button><button type="button" class="chip" disabled="">Come si calcola la parte fissa del compenso?</button><button type="button" class="chip" disabled="">Entro quanto tempo il Collegio decide su un quesito?</button><button type="button" class="chip" disabled="">Che differenza c’è tra parere e determinazione?</button><button type="button" class="chip" disabled="">Cosa fa la Segreteria tecnico-amministrativa?</button><button type="button" class="chip" disabled="">Cosa cambia per i collegi costituiti prima del correttivo?</button>
+            </div>
+          </div>
+        
+        
+      </div>
+      
+      <div class="comp">
+        <label for="domanda" class="sr" style="position: absolute; left: -9999px;">La tua domanda</label>
+        <textarea id="domanda" rows="2" maxlength="2000" placeholder="Servizio in attivazione" disabled=""></textarea>
+        <button type="button" class="send" disabled=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span>Invia</span></button>
+      </div>
+    </div>
+    <div class="c-foot">
+      <span>Invio per inviare, Maiusc+Invio per andare a capo. Fino a 8 domande al minuto.</span>
+      <span style="display: flex; gap: 16px;"><button type="button" class="lnk">Nuova conversazione</button></span>
+    </div>
+    <p class="mut" style="margin: 0; font-size: 13px;">La conversazione resta solo in questo browser. Il testo delle domande viene inviato al servizio Claude di Anthropic per generare la risposta e non viene conservato da Prassi CCT. Dettagli nell’<a href="/privacy/#segretario">informativa</a>.</p>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+
+</div>
+<template id="tpl">
+<div class="pg">
+
+  <header class="hd">
+    <div class="wrap hd-in">
+      <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
+      <nav class="nav" aria-label="Principale">
+        <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide operative</a>
+        <a href="/simulatore/">Simulatore compensi</a>
+        <a href="/fonti/">Fonti</a>
+        <a href="/eventi/">Eventi</a>
+        <a href="/progetto/">Il progetto</a>
+        <a href="/segretario/" class="cta on" aria-current="page">Segretario online</a>
+      </nav>
+    </div>
+  </header>
+  <section class="wrap chat-w" style="padding-top: 48px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 18px;">
+    <nav aria-label="Percorso" class="mut" style="font-size: 13px; display: flex; gap: 8px;"><a href="/" style="text-decoration: none;">Home</a><span aria-hidden="true">/</span><span>Segretario online</span></nav>
+    <h1 class="h1">Parla con il segretario online!</h1>
+    <p class="lead">Fai una domanda sui Collegi Consultivi Tecnici e sugli appalti collegati: costituzione, quesiti, termini, compensi, verbali. Ti risponde in modo semplice, con il riferimento alla norma.</p>
+    <div class="ai-note" role="note">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v5h1"/></svg>
+      <span><strong>Stai parlando con un assistente di intelligenza artificiale</strong> (Claude, di Anthropic), non con una persona. Le risposte sono informazioni generali e possono contenere errori: verificale sulle fonti indicate e non usarle come parere legale. Non inserire nomi delle parti, dati personali o contenuti riservati del Collegio.</span>
+    </div>
+
+    <sc-if value="{{spento}}" hint-placeholder-val="{{false}}">
+      <p class="off">Il segretario online è in fase di attivazione. Nel frattempo trovi le risposte nelle <a href="/guide/">guide operative</a> e negli <a href="/approfondimenti/">approfondimenti</a>.</p>
+    </sc-if>
+
+    <div class="chat">
+      <div class="msgs" id="msgs" aria-live="polite">
+        <sc-if value="{{vuota}}" hint-placeholder-val="{{true}}">
+          <div class="empty">
+            <span class="empty-t">Da dove vuoi iniziare?</span>
+            <div class="chips">
+              <sc-for list="{{spunti}}" as="q" hint-placeholder-count="6"><button type="button" class="chip" onClick="{{q.set}}" disabled="{{q.dis}}">{{q.t}}</button></sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <sc-for list="{{msgs}}" as="m" hint-placeholder-count="2">
+          <div class="{{m.cls}}">
+            <span class="m-who">{{m.who}}</span>
+            <div class="bub">
+              <sc-if value="{{m.isU}}" hint-placeholder-val="{{false}}"><span class="ut">{{m.testo}}</span></sc-if>
+              <sc-if value="{{m.attesa}}" hint-placeholder-val="{{false}}"><span class="typing" aria-label="Sta scrivendo"><i></i><i></i><i></i></span></sc-if>
+              <sc-for list="{{m.blocchi}}" as="b" hint-placeholder-count="1">
+                <sc-if value="{{b.p}}" hint-placeholder-val="{{true}}"><p><sc-for list="{{b.segs}}" as="g" hint-placeholder-count="1"><sc-if value="{{g.a}}" hint-placeholder-val="{{false}}"><a href="{{g.href}}" target="_blank" rel="noopener">{{g.t}}</a></sc-if><sc-if value="{{g.s}}" hint-placeholder-val="{{false}}"><strong>{{g.t}}</strong></sc-if><sc-if value="{{g.n}}" hint-placeholder-val="{{true}}">{{g.t}}</sc-if></sc-for></p></sc-if>
+                <sc-if value="{{b.l}}" hint-placeholder-val="{{false}}"><ul><sc-for list="{{b.items}}" as="it" hint-placeholder-count="2"><li><sc-for list="{{it}}" as="g" hint-placeholder-count="1"><sc-if value="{{g.a}}" hint-placeholder-val="{{false}}"><a href="{{g.href}}" target="_blank" rel="noopener">{{g.t}}</a></sc-if><sc-if value="{{g.s}}" hint-placeholder-val="{{false}}"><strong>{{g.t}}</strong></sc-if><sc-if value="{{g.n}}" hint-placeholder-val="{{true}}">{{g.t}}</sc-if></sc-for></li></sc-for></ul></sc-if>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{errore}}" hint-placeholder-val="{{false}}"><p class="err" role="alert">{{errTxt}}</p></sc-if>
+      <div class="comp">
+        <label for="domanda" class="sr" style="position: absolute; left: -9999px;">La tua domanda</label>
+        <textarea id="domanda" rows="2" maxlength="2000" placeholder="{{ph}}" value="{{testo}}" onChange="{{setTesto}}" onKeyDown="{{tasto}}" disabled="{{spento}}"></textarea>
+        <button type="button" class="send" onClick="{{invia}}" disabled="{{noInvio}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg><span>Invia</span></button>
+      </div>
+    </div>
+    <div class="c-foot">
+      <span>{{stato}}</span>
+      <span style="display: flex; gap: 16px;"><button type="button" class="lnk" onClick="{{nuova}}">Nuova conversazione</button></span>
+    </div>
+    <p class="mut" style="margin: 0; font-size: 13px;">La conversazione resta solo in questo browser. Il testo delle domande viene inviato al servizio Claude di Anthropic per generare la risposta e non viene conservato da Prassi CCT. Dettagli nell’<a href="/privacy/#segretario">informativa</a>.</p>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <span>Prassi CCT · prassicct.it · Progetto editoriale indipendente sui Collegi Consultivi Tecnici</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="/progetto/">Note legali</a><a href="/privacy/">Privacy e cookie</a></span>
+    </div>
+  </footer>
+</div>
+</div>
+</template>
+<noscript><p style="max-width:720px;margin:24px auto;padding:0 24px;font-family:system-ui">Per usare filtri, riquadri delle fonti e strumenti di calcolo è necessario JavaScript.</p></noscript>
+<script src="/assets/dc.js"></script>
+<script>
+const ENDPOINT = "";
+const CHAT_KEY = 'prassicct.segretario.chat.v1';
+const SPUNTI = [
+  'Quando è obbligatorio costituire il CCT?',
+  'Come si calcola la parte fissa del compenso?',
+  'Entro quanto tempo il Collegio decide su un quesito?',
+  'Che differenza c’è tra parere e determinazione?',
+  'Cosa fa la Segreteria tecnico-amministrativa?',
+  'Cosa cambia per i collegi costituiti prima del correttivo?'
+];
+class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem(CHAT_KEY);
+      if (raw) {
+        const c = JSON.parse(raw);
+        if (c && Array.isArray(c.m) && Date.now() - (c.t || 0) < 30 * 864e5) this.setState({ msgs: c.m.filter((x) => x && x.content) });
+        else localStorage.removeItem(CHAT_KEY);
+      }
+    } catch (e) {}
+    setTimeout(() => this.scorri(), 50);
+  }
+  salva(msgs) {
+    try {
+      if (msgs.length) localStorage.setItem(CHAT_KEY, JSON.stringify({ t: Date.now(), m: msgs.slice(-40) }));
+      else localStorage.removeItem(CHAT_KEY);
+    } catch (e) {}
+  }
+  scorri() {
+    const el = document.getElementById('msgs');
+    if (el) el.scrollTop = el.scrollHeight;
+  }
+  inline(t) {
+    const out = [];
+    const re = /\*\*([^*]+)\*\*|\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s)<>]+[^\s)<>.,;:!?])/g;
+    let last = 0, m;
+    while ((m = re.exec(t))) {
+      if (m.index > last) out.push({ t: t.slice(last, m.index), n: true });
+      if (m[1]) out.push({ t: m[1], s: true });
+      else if (m[2]) out.push({ t: m[2], a: true, href: m[3] });
+      else out.push({ t: m[4].replace(/^https?:\/\//, ''), a: true, href: m[4] });
+      last = re.lastIndex;
+    }
+    if (last < t.length) out.push({ t: t.slice(last), n: true });
+    return out.map((g) => Object.assign({ n: false, s: false, a: false, href: '' }, g));
+  }
+  blocchi(testo) {
+    const righe = String(testo || '').replace(/\r/g, '').split('\n');
+    const out = [];
+    let par = [], lista = null;
+    const chiudiP = () => { if (par.length) { out.push({ p: true, l: false, segs: this.inline(par.join(' ')), items: [] }); par = []; } };
+    const chiudiL = () => { if (lista) { out.push({ p: false, l: true, segs: [], items: lista }); lista = null; } };
+    righe.forEach((r) => {
+      const x = r.trim();
+      const li = x.match(/^(?:[-*•]|\d+[.)])\s+(.*)$/);
+      if (!x) { chiudiP(); chiudiL(); return; }
+      if (li) { chiudiP(); (lista = lista || []).push(this.inline(li[1])); return; }
+      chiudiL();
+      const h = x.match(/^#{1,6}\s+(.*)$/);
+      if (h) { chiudiP(); out.push({ p: true, l: false, segs: this.inline('**' + h[1].replace(/\*\*/g, '') + '**'), items: [] }); return; }
+      par.push(x);
+    });
+    chiudiP(); chiudiL();
+    return out;
+  }
+  async chiedi(domanda) {
+    const s = this.state || {};
+    const q = String(domanda || '').trim();
+    if (!q || s.attesa || !ENDPOINT) return;
+    const storia = (s.msgs || []).concat([{ role: 'user', content: q }]);
+    const risposta = { role: 'assistant', content: '' };
+    this.setState({ msgs: storia.concat([risposta]), testo: '', attesa: true, errore: '' });
+    setTimeout(() => this.scorri(), 30);
+    try {
+      const r = await fetch(ENDPOINT.replace(/\/$/, '') + '/chat', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: storia.slice(-16).map((m) => ({ role: m.role, content: m.content })) })
+      });
+      if (!r.ok || !r.body) {
+        let msg = 'Il servizio non è disponibile in questo momento: riprova tra poco.';
+        try { const j = await r.json(); if (j && j.errore) msg = j.errore; } catch (e) {}
+        throw new Error(msg);
+      }
+      const reader = r.body.getReader(), dec = new TextDecoder();
+      let testo = '';
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        testo += dec.decode(value, { stream: true });
+        risposta.content = testo;
+        this.setState({ msgs: storia.concat([Object.assign({}, risposta)]) });
+        requestAnimationFrame(() => this.scorri());
+      }
+      testo += dec.decode();
+      if (!testo.trim()) throw new Error('Non è arrivata alcuna risposta: riprova.');
+      const finali = storia.concat([{ role: 'assistant', content: testo }]);
+      this.setState({ msgs: finali, attesa: false });
+      this.salva(finali);
+    } catch (e) {
+      this.setState({ msgs: storia.slice(0, -1).concat([]), testo: q, attesa: false, errore: (e && e.message) || 'Errore di connessione: riprova.' });
+      this.salva(storia.slice(0, -1));
+    }
+    setTimeout(() => this.scorri(), 30);
+  }
+  renderVals() {
+    const s = this.state || {};
+    const msgs = s.msgs || [];
+    const spento = !ENDPOINT;
+    const ultima = msgs.length - 1;
+    return {
+      spento,
+      vuota: !msgs.length,
+      spunti: SPUNTI.map((t) => ({ t, dis: spento || !!s.attesa, set: () => this.chiedi(t) })),
+      msgs: msgs.map((m, i) => {
+        const u = m.role === 'user';
+        const attesa = !u && i === ultima && !!s.attesa && !m.content;
+        return { cls: u ? 'm m-u' : 'm m-a', who: u ? 'Tu' : 'Segretario online', isU: u, testo: u ? m.content : '', attesa, blocchi: u ? [] : this.blocchi(m.content) };
+      }),
+      testo: s.testo || '',
+      setTesto: (e) => this.setState({ testo: e.target.value }),
+      tasto: (e) => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); this.chiedi((this.state || {}).testo); } },
+      invia: () => this.chiedi((this.state || {}).testo),
+      noInvio: spento || !!s.attesa || !String(s.testo || '').trim(),
+      ph: spento ? 'Servizio in attivazione' : 'Scrivi la tua domanda…',
+      errore: !!s.errore, errTxt: s.errore || '',
+      stato: s.attesa ? 'Il segretario sta scrivendo…' : msgs.length ? 'Conversazione salvata solo in questo browser per 30 giorni.' : 'Invio per inviare, Maiusc+Invio per andare a capo. Fino a 8 domande al minuto.',
+      nuova: () => { this.setState({ msgs: [], errore: '', testo: '' }); this.salva([]); }
+    };
+  }
+}
+
+
+DC.mount(Component);
+</script>
+</body>
+</html>
