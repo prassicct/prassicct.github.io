@@ -958,7 +958,7 @@ class Component extends DCLogic {
       ? [[0, 50 * M, 0.005, '0,50%'], [50 * M, 100 * M, 0.0025, '0,25%'], [100 * M, 200 * M, 0.0015, '0,15%'], [200 * M, 500 * M, 0.001, '0,10%'], [500 * M, Infinity, 0.0007, '0,07%']]
       : [[0, 50 * M, 0.008, '0,80%'], [50 * M, 100 * M, 0.004, '0,40%'], [100 * M, 200 * M, 0.0025, '0,25%'], [200 * M, 500 * M, 0.0015, '0,15%'], [500 * M, Infinity, 0.001, '0,10%']];
     const SC = reg === 'c' ? base.slice(0, 4).concat([[500 * M, 1000 * M, base[4][2], base[4][3]], [1000 * M, Infinity, n === 3 ? 0.0002 : 0.0003, n === 3 ? '0,02%' : '0,03%']]) : base;
-    const mln = (v) => (v / M).toLocaleString('it-IT');
+    const mln = (v) => this.fmtN(v / M, 0);
     const nome = (c) => c[0] === 0 ? 'fino a ' + mln(c[1]) + ' milioni' : c[1] === Infinity ? 'oltre ' + mln(c[0]) + ' milioni' : 'da ' + mln(c[0]) + ' a ' + mln(c[1]) + ' milioni';
     const scaglioni = SC.map((c) => { const quota = Math.max(0, Math.min(app, c[1]) - c[0]); return { nome: nome(c), al: c[3], quota, imp: quota * c[2] }; });
     const tetto7bis = scaglioni.reduce((a, x) => a + x.imp, 0);
@@ -989,9 +989,15 @@ class Component extends DCLogic {
         facBase: 'Linee guida, punto 7.3.1', segrBase: 'Linee guida, punto 7.6.1' }
     })[r];
   }
-  eur(v) { return (v || 0).toLocaleString('it-IT', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
-  pct(v, d) { return (v * 100).toLocaleString('it-IT', { minimumFractionDigits: d == null ? 2 : d, maximumFractionDigits: d == null ? 2 : d }) + '%'; }
-  dec(v, d) { return (v || 0).toLocaleString('it-IT', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  fmtN(v, d) {
+    const x = Number(v) || 0, neg = x < 0;
+    const [i, f] = Math.abs(x).toFixed(d).split('.');
+    const g = i.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return (neg ? '−' : '') + g + (d > 0 ? ',' + f : '');
+  }
+  eur(v) { return this.fmtN(v, 2) + '\u00a0€'; }
+  pct(v, d) { return this.fmtN(v * 100, d == null ? 2 : d) + '%'; }
+  dec(v, d) { return this.fmtN(v, d); }
   titolo(k, i) { return (this.state || {}).tipo === 'aq' ? 'Contratto applicativo n. ' + (i + 1) + (k.nome ? ' — ' + k.nome : '') : 'Categorie d’opera'; }
   prospetto(c) {
     const ri = this.regInfo(c.reg);
