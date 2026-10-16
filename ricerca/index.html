@@ -108,7 +108,6 @@ a{color:inherit}
       <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
       <nav class="nav" aria-label="Principale">
         <a href="/approfondimenti/">Approfondimenti</a>
-        <a href="/guide/">Guide operative</a>
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
         <a href="/eventi/">Eventi</a>
@@ -135,7 +134,7 @@ a{color:inherit}
           <div class="empty">
             <span class="empty-t">Prova con una di queste domande</span>
             <div class="chips">
-              <button type="button" class="chip">Quando è obbligatorio costituire il CCT?</button><button type="button" class="chip">Come si calcola la parte fissa del compenso?</button><button type="button" class="chip">Entro quanto tempo il Collegio decide su un quesito?</button><button type="button" class="chip">Che differenza c’è tra parere e determinazione?</button><button type="button" class="chip">Cosa fa la Segreteria tecnico-amministrativa?</button><button type="button" class="chip">Cosa cambia per i collegi costituiti prima del correttivo?</button>
+              <button type="button" class="chip">Per quali contratti il CCT è obbligatorio?</button><button type="button" class="chip">Chi nomina il Presidente del Collegio?</button><button type="button" class="chip">Entro quanto tempo il Collegio decide su un quesito?</button><button type="button" class="chip">Che differenza c’è tra parere e determinazione?</button><button type="button" class="chip">Cosa fa la Segreteria tecnico-amministrativa?</button><button type="button" class="chip">Cosa cambia per i collegi costituiti prima del correttivo?</button>
             </div>
           </div>
         
@@ -172,7 +171,6 @@ a{color:inherit}
       <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
       <nav class="nav" aria-label="Principale">
         <a href="/approfondimenti/">Approfondimenti</a>
-        <a href="/guide/">Guide operative</a>
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
         <a href="/eventi/">Eventi</a>
@@ -246,10 +244,10 @@ a{color:inherit}
 <script>
 const ENDPOINT = "";
 const CERCA = (() => {
-  const STOP = new Set('a ad al alla alle allo agli ai anche che chi con cosa come cui da dal dalla dalle dei del della delle dello degli di e ed è il in la le lo gli i ma mi ne nel nella nelle non o per più può puo quale quali quando quanto se si sia sono su sul sulla tra fra un una uno questo questa quello quella essere ha hanno deve devono fare viene come cos è c ci vi ti dopo prima entro ogni tutto tutti qual cosi molto poco sempre mai solo ancora gia stato stata fatto fare'.split(' '));
-  const SIN = { cct: 'collegio', collegi: 'collegio', compenso: 'compens', compensi: 'compens', parcella: 'compens', onorario: 'compens', onorari: 'compens', rup: 'responsabile', sa: 'stazione', segretario: 'segreteria', scadenza: 'termin', scadenze: 'termin', tempo: 'termin', tempi: 'termin', giorni: 'termin', sciogliere: 'scioglimento', chiusura: 'scioglimento', domanda: 'quesit', domande: 'quesit', richiesta: 'quesit', prende: 'compens', guadagna: 'compens', paga: 'compens', pagato: 'compens', costa: 'compens', decide: 'determinazione', decidere: 'determinazione', decisione: 'determinazione', pronuncia: 'determinazione', durata: 'termin', impugnare: 'giurisdizione', ricorso: 'giurisdizione', giudice: 'giurisdizione' };
+  const STOP = new Set('a ad al alla alle allo agli ai anche che chi con cosa come cui da dal dalla dalle dei del della delle dello degli di e ed è il in la le lo gli i ma mi ne nel nella nelle non o per più può puo quale quali quando quanto se si sia sono su sul sulla tra fra un una uno questo questa quello quella essere ha hanno deve devono fare viene come cos è c ci vi ti dopo prima entro ogni tutto tutti qual cosi molto poco sempre mai solo ancora gia stato stata fatto fare differenza differenze cambia cambiano rispetto tipo'.split(' '));
+  const SIN = { cct: 'collegio', collegi: 'collegio', compenso: 'compens', compensi: 'compens', parcella: 'compens', onorario: 'compens', onorari: 'compens', rup: 'responsabile', sa: 'stazione', segretario: 'segreteria', scadenza: 'termin', scadenze: 'termin', tempo: 'termin', tempi: 'termin', giorni: 'termin', sciogliere: 'scioglimento', chiusura: 'scioglimento', domanda: 'quesit', domande: 'quesit', richiesta: 'quesit', prende: 'compens', guadagna: 'compens', paga: 'compens', pagato: 'compens', costa: 'compens', decide: 'determinazione', decidere: 'determinazione', decisione: 'determinazione', pronuncia: 'determinazione', pronunce: 'determinazione', competente: 'giurisdizione', tar: 'giurisdizione', durata: 'termin', impugnare: 'giurisdizione', ricorso: 'giurisdizione', giudice: 'giurisdizione' };
   const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, ' ');
-  const cut = (w) => (w.length > 6 ? w.slice(0, 6) : w);
+  const cut = (w) => (w.length > 6 ? w.slice(0, 6) : (w.length > 4 && /[aeiou]$/.test(w) ? w.slice(0, -1) : w));
   const stem = (w) => cut(SIN[w] || w);
   const tok = (t) => norm(t).split(/[^a-z0-9]+/).filter((w) => w && (w.length > 2 || /\d/.test(w)) && !STOP.has(w)).map(stem);
   function indice(chunks) {
@@ -268,7 +266,7 @@ const CERCA = (() => {
       q.forEach((w) => {
         const n = ix.df.get(w); if (!n) return;
         const idf = Math.log(1 + (ix.N - n + 0.5) / (n + 0.5));
-        const f = d.tx.filter((x) => x === w).length + 2 * d.ts.filter((x) => x === w).length + 0.8 * d.ta.filter((x) => x === w).length;
+        const f = d.tx.filter((x) => x === w).length + 3 * d.ts.filter((x) => x === w).length + 1.5 * d.ta.filter((x) => x === w).length;
         if (f) { hit++; s += idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * d.len / ix.avg)); }
       });
       if (hit / q.length < (q.length >= 3 ? 0.5 : 0.5)) s = 0;
@@ -286,8 +284,8 @@ const CERCA = (() => {
 const CHAT_KEY = 'prassicct.segretario.chat.v1';
 let KBIX = null;
 const SPUNTI = [
-  'Quando è obbligatorio costituire il CCT?',
-  'Come si calcola la parte fissa del compenso?',
+  'Per quali contratti il CCT è obbligatorio?',
+  'Chi nomina il Presidente del Collegio?',
   'Entro quanto tempo il Collegio decide su un quesito?',
   'Che differenza c’è tra parere e determinazione?',
   'Cosa fa la Segreteria tecnico-amministrativa?',
@@ -362,7 +360,7 @@ class Component extends DCLogic {
   }
   rispostaLocale(domanda, motivo) {
     const trovati = KBIX ? CERCA.cerca(KBIX, domanda, 3) : [];
-    let md = (motivo ? motivo + ' ' : '') + (trovati.length ? 'Ecco i passaggi di Prassi CCT che rispondono alla tua domanda:' : 'Non ho trovato passaggi pertinenti nei contenuti di Prassi CCT. Prova a riformulare la domanda con parole diverse, oppure consulta le guide operative: https://prassicct.it/guide/');
+    let md = (motivo ? motivo + ' ' : '') + (trovati.length ? 'Ecco i passaggi di Prassi CCT che rispondono alla tua domanda:' : 'Non ho trovato passaggi pertinenti nei contenuti di Prassi CCT. Prova a riformulare la domanda con parole diverse, oppure sfoglia gli approfondimenti: https://prassicct.it/approfondimenti/');
     trovati.forEach((r) => { md += '\n\n**' + r.c.t + (r.c.f ? '' : ' — ' + r.c.s) + '**\n' + this.estratto(r.c.x) + '\n[Leggi tutto](' + this.assoluto(r.c.u) + ')'; });
     return { role: 'assistant', content: md, modo: 'ricerca' };
   }
