@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Il progetto — Prassi CCT</title>
-<meta name="description" content="Prassi CCT è un progetto editoriale indipendente sui Collegi Consultivi Tecnici: metodo, indipendenza, contatti e note legali.">
+<meta name="description" content="Prassi CCT è un progetto editoriale indipendente sui Collegi Consultivi Tecnici a cura di Tiziano Policarpo: l’idea, l’autore, il metodo, contatti e note legali.">
 <link rel="canonical" href="https://prassicct.it/progetto/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prassi CCT">
 <meta property="og:title" content="Il progetto — Prassi CCT">
-<meta property="og:description" content="Prassi CCT è un progetto editoriale indipendente sui Collegi Consultivi Tecnici: metodo, indipendenza, contatti e note legali.">
+<meta property="og:description" content="Prassi CCT è un progetto editoriale indipendente sui Collegi Consultivi Tecnici a cura di Tiziano Policarpo: l’idea, l’autore, il metodo, contatti e note legali.">
 <meta property="og:url" content="https://prassicct.it/progetto/">
 <meta property="og:locale" content="it_IT">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -55,6 +55,27 @@ a{color:inherit}
 .inp{min-height:48px;padding:12px 14px;border-radius:8px;border:1px solid #E5DBCB;background:#fff;font:inherit;color:#2A2324;width:100%}
 .ft{border-top:1px solid #E5DBCB;background:#FFFDF9}
 .ft-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:32px;padding-bottom:32px;font-size:13px;color:#6A5F59}
+.pj-hero{background:linear-gradient(180deg,#FFFDF9 0%,#FAF6EF 100%);border-bottom:1px solid #E5DBCB}
+.pj-hero-in{display:flex;flex-wrap:wrap;gap:40px 64px;align-items:flex-end;padding-top:72px;padding-bottom:56px}
+.pj-hero-t{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.pj-toc{display:flex;flex-wrap:wrap;gap:8px 22px;padding-top:6px;font-size:15px;font-weight:600}
+.pj-toc a{color:#561622;text-decoration:none;border-bottom:1px solid #E5C9C9;padding-bottom:2px}
+.pj-toc a:hover{border-color:#6E1E2B}
+.pj-quote{flex:1 1 300px;min-width:0;position:relative;background:#2A2324;color:#F3EFEA;border-radius:12px;padding:56px 30px 30px}
+.pj-quote p{margin:0;font-family:'Lora',Georgia,serif;font-style:italic;font-size:21px;line-height:1.5}
+.pj-grid{position:absolute;top:22px;left:30px;display:grid;grid-template-columns:repeat(8,6px);gap:6px}
+.pj-grid i{width:6px;height:6px;background:#E8939F;opacity:.25}.pj-grid i:nth-child(5n+1){opacity:1}
+.pj-pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding-top:6px}
+.pj-pillars div{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:10px;background:#FFFDF9;border:1px solid #E5DBCB;font-size:15px;color:#6A5F59}
+.pj-n{font-family:'Lora',Georgia,serif;font-weight:600;font-size:20px;color:#6E1E2B}
+.pj-author{display:flex;gap:14px;align-items:center}
+.pj-mono{flex:none;width:56px;height:56px;border-radius:50%;background:#6E1E2B;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:600;font-size:20px;letter-spacing:.04em}
+.pj-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pj-steps div{border-top:2px solid #6E1E2B;padding-top:12px}
+.pj-steps p{margin:6px 0 0;font-size:15px;color:#4A4042;line-height:1.55}
+.pj-k{font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E1E2B}
+.ftag{display:inline-block;flex:none;min-width:92px;text-align:center;font:500 12px 'IBM Plex Mono',monospace;padding:2px 8px;border-radius:4px;border:1px solid}
+.ftag.ok{color:#1F6B45;border-color:#1F6B45}.ftag.v{color:#8A5300;border-color:#8A5300}
 </style>
 </head>
 <body>
@@ -66,54 +87,84 @@ a{color:inherit}
       <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
       <nav class="nav" aria-label="Principale">
         <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide</a>
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
+        <a href="/libri-e-contributi/">Libri e contributi</a>
         <a href="/eventi/">Eventi</a>
         <a href="/progetto/" class="on" aria-current="page">Il progetto</a>
         <a href="/cct-update/">CCT Update</a>
-        <a href="/ricerca/" class="cta">Ricerca intelligente nel sito</a>
+        <a href="/ricerca/" class="cta">Chiedi al segretario digitale!</a>
       </nav>
     </div>
   </header>
 
-  <section class="wrap" style="padding-top: 64px; padding-bottom: 48px; display: flex; flex-direction: column; gap: 18px;">
-    <p class="kick">Il progetto</p>
-    <h1 class="h1" style="max-width: 20ch;">Una risorsa indipendente per gestire bene un Collegio</h1>
-    <p class="lead">Prassi CCT è un progetto editoriale dedicato ai Collegi Consultivi Tecnici: norme, prassi e strumenti operativi in un unico luogo, scritti per chi il Collegio lo fa funzionare ogni giorno.</p>
-    <nav aria-label="In questa pagina" style="display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 8px; font-size: 15px; font-weight: 600;">
-      <a href="#perche" style="color: #561622;">Perché</a><a href="#metodo" style="color: #561622;">Metodo</a><a href="#indipendenza" style="color: #561622;">Indipendenza</a><a href="#contatti" style="color: #561622;">Contatti</a><a href="#note" style="color: #561622;">Note legali</a><a href="#privacy" style="color: #561622;">Privacy e cookie</a>
-    </nav>
+  <section class="pj-hero">
+    <div class="wrap pj-hero-in">
+      <div class="pj-hero-t">
+        <h1 class="h1" style="max-width: 18ch;">Uno spazio di approfondimento sul collegio consultivo tecnico</h1>
+        <p class="lead">Prassi CCT è un progetto editoriale indipendente: riunisce in un unico luogo la disciplina, la prassi e gli strumenti di lavoro dei collegi consultivi tecnici, con strumenti semplici, innovativi ed efficaci, senza trascurare attenzione e precisione.</p>
+        <nav aria-label="In questa pagina" class="pj-toc">
+          <a href="#idea">L’idea</a><a href="#autore">L’autore</a><a href="#metodo">Il metodo</a><a href="#indipendenza">Indipendenza</a><a href="#contatti">Contatti</a><a href="#note">Note legali</a>
+        </nav>
+      </div>
+      <aside class="pj-quote" aria-label="Il principio del progetto">
+        <span class="pj-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <p>«Un buon strumento deve essere prima di tutto affidabile, e solo dopo brillante.»</p>
+      </aside>
+    </div>
   </section>
 
   <div class="wrap">
-    <section id="perche" class="row">
-      <div class="side"><h2 class="h2">Perché esiste</h2></div>
+    <section id="idea" class="row">
+      <div class="side"><h2 class="h2">L’idea</h2></div>
       <div class="main">
-        <p class="p">Il Collegio consultivo tecnico è uno strumento giovane, la cui disciplina è cambiata più volte in pochi anni: dal D.L. 76/2020 al Codice del 2023, al correttivo del 2024 e alle successive modifiche. Chi lo presiede, chi ne fa parte e chi ne gestisce la segreteria si trova spesso a ricostruire da solo adempimenti, termini e prassi.</p>
-        <p class="p">Prassi CCT nasce per ridurre questo lavoro: ogni contenuto risponde a una domanda concreta e offre, quando possibile, uno strumento da usare subito.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding-top: 8px;">
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">Presidenti e componenti dei Collegi</p></div>
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">Segreterie tecnico-amministrative</p></div>
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">RUP e dirigenti delle stazioni appaltanti</p></div>
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">Avvocati, ingegneri, imprese</p></div>
+        <p class="p">Il collegio consultivo tecnico è un istituto giovane, la cui disciplina è stata riscritta più volte in pochi anni: dall’art. 6 del d.l. n. 76/2020 al Codice dei contratti pubblici del 2023, fino al Correttivo del 2024 e agli interventi successivi. Le regole sono distribuite tra il Codice, l’Allegato V.2, le Linee guida del 2022 e i provvedimenti del Ministero e del Consiglio superiore dei lavori pubblici, mentre la prassi applicativa si forma, nel frattempo, collegio per collegio.</p>
+        <p class="p">Prassi CCT nasce dall’esigenza di riunire questo materiale e di renderlo davvero utilizzabile. Gli approfondimenti ricostruiscono la disciplina con il rigore dell’analisi giuridica; le guide la traducono in percorsi di studio, con una verifica finale; il simulatore dei compensi, il segretario digitale, le fonti e la bibliografia offrono un aiuto immediato a chi deve assumere una decisione o preparare un atto.</p>
+        <div class="pj-pillars">
+          <div><span class="pj-n">Approfondire</span><span>Contributi di analisi, con note e fonti verificate sul testo ufficiale.</span></div>
+          <div><span class="pj-n">Imparare</span><span>Guide in forma di presentazione, con domande di verifica al termine.</span></div>
+          <div><span class="pj-n">Operare</span><span>Strumenti di calcolo e di ricerca che funzionano nel browser, senza raccogliere dati.</span></div>
         </div>
+      </div>
+    </section>
+
+    <section id="autore" class="row">
+      <div class="side" style="display: flex; flex-direction: column; gap: 14px;">
+        <h2 class="h2">L’autore</h2>
+        <div class="pj-author">
+          <span class="pj-mono" aria-hidden="true">TP</span>
+          <span><strong>Tiziano Policarpo</strong><br><span class="mut" style="font-size: 14px;">Ideazione e cura di Prassi CCT</span></span>
+        </div>
+      </div>
+      <div class="main">
+        <p class="p">Ho una formazione giuridica e sono abilitato all’esercizio della professione forense. Il mio percorso si è sviluppato tra attività legale, contratti e contenzioso, con un’attenzione costante agli appalti e ai lavori pubblici e all’organizzazione di procedure e flussi documentali complessi.</p>
+        <p class="p">Da luglio 2026 svolgo l’incarico di segretario tecnico-amministrativo di un collegio consultivo tecnico. È un punto di osservazione privilegiato: permette di constatare quanto la qualità del lavoro di un collegio dipenda, oltre che dalla competenza dei suoi componenti, dall’ordine con cui si gestiscono atti, comunicazioni, termini e documenti.</p>
+        <p class="p">Prassi CCT è il tentativo di mettere quell’attenzione al servizio di chi, a vario titolo, lavora con i collegi. Curo personalmente ogni contenuto, nella convinzione che la chiarezza sia una forma di rispetto per il lettore e che la precisione delle fonti sia la condizione di ogni utilità pratica. Segnalazioni di errori, fonti da aggiungere e proposte di approfondimento sono sempre benvenute.</p>
+        <p class="mut" style="margin: 0; font-size: 15px;">I contenuti del sito non derivano da atti, documenti o informazioni dei collegi nei quali opero, che restano riservati: sono costruiti esclusivamente su norme, documenti pubblici e prassi generalizzabili.</p>
       </div>
     </section>
 
     <section id="metodo" class="row">
       <div class="side"><h2 class="h2">Il metodo</h2></div>
       <div class="main">
-        <p class="p">Ogni affermazione dichiara la propria natura con un'etichetta. Una scelta organizzativa suggerita non viene mai presentata come un obbligo di legge.</p>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div class="li" style="flex-wrap: wrap;"><span class="tag tag-n" style="width: 168px;">Norma</span><span>Disposizione direttamente applicabile, con articolo e link alla fonte ufficiale.</span></div>
-          <div class="li" style="flex-wrap: wrap;"><span class="tag tag-i" style="width: 168px;">Interpretazione</span><span>Lettura sistematica, indicazioni ministeriali, pareri, giurisprudenza.</span></div>
-          <div class="li" style="flex-wrap: wrap;"><span class="tag" style="width: 168px;">Prassi</span><span>Modalità operative diffuse, senza obbligo di legge.</span></div>
-          <div class="li" style="flex-wrap: wrap;"><span class="tag tag-o" style="width: 168px;">Proposta operativa</span><span>Metodo organizzativo suggerito da Prassi CCT.</span></div>
+        <p class="p">Gli approfondimenti sono costruiti come brevi saggi. Ciascuno muove da un problema preciso, ricostruisce il dato normativo nel testo vigente, esamina le questioni interpretative e si chiude con le indicazioni che ne derivano per chi opera nel collegio.</p>
+        <div class="pj-steps">
+          <div><span class="pj-k">Fonte</span><p>Le norme sono lette nel testo vigente su Normattiva e sulle fonti ufficiali; ogni contributo indica, nella nota metodologica, la data della lettura.</p></div>
+          <div><span class="pj-k">Nota</span><p>Ogni affermazione rilevante rinvia a una nota numerata, con il riferimento puntuale e il link al testo ufficiale.</p></div>
+          <div><span class="pj-k">Natura</span><p>Accanto a ogni nota un’etichetta dichiara la natura della fonte, così che il lettore sappia sempre quanto è solido ciò che legge.</p></div>
+          <div><span class="pj-k">Distinzione</span><p>Norma, interpretazione e prassi restano distinte: le Linee guida del 2022 sono richiamate come prassi, salvo che per i compensi; le letture proposte sono dichiarate come tali.</p></div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 8px;">
-          <div class="li"><span class="sq" aria-hidden="true"></span><span>Fonti ufficiali prima di tutto: Normattiva, Gazzetta Ufficiale, MIT, CSLP, ANAC, testi delle pronunce.</span></div>
-          <div class="li"><span class="sq" aria-hidden="true"></span><span>Ogni contenuto riporta la data dell'ultimo aggiornamento.</span></div>
-          <div class="li"><span class="sq" aria-hidden="true"></span><span>Le fonti non ancora verificate sul testo ufficiale sono segnalate come tali.</span></div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 12px;">
+          <span class="lbl">Le etichette delle note</span>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag ok">primaria</span><span>Testo normativo letto sulla fonte ufficiale.</span></div>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag ok">ufficiale</span><span>Atto o documento di un’istituzione, letto nel testo pubblicato.</span></div>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag v">secondaria</span><span>Commenti, massime e notizie di cui non è stato letto il testo integrale.</span></div>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag v">valutazione</span><span>Conclusione dell’autore, ricavata dai testi citati nelle altre note.</span></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="li"><span class="sq" aria-hidden="true"></span><span>Le guide seguono la stessa impostazione: ogni slide rinvia alle fonti numerate e ogni percorso si chiude con domande di verifica, con la spiegazione della risposta.</span></div>
+          <div class="li"><span class="sq" aria-hidden="true"></span><span>I riferimenti normativi evidenziati nel testo si aprono in un riquadro con la sintesi della disposizione e il collegamento alla fonte.</span></div>
           <div class="li"><span class="sq" aria-hidden="true"></span><span>Le correzioni sono pubblicate e datate, non apportate in silenzio.</span></div>
         </div>
       </div>
@@ -122,15 +173,15 @@ a{color:inherit}
     <section id="indipendenza" class="row">
       <div class="side"><h2 class="h2">Indipendenza e riservatezza</h2></div>
       <div class="main">
-        <p class="p">Prassi CCT non è affiliato al Ministero delle infrastrutture e dei trasporti, al Consiglio superiore dei lavori pubblici, all'Autorità nazionale anticorruzione, ad alcuna stazione appaltante, associazione professionale o Collegio. Non ne utilizza loghi o segni distintivi.</p>
-        <p class="p">I contenuti e gli strumenti sono costruiti esclusivamente su norme, documenti pubblici e prassi generalizzabili. Non vengono mai utilizzati atti, verbali, quesiti o comunicazioni riservate di Collegi, né dati di parti o di controversie.</p>
+        <p class="p">Prassi CCT non è affiliato al Ministero delle infrastrutture e dei trasporti, al Consiglio superiore dei lavori pubblici, all’Autorità nazionale anticorruzione, ad alcuna stazione appaltante, associazione professionale o collegio, e non ne utilizza loghi o segni distintivi.</p>
+        <p class="p">Non vengono mai utilizzati atti, verbali, quesiti o comunicazioni riservate di collegi, né dati di parti o di controversie. Il sito non contiene pubblicità.</p>
       </div>
     </section>
 
     <section id="contatti" class="row">
       <div class="side" style="display: flex; flex-direction: column; gap: 10px;">
         <h2 class="h2">Contatti e segnalazioni</h2>
-        <p class="mut" style="margin: 0;">Errori, fonti mancanti, proposte di intervento o collaborazione.</p>
+        <p class="mut" style="margin: 0;">Errori, fonti mancanti, proposte di approfondimento o di collaborazione.</p>
         <p style="margin: 0; font-size: 15px;">Email: <a href="mailto:prassicct@gmail.com" style="font-family: 'IBM Plex Mono', monospace; color: #561622;">prassicct@gmail.com</a></p>
       </div>
       <div class="main">
@@ -141,7 +192,7 @@ a{color:inherit}
               <option>Segnalazione di un errore</option><option>Fonte da aggiungere</option><option>Proposta di intervento o webinar</option><option>Collaborazione editoriale</option><option>Altro</option>
             </select>
           </div>
-          <p class="mut" style="margin: 0; font-size: 15px;">Indica la pagina e, se possibile, la fonte ufficiale di riferimento. Non inserire dati riservati di Collegi o di parti.</p>
+          <p class="mut" style="margin: 0; font-size: 15px;">Indica la pagina e, se possibile, la fonte ufficiale di riferimento. Non inserire dati riservati di collegi o di parti.</p>
           <div><a class="btn" href="mailto:prassicct@gmail.com?subject=Prassi%20CCT%20%E2%80%94%20Segnalazione%20di%20un%20errore&amp;body=Pagina%20di%20riferimento%3A%0A%0AMessaggio%3A%0A%0AFonte%20ufficiale%20(se%20disponibile)%3A%0A">Scrivi alla redazione</a></div>
           <span class="mut" style="font-size: 13px;">Si apre un messaggio già intestato per prassicct@gmail.com. <a href="/privacy/" style="color: #561622;">Informativa privacy</a></span>
         </div>
@@ -151,9 +202,9 @@ a{color:inherit}
     <section id="note" class="row">
       <div class="side"><h2 class="h2">Note legali</h2></div>
       <div class="main">
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>I contenuti hanno finalità informative e non costituiscono parere legale o consulenza professionale sul caso concreto.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>I contenuti hanno finalità informative e di studio e non costituiscono parere legale o consulenza professionale sul caso concreto.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Le sintesi delle norme sono redazionali: fa fede esclusivamente il testo pubblicato sulle fonti ufficiali.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>Modelli e checklist possono essere liberamente adattati per l'uso professionale; la ripubblicazione richiede la citazione della fonte.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>I contenuti possono essere citati e utilizzati per l’uso professionale; la ripubblicazione richiede l’indicazione della fonte.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Titolare del sito e del trattamento dei dati: Tiziano Policarpo · contatti: prassicct@gmail.com.</span></div>
       </div>
     </section>
@@ -162,12 +213,13 @@ a{color:inherit}
       <div class="side"><h2 class="h2">Privacy e cookie</h2></div>
       <div class="main">
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Il sito non usa moduli di raccolta dati: chi scrive a prassicct@gmail.com comunica il proprio indirizzo email e il contenuto del messaggio.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>Il simulatore dei compensi funziona nel browser e non trasmette i dati inseriti.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>Simulatore, guide e segretario digitale funzionano nel browser e non trasmettono i dati inseriti.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Nessun cookie di profilazione né strumento di tracciamento; i caratteri tipografici sono ospitati sul sito.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span><a href="/privacy/" style="color: #561622; font-weight: 600;">Informativa completa ai sensi del Regolamento (UE) 2016/679</a></span></div>
       </div>
     </section>
   </div>
+
 
   <footer class="ft">
     <div class="wrap ft-in">
@@ -185,54 +237,84 @@ a{color:inherit}
       <a href="/" class="logo" aria-label="Prassi CCT, home"><span class="logo-p">Prass<span class="logo-i">ı<span class="logo-q" aria-hidden="true"></span></span></span><span class="logo-c">CCT</span></a>
       <nav class="nav" aria-label="Principale">
         <a href="/approfondimenti/">Approfondimenti</a>
+        <a href="/guide/">Guide</a>
         <a href="/simulatore/">Simulatore compensi</a>
         <a href="/fonti/">Fonti</a>
+        <a href="/libri-e-contributi/">Libri e contributi</a>
         <a href="/eventi/">Eventi</a>
         <a href="/progetto/" class="on" aria-current="page">Il progetto</a>
         <a href="/cct-update/">CCT Update</a>
-        <a href="/ricerca/" class="cta">Ricerca intelligente nel sito</a>
+        <a href="/ricerca/" class="cta">Chiedi al segretario digitale!</a>
       </nav>
     </div>
   </header>
 
-  <section class="wrap" style="padding-top: 64px; padding-bottom: 48px; display: flex; flex-direction: column; gap: 18px;">
-    <p class="kick">Il progetto</p>
-    <h1 class="h1" style="max-width: 20ch;">Una risorsa indipendente per gestire bene un Collegio</h1>
-    <p class="lead">Prassi CCT è un progetto editoriale dedicato ai Collegi Consultivi Tecnici: norme, prassi e strumenti operativi in un unico luogo, scritti per chi il Collegio lo fa funzionare ogni giorno.</p>
-    <nav aria-label="In questa pagina" style="display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 8px; font-size: 15px; font-weight: 600;">
-      <a href="#perche" style="color: #561622;">Perché</a><a href="#metodo" style="color: #561622;">Metodo</a><a href="#indipendenza" style="color: #561622;">Indipendenza</a><a href="#contatti" style="color: #561622;">Contatti</a><a href="#note" style="color: #561622;">Note legali</a><a href="#privacy" style="color: #561622;">Privacy e cookie</a>
-    </nav>
+  <section class="pj-hero">
+    <div class="wrap pj-hero-in">
+      <div class="pj-hero-t">
+        <h1 class="h1" style="max-width: 18ch;">Uno spazio di approfondimento sul collegio consultivo tecnico</h1>
+        <p class="lead">Prassi CCT è un progetto editoriale indipendente: riunisce in un unico luogo la disciplina, la prassi e gli strumenti di lavoro dei collegi consultivi tecnici, con strumenti semplici, innovativi ed efficaci, senza trascurare attenzione e precisione.</p>
+        <nav aria-label="In questa pagina" class="pj-toc">
+          <a href="#idea">L’idea</a><a href="#autore">L’autore</a><a href="#metodo">Il metodo</a><a href="#indipendenza">Indipendenza</a><a href="#contatti">Contatti</a><a href="#note">Note legali</a>
+        </nav>
+      </div>
+      <aside class="pj-quote" aria-label="Il principio del progetto">
+        <span class="pj-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <p>«Un buon strumento deve essere prima di tutto affidabile, e solo dopo brillante.»</p>
+      </aside>
+    </div>
   </section>
 
   <div class="wrap">
-    <section id="perche" class="row">
-      <div class="side"><h2 class="h2">Perché esiste</h2></div>
+    <section id="idea" class="row">
+      <div class="side"><h2 class="h2">L’idea</h2></div>
       <div class="main">
-        <p class="p">Il Collegio consultivo tecnico è uno strumento giovane, la cui disciplina è cambiata più volte in pochi anni: dal D.L. 76/2020 al Codice del 2023, al correttivo del 2024 e alle successive modifiche. Chi lo presiede, chi ne fa parte e chi ne gestisce la segreteria si trova spesso a ricostruire da solo adempimenti, termini e prassi.</p>
-        <p class="p">Prassi CCT nasce per ridurre questo lavoro: ogni contenuto risponde a una domanda concreta e offre, quando possibile, uno strumento da usare subito.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding-top: 8px;">
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">Presidenti e componenti dei Collegi</p></div>
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">Segreterie tecnico-amministrative</p></div>
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">RUP e dirigenti delle stazioni appaltanti</p></div>
-          <div class="card" style="padding: 18px;"><span class="lbl">Per chi</span><p style="margin: 6px 0 0; font-weight: 600;">Avvocati, ingegneri, imprese</p></div>
+        <p class="p">Il collegio consultivo tecnico è un istituto giovane, la cui disciplina è stata riscritta più volte in pochi anni: dall’art. 6 del d.l. n. 76/2020 al Codice dei contratti pubblici del 2023, fino al Correttivo del 2024 e agli interventi successivi. Le regole sono distribuite tra il Codice, l’Allegato V.2, le Linee guida del 2022 e i provvedimenti del Ministero e del Consiglio superiore dei lavori pubblici, mentre la prassi applicativa si forma, nel frattempo, collegio per collegio.</p>
+        <p class="p">Prassi CCT nasce dall’esigenza di riunire questo materiale e di renderlo davvero utilizzabile. Gli approfondimenti ricostruiscono la disciplina con il rigore dell’analisi giuridica; le guide la traducono in percorsi di studio, con una verifica finale; il simulatore dei compensi, il segretario digitale, le fonti e la bibliografia offrono un aiuto immediato a chi deve assumere una decisione o preparare un atto.</p>
+        <div class="pj-pillars">
+          <div><span class="pj-n">Approfondire</span><span>Contributi di analisi, con note e fonti verificate sul testo ufficiale.</span></div>
+          <div><span class="pj-n">Imparare</span><span>Guide in forma di presentazione, con domande di verifica al termine.</span></div>
+          <div><span class="pj-n">Operare</span><span>Strumenti di calcolo e di ricerca che funzionano nel browser, senza raccogliere dati.</span></div>
         </div>
+      </div>
+    </section>
+
+    <section id="autore" class="row">
+      <div class="side" style="display: flex; flex-direction: column; gap: 14px;">
+        <h2 class="h2">L’autore</h2>
+        <div class="pj-author">
+          <span class="pj-mono" aria-hidden="true">TP</span>
+          <span><strong>Tiziano Policarpo</strong><br><span class="mut" style="font-size: 14px;">Ideazione e cura di Prassi CCT</span></span>
+        </div>
+      </div>
+      <div class="main">
+        <p class="p">Ho una formazione giuridica e sono abilitato all’esercizio della professione forense. Il mio percorso si è sviluppato tra attività legale, contratti e contenzioso, con un’attenzione costante agli appalti e ai lavori pubblici e all’organizzazione di procedure e flussi documentali complessi.</p>
+        <p class="p">Da luglio 2026 svolgo l’incarico di segretario tecnico-amministrativo di un collegio consultivo tecnico. È un punto di osservazione privilegiato: permette di constatare quanto la qualità del lavoro di un collegio dipenda, oltre che dalla competenza dei suoi componenti, dall’ordine con cui si gestiscono atti, comunicazioni, termini e documenti.</p>
+        <p class="p">Prassi CCT è il tentativo di mettere quell’attenzione al servizio di chi, a vario titolo, lavora con i collegi. Curo personalmente ogni contenuto, nella convinzione che la chiarezza sia una forma di rispetto per il lettore e che la precisione delle fonti sia la condizione di ogni utilità pratica. Segnalazioni di errori, fonti da aggiungere e proposte di approfondimento sono sempre benvenute.</p>
+        <p class="mut" style="margin: 0; font-size: 15px;">I contenuti del sito non derivano da atti, documenti o informazioni dei collegi nei quali opero, che restano riservati: sono costruiti esclusivamente su norme, documenti pubblici e prassi generalizzabili.</p>
       </div>
     </section>
 
     <section id="metodo" class="row">
       <div class="side"><h2 class="h2">Il metodo</h2></div>
       <div class="main">
-        <p class="p">Ogni affermazione dichiara la propria natura con un'etichetta. Una scelta organizzativa suggerita non viene mai presentata come un obbligo di legge.</p>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div class="li" style="flex-wrap: wrap;"><span class="tag tag-n" style="width: 168px;">Norma</span><span>Disposizione direttamente applicabile, con articolo e link alla fonte ufficiale.</span></div>
-          <div class="li" style="flex-wrap: wrap;"><span class="tag tag-i" style="width: 168px;">Interpretazione</span><span>Lettura sistematica, indicazioni ministeriali, pareri, giurisprudenza.</span></div>
-          <div class="li" style="flex-wrap: wrap;"><span class="tag" style="width: 168px;">Prassi</span><span>Modalità operative diffuse, senza obbligo di legge.</span></div>
-          <div class="li" style="flex-wrap: wrap;"><span class="tag tag-o" style="width: 168px;">Proposta operativa</span><span>Metodo organizzativo suggerito da Prassi CCT.</span></div>
+        <p class="p">Gli approfondimenti sono costruiti come brevi saggi. Ciascuno muove da un problema preciso, ricostruisce il dato normativo nel testo vigente, esamina le questioni interpretative e si chiude con le indicazioni che ne derivano per chi opera nel collegio.</p>
+        <div class="pj-steps">
+          <div><span class="pj-k">Fonte</span><p>Le norme sono lette nel testo vigente su Normattiva e sulle fonti ufficiali; ogni contributo indica, nella nota metodologica, la data della lettura.</p></div>
+          <div><span class="pj-k">Nota</span><p>Ogni affermazione rilevante rinvia a una nota numerata, con il riferimento puntuale e il link al testo ufficiale.</p></div>
+          <div><span class="pj-k">Natura</span><p>Accanto a ogni nota un’etichetta dichiara la natura della fonte, così che il lettore sappia sempre quanto è solido ciò che legge.</p></div>
+          <div><span class="pj-k">Distinzione</span><p>Norma, interpretazione e prassi restano distinte: le Linee guida del 2022 sono richiamate come prassi, salvo che per i compensi; le letture proposte sono dichiarate come tali.</p></div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 8px;">
-          <div class="li"><span class="sq" aria-hidden="true"></span><span>Fonti ufficiali prima di tutto: Normattiva, Gazzetta Ufficiale, MIT, CSLP, ANAC, testi delle pronunce.</span></div>
-          <div class="li"><span class="sq" aria-hidden="true"></span><span>Ogni contenuto riporta la data dell'ultimo aggiornamento.</span></div>
-          <div class="li"><span class="sq" aria-hidden="true"></span><span>Le fonti non ancora verificate sul testo ufficiale sono segnalate come tali.</span></div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 12px;">
+          <span class="lbl">Le etichette delle note</span>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag ok">primaria</span><span>Testo normativo letto sulla fonte ufficiale.</span></div>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag ok">ufficiale</span><span>Atto o documento di un’istituzione, letto nel testo pubblicato.</span></div>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag v">secondaria</span><span>Commenti, massime e notizie di cui non è stato letto il testo integrale.</span></div>
+          <div class="li" style="flex-wrap: wrap;"><span class="ftag v">valutazione</span><span>Conclusione dell’autore, ricavata dai testi citati nelle altre note.</span></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="li"><span class="sq" aria-hidden="true"></span><span>Le guide seguono la stessa impostazione: ogni slide rinvia alle fonti numerate e ogni percorso si chiude con domande di verifica, con la spiegazione della risposta.</span></div>
+          <div class="li"><span class="sq" aria-hidden="true"></span><span>I riferimenti normativi evidenziati nel testo si aprono in un riquadro con la sintesi della disposizione e il collegamento alla fonte.</span></div>
           <div class="li"><span class="sq" aria-hidden="true"></span><span>Le correzioni sono pubblicate e datate, non apportate in silenzio.</span></div>
         </div>
       </div>
@@ -241,15 +323,15 @@ a{color:inherit}
     <section id="indipendenza" class="row">
       <div class="side"><h2 class="h2">Indipendenza e riservatezza</h2></div>
       <div class="main">
-        <p class="p">Prassi CCT non è affiliato al Ministero delle infrastrutture e dei trasporti, al Consiglio superiore dei lavori pubblici, all'Autorità nazionale anticorruzione, ad alcuna stazione appaltante, associazione professionale o Collegio. Non ne utilizza loghi o segni distintivi.</p>
-        <p class="p">I contenuti e gli strumenti sono costruiti esclusivamente su norme, documenti pubblici e prassi generalizzabili. Non vengono mai utilizzati atti, verbali, quesiti o comunicazioni riservate di Collegi, né dati di parti o di controversie.</p>
+        <p class="p">Prassi CCT non è affiliato al Ministero delle infrastrutture e dei trasporti, al Consiglio superiore dei lavori pubblici, all’Autorità nazionale anticorruzione, ad alcuna stazione appaltante, associazione professionale o collegio, e non ne utilizza loghi o segni distintivi.</p>
+        <p class="p">Non vengono mai utilizzati atti, verbali, quesiti o comunicazioni riservate di collegi, né dati di parti o di controversie. Il sito non contiene pubblicità.</p>
       </div>
     </section>
 
     <section id="contatti" class="row">
       <div class="side" style="display: flex; flex-direction: column; gap: 10px;">
         <h2 class="h2">Contatti e segnalazioni</h2>
-        <p class="mut" style="margin: 0;">Errori, fonti mancanti, proposte di intervento o collaborazione.</p>
+        <p class="mut" style="margin: 0;">Errori, fonti mancanti, proposte di approfondimento o di collaborazione.</p>
         <p style="margin: 0; font-size: 15px;">Email: <a href="mailto:prassicct@gmail.com" style="font-family: 'IBM Plex Mono', monospace; color: #561622;">prassicct@gmail.com</a></p>
       </div>
       <div class="main">
@@ -260,7 +342,7 @@ a{color:inherit}
               <option data-for-list="{{motivi}}" data-for-as="m" value="{{m}}">{{m}}</option>
             </select>
           </div>
-          <p class="mut" style="margin: 0; font-size: 15px;">Indica la pagina e, se possibile, la fonte ufficiale di riferimento. Non inserire dati riservati di Collegi o di parti.</p>
+          <p class="mut" style="margin: 0; font-size: 15px;">Indica la pagina e, se possibile, la fonte ufficiale di riferimento. Non inserire dati riservati di collegi o di parti.</p>
           <div><a class="btn" href="{{mailto}}">Scrivi alla redazione</a></div>
           <span class="mut" style="font-size: 13px;">Si apre un messaggio già intestato per prassicct@gmail.com. <a href="/privacy/" style="color: #561622;">Informativa privacy</a></span>
         </div>
@@ -270,9 +352,9 @@ a{color:inherit}
     <section id="note" class="row">
       <div class="side"><h2 class="h2">Note legali</h2></div>
       <div class="main">
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>I contenuti hanno finalità informative e non costituiscono parere legale o consulenza professionale sul caso concreto.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>I contenuti hanno finalità informative e di studio e non costituiscono parere legale o consulenza professionale sul caso concreto.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Le sintesi delle norme sono redazionali: fa fede esclusivamente il testo pubblicato sulle fonti ufficiali.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>Modelli e checklist possono essere liberamente adattati per l'uso professionale; la ripubblicazione richiede la citazione della fonte.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>I contenuti possono essere citati e utilizzati per l’uso professionale; la ripubblicazione richiede l’indicazione della fonte.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Titolare del sito e del trattamento dei dati: Tiziano Policarpo · contatti: prassicct@gmail.com.</span></div>
       </div>
     </section>
@@ -281,12 +363,13 @@ a{color:inherit}
       <div class="side"><h2 class="h2">Privacy e cookie</h2></div>
       <div class="main">
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Il sito non usa moduli di raccolta dati: chi scrive a prassicct@gmail.com comunica il proprio indirizzo email e il contenuto del messaggio.</span></div>
-        <div class="li"><span class="sq" aria-hidden="true"></span><span>Il simulatore dei compensi funziona nel browser e non trasmette i dati inseriti.</span></div>
+        <div class="li"><span class="sq" aria-hidden="true"></span><span>Simulatore, guide e segretario digitale funzionano nel browser e non trasmettono i dati inseriti.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span>Nessun cookie di profilazione né strumento di tracciamento; i caratteri tipografici sono ospitati sul sito.</span></div>
         <div class="li"><span class="sq" aria-hidden="true"></span><span><a href="/privacy/" style="color: #561622; font-weight: 600;">Informativa completa ai sensi del Regolamento (UE) 2016/679</a></span></div>
       </div>
     </section>
   </div>
+
 
   <footer class="ft">
     <div class="wrap ft-in">
