@@ -1110,17 +1110,6 @@ class Component extends DCLogic {
     if (aq && this.num(f.soglia)) kv('Soglia europea lavori', this.eur(this.num(f.soglia)));
     kv('Redatto da', f.red || '—');
 
-    if (aq) {
-      heading('Riepilogo contratti applicativi');
-      const cx = [L, L + 200, L + 238, L + 350];
-      need(18); rect(L, y - 4, R - L, 16, '0.949 0.918 0.867');
-      text(cx[0] + 3, y + 1, 'Contratto', 8.5, true); rtext(cx[2] - 8, y + 1, 'Valore', 8.5, true); text(cx[2] + 3, y + 1, 'Collegio', 8.5, true); rtext(cx[3] + 60, y + 1, 'Parte fissa', 8.5, true); rtext(R - 4, y + 1, 'Tetto compl.', 8.5, true); y -= 18;
-      ks.forEach((k, i) => { const c = calcs[i]; need(16); text(cx[0] + 3, y, ('n. ' + (i + 1) + (k.nome ? ' ' + k.nome : '')).slice(0, 30), 8.5); rtext(cx[2] - 8, y, this.dec(c.app, 2), 8.5); text(cx[2] + 3, y, c.obbl.split(' (')[0], 8.5); rtext(cx[3] + 60, y, this.dec(c.fissaCollR, 2), 8.5); rtext(R - 4, y, this.dec(c.totColl, 2), 8.5); y -= 5; line(L, y, R, y); y -= 11; });
-      const tf = calcs.reduce((a, c) => a + c.fissaCollR, 0), tt = calcs.reduce((a, c) => a + c.totColl, 0);
-      const tv = calcs.reduce((a, c) => a + c.app, 0);
-      need(16); text(L + 3, y, 'Totale', 8.5, true); rtext(cx[2] - 8, y, this.dec(tv, 2), 8.5, true); rtext(cx[3] + 60, y, this.dec(tf, 2), 8.5, true); rtext(R - 4, y, this.dec(tt, 2), 8.5, true); y -= 22;
-      y -= 4;
-    }
 
     ks.forEach((k, i) => {
       const c = calcs[i];
