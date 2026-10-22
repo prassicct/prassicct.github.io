@@ -632,20 +632,12 @@ c. 2 — Il compenso della segreteria è compreso tra il 3% e il 10% di quello d
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <sc-if value="{{isAQ}}" hint-placeholder-val="{{false}}">
           <div class="card" style="padding: 0;">
-            <div class="t-h">Riepilogo complessivo</div>
+            <div class="t-h">Riepilogo contratti applicativi</div>
             <div style="overflow-x: auto;">
               <table class="tb">
                 <thead><tr><th>Contratto</th><th style="text-align: right;">Valore</th><th style="text-align: right;">Parte fissa</th><th style="text-align: right;">Compenso massimo</th></tr></thead>
                 <tbody>
                   <tr data-for-list="{{riepilogo}}" data-for-as="x" class="{{x.cls}}"><td>{{x.nome}}</td><td class="n">{{x.valore}}</td><td class="n">{{x.fissa}}</td><td class="n">{{x.tot}}</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div style="overflow-x: auto; border-top: 1px solid #E5DBCB;">
-              <table class="tb">
-                <thead><tr><th>Totali dei contratti applicativi</th><th style="text-align: right;">Importo</th></tr></thead>
-                <tbody>
-                  <tr data-for-list="{{totali}}" data-for-as="t"><td>{{t.voce}}</td><td class="n">{{t.imp}}</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1119,7 +1111,7 @@ class Component extends DCLogic {
     kv('Redatto da', f.red || '—');
 
     if (aq) {
-      heading('Riepilogo complessivo');
+      heading('Riepilogo contratti applicativi');
       const cx = [L, L + 200, L + 238, L + 350];
       need(18); rect(L, y - 4, R - L, 16, '0.949 0.918 0.867');
       text(cx[0] + 3, y + 1, 'Contratto', 8.5, true); rtext(cx[2] - 8, y + 1, 'Valore', 8.5, true); text(cx[2] + 3, y + 1, 'Collegio', 8.5, true); rtext(cx[3] + 60, y + 1, 'Parte fissa', 8.5, true); rtext(R - 4, y + 1, 'Tetto compl.', 8.5, true); y -= 18;
@@ -1127,10 +1119,6 @@ class Component extends DCLogic {
       const tf = calcs.reduce((a, c) => a + c.fissaCollR, 0), tt = calcs.reduce((a, c) => a + c.totColl, 0);
       const tv = calcs.reduce((a, c) => a + c.app, 0);
       need(16); text(L + 3, y, 'Totale', 8.5, true); rtext(cx[2] - 8, y, this.dec(tv, 2), 8.5, true); rtext(cx[3] + 60, y, this.dec(tf, 2), 8.5, true); rtext(R - 4, y, this.dec(tt, 2), 8.5, true); y -= 22;
-      const T = this.totali(calcs);
-      need(18); rect(L, y - 4, R - L, 16, '0.949 0.918 0.867');
-      text(L + 3, y + 1, 'Totali dei contratti applicativi', 8.5, true); rtext(R - 4, y + 1, 'Importo', 8.5, true); y -= 18;
-      T.forEach((t) => { need(16); text(L + 3, y, t[0], 8.5, !!t[2]); rtext(R - 4, y, t[1], 8.5, !!t[2]); y -= 5; line(L, y, R, y); y -= 11; });
       y -= 4;
     }
 
@@ -1296,7 +1284,6 @@ class Component extends DCLogic {
       azzera: () => this.setState({ contratti: null, f: {}, fac: false, cod: false, av: '0' }),
       avviso: !vuoto && incompleto,
       avvisoTxt: vuoto ? 'Scegli almeno una categoria d’opera e inserisci l’importo per calcolare la parte fissa.' : 'Attenzione: una categoria ha l’importo ma non G o Q, quindi non entra nel calcolo.',
-      totali: this.totali(calcs).map((t) => ({ voce: t[0], imp: t[1] })),
       riepilogo: ks.map((k, i) => ({ nome: 'n. ' + (i + 1) + (k.nome ? ' — ' + k.nome : ''), valore: this.eur(calcs[i].app), obbl: calcs[i].obbl, fissa: this.eur(calcs[i].fissaCollR), tot: this.eur(calcs[i].totColl), cls: '' }))
         .concat([{ nome: 'Totale', valore: this.eur(calcs.reduce((a, c) => a + c.app, 0)), obbl: '', fissa: this.eur(calcs.reduce((a, c) => a + c.fissaCollR, 0)), tot: this.eur(calcs.reduce((a, c) => a + c.totColl, 0)), cls: 'tot' }]),
       risultati: ks.map((k, i) => {
